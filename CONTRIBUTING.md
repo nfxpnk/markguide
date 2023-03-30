@@ -42,7 +42,10 @@ JavaScript file:        ./bin/markguide.js
 Application parameters: --build
 ```
 
-Additional resources: [VSCode](https://code.visualstudio.com/docs/nodejs/nodejs-debugging), [WebStorm](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html)
+Additional resources:
+
+- [VSCode](https://code.visualstudio.com/docs/nodejs/nodejs-debugging),
+- [WebStorm](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html)
 
 ### Run tests
 

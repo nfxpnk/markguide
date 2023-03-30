@@ -38,14 +38,14 @@ Support regular markdown files in components folders and process it as guideline
 ### Installing
 
 ```
-npm install fret2buzz/markguide#commit
+npm install markguide
 ```
 
 ### Configuring
 
 #### Minimal configuration
 
-`.atlasrc.json`:
+`.markguiderc.json`:
 
 ```json
 {

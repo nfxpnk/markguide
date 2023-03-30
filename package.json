@@ -11,7 +11,7 @@
     "scss",
     "css",
     "markdown",
-    "atlas"
+    "markguide"
   ],
   "engines": {
     "node": ">=18",
