@@ -379,20 +379,6 @@ Simple `html`, `scss`, `css` "fences" become regular code-block:
 */
 ```
 
-#### Styling code "fences"
-
-All "_" in code block "fences" will be removed, but original "fence" will be added as CSS-class, so you could use it to style code by your needs. Atlas by default style 2 class `*_bad`, `*_good`. This could be used in guidelines.
-
-```md
-``html_bad
-<H1>not do</H1>
-``
-
-``html_good
-<h1>do</h1>
-``
-```
-
 #### Template helpers
 
 To inline some resources like svg icons, inlined styles etc. you could use `inline` helper. Ex:
