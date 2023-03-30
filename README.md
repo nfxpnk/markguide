@@ -272,16 +272,6 @@ All templates and partials in Atlas could be overwritten. Please see this repo v
         "navigation": "",
         "toc": ""
     },
-    "projectConstants": {
-        "constantsSrc": ["project-root/path/to/project-settings.scss"],
-        "colorPrefix": "color",
-        "fontPrefix": "font",
-        "scalePrefix": "scale",
-        "spacePrefix": "space",
-        "motionPrefix": "motion",
-        "depthPrefix": "depth",
-        "breakpointPrefix": "break"
-    },
     "projectInfo": {
         "name": "some-project-name"
     }
