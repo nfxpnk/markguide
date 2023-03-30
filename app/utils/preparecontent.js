@@ -4,12 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = function(atlasConfig, projectTree) {
-    const projectConstants = require(path.resolve(__dirname, '../../models/projectconstants.js'))(
-        atlasConfig.constants, atlasConfig.scssAdditionalImportsArray, atlasConfig.constants.constantsFile);
     const renderedPageContent = require(path.resolve(__dirname, '../../models/pagecontent.js'));
-
-    // View models
-    const styleguide = require(path.resolve(__dirname, '../../viewmodels/styleguide.js'));
 
     // Prepare guide page content model depending on component type
     function prepareContent(component) {
@@ -27,9 +22,6 @@ module.exports = function(atlasConfig, projectTree) {
         }
 
         switch (component.type) {
-            case 'styleguide':
-                content = styleguide(projectConstants, component);
-                break;
             case 'component':
             case 'container':
                 break;
