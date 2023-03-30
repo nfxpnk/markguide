@@ -1,0 +1,180 @@
+.atlas-nav { // atlas-outline-view
+	font-family: $font-sans-atlas;
+	font-size: $atlas-scale-secondary;
+	list-style: none;
+	padding-bottom: $space-md-atlas;
+
+	&__item {
+		display: block;
+		position: relative;
+
+		&_index + &_index {
+			display: none;
+		}
+	}
+
+	&__ln {
+		all: initial;
+		align-items: center;
+		color: inherit;
+		cursor: pointer;
+		display: flex;
+		font-family: $font-sans-atlas;
+		font-size: $atlas-scale-secondary;
+		gap: 6px;
+		overflow: hidden;
+		padding: 5px 0;
+		position: relative;
+		text-decoration: none;
+		text-overflow: ellipsis;
+		transition: opacity ease 0.2s;
+		user-select: none;
+		white-space: nowrap;
+
+		&:hover,
+		&:focus {
+			color: black;
+			text-decoration: none;
+		}
+
+		&:active {
+			color: $color-blue-atlas;
+		}
+
+		&.js-current-page {
+			background-color: $atlas-aside-selected;
+			color: black;
+			cursor: default;
+			pointer-events: none;
+		}
+
+		svg {
+			height: 18px;
+			min-width: 18px;
+			pointer-events: none;
+			vertical-align: text-bottom;
+			width: 18px;
+		}
+
+		&._category {
+			svg {
+				color: $color-blue-atlas;
+			}
+		}
+
+		&.js-collapsed._category {
+			svg {
+				color: $color-grey70-atlas;
+			}
+		}
+
+		&._deprecated {
+			text-decoration: line-through;
+		}
+
+		&._empty {
+			opacity: 0.6;
+			font-style: italic;
+		}
+	}
+
+	/* stylelint-disable */
+	// Recursive nesting level structure - refactor me later
+	> .atlas-nav__item {
+		> .atlas-nav__ln {
+			background: $atlas-aside-bg;
+			padding: $space-sm-atlas 0 $space-sm-atlas $space-md-atlas;
+			position: sticky;
+			top: 0;
+			z-index: 1;
+
+			&::after {
+				background: lightgrey;
+				bottom: 0;
+				content: "";
+				height: 1px;
+				left: $space-md-atlas;
+				position: absolute;
+				right: $space-md-atlas;
+			}
+		}
+
+		.atlas-nav__item {
+			> .atlas-nav__ln {
+				padding-left: ($space-md-atlas * 2);
+			}
+
+			.atlas-nav__item {
+				> .atlas-nav__ln {
+					padding-left: ($space-md-atlas * 3);
+				}
+
+				.atlas-nav__item {
+					> .atlas-nav__ln {
+						padding-left: ($space-md-atlas * 4);
+					}
+				}
+			}
+		}
+	}
+	/* stylelint-enable */
+
+	.atlas-nav__ln._category {
+		svg {
+		}
+	}
+
+	.atlas-nav__ln._category.js-collapsed { /* stylelint-disable-line */
+		svg { /* stylelint-disable-line */
+			transform: rotate(0);
+		}
+
+		+ .atlas-nav__sub-nav { /* stylelint-disable-line */
+			display: none;
+		}
+	}
+}
+
+.js-searching {
+	.atlas-nav__ln {
+		color: lighten($atlas-color-text, 40%);
+		cursor: default;
+		pointer-events: none;
+
+		&._category {
+			svg {
+				color: lighten($atlas-color-text, 40%);
+			}
+		}
+	}
+}
+
+.js-found {
+	.atlas-nav__ln {
+		color: lighten($atlas-color-text, 40%);
+		cursor: default;
+		display: none;
+		pointer-events: none;
+	}
+
+	.atlas-nav__ln.js-relevant {
+		color: $atlas-color-text;
+		cursor: pointer;
+		display: block;
+		pointer-events: initial;
+
+		&:hover,
+		&:focus {
+			color: black;
+		}
+
+		&:active {
+			color: $color-blue-atlas;
+		}
+	}
+
+	.atlas-nav__sub-nav,
+	.atlas-nav__ln._category {
+		display: block !important; /* stylelint-disable-line */
+	}
+}

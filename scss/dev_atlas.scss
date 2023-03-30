@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+@import "dev-atlas-definitions";
+
+@import "global/global-normalization";
+
+@import "frame/atlas-page";
+@import "frame/atlas-content";
+@import "frame/atlas";
+@import "frame/atlas-overline";
+@import "frame/atlas-message-global";
+
+@import "guideline/atlas-toc";
+@import "guideline/atlas-landing";
+
+@import "component/atlas-component-aside";
+@import "component/atlas-info-digit";
+@import "component/atlas-component-footer";
+@import "component/atlas-info-list";
+@import "component/atlas-constant";
+@import "component/atlas-component-structure";
+@import "component/atlas-colors";
+@import "component/atlas-icons";
+
+@import "styleguide/atlas-copier";
+
+
+/* TODO: Temp location, move to some file.scss */
+.atlas-html {
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid grey;
+
+	&__item {
+		margin-bottom: 20px;
+
+		h2 {
+			margin-bottom: 10px;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+
+.atlas-markup {
+	position: relative;
+	outline: none !important;
+	margin-bottom: 20px;
+
+	&:focus {
+		outline: none !important;
+	}
+
+	summary {
+		border: 1px solid grey;
+		cursor: pointer;
+		padding-left: 10px;
+		user-select: none;
+
+		&:focus {
+			outline: none !important;
+		}
+	}
+
+	&__copy-button {
+		appearance: none;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		position: absolute;
+		right: 15px;
+		top: 0;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

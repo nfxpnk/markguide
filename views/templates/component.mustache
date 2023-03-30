@@ -1,0 +1,24 @@
+{{> header}}
+
+{{#isDeprecated}}
+    <div class="atlas-message-global _warn">
+        This component is deprecated!
+    </div>
+{{/isDeprecated}}
+
+{{> componentstataside}}
+
+<div class="atlas-overline">
+    <svg width="16" height="16" role="img">
+        <use href="#{{icon}}"></use>
+    </svg>
+    {{type}}
+</div>
+
+<section><!-- this is hack, but we have sections in markdown, so we need to open and close it on wrapper -->
+{{{content.documentation}}}
+</section>
+
+{{> componentstatfooter}}
+
+{{> footer}}

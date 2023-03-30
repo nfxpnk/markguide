@@ -1,0 +1,36 @@
+<div class="l-atlas-container__aside" id="js-atlas-aside" role="contentinfo">
+    <script>
+        document.getElementById('js-atlas-aside').style.width =
+            window.sessionStorage && (window.sessionStorage.getItem('asideWidth')) ?
+                window.sessionStorage.getItem('asideWidth') + 'px' : '';
+    </script>
+    <div class="atlas-aside">
+        <div class="atlas-aside__header">
+            <div class="atlas-header">
+                <div class="atlas-header__logo" role="banner">
+                    {{>logo}}
+                </div>
+
+                <div class="atlas-header__search">
+                    <div class="atlas-search" role="search">
+                        <svg class="atlas-search__icon" width="16" height="16" role="img"><use href="#search-16"></use></svg>
+                        <input class="atlas-search__input" type="search" id="js-atlas-search" placeholder="Filter" autocomplete="off"/>
+                        <button class="atlas-search__clear" id="js-atlas-search-clear" title="Clear input">
+                            <svg width="16" height="16" role="img"><use href="#x-circle-16"></use></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="atlas-aside__content" role="navigation" id="js-atlas-aside-content">
+            <div class="atlas-nav" role="list" id="js-atlas-navigation">
+                &nbsp;
+            </div>
+        </div>
+        <div class="atlas-aside__footer">
+            {{> copyright}}
+        </div>
+    </div>
+    <button class="atlas-aside-ctrl" id="js-atlas-aside-resizer" title="Double click to toggle aside"></button>
+    <div class="atlas-aside-resizer-overlay" id="js-atlas-aside-resizer-overlay"></div>
+</div>

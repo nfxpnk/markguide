@@ -1,0 +1,7 @@
+<link rel="stylesheet" type="text/css" href="styles.css"/>
+
+<script>
+    window.contexts = ["global"]
+</script>
+<script async="async" src="js.js" crossorigin="anonymous"></script>
+

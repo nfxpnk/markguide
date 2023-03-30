@@ -1,0 +1,12 @@
+<div class="atlas-toc">
+    <div class="atlas-toc__info">
+        <div class="atlas-toc__path"><strong>Path:</strong> {{content.path}}</div>
+    </div>
+    {{#content.toc}}
+        <div class="atlas-toc__item" role="listitem">
+            <a class="atlas-toc__ln atlas-toc__ln_{{level}}" href="#h{{level}}-{{escapedText}}">
+                {{{text}}}
+            </a>
+        </div>
+    {{/content.toc}}
+</div>

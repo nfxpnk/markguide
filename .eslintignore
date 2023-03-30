@@ -1,0 +1,3 @@
+node_modules/*
+atlas/assets/js/*.js
+assets/js/prism.js

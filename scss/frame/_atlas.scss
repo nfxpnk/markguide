@@ -1,0 +1,336 @@
+@use "sass:math";
+
+.atlas {
+	all: initial;
+	color: $atlas-color-text;
+	font-family: $font-sans-atlas;
+	font-size: 16px;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-weight: normal;
+
+	&-title {
+		display: block;
+
+		&_1,
+		&_2,
+		&_3 {
+			margin-bottom: $space-md-atlas;
+			margin-top: $space-lg-atlas;
+		}
+
+		&_1,
+		&_2,
+		&_3,
+		&_4,
+		&_5,
+		&_6 {
+			font-weight: bold;
+			letter-spacing: -0.03em;
+			margin-bottom: $space-md-atlas;
+		}
+
+		&_1 {
+			font-size: $scale-xxl-atlas;
+			font-weight: bold;
+			letter-spacing: -0.04em;
+			line-height: 44px;
+			margin-top: $space-md-atlas;
+			padding-top: 16px;
+		}
+
+		&_2 {
+			font-size: $scale-xl-atlas;
+			line-height: $space-lg-atlas;
+		}
+
+		&_3 {
+			font-size: $scale-lg-atlas;
+			line-height: $space-md-atlas;
+		}
+
+		&_4 {
+			font-size: $scale-md-atlas;
+			font-weight: bold;
+			line-height: $space-md-atlas;
+			text-transform: uppercase;
+		}
+
+		&_5 {
+			font-size: $scale-sm-atlas;
+			font-weight: bold;
+			line-height: $space-md-atlas;
+			text-transform: uppercase;
+		}
+
+		&_6 {
+			font-size: $scale-sm-atlas;
+			line-height: $space-md-atlas;
+		}
+	}
+
+	&-p {
+		display: block;
+		margin: 0 0 $space-md-atlas;
+		padding: 0;
+
+		a {
+			color: $color-blue-atlas;
+			text-decoration: underline;
+			word-break: break-word;
+		}
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&-hr {
+		border: none;
+		border-top: 1px solid;
+		color: $color-grey80-atlas;
+		display: block;
+		margin: $space-lg-atlas auto;
+	}
+
+	&-ol,
+	&-ul {
+		display: block;
+		list-style: disc;
+		margin-bottom: $space-md-atlas;
+		margin-top: $space-md-atlas;
+		padding-left: $space-md-atlas;
+
+		li {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	&-ol {
+		list-style: decimal;
+	}
+
+	&-table {
+		border-collapse: collapse;
+		display: table;
+		margin-bottom: $space-md-atlas;
+
+		th,
+		td {
+			padding: #{math.div($space-sm-atlas, 2)} $space-sm-atlas #{math.div($space-sm-atlas, 2)} 0;
+		}
+
+		th {
+			border-bottom: 2px solid $atlas-color-divider;
+			font-weight: bold;
+		}
+	}
+
+	&-code {
+		display: block;
+		font-family: $font-mono-atlas;
+		font-weight: 400;
+		line-height: 1.5;
+		position: relative;
+		text-align: left;
+
+		code {
+			direction: ltr;
+			//hyphens: none;
+			overflow: auto;
+			//tab-size: 4;
+			text-align: left;
+			white-space: pre-wrap;
+			word-break: normal;
+			word-spacing: normal;
+			word-wrap: normal;
+		}
+
+		pre {
+			background-color: lighten($color-grey95-atlas, 4%);
+			border: 1px solid $color-grey95-atlas;
+			border-radius: 3px;
+			margin: 0 0 $space-md-atlas;
+			overflow: auto;
+			padding: $space-sm-atlas;
+
+			code {
+				background: transparent;
+				border: none;
+				border-radius: 0;
+				padding: 0;
+			}
+		}
+
+		&[class*="_bad"],
+		&[class*="_good"] {
+			&::after {
+				display: block;
+				font-size: 0.8em;
+				font-weight: bold;
+				line-height: $space-md-atlas;
+				margin: -#{$space-md-atlas} 0 $space-md-atlas;
+			}
+		}
+
+		&[class*="_bad"] {
+			pre {
+				border-color: lighten($color-red-atlas, 16%);
+			}
+
+			&::after {
+				color: $color-red-atlas;
+				content: "Don’t.";
+			}
+		}
+
+		&[class*="_good"] {
+			pre {
+				border-color: lighten($color-green-atlas, 16%);
+			}
+
+			&::after {
+				color: $color-green-atlas;
+				content: "Do.";
+			}
+		}
+	}
+
+	code {
+		background-color: lighten($color-grey90-atlas, 5%);
+		border: 1px solid $color-grey90-atlas;
+		border-radius: 5px;
+		font-family: $font-mono-atlas;
+		font-size: 0.85em;
+		line-height: 1.2;
+		padding: 0.1em 0.3em;
+	}
+}
+
+.atlas-title__text,
+.atlas-p,
+.atlas-ul,
+.atlas-ol,
+.atlas-code {
+	color: $atlas-color-text; // revert text to darkgrey for all clients that have alterations
+	// max-width: 800px;
+}
+
+// Article Headline
+.atlas-content__inner {
+	.atlas-title_1 {
+		+ .atlas-p {
+			font-size: $scale-lg-atlas;
+			line-height: 1.2;
+			margin-bottom: $space-lg-atlas;
+		}
+	}
+}
+
+// Title Anchor
+.atlas-title { /* stylelint-disable-line */
+	align-items: flex-end;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+
+	&__text {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__anchor {
+		color: $color-grey80-atlas;
+		font-size: $scale-lg-atlas;
+		padding-left: $space-md-atlas;
+
+		&::after {
+			background: linear-gradient(to left, rgba(black, 0.1), rgba(black, 0)) no-repeat right bottom;
+			background-size: 100%;
+			bottom: 0;
+			content: "";
+			height: 1px;
+			position: absolute;
+			right: 0;
+			transition: width ease 0.4s;
+			width: 0;
+		}
+
+		&:hover,
+		&:focus {
+			color: $color-grey60-atlas;
+
+			&::after {
+				width: 100%;
+			}
+		}
+
+		&:active {
+			color: $color-blue-atlas;
+		}
+
+		svg {
+			height: 14px;
+			width: 14px;
+		}
+	}
+
+	&__highlight {
+		bottom: -5px;
+		left: -#{$space-md-atlas};
+		pointer-events: none;
+		position: absolute;
+		right: -#{$space-md-atlas};
+		top: -5px;
+		z-index: 0;
+	}
+}
+
+.atlas-anchor {
+	pointer-events: none;
+	position: absolute;
+	transform: translateY(-70px);
+}
+
+.atlas-anchor:target + .atlas-title .atlas-title__highlight {
+	animation: target-highlight 2s ease;
+}
+
+// Sticky headings logic
+.atlas-section {
+	padding: 1px 0;
+	position: relative;
+}
+
+.atlas-title_2 { /* stylelint-disable-line */
+	background: rgba($color-white-atlas, 0.9);
+	border-bottom: 1px solid rgba(black, 0.1);
+	margin: 0 -#{$space-md-atlas} $space-lg-atlas;
+	padding: $space-sm-atlas $space-md-atlas;
+	position: sticky;
+	top: -1px; // compensate composition positioning bug
+	z-index: 5;
+
+	@supports (backdrop-filter: blur(10px)) {
+		backdrop-filter: saturate(180%) blur(10px);
+		background: rgba($color-white-atlas, 0.7);
+	}
+
+	.atlas-title__highlight {
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+	}
+}
+
+@keyframes target-highlight {
+	0% {
+		background-color: $color-orange-atlas;
+	}
+
+	100% {
+		background-color: transparent;
+	}
+}

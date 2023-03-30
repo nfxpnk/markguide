@@ -1,0 +1,19 @@
+{
+    "guideSrc": "_example/scss-source/",
+    "guideDest": "_example/atlas-static/",
+    "cssSrc": "assets/css/",
+    "projectCompiledFiles": "_example/projects-static-files/",
+    "copyInternalAssets": true,
+    "excludedSassFiles": "_dev-atlas-settings|_dev-atlas-definitions",
+    "componentPrefixes": ["atlas-", "l-"],
+    "projectConstants": {
+        "constantsSrc": "",
+        "colorPrefix": "color",
+        "fontPrefix": "font",
+        "scalePrefix": "scale",
+        "spacePrefix": "space",
+        "motionPrefix": "motion",
+        "depthPrefix": "depth",
+        "breakpointPrefix": "break"
+    }
+}

@@ -1,0 +1,69 @@
+.atlas-toc {
+	padding-top: 30px;
+	font-size: 13px;
+
+	&__info {
+		border: 1px solid $color-grey80-atlas;
+		border-radius: $atlas-radius;
+		display: flex;
+		flex-flow: column nowrap;
+		font-size: 14px;
+		gap: 10px;
+		margin-bottom: 30px;
+		padding: 10px;
+	}
+
+	&__path {
+		font-family: $font-mono-atlas;
+	}
+
+	&__date {
+		font-family: $font-mono-atlas;
+	}
+
+	&__item {
+		display: block;
+	}
+
+	&__ln {
+		color: $color-blue-atlas;
+		display: block;
+		text-decoration: underline;
+		text-overflow: ellipsis;
+
+		&:hover,
+		&:focus {
+			color: darken($color-blue-atlas, 15%);
+		}
+
+		&:active {
+			color: $color-orange-atlas;
+		}
+
+		&_1 {
+			font-size: 14px;
+			font-weight: bold;
+		}
+
+		&_2 {
+			font-weight: bold;
+			margin-left: $space-md-atlas;
+		}
+
+		&_3 {
+			margin-left: $space-md-atlas * 2;
+		}
+
+		&_4 {
+			margin-left: $space-md-atlas * 3;
+		}
+
+		&_5 {
+			margin-left: $space-md-atlas * 4;
+		}
+
+		&_6 {
+			margin-left: $space-md-atlas * 5;
+		}
+	}
+}

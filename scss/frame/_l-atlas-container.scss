@@ -1,0 +1,31 @@
+.l-atlas-container {
+	height: 100%;
+
+	&__aside {
+		bottom: 0;
+		box-shadow: 1px 0 0 0 $atlas-aside-bd;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 250px;
+		z-index: 2;
+	}
+
+	&__main {
+		background-color: $color-white-atlas;
+		margin-left: 250px;
+		position: relative;
+		z-index: 1;
+	}
+
+	&.js-aside-panel-hidden {
+		.l-atlas-container__aside {
+			min-width: 5px;
+			width: 5px;
+		}
+
+		.l-atlas-container__main {
+			margin-left: 5px;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+/*md
+
+# g-link
+
+This component is designed to provide same styles of text-type links (hyperlinks)
+across different components.
+
+For UI type links see `g-link_ui`.
+
+## Usage
+
+```scss
+// for regular cases
+.b-user_content-link {
+	@include g-link_brand;
+}
+
+// for cases when text color is inverted (white, red etc) and action color will not
+// be good (ex blue hover state on red alert banner)
+.b-error_message-link {
+	@include g-link_brand;
+}
+```
+
+*/
+/*md
+
+# Test page
+
+*/
+.code {
+  background: white;
+}

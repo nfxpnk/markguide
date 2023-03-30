@@ -1,0 +1,72 @@
+/*md
+
+# Test page
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:focus - Focus
+-->
+<!--
+Parent Styles:
+background: black; color: white;
+-->
+<button type="submit" class="b-button [modifier class]">
+    Primary
+</button>
+```
+
+## No styles
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:focus - Focus
+-->
+<button type="submit" class="b-button [modifier class]">
+    Primary
+</button>
+```
+
+## Include
+
+```html_example
+<!--
+Include: _b-test.html
+-->
+```
+
+## Include PUG
+
+```html_example
+<!--
+Include: _b-test.pug
+-->
+```
+
+## Include modifier
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:focus - Focus
+-->
+<!--
+Include: _b-test.html
+-->
+```
+
+*/
+
+.code {
+	background: white;
+}

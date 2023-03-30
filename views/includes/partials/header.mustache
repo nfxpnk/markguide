@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <title>Cybex Styleguide - {{title}}</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/dev_atlas.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/dev_atlas-frame.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/prism.css"/>
+
+    {{> assetshead}}
+</head>
+<body class="atlas-page atlas-page_{{type}}">
+
+<div id="js-atlas-icons"></div>
+{{> icons}}
+
+<div class="l-atlas-container" id="js-atlas-container">
+    {{> aside}}
+    <main role="main" class="l-atlas-container__main" id="js-atlas-main">
+        <script>
+            document.getElementById('js-atlas-main').style.marginLeft =
+                window.sessionStorage && window.sessionStorage.getItem('asideWidth') ?
+                    window.sessionStorage.getItem('asideWidth') + 'px' : '';
+        </script>
+        <div class="atlas-content">
+            <div class="atlas-content__inner">
+

@@ -1,0 +1,23 @@
+<div class="js-copier">
+    <div class="atlas-html" style="{{{style}}}">
+        <div class="atlas-html__item">
+            <h2>Default</h2>
+            <div>{{{code}}}</div>
+        </div>
+        {{#codeArray}}
+            <div class="atlas-html__item">
+                <h2>{{class}} - {{name}}</h2>
+                <div>{{{html}}}</div>
+            </div>
+        {{/codeArray}}
+    </div>
+
+    <details class="atlas-markup">
+        <summary>Code:</summary>
+        <button class="atlas-markup__copy-button js-copier-button">Copy</button>
+        <div class="atlas-code">
+            <pre><code class="js-copier-text language-{{language}}">{{code}}</code></pre>
+        </div>
+        <span role="region" aria-live="polite" class="atlas-markup__notifier js-playground__notifier"></span>
+    </details>
+</div>

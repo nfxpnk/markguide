@@ -1,0 +1,191 @@
+.atlas-component-structure {
+	margin-bottom: $space-lg-atlas;
+	margin-top: $space-lg-atlas;
+
+	&__title {
+		display: none;
+		font-size: $scale-lg-atlas;
+		font-weight: bold;
+		line-height: $space-md-atlas;
+		margin-bottom: $space-md-atlas;
+	}
+
+	&__nodes {
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)) no-repeat;
+		background-position: 26px 0;
+		background-size: 1px 100%;
+		font-family: $font-mono-atlas;
+		font-size: 12.8px;
+		list-style: none;
+		padding-bottom: 5px;
+		padding-left: $space-md-atlas;
+		position: relative;
+
+		&::after {
+			background-color: rgba(0, 0, 0, 0.3);
+			border-radius: $atlas-radius;
+			bottom: 0;
+			content: "";
+			height: 3px;
+			left: 25px;
+			position: absolute;
+			width: 3px;
+		}
+
+		.atlas-component-structure__nodes {
+			background: none;
+			padding-bottom: 0;
+
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	&__node {
+		font-size: 12.8px;
+		line-height: 1.4;
+		margin: 5px 0;
+	}
+
+	&__type {
+		background: grey;
+		border-radius: 3px;
+		box-shadow: 0 2px 3px rgba(black, 0.1);
+		color: $color-white-atlas;
+		display: inline-block;
+		font-family: $font-sans-atlas;
+		font-size: 11px;
+		font-weight: bold;
+		height: 15px;
+		line-height: 14px;
+		position: relative;
+		text-align: center;
+		text-shadow: 0 0 1px rgba(black, 0.5);
+		top: -#{1px};
+		width: 15px;
+
+		//&::after {
+		//	border: 3px solid #fafafa;
+		//	bottom: -3px;
+		//	content: "";
+		//	left: -3px;
+		//	position: absolute;
+		//	right: -3px;
+		//	top: -3px;
+		//}
+
+		$component: #e56daa;
+		$element: #6d7ce5;
+		$modifier: #2196f3;
+		$media: white;
+
+		&._container,
+		&._mixin {
+			background-color: $media;
+			color: $atlas-color-text;
+			text-shadow: none;
+
+			&::before {
+				// added as example of data uri
+				// It should be encoded according to RFC 3986 standard
+				background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2357595b%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%3E%3Cpath%20stroke-width%3D%223.068%22%20d%3D%22M20.575%203.425L3.221%2020.779%22%2F%3E%3Cpath%20d%3D%22M16.236%2020.778H3.221V7.763%22%20stroke-width%3D%223.06772%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center center no-repeat;
+				background-size: 80%;
+				color: transparent;
+				content: "↙";
+			}
+		}
+
+		&._container {
+			transform: rotate(45deg);
+		}
+
+		&._condition {
+			background-color: $media;
+			color: $atlas-color-text;
+			text-shadow: none;
+
+			&::before {
+				content: "?";
+			}
+		}
+
+		&._extend {
+			background-color: $media;
+			color: $atlas-color-text;
+			text-shadow: none;
+
+			&::before {
+				// added as example of data uri
+				background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2357595b%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%3E%3Cpath%20stroke-width%3D%223.068%22%20d%3D%22M3.221%2020.779L20.575%203.425%22%2F%3E%3Cpath%20d%3D%22M7.56%203.425h13.015V16.44%22%20stroke-width%3D%223.06772%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center center no-repeat;
+				background-size: 80%;
+				color: transparent;
+				content: "↗";
+			}
+		}
+
+		&._component {
+			background-color: $component;
+
+			&::before {
+				content: "c";
+			}
+		}
+
+		&._modifier {
+			background-color: $modifier;
+
+			&::before {
+				content: "m";
+			}
+		}
+
+		&._modifier-adjacent {
+			background-color: darken($modifier, 10%);
+
+			&::before {
+				content: "ma";
+			}
+		}
+
+		&._modifier-implicit {
+			background-color: lighten($modifier, 10%);
+
+			&::before {
+				content: "mi";
+			}
+		}
+
+		&._modifier-context {
+			background-color: darken($modifier, 10%);
+
+			&::before {
+				content: "mc";
+			}
+		}
+
+		&._element {
+			background-color: $element;
+
+			&::before {
+				content: "e";
+			}
+		}
+
+		&._element-implicit {
+			background-color: lighten($element, 10%);
+
+			&::before {
+				content: "ei";
+			}
+		}
+	}
+
+	&__name {
+		//white-space: pre;
+	}
+
+	&__brackets {
+		color: rgba(0, 0, 0, 0.3);
+	}
+}

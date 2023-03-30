@@ -1,0 +1,16 @@
+$bg: $color-yellow-atlas;
+$fg: $color-white-atlas;
+$accent: $atlas-color-text;
+
+.atlas-landing {
+	&__content {
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 20px;
+		position: relative;
+	}
+
+	&__main {
+		width: 100%;
+	}
+}

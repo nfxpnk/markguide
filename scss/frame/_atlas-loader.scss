@@ -1,0 +1,18 @@
+.atlas-loader {
+	align-items: center;
+	background: rgba($color-white-atlas, 0.96);
+	bottom: 0;
+	color: $color-blue-atlas;
+	display: none;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	z-index: 2;
+
+	.js-loading-frame & {
+		display: flex;
+	}
+}

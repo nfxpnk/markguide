@@ -1,0 +1,40 @@
+.atlas-icons_example {
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 14px;
+	gap: 6px;
+	text-align: center;
+}
+
+.atlas-icons_example-item {
+	border: 1px solid lightgrey;
+	border-radius: 6px;
+	flex-basis: 124px;
+	padding: 10px 5px;
+}
+
+.atlas-icons_example-item svg {
+	background: #dfdfdf;
+	display: block;
+	margin: 0 auto 10px;
+}
+
+.atlas-icons_section {
+
+}
+
+.atlas-icons_section h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.atlas-icons_isml {
+	background: white;
+	border: 1px solid grey;
+	padding: 10px;
+	position: fixed;
+	right: 20px;
+	top: 10px;
+	z-index: 900;
+}

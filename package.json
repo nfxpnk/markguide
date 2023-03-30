@@ -1,26 +1,69 @@
 {
   "name": "markguide",
-  "version": "1.0.0",
-  "description": "Markdown Styleguide",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nfxpnk/markguide.git"
-  },
+  "version": "1.0.1",
+  "license": "MIT",
+  "description": "Markguide is living style-guides & pattern library static site generator with extensive CSS monitoring and components info that could be used virtually with any scss/css project",
   "keywords": [
-    "styles",
-    "guide"
+    "styleguide",
+    "styleguide-generator",
+    "documentation-generator",
+    "livingstyleguide",
+    "scss",
+    "css",
+    "markdown",
+    "atlas"
   ],
-  "author": "nfxpnk",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nfxpnk/markguide/issues"
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8.19"
   },
-  "homepage": "https://github.com/nfxpnk/markguide#readme",
   "dependencies": {
-    "fancy-log": "^2.0.0"
-  }
+    "lorem-ipsum": "^2.0.8",
+    "marked": "^4.3.0",
+    "mustache": "^4.2.0",
+    "postcss": "^8.4.21",
+    "postcss-scss": "^4.0.6",
+    "pug": "^3.0.2",
+    "sass": "^1.60.0"
+  },
+  "devDependencies": {
+    "ansi-colors": "^4.1.3",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.37.0",
+    "fancy-log": "^2.0.0",
+    "gulp": "^4.0.2",
+    "gulp-connect": "5.7.0",
+    "gulp-postcss": "9.0.1",
+    "gulp-sass": "5.1.0",
+    "gulp-sourcemaps": "3.0.0",
+    "snyk": "1.1131.0",
+    "stylelint": "15.3.0",
+    "stylelint-order": "6.0.3",
+    "stylelint-scss": "4.6.0"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "Safari >= 14",
+    "iOS >= 14",
+    "last 2 Samsung versions",
+    "last 2 ChromeAndroid versions"
+  ],
+  "main": "app/markguide.js",
+  "bin": {
+    "markguide": "bin/markguide.js"
+  },
+  "scripts": {
+    "lint": "eslint ./ && stylelint ./",
+    "build": "gulp build",
+    "copyhooks": "node .githooks/copy-hooks.js",
+    "version": "npm run build && git add -A assets",
+    "postversion": "git push && git push --tags",
+    "debug": "node --nolazy --inspect-brk=9229 ./bin/markguide --build=.atlasrc.current.json",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "author": "nfxpnk, fret2buzz, base dimanech/markguide",
+  "snyk": true
 }

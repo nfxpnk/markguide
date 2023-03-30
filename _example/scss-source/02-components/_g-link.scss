@@ -1,0 +1,99 @@
+/*md
+
+# g-link
+
+This component is designed to provide same styles of text-type links (hyperlinks)
+across different components.
+
+For UI type links see `g-link_ui`.
+
+## Usage
+
+```scss
+// for regular cases
+.b-user_content-link {
+	@include g-link_brand;
+}
+
+// for cases when text color is inverted (white, red etc) and action color will not
+// be good (ex blue hover state on red alert banner)
+.b-error_message-link {
+	@include g-link_brand;
+}
+```
+
+*/
+@mixin g-link($_hover_color: var(--color-action)) {
+	color: inherit;
+	cursor: pointer;
+	font-weight: 700;
+	text-decoration: underline;
+
+	@include hover-supported {
+		&:hover {
+			color: $_hover_color;
+
+			@if $_hover_color == inherit {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+@mixin g-link_brand($_text_decoration: underline, $_font_weight: 700) {
+	color: inherit;
+	cursor: pointer;
+	font-weight: $_font_weight;
+	text-decoration-color: $color-link__text-decoration-color;
+	text-decoration-line: $_text_decoration;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 4px;
+	transition: $motion-fast;
+
+	@include hover-supported {
+		&:hover {
+			color: $color-link__color--hover;
+			text-decoration-color: $color-link__text-decoration-color--hover;
+			text-decoration-line: underline;
+		}
+	}
+
+	&:focus-within {
+		text-decoration-color: $color-link__text-decoration-color--focus;
+		text-decoration-line: underline;
+	}
+
+	&.m-disabled,
+	&:disabled {
+		color: $color-link__color--disabled;
+		pointer-events: none;
+		text-decoration-color: $color-link__text-decoration-color--disabled;
+	}
+
+	&.m-with-icon {
+		align-items: center;
+		display: inline-flex;
+		gap: 8px;
+		vertical-align: top;
+	}
+
+	&.m-inverted {
+		color: $color-white;
+		text-decoration-color: $color-link-inverted__text-decoration-color;
+
+		@include hover-supported {
+			&:hover {
+				color: $color-link-inverted__color--hover;
+				text-decoration-color: $color-link-inverted__text-decoration-color--hover;
+				text-decoration-line: underline;
+			}
+		}
+
+		&.m-disabled,
+		&:disabled {
+			color: $color-link-inverted__color--disabled;
+			pointer-events: none;
+			text-decoration-color: $color-link-inverted__text-decoration-color--disabled;
+		}
+	}
+}

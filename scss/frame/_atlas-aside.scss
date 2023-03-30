@@ -1,0 +1,53 @@
+.atlas-aside {
+	all: initial;
+	background-color: $atlas-aside-bg;
+	bottom: 0;
+	color: $atlas-color-text;
+	display: flex;
+	flex-direction: column;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	height: 100%;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0);
+	z-index: 1;
+
+	&__header {
+		padding: $space-sm-atlas;
+	}
+
+	&__content {
+		overflow-y: auto;
+		-webkit-overscroll-behavior: contain;
+		-ms-scroll-chaining: none;
+		overscroll-behavior: contain; /* stylelint-disable-line */
+	}
+
+	&__footer {
+		margin-top: auto;
+		padding-top: $space-md-atlas;
+		position: relative;
+
+		&::after {
+			background: linear-gradient(rgba($color-white-atlas, 0), $atlas-aside-bg);
+			content: "";
+			display: block;
+			height: $space-md-atlas;
+			left: 4px;
+			pointer-events: none;
+			position: absolute;
+			right: 0;
+			top: -#{$space-md-atlas};
+			z-index: 2;
+		}
+	}
+}
+
+// hide this elements when aside is hidden
+.js-aside-panel-hidden {
+	.atlas-aside__header,
+	.atlas-aside__footer,
+	.atlas-aside__content {
+		display: none;
+	}
+}
