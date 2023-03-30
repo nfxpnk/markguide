@@ -3,11 +3,11 @@
 const path = require('path');
 const cwd = process.cwd();
 
-function normalizePath(url) {
-    if (url !== undefined) {
-        return path.isAbsolute(url) ? url : path.join(cwd, url);
+function normalizePath(filePath) {
+    if (filePath !== undefined) {
+        return path.isAbsolute(filePath) ? filePath : path.join(cwd, filePath);
     } else {
-        return url;
+        return filePath;
     }
 }
 
