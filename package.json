@@ -1,0 +1,26 @@
+{
+  "name": "markguide",
+  "version": "1.0.0",
+  "description": "Markdown Styleguide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfxpnk/markguide.git"
+  },
+  "keywords": [
+    "styles",
+    "guide"
+  ],
+  "author": "nfxpnk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nfxpnk/markguide/issues"
+  },
+  "homepage": "https://github.com/nfxpnk/markguide#readme",
+  "dependencies": {
+    "fancy-log": "^2.0.0"
+  }
+}
