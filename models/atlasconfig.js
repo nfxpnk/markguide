@@ -81,8 +81,6 @@ function getBaseConfig(configRaw) {
 
     const templates = { templates: fillTemplatesConfig(config.templates, '../views/templates/', 'template') };
 
-    const constants = { constants: require('./config/constants')(config) };
-
     const getIndexPageSource = require('./config/indexpagesource');
 
     const additionalPages = {
