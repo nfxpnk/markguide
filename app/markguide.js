@@ -4,34 +4,34 @@ const path = require('path');
 const log = require('fancy-log');
 const c = require('ansi-colors');
 
+const atlasConfig = require('../models/atlasconfig.js');
+const projectTree = require('../models/projectdocumentedtree.js');
+const copyAssets = require('./utils/copyassets.js');
+
 function withConfig(configPath) {
     // Prepare config and basic models
-    const atlasConfig = require(path.resolve(__dirname, '../models/atlasconfig.js'))(configPath);
+    const config = config(configPath);
 
     // If config has no proper fields
-    if (atlasConfig.isCorrupted) {
+    if (config.isCorrupted) {
         // log
         return {
-            'build': () => new Promise(resolve => resolve('Config is corrupted')),
-            'buildAll': () => new Promise(resolve => resolve('Config is corrupted'))
+            build: () => new Promise(resolve => resolve('Config is corrupted')),
+            buildAll: () => new Promise(resolve => resolve('Config is corrupted'))
         };
     }
 
-    const projectTree = require(path.resolve(__dirname, '../models/projectdocumentedtree.js'))(atlasConfig);
-
-    // Prepare Utils based on config
-    const writePage = require('./utils/writepage.js')(atlasConfig, projectTree).writePage;
-
-    const buildComponent = require('./buildcomponent.js')(
-        atlasConfig, projectTree, writePage).buildComponent;
+    const tree = projectTree(config);
+    const writePage = require('./utils/writepage.js')(config, tree).writePage;
+    const buildComponent = require('./buildcomponent.js')(config, tree, writePage).buildComponent;
 
     // Copy internal assets to the components destinations
-    log(c.green(atlasConfig.internalAssetsPath), atlasConfig.guideDest);
-    require(path.join(__dirname, '/utils/copyassets.js'))(atlasConfig.internalAssetsPath, atlasConfig.guideDest);
+    log(c.green(config.internalAssetsPath), config.guideDest);
+    copyAssets(config.internalAssetsPath, config.guideDest);
 
     return {
-        'build': buildComponent,
-        'buildAll': () => Promise.all([
+        build: buildComponent,
+        buildAll: () => Promise.all([
             buildComponent()
         ])
     };
