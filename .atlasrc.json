@@ -5,5 +5,8 @@
     "projectCompiledFiles": "_example/projects-static-files/",
     "copyInternalAssets": true,
     "excludedSassFiles": "_dev-atlas-settings|_dev-atlas-definitions",
-    "componentPrefixes": ["atlas-", "l-"]
+    "componentPrefixes": ["atlas-", "l-"],
+    "plugins": {
+        "colors"
+    }
 }
