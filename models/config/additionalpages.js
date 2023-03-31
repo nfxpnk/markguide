@@ -2,7 +2,7 @@
 
 const path = require('path');
 
-function getAdditionalPages(templates, dest, constants, indexSrc) {
+function getAdditionalPages(templates, dest, indexSrc) {
     let additionalPages = [];
 
     additionalPages.push({

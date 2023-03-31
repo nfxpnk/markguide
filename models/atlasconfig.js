@@ -87,7 +87,6 @@ function getBaseConfig(configRaw) {
         additionalPages: require('./config/additionalpages')(
             templates.templates,
             baseMandatory.guideDest,
-            constants.constants,
             getIndexPageSource(projectRoot, baseMandatory.guideSrc, baseOptional.indexPageSource)
         )
     };
