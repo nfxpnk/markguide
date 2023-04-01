@@ -7,15 +7,44 @@ It designed primarily as "style-guide driven development" tool with focus on spl
 
 * [Live example](https://nfxpnk.github.io/???/)
 
+
+## Folder Structure
+This documentation provides an overview of the folder structure for this project, including the purpose of each folder and its contents.
+
+### `_example`
+
+This folder contains SCSS example files and static HTML files destination.
+
+### `app`
+This is the main folder that contains all the modules' JavaScript files.
+
+### `assets`
+This folder contains CSS and JavaScript files for the static HTML files.
+
+### `bin`
+This folder contains the executable files for the project's modules.
+
+### `helpers`
+This folder contains miscellaneous helper scripts.
+
+### `scss`
+This folder contains SCSS files for the style guide only.
+
+
 ## Features
 
 * blazing fast thanks to Mustache and Marked. It primary designed as development platform;
 * supports incremental builds, so only changed pages could be updated;
-* could be setup with live reload or "hot" reload;
-* small list of dependencies (Mustache, Marked, PostCSS);
+* could be setup with livereload;
+* small list of dependencies
+    * ansi-colors
+    * fancy-log
+    * lorem-ipsum
+    * marked
+    * mustache
+    * pug
 * all internal templates and styles could be overwritten on project level;
 * could be used as simple guide docs generator;
-* Hologram compatible (without front matter section);
 
 ### Components library
 
