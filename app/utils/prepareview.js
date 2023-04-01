@@ -2,7 +2,6 @@
 
 module.exports = function init(projectInfo, subPages) {
     const inline = require('./templateHelpers/inline.js');
-    const pluralize = require('./templateHelpers/pluralize.js');
 
     const View = function(config) {
         this.projectInfo = {
@@ -18,7 +17,6 @@ module.exports = function init(projectInfo, subPages) {
     };
 
     View.prototype.inline = () => (text, render) => inline(text, render);
-    View.prototype.pluralize = () => (text, render) => pluralize(text, render);
 
     return { view: config => new View(config) };
 };
