@@ -70,7 +70,7 @@ Then in `package.json`
 ```json
 {
   "scripts": {
-    "build-atlas": "markguide --build=./path/to/config.json"
+    "build-styleguide": "markguide --build=./path/to/config.json"
   }
 }
 ```
