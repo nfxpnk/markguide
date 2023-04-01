@@ -21,11 +21,11 @@ const isContentChanged = (url, content) => {
 module.exports = function(atlasConfig, projectTree) {
     // Utils
     const normalizePath = require('./utils/normalizepath.js');
-    const writePage = require('./utils/writepage.js')(atlasConfig, projectTree).writePage;
     const prepareContent = require('./utils/preparecontent.js')(
             atlasConfig,
             projectTree
         ).prepareContent;
+    const writePage = require('./utils/writepage.js')(atlasConfig, projectTree).writePage;
 
     /**
      * Walk though documented files in project and generate particular page (if path specified)
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 `;
 
         traverseDocumentedTree(projectTree.subPages, source);
-        console.log('Writing navigation file....');
+        log('Writing navigation file....');
 
         let js = mustache.render(
             fs.readFileSync(atlasConfig.partials.navigation, 'utf8'),
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             js,
             error => {
                 if (error) {
-                    console.log(error);
+                    log(error);
                 }
             }
         );

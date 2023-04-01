@@ -3,11 +3,15 @@
 const log = require('fancy-log');
 const c = require('ansi-colors');
 
+const copyAssets = require('./utils/copyassets.js');
 const atlasConfig = require('./models/atlasconfig.js');
 const projectTree = require('./models/projectdocumentedtree.js');
-const copyAssets = require('./utils/copyassets.js');
 
 function withConfig(configPath) {
+    // Copy internal assets to the components destinations
+    log(c.green(config.internalAssetsPath), config.guideDest);
+    copyAssets(config.internalAssetsPath, config.guideDest);
+
     // Prepare config and basic models
     const config = config(configPath);
 
@@ -21,10 +25,6 @@ function withConfig(configPath) {
 
     const tree = projectTree(config);
     const buildComponent = require('./buildcomponent.js')(config, tree).buildComponent;
-
-    // Copy internal assets to the components destinations
-    log(c.green(config.internalAssetsPath), config.guideDest);
-    copyAssets(config.internalAssetsPath, config.guideDest);
 
     return {
         build: buildComponent,
