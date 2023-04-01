@@ -1,4 +1,4 @@
-# Contributing to Atlas guide
+# Contributing
 
 ## Code Contribution
 

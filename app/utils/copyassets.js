@@ -5,7 +5,7 @@ const path = require('path');
 const destinationFolder = 'assets';
 
 /**
- * Copy internal assets to specified Atlas destination directory, so they will be available in generated static files.
+ * Copy internal assets to specified destination directory, so they will be available in generated static files.
  * @private
  * @param {string} assetsRoot - abs path to internal assets directory
  * @param {string} assetsSrc - abs path to processed internal assets directory

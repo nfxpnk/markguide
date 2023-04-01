@@ -20,7 +20,7 @@ log('Current config file is: ' + c.cyan(currentConfig));
 const atlas = require('./app/markguide.js').withConfig(currentConfig);
 const config = require(currentConfig);
 
-// Atlas styles source
+// Styles source
 config.sassSrc = './scss/';
 config.sassDest = './assets/css/';
 config.alsoSearchIn = '';

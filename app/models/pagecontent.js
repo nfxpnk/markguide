@@ -89,7 +89,7 @@ function getCommentContent(filePath) {
             content: strippedContent
         };
     } else {
-        // console.warn(c.yellow('Warn: ') + 'Atlas: Content for import not found in ' + filePath);
+        // console.warn(c.yellow('Warn: ') + 'Content for import not found in ' + filePath);
 
         return {
             content: ''
