@@ -52,7 +52,6 @@ function pageConfig(id, title, target, noDocumentation, isDocs) {
         src: target,
         target: guideDest + id + '.html',
         template: isDocs ? templates.docs : templates.component,
-        isDeprecated: /deprecated/.test(title),
         noDocumentation: noDocumentation,
         subPages: []
     };
@@ -63,7 +62,6 @@ function categoryConfig(title) {
         title: title,
         type: 'category',
         icon: 'file-directory-fill-16',
-        isDeprecated: false,
         subPages: []
     };
 }
