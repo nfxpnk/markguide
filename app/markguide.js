@@ -23,6 +23,8 @@ function withConfig(configPath) {
     log(c.green(config.internalAssetsPath), config.guideDest);
     copyAssets(config.internalAssetsPath, config.guideDest);
 
+    // setup plugins
+
     const tree = projectTree(config);
     const buildComponent = require('./buildcomponent.js')(config, tree).buildComponent;
 
