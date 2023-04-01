@@ -102,7 +102,7 @@ h1 Some
 }
 ```
 
-### Building Markguide
+### Building
 
 ```
 npm run ???
