@@ -20,8 +20,7 @@ function withConfig(configPath) {
     }
 
     const tree = projectTree(config);
-    const writePage = require('./utils/writepage.js')(config, tree).writePage;
-    const buildComponent = require('./buildcomponent.js')(config, tree, writePage).buildComponent;
+    const buildComponent = require('./buildcomponent.js')(config, tree).buildComponent;
 
     // Copy internal assets to the components destinations
     log(c.green(config.internalAssetsPath), config.guideDest);

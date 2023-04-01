@@ -3,6 +3,8 @@
 const fs = require('fs');
 const mustache = require('mustache');
 
+
+
 let cachedContent = {};
 const isContentChanged = (url, content) => {
     if (url === undefined) {
@@ -16,8 +18,9 @@ const isContentChanged = (url, content) => {
     }
 };
 
-module.exports = function(atlasConfig, projectTree, writePage) {
+module.exports = function(atlasConfig, projectTree) {
     // Utils
+    const writePage = require('./utils/writepage.js')(atlasConfig, projectTree).writePage;
     const normalizePath = require('./utils/normalizepath.js');
     const prepareContent = require('./utils/preparecontent.js')(
             atlasConfig,
