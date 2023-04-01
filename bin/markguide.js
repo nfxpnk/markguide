@@ -21,7 +21,7 @@ Usage: markguide [OPTION]
 
 Options:            
   -b, --build=FILE           build all atlas pages, followed with config '--build=./path/to/config.json'
-  -v, --version              print Atlas-guide version
+  -v, --version              print version
   --help                     print this message
             `);
     }
