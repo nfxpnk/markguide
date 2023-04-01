@@ -72,19 +72,19 @@ function getBaseConfig(configRaw) {
     if (config === undefined) {
         return { isCorrupted: true };
     }
-    const baseMandatory = require('./config/configmandatory')(config);
+    const baseMandatory = require('./config/configmandatory.js')(config);
     if (baseMandatory.isCorrupted) {
         return { isCorrupted: true };
     }
 
-    const baseOptional = require('./config/configoptional')(config);
+    const baseOptional = require('./config/configoptional.js')(config);
 
     const templates = { templates: fillTemplatesConfig(config.templates, '../views/templates/', 'template') };
 
-    const getIndexPageSource = require('./config/indexpagesource');
+    const getIndexPageSource = require('./config/indexpagesource.js');
 
     const additionalPages = {
-        additionalPages: require('./config/additionalpages')(
+        additionalPages: require('./config/additionalpages.js')(
             templates.templates,
             baseMandatory.guideDest,
             getIndexPageSource(projectRoot, baseMandatory.guideSrc, baseOptional.indexPageSource)

@@ -18,8 +18,8 @@ const isContentChanged = (url, content) => {
 
 module.exports = function(atlasConfig, projectTree, writePage) {
     // Utils
-    const normalizePath = require('./utils/normalizepath');
-    const prepareContent = require('./utils/preparecontent')(
+    const normalizePath = require('./utils/normalizepath.js');
+    const prepareContent = require('./utils/preparecontent.js')(
             atlasConfig,
             projectTree
         ).prepareContent;
