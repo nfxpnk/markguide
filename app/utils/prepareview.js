@@ -12,7 +12,6 @@ module.exports = function init(projectInfo, subPages) {
         this.content = config.content;
         this.type = config.type;
         this.icon = config.icon; // Icon in page header
-        this.isDeprecated = config.isDeprecated;
         this.subPages = subPages.subPages; // Aside navigation pages tree
     };
 

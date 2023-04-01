@@ -51,7 +51,6 @@ module.exports = function(atlasConfig, projectTree, writePage) {
                             //template: component.template,
                             type: component.type,
                             icon: component.icon,
-                            isDeprecated: component.isDeprecated,
                             content: content
                         });
                     }

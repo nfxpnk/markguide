@@ -12,7 +12,6 @@ function getAdditionalPages(templates, dest, indexSrc) {
         target: path.join(dest, '/index.html'),
         type: 'about',
         icon: 'info-16',
-        isDeprecated: false,
         subPages: []
     });
 

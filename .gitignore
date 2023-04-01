@@ -38,3 +38,5 @@ icons/octicons/*
 
 
 views/includes/partials/project-head.mustache
+
+README.html
