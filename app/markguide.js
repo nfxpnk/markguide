@@ -8,12 +8,8 @@ const atlasConfig = require('./models/atlasconfig.js');
 const projectTree = require('./models/projectdocumentedtree.js');
 
 function withConfig(configPath) {
-    // Copy internal assets to the components destinations
-    log(c.green(config.internalAssetsPath), config.guideDest);
-    copyAssets(config.internalAssetsPath, config.guideDest);
-
     // Prepare config and basic models
-    const config = config(configPath);
+    const config = atlasConfig(configPath);
 
     // If config has no proper fields
     if (config.isCorrupted) {
@@ -22,6 +18,10 @@ function withConfig(configPath) {
             buildAll: () => new Promise(resolve => resolve('Config is corrupted'))
         };
     }
+
+    // Copy internal assets to the components destinations
+    log(c.green(config.internalAssetsPath), config.guideDest);
+    copyAssets(config.internalAssetsPath, config.guideDest);
 
     const tree = projectTree(config);
     const buildComponent = require('./buildcomponent.js')(config, tree).buildComponent;
