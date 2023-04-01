@@ -14,8 +14,8 @@ function withConfig(configPath) {
     // If config has no proper fields
     if (config.isCorrupted) {
         return {
-            build: () => new Promise(resolve => resolve('Config is corrupted')),
-            buildAll: () => new Promise(resolve => resolve('Config is corrupted'))
+            build: () => Promise.reject('Config is corrupted'),
+            buildAll: () => Promise.reject('Config is corrupted')
         };
     }
 
