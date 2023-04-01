@@ -3,8 +3,8 @@
 const log = require('fancy-log');
 const c = require('ansi-colors');
 
-const atlasConfig = require('../models/atlasconfig.js');
-const projectTree = require('../models/projectdocumentedtree.js');
+const atlasConfig = require('./models/atlasconfig.js');
+const projectTree = require('./models/projectdocumentedtree.js');
 const copyAssets = require('./utils/copyassets.js');
 
 function withConfig(configPath) {

@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = function(atlasConfig, projectTree) {
-    const renderedPageContent = require(path.resolve(__dirname, '../../models/pagecontent.js'));
+    const renderedPageContent = require(path.resolve(__dirname, '../models/pagecontent.js'));
 
     // Prepare guide page content model depending on component type
     function prepareContent(component) {
