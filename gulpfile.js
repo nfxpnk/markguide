@@ -10,9 +10,9 @@ const sourcemaps = require('gulp-sourcemaps');
 const log = require('fancy-log');
 const c = require('ansi-colors');
 
-let currentConfig = './.atlasrc.current.json'
+let currentConfig = './.markguiderc.current.json'
 if (fs.existsSync(currentConfig) === false) {
-    currentConfig = './.atlasrc.json';
+    currentConfig = './.markguiderc.json';
 }
 
 log('Current config file is: ' + c.cyan(currentConfig));

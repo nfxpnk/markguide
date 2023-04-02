@@ -28,7 +28,7 @@ logs
 node_modules
 .nyc_output
 
-.atlasrc.current.json
+.markguiderc.current.json
 
 _example/atlas-static/*.html
 _example/atlas-static/assets
