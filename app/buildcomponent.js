@@ -28,7 +28,6 @@ module.exports = function(atlasConfig, projectTree) {
     function prepareContent(component) {
         let content;
         let tableOfContent;
-        let stat;
         let page;
         let path;
 
@@ -44,9 +43,6 @@ module.exports = function(atlasConfig, projectTree) {
             case 'container':
                 break;
             case 'about':
-                stat = {
-                    'projectName': atlasConfig.projectInfo.name
-                };
                 break;
         }
 
