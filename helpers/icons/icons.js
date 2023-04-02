@@ -39,7 +39,7 @@ for (const icon of icons) {
     code = code.replace(/(width|height)="\d+" /gmi, '');
     code = code.replace('</svg>', '</symbol>');
 
-    if (code.indexOf('fill="currentColor"') == -1 && code.indexOf('fill = "currentColor"') == -1) {
+    if (code.indexOf('fill="currentColor"') === -1 && code.indexOf('fill = "currentColor"') === -1) {
         code = code.replace('<path', '<path fill="currentColor"');
     }
     code += '\r\n';

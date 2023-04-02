@@ -10,7 +10,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const log = require('fancy-log');
 const c = require('ansi-colors');
 
-let currentConfig = './.markguiderc.current.json'
+let currentConfig = './.markguiderc.current.json';
 if (fs.existsSync(currentConfig) === false) {
     currentConfig = './.markguiderc.json';
 }

@@ -36,7 +36,6 @@ window.onload = function() {
                 }
 
                 runSearch(term);
-
             }, 300);
 
             searchFunc();
@@ -49,7 +48,7 @@ window.onload = function() {
                 timeoutId = setTimeout(() => {
                     func(args);
                 }, delay);
-            }
+            };
         }
 
         function runSearch(term) {
@@ -61,7 +60,7 @@ window.onload = function() {
 
                 if (term.length && ~elementText.indexOf(term)) {
                     asidePanel.classList.add(hasResults);
-                //links[0].focus();
+                    //links[0].focus();
                     link.classList.add(isRelevant);
                 } else {
                     link.classList.remove(isRelevant);
@@ -80,6 +79,5 @@ window.onload = function() {
             searchField.value = storedValue;
             runSearch(storedValue);
         }
-
     }());
-}
+};

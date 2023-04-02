@@ -60,6 +60,5 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('beforeunload', populateStorage);
 
         highlightCurrentPage();
-
     }());
 });

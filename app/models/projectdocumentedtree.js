@@ -156,7 +156,7 @@ function makeProjectTree(atlasConfig) {
 
     findComponents(atlasConfig.guideSrc, docSet.subPages, '', mdFiles);
     removeEmptyCategories(docSet.subPages);
-    console.log(docSet.coverage.all,' : ', docSet.coverage.all - docSet.coverage.notcovered)
+    console.log(docSet.coverage.all, ' : ', docSet.coverage.all - docSet.coverage.notcovered);
 
     if (atlasConfig.additionalPages.length) {
         atlasConfig.additionalPages.forEach(page => docSet.subPages.unshift(page));
