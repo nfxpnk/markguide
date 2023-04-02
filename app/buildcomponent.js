@@ -2,8 +2,7 @@
 
 const fs = require('fs');
 const mustache = require('mustache');
-
-
+const log = require('fancy-log');
 
 let cachedContent = {};
 const isContentChanged = (url, content) => {
@@ -21,10 +20,7 @@ const isContentChanged = (url, content) => {
 module.exports = function(atlasConfig, projectTree) {
     // Utils
     const normalizePath = require('./utils/normalizepath.js');
-    const prepareContent = require('./utils/preparecontent.js')(
-            atlasConfig,
-            projectTree
-        ).prepareContent;
+    const prepareContent = require('./utils/preparecontent.js')(atlasConfig).prepareContent;
     const writePage = require('./utils/writepage.js')(atlasConfig, projectTree).writePage;
 
     /**
@@ -85,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
             fs.readFileSync(atlasConfig.partials.navigation, 'utf8'),
             projectTree,
             {
-                "navigation": fs.readFileSync(atlasConfig.partials.navigation, 'utf8')
+                'navigation': fs.readFileSync(atlasConfig.partials.navigation, 'utf8')
             }
         );
 

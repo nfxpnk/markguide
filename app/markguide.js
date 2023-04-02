@@ -25,6 +25,7 @@ function withConfig(configPath) {
 
     // setup plugins
 
+
     const tree = projectTree(config);
     const buildComponent = require('./buildcomponent.js')(config, tree).buildComponent;
 

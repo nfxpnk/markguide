@@ -1,9 +1,8 @@
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
 
-module.exports = function(atlasConfig, projectTree) {
+module.exports = function(atlasConfig) {
     const renderedPageContent = require(path.resolve(__dirname, '../models/pagecontent.js'));
 
     // Prepare guide page content model depending on component type
