@@ -1,6 +1,6 @@
 {
     "guideSrc": "_example/scss-source/",
-    "guideDest": "_example/atlas-static/",
+    "guideDest": "_example/markguide-static/",
     "cssSrc": "assets/css/",
     "projectCompiledFiles": "_example/projects-static-files/",
     "copyInternalAssets": true,

@@ -7,11 +7,9 @@ Thumbs.db
 .vscode
 
 .githooks
+.github
 .ssl
-atlas
-assets/src
-.nyc_output
-coverage
-docs
-test
 _example
+helpers
+.nyc_output
+test

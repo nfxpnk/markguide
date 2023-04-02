@@ -30,8 +30,8 @@ node_modules
 
 .markguiderc.current.json
 
-_example/atlas-static/*.html
-_example/atlas-static/assets
+_example/markguide-static/*.html
+_example/markguide-static/assets
 
 icons/octicons/*
 !icons/octicons/readme.txt

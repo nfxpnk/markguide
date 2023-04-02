@@ -142,14 +142,14 @@ See example guideline page or this repo gulp to get the idea how live reload and
 ### API
 
 ```js
-const atlas = require('markguide').withConfig('./project/root/path/to/config.json');
-// or atlas = require('markguide').withConfig({ rawConfigObject });
-atlas.build().then(...); // build all guide files without reports. Returns promise.
-atlas.build('/absolute/path/to/changed/file.scss').then(...); // compile only particular file, if it marked as documented in project tree. Returns promise.
-atlas.buildAll().then(...); // compile all guide pages. Returns promise.
+const markguide = require('markguide').withConfig('./project/root/path/to/config.json');
+// or markguide = require('markguide').withConfig({ rawConfigObject });
+markguide.build().then(...); // build all guide files without reports. Returns promise.
+markguide.build('/absolute/path/to/changed/file.scss').then(...); // compile only particular file, if it marked as documented in project tree. Returns promise.
+markguide.buildAll().then(...); // compile all guide pages. Returns promise.
 ```
 
-Use `atlas.build()` for incremental development builds, where it is not required to have extensive heavy-weight statistic.
+Use `markguide.build()` for incremental development builds, where it is not required to have extensive heavy-weight statistic.
 
 ### CLI
 
@@ -157,7 +157,7 @@ Use `atlas.build()` for incremental development builds, where it is not required
 Usage: markguide [OPTION]
 
 Options:            
-  -b, --build=FILE           build all atlas pages, followed with config '--build=./path/to/config.json'
+  -b, --build=FILE           build all markguide pages, followed with config '--build=./path/to/config.json'
   -v, --version              print version
   --help                     print this message
 ```
@@ -179,13 +179,13 @@ Minimal configuration:
 You could place it wherever you want and target with:
 
 ```js
-const atlas = require('markguide').withConfig('./from/project/root/path/to/my/config.json');
+const markguide = require('markguide').withConfig('./from/project/root/path/to/my/config.json');
 ```
 
-or with rawConfig object if you call atlas from js:
+or with rawConfig object if you call markguide from js:
 
 ```js
-const atlas = require('markguide').withConfig({
+const markguide = require('markguide').withConfig({
     guideSrc: 'path/to/yours/scss/',
     guideDest: 'path/to/your/static/folder/for/guide/',
     cssSrc: 'assets/css/'
@@ -224,13 +224,13 @@ than you could build guide like this:
 
 ```js
 const pkg = require('package.json');
-const atlasGuide = require('markguide');
+const markguide = require('markguide');
 
-const buildBrandOne = atlasGuide.withConfig(pkg.brands.one).buildAll().then(...);
-const buildBrandAnother = atlasGuide.withConfig(pkg.brands.another).buildAll().then(...);
+const buildBrandOne = markguide.withConfig(pkg.brands.one).buildAll().then(...);
+const buildBrandAnother = markguide.withConfig(pkg.brands.another).buildAll().then(...);
 
-const buildPageBrandOne = atlasGuide.withConfig(pkg.brands.one).build('/abs/path/to/changed/file.scss').then(...);
-const buildPageBrandAnother = atlasGuide.withConfig(pkg.brands.another).build('/abs/path/to/changed/file.scss').then(...);
+const buildPageBrandOne = markguide.withConfig(pkg.brands.one).build('/abs/path/to/changed/file.scss').then(...);
+const buildPageBrandAnother = markguide.withConfig(pkg.brands.another).build('/abs/path/to/changed/file.scss').then(...);
 ```
 
 ### Templates overwrites
@@ -269,7 +269,7 @@ All templates and partials could be overwritten. Please see this repo views fold
 ```json
 {
     "guideSrc": "project-root/path/to/components/directory/",
-    "guideDest": "project-root/path/where/atlas/will/be/placed/",
+    "guideDest": "project-root/path/where/markguide/will/be/placed/",
     "cssSrc": "project-root/path/to/css/",
     "scssAdditionalImportsArray": "",
     "componentPrefixes": ["b-", "l-"],
@@ -311,12 +311,12 @@ All templates and partials could be overwritten. Please see this repo views fold
 * !`guideDest` {string} – path to generated files folder.
 * !`cssSrc` {string} – path to generated CSS. Used for statistical reports.
 * `scssAdditionalImportsArray` {array} – array of additional sass imports, if they used. Needed for statistical reports and styleguide auto generation.
-* `componentPrefixes` {array of strings} – ['component', 'container'] prefixes that used for components and containers on project. It used to properly guess component types in component structure info (in footer). Ex: `['c-', 'l-']`, `['atlas-', 'l-']`
+* `componentPrefixes` {array of strings} – ['component', 'container'] prefixes that used for components and containers on project. It used to properly guess component types in component structure info (in footer). Ex: `['c-', 'l-']`, `['markguide-', 'l-']`
 * `excludedCssFiles` {regexp} – CSS files that would not be processed in statistical reports.
 * `excludedSassFiles` {regexp} – Sass files that would not be processed in statistical reports.
 * `excludedDirs` {regexp} – directories that will be excluded from doc sets.
 * `createDestFolder` {bool} - create destination directory if it is not exist. Default if `false`.
-* `indexPageSource` {string} - path to custom markdown file that will be used in index.html. Otherwise atlas try to find README.md in guide src and in the root of the project.
+* `indexPageSource` {string} - path to custom markdown file that will be used in index.html. Otherwise markguide try to find README.md in guide src and in the root of the project.
 * `templates`– use this field to use your own templates for guide generation.
 * `includes` – use this field to use your own partials and includes.
 * `projectInfo`
@@ -420,7 +420,7 @@ This helper use path to file from your *project root*. Virtually any file could 
 
 ### Guideline/Documentation page
 
-Simply put regular markdown file to components tree and they automatically become part of the atlas.
+Simply put regular markdown file to components tree and they automatically become part of the markguide.
 
 ### Build guide
 
@@ -429,11 +429,11 @@ Simply put regular markdown file to components tree and they automatically becom
 Regular development flow could be organized in this way – build all guide pages on start and incrementally rebuild pages on file changes:
 
 ```js
-const atlas = require('markguide').withConfig({config: 'here'});
-atlas.build().then(...); // build all guide files without reports
+const markguide = require('markguide').withConfig({config: 'here'});
+markguide.build().then(...); // build all guide files without reports
 
 // watch for changes, get changed file path and build needed page:
-atlas.build('/absolute/path/to/changed/file.scss').then(...); // compile only this file if was documented on module import
+markguide.build('/absolute/path/to/changed/file.scss').then(...); // compile only this file if was documented on module import
 ```
 
 ##### Gulp example
@@ -446,8 +446,8 @@ Due to time efforts reports not generated in regular flow. To generate reports y
 or in JS:
 
 ```js
-const atlas = require('markguide').withConfig({config: 'here'});
-atlas.buildAll().then(...); // compile all components, guidelines
+const markguide = require('markguide').withConfig({config: 'here'});
+markguide.buildAll().then(...); // compile all components, guidelines
 ```
 
 #### Remove this --> Setup constants
@@ -483,7 +483,7 @@ Other steps should be simple:
 ```json
 {
     "guideSrc": "path/to/components/directory/",
-    "guideDest": "path/where/atlas/will/be/placed/",
+    "guideDest": "path/where/markguide/will/be/placed/",
     "cssSrc": "path/to/css/",
     "scssAdditionalImportsArray": ["path/to/additional/sass/files"],
     "projectConstants": {

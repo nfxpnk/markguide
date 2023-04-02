@@ -17,7 +17,7 @@ if (fs.existsSync(currentConfig) === false) {
 
 log('Current config file is: ' + c.cyan(currentConfig));
 
-const atlas = require('./app/markguide.js').withConfig(currentConfig);
+const markguide = require('./app/markguide.js').withConfig(currentConfig);
 const config = require(currentConfig);
 
 // Styles source
@@ -60,7 +60,7 @@ gulp.task('server:up', done => {
     done();
 });
 
-// Reload the page right after 'atlas:compile:incremental' task is returned
+// Reload the page right after 'markguide:compile:incremental' task is returned
 gulp.task('server:reload:guide', () =>
     gulp.src(config.guideDest + '*.html') // full page reload
         .pipe(connect.reload()));
@@ -142,18 +142,18 @@ gulp.task('scss:watch', done => {
 
 
 // Compile all components pages
-gulp.task('atlas:compile', done => atlas.build().then(done()));
+gulp.task('markguide:compile', done => markguide.build().then(done()));
 
 // Compile particular page from the guide
-gulp.task('atlas:compile:incremental', done => atlas.build(changedFilePath).then(done()));
+gulp.task('markguide:compile:incremental', done => markguide.build(changedFilePath).then(done()));
 
-gulp.task('atlas:compile:all', done => atlas.buildAll().then(done()));
+gulp.task('markguide:compile:all', done => markguide.buildAll().then(done()));
 
 // Compile Guide and watch changes
-gulp.task('atlas:watch', done => {
+gulp.task('markguide:watch', done => {
     gulp.watch(
         [config.guideSrc + '**/*.scss', config.guideSrc + '**/*.md'],
-        gulp.series('atlas:compile:incremental', 'server:reload:guide')
+        gulp.series('markguide:compile:incremental', 'server:reload:guide')
     ).on('change', notifyChange);
     done();
 });
@@ -165,6 +165,6 @@ gulp.task('atlas:watch', done => {
 gulp.task('dev', gulp.parallel('server:up', 'styles:compile:all2', 'scss:watch'));
 
 
-// change to atlas:compile for regular projects, for our cases we compile all atlas in dev workflow
-gulp.task('dev:atlas', gulp.parallel('server:up', 'atlas:compile:all', 'atlas:watch'));
-gulp.task('build', gulp.parallel('styles:compile:all', 'styles:compile:all2', 'atlas:compile:all'));
+// change to markguide:compile for regular projects, for our cases we compile all markguide in dev workflow
+gulp.task('dev:markguide', gulp.parallel('server:up', 'markguide:compile:all', 'markguide:watch'));
+gulp.task('build', gulp.parallel('styles:compile:all', 'styles:compile:all2', 'markguide:compile:all'));
