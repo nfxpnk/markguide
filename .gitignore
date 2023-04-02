@@ -31,6 +31,7 @@ node_modules
 .markguiderc.current.json
 
 _example/markguide-static/*.html
+_example/markguide-static/*.js
 _example/markguide-static/assets
 
 icons/octicons/*

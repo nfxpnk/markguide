@@ -258,9 +258,6 @@
 .atlas-nav__ln.js-collapsed._category svg {
 	color: hsl(0, 0%, 70%);
 }
-.atlas-nav__ln._deprecated {
-	text-decoration: line-through;
-}
 .atlas-nav__ln._empty {
 	opacity: 0.6;
 	font-style: italic;

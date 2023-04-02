@@ -95,7 +95,7 @@ function getBaseConfig(configRaw) {
 
     const projectInfo = { projectInfo: getProjectInfo(config) };
 
-    return Object.assign({}, baseMandatory, baseOptional, templates, additionalPages, constants, partials, projectInfo);
+    return Object.assign({}, baseMandatory, baseOptional, templates, additionalPages, partials, projectInfo);
 }
 
 module.exports = getBaseConfig;
