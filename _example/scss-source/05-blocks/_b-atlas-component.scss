@@ -40,15 +40,7 @@ Also any `css`, `html` or `js` code could be added to description.
 
 For regular code blocks we have styles for "do"-"not do" blocks:
 
-```html_bad
-<i class="atlas-loader">Example of code "fences" usage</i>
-```
-
 Use `div` HTML-element so page will be better gziped:
-
-```html_good
-<div class="atlas-loader"></div>
-```
 
 ## Use styles that not included in project css
 

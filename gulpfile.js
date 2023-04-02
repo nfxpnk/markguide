@@ -89,10 +89,10 @@ const sassCompile = config => {
     log('[SCSS COMPILE OUTPUT:] ' + c.magenta(config.dest));
 
     return gulp.src(config.source, {allowEmpty: true})
-        .pipe(sourcemaps.init({
-            loadMaps: true,
-            largeFile: true
-        }))
+        // .pipe(sourcemaps.init({
+        //     loadMaps: true,
+        //     largeFile: true
+        // }))
         .pipe(sass({
             includePaths: config.alsoSearchIn,
             sourceMap: false,
@@ -108,7 +108,7 @@ const sassCompile = config => {
             this.emit('end');
         })
         .pipe(postcss(postProcessors))
-        .pipe(sourcemaps.write('.'))
+        // .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.dest))
         .pipe(connect.reload());
 };
