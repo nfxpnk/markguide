@@ -38,14 +38,6 @@ module.exports = function(atlasConfig, projectTree) {
             path = component.src.split('\\scss\\')[1];
         }
 
-        switch (component.type) {
-            case 'component':
-            case 'container':
-                break;
-            case 'about':
-                break;
-        }
-
         return {
             documentation: content,
             toc: tableOfContent,
