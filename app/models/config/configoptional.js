@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const getComponentsPrefix = require('./componentsprefix');
+const getComponentsPrefix = require('./componentsprefix.js');
 
 function getOptionalBaseConfigs(config) {
     let atlasConfig = {};
