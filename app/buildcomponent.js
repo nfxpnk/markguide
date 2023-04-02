@@ -20,8 +20,42 @@ const isContentChanged = (url, content) => {
 module.exports = function(atlasConfig, projectTree) {
     // Utils
     const normalizePath = require('./utils/normalizepath.js');
-    const prepareContent = require('./utils/preparecontent.js')(atlasConfig).prepareContent;
+    const renderedPageContent = require('./models/pagecontent.js');
+
     const writePage = require('./utils/writepage.js')(atlasConfig, projectTree).writePage;
+
+    // Prepare guide page content model depending on component type
+    function prepareContent(component) {
+        let content;
+        let tableOfContent;
+        let stat;
+        let page;
+        let path;
+
+        if (component.src !== '') { // could be stat pages or custom defined file
+            page = renderedPageContent(component.src, {'title': component.title});
+            content = page.content;
+            tableOfContent = page.toc;
+            path = component.src.split('\\scss\\')[1];
+        }
+
+        switch (component.type) {
+            case 'component':
+            case 'container':
+                break;
+            case 'about':
+                stat = {
+                    'projectName': atlasConfig.projectInfo.name
+                };
+                break;
+        }
+
+        return {
+            documentation: content,
+            toc: tableOfContent,
+            path: path
+        };
+    }
 
     /**
      * Walk though documented files in project and generate particular page (if path specified)
@@ -75,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 `;
 
         traverseDocumentedTree(projectTree.subPages, source);
+
         log('Writing navigation file....');
 
         let js = mustache.render(
