@@ -1,50 +1,53 @@
 # Markguide
 
-Markguide is living style-guide, pattern library, guidelines and documentation static site generator with extensive styles monitoring and Sass components reports. It generates documentation from markdown files and documentation comment in `scss` files.
+Markguide is a living style-guide, pattern library, guidelines, and documentation static site generator with extensive style monitoring and Sass component reports. It generates documentation from markdown files and documentation comments in `scss` files.
 
-It is opinionated. Because it is, probably, impossible to cover all cases in CSS/Sass.
-It designed primarily as "style-guide driven development" tool with focus on splited files approach and incapsulated components with normative Sass imports structure.
+It is opinionated because it is probably impossible to cover all cases in CSS/Sass. It is designed primarily as a "style-guide driven development" tool with a focus on split files approach and encapsulated components with normative Sass import structures.
 
 * [Live example](https://nfxpnk.github.io/???/)
 
-
 ## Folder Structure
+
 This documentation provides an overview of the folder structure for this project, including the purpose of each folder and its contents.
 
 ### `_example`
 
-This folder contains SCSS example files and static HTML files destination.
+This folder contains SCSS example files and static HTML file destinations.
 
 ### `app`
+
 This is the main folder that contains all the modules' JavaScript files.
 
 ### `assets`
+
 This folder contains CSS and JavaScript files for the static HTML files.
 
 ### `bin`
+
 This folder contains the executable files for the project's modules.
 
 ### `helpers`
+
 This folder contains miscellaneous helper scripts.
 
 ### `scss`
-This folder contains SCSS files for the style guide only.
 
+This folder contains SCSS files for the style guide only.
 
 ## Features
 
-* blazing fast thanks to Mustache and Marked. It primary designed as development platform;
-* supports incremental builds, so only changed pages could be updated;
-* could be setup with livereload;
-* small list of dependencies
+* Blazing fast thanks to Mustache and Marked. It is primarily designed as a development platform.
+* Supports incremental builds, so only changed pages are updated.
+* Can be set up with livereload.
+* Small list of dependencies:
     * ansi-colors
     * fancy-log
     * lorem-ipsum
     * marked
     * mustache
     * pug
-* all internal templates and styles could be overwritten on project level;
-* could be used as simple guide docs generator;
+* All internal templates and styles can be overwritten on the project level.
+* Can be used as a simple guide docs generator.
 
 ### Components library
 
