@@ -2,7 +2,8 @@
 
 .atlas-component-aside {
 	all: initial;
-	background: linear-gradient(to top, rgba(black, 0), rgba(black, 0.1)) no-repeat;
+	background: linear-gradient(to top, rgba(black, 0), rgba(black, 0.1))
+		no-repeat;
 	background-size: 1px 100%;
 	color: $atlas-color-text;
 	float: right;
@@ -25,7 +26,8 @@
 		margin-bottom: math.div($space-sm-atlas, 2);
 	}
 
-	&__list {}
+	&__list {
+	}
 
 	&__list-item {
 		font-family: $font-mono-atlas;
@@ -42,5 +44,6 @@
 		}
 	}
 
-	&__pre {}
+	&__pre {
+	}
 }

@@ -118,7 +118,10 @@
 
 		th,
 		td {
-			padding: #{math.div($space-sm-atlas, 2)} $space-sm-atlas #{math.div($space-sm-atlas, 2)} 0;
+			padding: #{math.div($space-sm-atlas, 2)} $space-sm-atlas #{math.div(
+					$space-sm-atlas,
+					2
+				)} 0;
 		}
 
 		th {
@@ -229,7 +232,8 @@
 }
 
 // Title Anchor
-.atlas-title { /* stylelint-disable-line */
+.atlas-title {
+	/* stylelint-disable-line */
 	align-items: flex-end;
 	display: flex;
 	justify-content: space-between;
@@ -246,7 +250,12 @@
 		padding-left: $space-md-atlas;
 
 		&::after {
-			background: linear-gradient(to left, rgba(black, 0.1), rgba(black, 0)) no-repeat right bottom;
+			background: linear-gradient(
+					to left,
+					rgba(black, 0.1),
+					rgba(black, 0)
+				)
+				no-repeat right bottom;
 			background-size: 100%;
 			bottom: 0;
 			content: "";
@@ -303,7 +312,8 @@
 	position: relative;
 }
 
-.atlas-title_2 { /* stylelint-disable-line */
+.atlas-title_2 {
+	/* stylelint-disable-line */
 	background: rgba($color-white-atlas, 0.9);
 	border-bottom: 1px solid rgba(black, 0.1);
 	margin: 0 -#{$space-md-atlas} $space-lg-atlas;

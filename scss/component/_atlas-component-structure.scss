@@ -11,7 +11,12 @@
 	}
 
 	&__nodes {
-		background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)) no-repeat;
+		background: linear-gradient(
+				to top,
+				rgba(0, 0, 0, 0.1),
+				rgba(0, 0, 0, 0.1)
+			)
+			no-repeat;
 		background-position: 26px 0;
 		background-size: 1px 100%;
 		font-family: $font-mono-atlas;
@@ -89,7 +94,8 @@
 			&::before {
 				// added as example of data uri
 				// It should be encoded according to RFC 3986 standard
-				background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2357595b%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%3E%3Cpath%20stroke-width%3D%223.068%22%20d%3D%22M20.575%203.425L3.221%2020.779%22%2F%3E%3Cpath%20d%3D%22M16.236%2020.778H3.221V7.763%22%20stroke-width%3D%223.06772%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center center no-repeat;
+				background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2357595b%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%3E%3Cpath%20stroke-width%3D%223.068%22%20d%3D%22M20.575%203.425L3.221%2020.779%22%2F%3E%3Cpath%20d%3D%22M16.236%2020.778H3.221V7.763%22%20stroke-width%3D%223.06772%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")
+					center center no-repeat;
 				background-size: 80%;
 				color: transparent;
 				content: "↙";
@@ -117,7 +123,8 @@
 
 			&::before {
 				// added as example of data uri
-				background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2357595b%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%3E%3Cpath%20stroke-width%3D%223.068%22%20d%3D%22M3.221%2020.779L20.575%203.425%22%2F%3E%3Cpath%20d%3D%22M7.56%203.425h13.015V16.44%22%20stroke-width%3D%223.06772%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center center no-repeat;
+				background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2357595b%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%3E%3Cpath%20stroke-width%3D%223.068%22%20d%3D%22M3.221%2020.779L20.575%203.425%22%2F%3E%3Cpath%20d%3D%22M7.56%203.425h13.015V16.44%22%20stroke-width%3D%223.06772%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")
+					center center no-repeat;
 				background-size: 80%;
 				color: transparent;
 				content: "↗";

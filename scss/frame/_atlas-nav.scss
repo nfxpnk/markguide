@@ -1,4 +1,5 @@
-.atlas-nav { // atlas-outline-view
+.atlas-nav {
+	// atlas-outline-view
 	font-family: $font-sans-atlas;
 	font-size: $atlas-scale-secondary;
 	list-style: none;
@@ -120,12 +121,15 @@
 		}
 	}
 
-	.atlas-nav__ln._category.js-collapsed { /* stylelint-disable-line */
-		svg { /* stylelint-disable-line */
+	.atlas-nav__ln._category.js-collapsed {
+		/* stylelint-disable-line */
+		svg {
+			/* stylelint-disable-line */
 			transform: rotate(0);
 		}
 
-		+ .atlas-nav__sub-nav { /* stylelint-disable-line */
+		+ .atlas-nav__sub-nav {
+			/* stylelint-disable-line */
 			display: none;
 		}
 	}
