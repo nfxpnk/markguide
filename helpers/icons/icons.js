@@ -28,8 +28,19 @@ const header = '<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\
 const footer = '</svg>\r\n';
 
 let html = header;
+
+let iconsPath = './octicons/octicons/icons';
+if (!fs.existsSync(iconsPath)) {
+    iconsPath = './octicons/icons';
+}
+
+if (!fs.existsSync(iconsPath)) {
+    console.log(`Can't find icons 'octicons' folder`);
+    process.exit();
+}
+
 for (const icon of icons) {
-    let iconFile = `./octicons/icons/${icon}.svg`;
+    let iconFile = `${iconsPath}/${icon}.svg`;
     if (!fs.existsSync(iconFile)) {
         iconFile = `./custom/${icon}.svg`;
     }
