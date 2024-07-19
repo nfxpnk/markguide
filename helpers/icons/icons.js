@@ -1,6 +1,8 @@
 'use strict';
 
 const fs = require('fs');
+const log = require('fancy-log');
+const c = require('ansi-colors');
 
 const icons = [
     'x-circle-16',
@@ -21,7 +23,7 @@ const icons = [
     'icons'
 ];
 
-const iconsFile = '../app/views/includes/partials/icons.mustache';
+const iconsFile = '../../app/views/includes/partials/icons.mustache';
 
 const header = '<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\r\n';
 const footer = '</svg>\r\n';
@@ -34,14 +36,21 @@ if (!fs.existsSync(iconsPath)) {
 }
 
 if (!fs.existsSync(iconsPath)) {
-    console.log(`Can't find icons 'octicons' folder. 'git clone git@github.com:primer/octicons.git' into ./helpers/icons/octicons`);
+    log(`Can't find icons 'octicons' folder.`);
+    log(`'git clone git@github.com:primer/octicons.git' into ./helpers/icons/octicons`);
     process.exit();
 }
 
 for (const icon of icons) {
     let iconFile = `${iconsPath}/${icon}.svg`;
+
     if (!fs.existsSync(iconFile)) {
         iconFile = `./custom/${icon}.svg`;
+    }
+
+    if (!fs.existsSync(iconFile)) {
+        log(`Icon ` + c.red(iconFile) + ` doesn't exist`);
+        continue;
     }
 
     let code = fs.readFileSync(iconFile, 'utf8');
@@ -54,7 +63,14 @@ for (const icon of icons) {
     }
     code += '\r\n';
     html += code;
+
+    log(`Icon ` + c.green(iconFile) + ` added to template content`);
 }
 html += footer;
 
-fs.writeFileSync(iconsFile, html);
+try {
+    fs.writeFileSync(iconsFile, html);
+    log(`File ` + c.cyan(iconsFile) + ` written successfully`);
+} catch (err) {
+    console.error(err);
+}
