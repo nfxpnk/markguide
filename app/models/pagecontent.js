@@ -20,21 +20,30 @@ const lorem = new LoremIpsum({
 });
 
 marked.setOptions({
-    // Custom renderer instance to use for rendering Markdown syntax. Default is a built-in renderer.
+    // Custom renderer instance to use for rendering Markdown syntax.
+    // Default is a built-in renderer.
     renderer: renderer,
-    // Enable GitHub flavored Markdown extensions, such as task lists and strikethrough syntax.
+    // Enable GitHub flavored Markdown extensions,
+    // such as task lists and strikethrough syntax.
     gfm: true,
     // Enable parsing of tables in Markdown syntax.
     tables: true,
-    // Enable GitHub flavored line breaks, which convert single newlines to line breaks. This option is incompatible with `gfm`.
+    // Enable GitHub flavored line breaks,
+    // which convert single newlines to line breaks.
+    // This option is incompatible with `gfm`.
     breaks: false,
-    // Enable strict mode, which disables some non-standard Markdown syntax extensions and requires one space after "#" in headings.
+    // Enable strict mode, which disables some non-standard Markdown syntax
+    // extensions and requires one space after "#" in headings.
     pedantic: false,
-    // Enable HTML tag escaping to prevent XSS attacks. If disabled, all HTML tags and attributes will be passed through unescaped.
+    // Enable HTML tag escaping to prevent XSS attacks.
+    // If disabled, all HTML tags and attributes will be passed through unescaped.
     sanitize: false,
-    // Enable smart list behavior, which allows ordered lists to start at any number and unordered lists to use any marker symbol ("-", "*", or "+").
+    // Enable smart list behavior, which allows ordered lists to start at any number
+    // and unordered lists to use any marker symbol ("-", "*", or "+").
     smartLists: true,
-    // Enable smart punctuation behavior, which replaces straight quotes with curly quotes, hyphens with en-dashes and em-dashes, etc. This option is often used for typographically correct output.
+    // Enable smart punctuation behavior, which replaces straight
+    // quotes with curly quotes, hyphens with en-dashes and em-dashes, etc.
+    // This option is often used for typographically correct output.
     smartypants: false
 });
 
