@@ -18,11 +18,10 @@ const icons = [
     'book-16',
     'paintbrush-16',
     'confluence',
-    'icons',
-    'colors'
+    'icons'
 ];
 
-const iconsFile = '../views/includes/partials/icons.mustache';
+const iconsFile = '../app/views/includes/partials/icons.mustache';
 
 const header = '<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\r\n';
 const footer = '</svg>\r\n';
@@ -35,7 +34,7 @@ if (!fs.existsSync(iconsPath)) {
 }
 
 if (!fs.existsSync(iconsPath)) {
-    console.log(`Can't find icons 'octicons' folder`);
+    console.log(`Can't find icons 'octicons' folder. 'git clone git@github.com:primer/octicons.git' into ./helpers/icons/octicons`);
     process.exit();
 }
 
