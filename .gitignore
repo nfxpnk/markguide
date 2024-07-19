@@ -28,16 +28,19 @@ logs
 node_modules
 .nyc_output
 
+# Config file for current project
 .markguiderc.current.json
 
+# Example static files
 _example/markguide-static/*.html
 _example/markguide-static/*.js
 _example/markguide-static/assets
 
-icons/octicons/*
-!icons/octicons/readme.txt
-
+# Helpers
+helpers/icons/octicons/*
+!helpers/icons/octicons/readme.txt
 
 views/includes/partials/project-head.mustache
 
+# Generated html file from README.md
 README.html
