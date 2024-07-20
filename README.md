@@ -508,7 +508,7 @@ After that styleguide page and components stat hints would be generated beside c
 
 ### We have 2 document comments `/*md` in scss file, but only first is shown in documentation.
 
-This is done intentionally. It all designed for 1 component 1 scss file structure. Otherwise it is very hard to keep compoents readable and supportable.
+This is done intentionally. It all designed for 1 component 1 scss file structure. Otherwise it is very hard to keep components readable and supportable.
 
 ## Contributing
 
