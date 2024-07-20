@@ -6,7 +6,6 @@ const marked = require('marked');
 const mustache = require('mustache');
 const pug = require('pug');
 const LoremIpsum = require('lorem-ipsum').LoremIpsum;
-const renderer = new marked.Renderer();
 
 const log = require('fancy-log');
 const c = require('ansi-colors');
@@ -22,65 +21,43 @@ const lorem = new LoremIpsum({
     }
 });
 
-marked.setOptions({
-    // Custom renderer instance to use for rendering Markdown syntax.
-    // Default is a built-in renderer.
-    renderer: renderer,
-    // Enable GitHub flavored Markdown extensions,
-    // such as task lists and strikethrough syntax.
-    gfm: true,
-    // Enable parsing of tables in Markdown syntax.
-    tables: true,
-    // Enable GitHub flavored line breaks,
-    // which convert single newlines to line breaks.
-    // This option is incompatible with `gfm`.
-    breaks: false,
-    // Enable strict mode, which disables some non-standard Markdown syntax
-    // extensions and requires one space after "#" in headings.
-    pedantic: false,
-    // Enable HTML tag escaping to prevent XSS attacks.
-    // If disabled, all HTML tags and attributes will be passed through unescaped.
-    sanitize: false,
-    // Enable smart list behavior, which allows ordered lists to start at any number
-    // and unordered lists to use any marker symbol ("-", "*", or "+").
-    smartLists: true,
-    // Enable smart punctuation behavior, which replaces straight
-    // quotes with curly quotes, hyphens with en-dashes and em-dashes, etc.
-    // This option is often used for typographically correct output.
-    smartypants: false
-});
-
-const markdownTemplates = '../views/includes/markdown/';
+const markdownTemplates = '../views/includes/markdown';
 const getFile = fileURL => fs.readFileSync(path.join(__dirname, fileURL), 'utf8');
 const elements = {
-    'heading': getFile(markdownTemplates + 'heading.mustache'),
-    'example': getFile(markdownTemplates + 'example.mustache'),
-    'examplePug': getFile(markdownTemplates + 'example-pug.mustache'),
-    'exampleArray': getFile(markdownTemplates + 'example-array.mustache'),
-    'code': getFile(markdownTemplates + 'code.mustache'),
-    'hr': getFile(markdownTemplates + 'hr.mustache'),
-    'paragraph': getFile(markdownTemplates + 'paragraph.mustache'),
-    'ol': getFile(markdownTemplates + 'ol.mustache'),
-    'ul': getFile(markdownTemplates + 'ul.mustache'),
-    'table': getFile(markdownTemplates + 'table.mustache')
+    'heading': getFile(markdownTemplates + '/heading.mustache'),
+    'example': getFile(markdownTemplates + '/example.mustache'),
+    'examplePug': getFile(markdownTemplates + '/example-pug.mustache'),
+    'exampleArray': getFile(markdownTemplates + '/example-array.mustache'),
+    'code': getFile(markdownTemplates + '/code.mustache'),
+    'hr': getFile(markdownTemplates + '/hr.mustache'),
+    'paragraph': getFile(markdownTemplates + '/paragraph.mustache'),
+    'ol': getFile(markdownTemplates + '/ol.mustache'),
+    'ul': getFile(markdownTemplates + '/ul.mustache'),
+    'table': getFile(markdownTemplates + '/table.mustache')
 };
 
-renderer.paragraph = token => mustache.render(elements.paragraph, {text: token.text});
+const renderer = {
+    paragraph(text) {
+        return mustache.render(elements.paragraph, {text: text});
+    },
 
-renderer.list = (body, ordered) => {
-    //console.log(body, ordered);
-    const ol = mustache.render(elements.ol, {body: body});
-    const ul = mustache.render(elements.ul, {body: body});
+    list (body, ordered) {
+        const ol = mustache.render(elements.ol, {body: body});
+        const ul = mustache.render(elements.ul, {body: body});
 
-    return ordered ? ol : ul;
-};
+        return ordered ? ol : ul;
+    },
 
-renderer.table = (header, body) => {
-    //console.log(header, body);
-    mustache.render(elements.table, {header: header, body: body});
+    table(header, body) {
+        return mustache.render(elements.table, {header: header, body: body});
+    },
+
+    hr() { /// ???????????????????
+        return elements.hr;
+    },
 }
 
-renderer.hr = () => elements.hr;
+
 
 /**
  * @typedef {Object} commentContent
@@ -123,13 +100,13 @@ function mdImport(fileURL, options) {
     let toc = [];
 
     // We need to keep renderers here because they changes page to page
-    renderer.heading = (token) => {
-        const escapedText = token.text.toLowerCase().replace(/[^\w]+/g, '-');
+    renderer.heading = (text, depth) => {
+        const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
         const heading = {
-            text: token.text,
-            level: token.depth,
+            text: text,
+            level: depth,
             escapedText: escapedText,
-            isSection: token.depth <= 2
+            isSection: depth <= 2
         };
 
         toc.push(heading);
@@ -137,10 +114,10 @@ function mdImport(fileURL, options) {
         return mustache.render(elements.heading, heading);
     };
 
-    renderer.code = (token) => {
+    renderer.code = (text, lang) => {
 
-        let language = token.lang;
-        let code = token.text;
+        let language = lang;
+        let code = text;
 
         if (language === undefined) {
             language = 'text';
@@ -253,6 +230,18 @@ function mdImport(fileURL, options) {
             return regularMarkup;
         }
     };
+
+    marked.use({
+        // Custom renderer instance to use for rendering Markdown syntax.
+        // Default is a built-in renderer.
+        renderer,
+        // Enable GitHub flavored Markdown extensions,
+        // such as task lists and strikethrough syntax.
+        gfm: true,
+        // Enable parsing of tables in Markdown syntax.
+        breaks: false
+    });
+
 
     if (path.extname(fileURL) === '.md') {
         content = marked.parse(fs.readFileSync(fileURL, 'utf8'));
