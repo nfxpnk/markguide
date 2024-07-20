@@ -3,9 +3,9 @@
 const log = require('fancy-log');
 const c = require('ansi-colors');
 
-const copyAssets = require('./utils/copyassets.js');
+const copyAssets = require('./utils/copy-assets.js');
 const atlasConfig = require('./models/config.js');
-const projectTree = require('./models/projectdocumentedtree.js');
+const projectTree = require('./models/project-tree.js');
 
 function withConfig(configPath) {
     // Prepare config and basic models
@@ -29,7 +29,7 @@ function withConfig(configPath) {
 
 
     const tree = projectTree(config);
-    const buildComponent = require('./buildcomponent.js')(config, tree).buildComponent;
+    const buildComponent = require('./build-component.js')(config, tree).buildComponent;
 
     return {
         build: buildComponent,

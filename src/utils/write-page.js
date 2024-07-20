@@ -2,9 +2,24 @@
 
 const fs = require('fs');
 const mustache = require('mustache');
+const inline = require('./template-helpers/inline.js');
+
+const prepareView = function(config, projectInfo, subPages) {
+    this.projectInfo = {
+        name: projectInfo.name,
+        version: projectInfo.version
+    };
+    this.title = config.title;
+    this.content = config.content;
+    this.type = config.type;
+    this.icon = config.icon; // Icon in page header
+    this.subPages = subPages.subPages; // Aside navigation pages tree
+};
+
+prepareView.prototype.inline = () => (text, render) => inline(text, render);
 
 module.exports = function init(atlasConfig, subPages) {
-    const view = require('./prepare-view.js')(atlasConfig.projectInfo, subPages).view; // init info once and cache
+    const view = config => new View(config, projectInfo, subPages);
 
     const cachedTemplates = {
         'component': fs.readFileSync(atlasConfig.templates.component, 'utf8'),
