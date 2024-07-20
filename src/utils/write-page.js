@@ -4,7 +4,7 @@ const fs = require('fs');
 const mustache = require('mustache');
 
 module.exports = function init(atlasConfig, subPages) {
-    const view = require('./prepareview.js')(atlasConfig.projectInfo, subPages).view; // init info once and cache
+    const view = require('./prepare-view.js')(atlasConfig.projectInfo, subPages).view; // init info once and cache
 
     const cachedTemplates = {
         'component': fs.readFileSync(atlasConfig.templates.component, 'utf8'),
