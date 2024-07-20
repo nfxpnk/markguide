@@ -11,6 +11,12 @@ function writeNavigation(atlasConfig, projectTree) {
     document.addEventListener('DOMContentLoaded', function () {
         const asideNavContainer = document.getElementById('js-atlas-navigation');
         asideNavContainer.innerHTML = asideNav;
+
+        const event = new CustomEvent('MyEventFired', {
+            detail: { message: 'Hello, world!' } // Optional: pass additional data here
+        });
+
+       document.dispatchEvent(event);
     });
     `;
 

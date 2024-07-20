@@ -52,8 +52,9 @@ function pageConfig(id, title, target, noDocumentation, isDocs) {
     };
 }
 
-function categoryConfig(title) {
+function categoryConfig(id, title) {
     return {
+        id: id,
         title: title,
         type: 'category',
         icon: 'file-directory-fill-16',
@@ -136,7 +137,8 @@ function makeProjectTree(atlasConfig) {
                     config.push(pageConfig(id, title, target, false, true));
                 }
             } else if (resource.isDirectory() && !isExcludedDirectory(name)) {
-                config.push(categoryConfig(name));
+                const id = 'section-' + path.basename(name);
+                config.push(categoryConfig(id, name));
                 findComponents(target, config[config.length - 1].subPages, categoryName + name + '-', mdFiles);
             }
         });
