@@ -8,6 +8,9 @@ const pug = require('pug');
 const LoremIpsum = require('lorem-ipsum').LoremIpsum;
 const renderer = new marked.Renderer();
 
+const log = require('fancy-log');
+const c = require('ansi-colors');
+
 const lorem = new LoremIpsum({
     sentencesPerParagraph: {
         max: 8,
@@ -62,16 +65,20 @@ const elements = {
     'table': getFile(markdownTemplates + 'table.mustache')
 };
 
-renderer.paragraph = text => mustache.render(elements.paragraph, {text: text});
+renderer.paragraph = token => mustache.render(elements.paragraph, {text: token.text});
 
 renderer.list = (body, ordered) => {
+    //console.log(body, ordered);
     const ol = mustache.render(elements.ol, {body: body});
     const ul = mustache.render(elements.ul, {body: body});
 
     return ordered ? ol : ul;
 };
 
-renderer.table = (header, body) => mustache.render(elements.table, {header: header, body: body});
+renderer.table = (header, body) => {
+    //console.log(header, body);
+    mustache.render(elements.table, {header: header, body: body});
+}
 
 renderer.hr = () => elements.hr;
 
@@ -90,6 +97,8 @@ function getCommentContent(filePath) {
     const statRegexp = /@no-stat(\r\n|\n)/g;
     const match = documentationCommentRegexp.exec(file);
 
+    console.log(filePath);
+
     if (match !== null) {
         const fullContent = match[2];
         const strippedContent = fullContent.replace(statRegexp, '');
@@ -98,7 +107,7 @@ function getCommentContent(filePath) {
             content: strippedContent
         };
     } else {
-        // console.warn(c.yellow('Warn: ') + 'Content for import not found in ' + filePath);
+        log(c.yellow('Warn: ') + 'Content for import not found in ' + filePath);
 
         return {
             content: ''
@@ -114,19 +123,25 @@ function mdImport(fileURL, options) {
     let toc = [];
 
     // We need to keep renderers here because they changes page to page
-    renderer.heading = (text, level) => {
-        const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+    renderer.heading = (token) => {
+        const escapedText = token.text.toLowerCase().replace(/[^\w]+/g, '-');
         const heading = {
-            text: text,
-            level: level,
+            text: token.text,
+            level: token.depth,
             escapedText: escapedText,
-            isSection: level <= 2
+            isSection: token.depth <= 2
         };
+
         toc.push(heading);
+
         return mustache.render(elements.heading, heading);
     };
 
-    renderer.code = (code, language) => {
+    renderer.code = (token) => {
+
+        let language = token.lang;
+        let code = token.text;
+
         if (language === undefined) {
             language = 'text';
         }

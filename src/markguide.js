@@ -26,7 +26,7 @@ function withConfig(configPath) {
 
     // setup plugins
 
-    console.log(config);
+    //console.log(config);
 
     const tree = projectTree(config);
     const writeNavigation = require('./utils/write-navigation.js');

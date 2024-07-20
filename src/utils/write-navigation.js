@@ -16,6 +16,8 @@ function writeNavigation(atlasConfig, projectTree) {
 
     log('Writing navigation file....');
 
+    //console.log(projectTree);
+
     let js = mustache.render(
         fs.readFileSync(atlasConfig.partials.navigation, 'utf8'),
         projectTree,

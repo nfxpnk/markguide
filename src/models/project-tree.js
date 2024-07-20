@@ -8,17 +8,12 @@ let excludedDirs;
 let guideDest;
 let templates;
 
-function isDocumented(filePath, arr) {
-    // const file = fs.readFileSync(filePath, 'utf8');
-    // const docComment = /\/\*md(\r\n|\n)(((\r\n|\n)|.)*?)\*\//g;
-    // const exec = docComment.exec(file);
+function isDocumented(filePath) {
+    const file = fs.readFileSync(filePath, 'utf8');
+    const docComment = /\/\*md(\r\n|\n)(((\r\n|\n)|.)*?)\*\//g;
+    const exec = docComment.exec(file);
 
-    // return !!(exec !== null && exec[2].trim());
-    if (!arr || !filePath) {
-        return false;
-    }
-
-    return arr.includes(filePath.split('.')[0]);
+    return !!(exec !== null && exec[2].trim());
 }
 
 /**
@@ -112,16 +107,27 @@ function makeProjectTree(atlasConfig) {
             let resource = fs.statSync(target);
 
             if (resource.isFile()) {
-                const title = path.basename(name);
+                let title = path.basename(name);
                 const isSass = path.extname(name) === '.scss';
+
                 if (isSass) {
                     docSet.coverage.all++;
                 }
 
-                if (isSass && !isDocumented(target, mdFiles) && !isExcludedFile(name)) {
-                    docSet.coverage.notcovered++;
-                    config.push(pageConfig(false, title, target, true, false));
+                if (isSass && !isExcludedFile(name)) {
+                    const isDocumentedValue = isDocumented(target);
+                    let titleId = path.basename(name, '.scss').replace(/^_/i, '');
+                    const id = categoryName + titleId;
+
+                    if(isDocumentedValue) {
+                        docSet.coverage.covered++;
+                    } else {
+                        docSet.coverage.notcovered++;
+                    }
+
+                    config.push(pageConfig(id, title, target, !isDocumentedValue));
                 }
+
                 if (path.extname(name) === '.md' && !/^README\.md/.test(categoryName + name)) { // this is hacky way
                     // to exclude root README.md
                     const id = categoryName + 'doc-' + path.basename(name, '.md');
@@ -156,7 +162,8 @@ function makeProjectTree(atlasConfig) {
 
     findComponents(atlasConfig.guideSrc, docSet.subPages, '', mdFiles);
     removeEmptyCategories(docSet.subPages);
-    console.log(docSet.coverage.all, ' : ', docSet.coverage.all - docSet.coverage.notcovered);
+
+    //console.log(docSet.coverage.all, ' : ', docSet.coverage.all - docSet.coverage.notcovered);
 
     if (atlasConfig.additionalPages.length) {
         atlasConfig.additionalPages.forEach(page => docSet.subPages.unshift(page));

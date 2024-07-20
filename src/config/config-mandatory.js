@@ -64,7 +64,7 @@ function getMandatoryBaseConfig(config) {
         }
     }
 
-    console.log(atlasConfig, config);
+    //console.log(atlasConfig, config);
 
     return atlasConfig;
 }
