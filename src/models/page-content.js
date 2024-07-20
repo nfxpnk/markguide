@@ -52,8 +52,8 @@ const getFile = fileURL => fs.readFileSync(path.join(__dirname, fileURL), 'utf8'
 const elements = {
     'heading': getFile(markdownTemplates + 'heading.mustache'),
     'example': getFile(markdownTemplates + 'example.mustache'),
-    'examplePug': getFile(markdownTemplates + 'examplePug.mustache'),
-    'exampleArray': getFile(markdownTemplates + 'exampleArray.mustache'),
+    'examplePug': getFile(markdownTemplates + 'example-pug.mustache'),
+    'exampleArray': getFile(markdownTemplates + 'example-array.mustache'),
     'code': getFile(markdownTemplates + 'code.mustache'),
     'hr': getFile(markdownTemplates + 'hr.mustache'),
     'paragraph': getFile(markdownTemplates + 'paragraph.mustache'),

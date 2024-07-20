@@ -33,7 +33,7 @@ const fillTemplatesConfig = (templatesConfig, internalTemplatesPath, name) => {
 
     return templates;
 };
-const getConfig = require('./config/findconfig');
+const getConfig = require('./config/find-config');
 
 function getProjectInfo(config) {
     const pkg = require(path.join(projectRoot, 'package.json'));
@@ -72,16 +72,16 @@ function getBaseConfig(configRaw) {
     if (config === undefined) {
         return { isCorrupted: true };
     }
-    const baseMandatory = require('./config/configmandatory.js')(config);
+    const baseMandatory = require('./config/config-mandatory.js')(config);
     if (baseMandatory.isCorrupted) {
         return { isCorrupted: true };
     }
 
-    const baseOptional = require('./config/configoptional.js')(config);
+    const baseOptional = require('./config/config-optional.js')(config);
 
     const templates = { templates: fillTemplatesConfig(config.templates, '../views/templates/', 'template') };
 
-    const getIndexPageSource = require('./config/indexpagesource.js');
+    const getIndexPageSource = require('./config/index-page-source.js');
 
     const additionalPages = {
         additionalPages: require('./config/additionalpages.js')(

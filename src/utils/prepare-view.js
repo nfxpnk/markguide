@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function init(projectInfo, subPages) {
-    const inline = require('./templateHelpers/inline.js');
+    const inline = require('./template-helpers/inline.js');
 
     const View = function(config) {
         this.projectInfo = {
