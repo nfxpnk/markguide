@@ -19,7 +19,7 @@ const prepareView = function(config, projectInfo, subPages) {
 prepareView.prototype.inline = () => (text, render) => inline(text, render);
 
 module.exports = function init(atlasConfig, subPages) {
-    const view = config => new View(config, projectInfo, subPages);
+    const view = config => new prepareView(config, projectInfo, subPages);
 
     const cachedTemplates = {
         'component': fs.readFileSync(atlasConfig.templates.component, 'utf8'),
