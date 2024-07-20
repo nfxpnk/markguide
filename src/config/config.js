@@ -33,6 +33,7 @@ const fillTemplatesConfig = (templatesConfig, internalTemplatesPath, name) => {
 
     return templates;
 };
+
 const getConfig = require('./config/find-config');
 
 function getProjectInfo(config) {
