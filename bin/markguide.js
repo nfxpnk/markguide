@@ -2,14 +2,21 @@
 'use strict';
 
 const fs = require('fs');
+const args = process.argv[2];
+
+if (typeof args !== 'string') {
+    console.error('Error: no arguments');
+    process.exit(0);
+}
+
 const parseOption = arg => arg.split(/=/);
-const arg = parseOption(process.argv[2]);
+const arg = parseOption(args);
 
 try {
     switch (arg[0]) {
         case '--build':
         case '-b':
-            require('../app/markguide.js').withConfig(arg[1]).buildAll();
+            require('../src/markguide.js').withConfig(arg[1]).buildAll();
             break;
         case '--version':
         case '-v':

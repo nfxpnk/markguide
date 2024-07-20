@@ -16,12 +16,13 @@ function findConfig(config) {
             return config;
         }
         const configPath = path.join(projectRoot, config);
+
         if (fs.existsSync(configPath)) {
             return require(configPath);
         }
     }
 
-    log(c.red('Error: ') + 'Could not find configuration. Please pass path to config ' +
+    log(c.red('Error: ') + 'Could not find configuration. ' + configPath + ' Please pass path to config ' +
         'or raw config object into atlas.withConfig()');
 
     return undefined;
