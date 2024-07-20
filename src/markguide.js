@@ -4,7 +4,6 @@ const log = require('fancy-log');
 const c = require('ansi-colors');
 
 const copyAssets = require('./utils/copy-assets.js');
-const writeNavigation = require('./utils/write-navigation.js');
 const atlasConfig = require('./config/config.js');
 const projectTree = require('./models/project-tree.js');
 
@@ -30,6 +29,8 @@ function withConfig(configPath) {
     console.log(config);
 
     const tree = projectTree(config);
+    const writeNavigation = require('./utils/write-navigation.js');
+
     writeNavigation(config, tree);
 
     const buildComponent = require('./build-component.js')(config, tree).buildComponent;
