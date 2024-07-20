@@ -125,7 +125,9 @@ function makeProjectTree(atlasConfig) {
                         docSet.coverage.notcovered++;
                     }
 
-                    config.push(pageConfig(id, title, target, !isDocumentedValue));
+                    if (isDocumentedValue || path.basename(name).startsWith('_')) {
+                        config.push(pageConfig(id, title, target, !isDocumentedValue));
+                    }
                 }
 
                 if (path.extname(name) === '.md' && !/^README\.md/.test(categoryName + name)) { // this is hacky way
