@@ -19,10 +19,10 @@ const isContentChanged = (url, content) => {
 
 module.exports = function(atlasConfig, projectTree) {
     // Utils
-    const normalizePath = require('./utils/normalizepath.js');
-    const renderedPageContent = require('./models/pagecontent.js');
+    const normalizePath = require('./utils/normalize-path.js');
+    const renderedPageContent = require('./models/page-content.js');
 
-    const writePage = require('./utils/writepage.js')(atlasConfig, projectTree).writePage;
+    const writePage = require('./utils/write-page.js')(atlasConfig, projectTree).writePage;
 
     // Prepare guide page content model depending on component type
     function prepareContent(component) {
@@ -87,38 +87,7 @@ module.exports = function(atlasConfig, projectTree) {
             });
         }
 
-        let tpl = `
-const asideNav = \`;;;;;;\`;
-
-document.addEventListener('DOMContentLoaded', function () {
-    const asideNavContainer = document.getElementById('js-atlas-navigation');
-    asideNavContainer.innerHTML = asideNav;
-});
-`;
-
         traverseDocumentedTree(projectTree.subPages, source);
-
-        log('Writing navigation file....');
-
-        let js = mustache.render(
-            fs.readFileSync(atlasConfig.partials.navigation, 'utf8'),
-            projectTree,
-            {
-                'navigation': fs.readFileSync(atlasConfig.partials.navigation, 'utf8')
-            }
-        );
-
-        js = tpl.replace(';;;;;;', js);
-
-        fs.writeFileSync(
-            atlasConfig.guideDest + 'nav.js',
-            js,
-            error => {
-                if (error) {
-                    log(error);
-                }
-            }
-        );
 
         return Promise.all(docSet.map(writePage));
     }
