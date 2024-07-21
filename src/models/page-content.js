@@ -1,14 +1,11 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+const { fs, path, log, c } = require('../utils/common-utils.js');
+
 const marked = require('marked');
 const mustache = require('mustache');
 const pug = require('pug');
 const LoremIpsum = require('lorem-ipsum').LoremIpsum;
-
-const log = require('fancy-log');
-const c = require('ansi-colors');
 
 const lorem = new LoremIpsum({
     sentencesPerParagraph: {

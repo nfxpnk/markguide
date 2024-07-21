@@ -1,6 +1,7 @@
 'use strict';
 
-const path = require('path');
+const { fs, path, log, c } = require('./common-utils.js');
+
 const cwd = process.cwd();
 
 /**

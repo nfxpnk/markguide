@@ -1,7 +1,6 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+const { fs, path, log, c } = require('../utils/common-utils.js');
 
 let excludedSassFiles;
 let excludedDirs;

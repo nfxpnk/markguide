@@ -1,9 +1,6 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const log = require('fancy-log');
-const c = require('ansi-colors');
+const { fs, path, log, c } = require('../utils/common-utils.js');
 
 function getIndexPageSource(projectRoot, guideSrc, indexPageSource) {
     const inConfig = indexPageSource ? indexPageSource : '';

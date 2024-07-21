@@ -1,7 +1,7 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+const { fs, path, log, c } = require('./common-utils.js');
+
 const destinationFolder = 'assets';
 
 /**

@@ -1,6 +1,6 @@
 'use strict';
 
-const path = require('path');
+const { fs, path, log, c } = require('../utils/common-utils.js');
 
 function getAdditionalPages(templates, dest, indexSrc) {
     let additionalPages = [];

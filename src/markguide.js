@@ -1,7 +1,6 @@
 'use strict';
 
-const log = require('fancy-log');
-const c = require('ansi-colors');
+const { fs, path, log, c } = require('./utils/common-utils.js');
 
 const copyAssets = require('./utils/copy-assets.js');
 const atlasConfig = require('./config/config.js');

@@ -1,8 +1,8 @@
 'use strict';
 
-const fs = require('fs');
+const { fs, path, log, c } = require('./utils/common-utils.js');
+
 const mustache = require('mustache');
-const log = require('fancy-log');
 
 let cachedContent = {};
 const isContentChanged = (url, content) => {
