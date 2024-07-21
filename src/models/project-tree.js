@@ -7,7 +7,15 @@ let excludedDirs;
 let guideDest;
 let templates;
 
-
+/**
+ * Checks if the specified file contains a non-empty documentation comment block.
+ *
+ * The function looks for a block comment starting with /*md and ending with /.
+ * It returns true if such a block is found and the content inside the block is not empty.
+ *
+ * @param {string} filePath - The path to the file to check for documentation.
+ * @returns {boolean} - Returns true if a non-empty documentation block is found, otherwise false.
+ */
 function isDocumented(filePath) {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const docCommentPattern = /\/\*md(\r\n|\n)(((\r\n|\n)|.)*?)\*\//g;
