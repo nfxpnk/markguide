@@ -56,16 +56,6 @@ function getProjectInfo(config) {
     };
 }
 
-// function getPartialsConfig(config) {
-//     let partials = fillTemplatesConfig(config.partials, '../views/includes/partials/', 'partial');
-//
-//     Object.keys(partials).forEach(function(partial) {
-//         partials[partial] = fs.readFileSync(partials[partial], 'utf8');
-//     });
-//
-//     return partials;
-// }
-
 function getBaseConfig(configRaw) {
     const config = getConfig(configRaw);
     if (config === undefined) {

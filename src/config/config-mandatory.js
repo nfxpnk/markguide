@@ -61,8 +61,6 @@ function getMandatoryBaseConfig(config) {
         }
     }
 
-    //console.log(markguideConfig, config);
-
     return markguideConfig;
 }
 
