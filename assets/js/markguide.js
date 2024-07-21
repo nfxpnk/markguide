@@ -1,9 +1,9 @@
 'use strict';
 
 (function() {
-    var AtlasStateGenerator;
+    var MarkguideStateGenerator;
 
-    AtlasStateGenerator = (function() {
+    MarkguideStateGenerator = (function() {
         var pseudoSelectors;
         pseudoSelectors = [
             'hover',
@@ -23,7 +23,7 @@
 
         var pseudos = new RegExp("(\\:" + (pseudoSelectors.join('|\\:')) + ")", "g");
 
-        function AtlasStateGenerator() {
+        function MarkguideStateGenerator() {
             var stylesheet;
             var _i;
             var _len;
@@ -43,7 +43,7 @@
             }
         }
 
-        AtlasStateGenerator.prototype.insertRules = function(rules) {
+        MarkguideStateGenerator.prototype.insertRules = function(rules) {
             //console.log('insertRules');
             let idx;
             for (idx = 0; idx < rules.length; idx++) {
@@ -65,7 +65,7 @@
             }
         };
 
-        AtlasStateGenerator.prototype.insertRule = function(rule) {
+        MarkguideStateGenerator.prototype.insertRule = function(rule) {
             //console.log(rule);
             var headEl;
             var styleEl;
@@ -80,8 +80,8 @@
             return headEl.appendChild(styleEl);
         };
 
-        return AtlasStateGenerator;
+        return MarkguideStateGenerator;
     })();
 
-    new AtlasStateGenerator();
+    new MarkguideStateGenerator();
 }).call(this);
