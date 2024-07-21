@@ -19,12 +19,12 @@ const prepareView = function(config, projectInfo, subPages) {
 
 prepareView.prototype.inline = () => (text, render) => inline(text, render);
 
-module.exports = function init(atlasConfig, subPages) {
-    const view = config => new prepareView(config, atlasConfig.projectInfo, subPages);
+module.exports = function init(markguideConfig, subPages) {
+    const view = config => new prepareView(config, markguideConfig.projectInfo, subPages);
 
     const cachedTemplates = {
-        'component': fs.readFileSync(atlasConfig.templates.component, 'utf8'),
-        'guide': fs.readFileSync(atlasConfig.templates.guide, 'utf8')
+        'component': fs.readFileSync(markguideConfig.templates.component, 'utf8'),
+        'guide': fs.readFileSync(markguideConfig.templates.guide, 'utf8')
     };
 
     const getCachedTemplates = type => {
@@ -35,7 +35,7 @@ module.exports = function init(atlasConfig, subPages) {
             case 'container':
                 return cachedTemplates.component;
             default:
-                return fs.readFileSync(atlasConfig.templates[type], 'utf8');
+                return fs.readFileSync(markguideConfig.templates[type], 'utf8');
         }
     };
 
@@ -49,7 +49,7 @@ module.exports = function init(atlasConfig, subPages) {
         return partialsStrings;
     };
 
-    const cachedPartials = cachePartials(atlasConfig.partials);
+    const cachedPartials = cachePartials(markguideConfig.partials);
 
     /**
      * Prepare data and write file to destination.

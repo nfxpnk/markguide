@@ -20,7 +20,7 @@ function findConfig(config) {
     }
 
     log(c.red('Error: ') + 'Could not find configuration. ' + configPath + ' Please pass path to config ' +
-        'or raw config object into atlas.withConfig()');
+        'or raw config object into markguide.withConfig()');
 
     return undefined;
 }

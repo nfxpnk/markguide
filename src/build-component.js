@@ -17,12 +17,12 @@ const isContentChanged = (url, content) => {
     }
 };
 
-module.exports = function(atlasConfig, projectTree) {
+module.exports = function(markguideConfig, projectTree) {
     // Utils
     const normalizePath = require('./utils/normalize-path.js');
     const renderedPageContent = require('./models/page-content.js');
 
-    const writePage = require('./utils/write-page.js')(atlasConfig, projectTree).writePage;
+    const writePage = require('./utils/write-page.js')(markguideConfig, projectTree).writePage;
 
     // Prepare guide page content model depending on component type
     function prepareContent(component) {

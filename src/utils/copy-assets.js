@@ -9,7 +9,7 @@ const destinationFolder = 'assets';
  * @private
  * @param {string} assetsRoot - abs path to internal assets directory
  * @param {string} assetsSrc - abs path to processed internal assets directory
- * @param {string} assetsDest - abs path to atlas directory in project space
+ * @param {string} assetsDest - abs path to markguide directory in project space
  */
 function copyAssetsFiles(assetsRoot, assetsSrc, assetsDest) {
     const dir = fs.readdirSync(assetsSrc);

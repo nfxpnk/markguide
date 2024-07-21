@@ -36,15 +36,15 @@ const getConfig = require('./find-config');
 
 function getProjectInfo(config) {
     const pkg = require(path.join(projectRoot, 'package.json'));
-    let projectName = 'atlas';
+    let projectName = 'markguide';
 
     if (config.projectInfo !== undefined && config.projectInfo.name) {
         projectName = config.projectInfo.name;
     } else {
         if (!pkg.name) {
             log(c.yellow('Warning: ') +
-                'Neither "projectName" in atlas, nor "name" in package.json is declared. ' +
-                '"atlas" name used instead.');
+                'Neither "projectName" in markguide, nor "name" in package.json is declared. ' +
+                '"markguide" name used instead.');
         } else {
             projectName = pkg.name.replace('/', '-'); // fix namespaced project names
         }

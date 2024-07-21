@@ -4,7 +4,7 @@ const { fs, path, log, c } = require('./common-utils.js');
 
 const mustache = require('mustache');
 
-function writeNavigation(atlasConfig, projectTree) {
+function writeNavigation(markguideConfig, projectTree) {
     const tpl = `
     const asideNav = \`;;;;;;\`;
 
@@ -25,17 +25,17 @@ function writeNavigation(atlasConfig, projectTree) {
     //console.log(projectTree);
 
     let js = mustache.render(
-        fs.readFileSync(atlasConfig.partials.navigation, 'utf8'),
+        fs.readFileSync(markguideConfig.partials.navigation, 'utf8'),
         projectTree,
         {
-            'navigation': fs.readFileSync(atlasConfig.partials.navigation, 'utf8')
+            'navigation': fs.readFileSync(markguideConfig.partials.navigation, 'utf8')
         }
     );
 
     js = tpl.replace(';;;;;;', js);
 
     fs.writeFileSync(
-        atlasConfig.guideDest + 'nav.js',
+        markguideConfig.guideDest + 'nav.js',
         js,
         error => {
             if (error) {

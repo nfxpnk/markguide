@@ -3,12 +3,12 @@
 const { fs, path, log, c } = require('./utils/common-utils.js');
 
 const copyAssets = require('./utils/copy-assets.js');
-const atlasConfig = require('./config/config.js');
+const markguideConfig = require('./config/config.js');
 const projectTree = require('./models/project-tree.js');
 
 function withConfig(configPath) {
     // Prepare config and basic models
-    const config = atlasConfig(configPath);
+    const config = markguideConfig(configPath);
 
     // If config has no proper fields
     if (config.isCorrupted) {

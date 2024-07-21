@@ -62,7 +62,7 @@ function categoryConfig(id, title) {
 }
 
 /**
- * @typedef {Object} atlasComponentObject
+ * @typedef {Object} markguideComponentObject
  * @property {string} title - title of resource [category|component|guide]
  * @property {string} type - type of resource [category|guide|component|container]
  * @property {string} [src] - source file of resource
@@ -75,14 +75,14 @@ function categoryConfig(id, title) {
  * This will be used as data for pages generation and as high availability project map to prevent unnecessary direct
  * work with FS.
  * @private
- * @param {object} atlasConfig
- * @return {atlasComponentObject} tree of nodes
+ * @param {object} markguideConfig
+ * @return {markguideComponentObject} tree of nodes
  */
-function makeProjectTree(atlasConfig) {
-    excludedSassFiles = atlasConfig.excludedSassFiles;
-    excludedDirs = atlasConfig.excludedDirs;
-    guideDest = atlasConfig.guideDest;
-    templates = atlasConfig.templates;
+function makeProjectTree(markguideConfig) {
+    excludedSassFiles = markguideConfig.excludedSassFiles;
+    excludedDirs = markguideConfig.excludedDirs;
+    guideDest = markguideConfig.guideDest;
+    templates = markguideConfig.templates;
 
     let docSet = {
         'coverage': {
@@ -96,7 +96,7 @@ function makeProjectTree(atlasConfig) {
      * Traverse directories and generate components config
      * @param {string} url - components source
      * @param {object} config - base for generated config
-     * @param {string} categoryName - category name that will be used as component prefix. 'atlas' as start point,
+     * @param {string} categoryName - category name that will be used as component prefix. 'markguide' as start point,
      * directory name in all future cases.
      */
     function findComponents(url, config, categoryName, mdFiles) {
@@ -161,15 +161,15 @@ function makeProjectTree(atlasConfig) {
         });
     }
 
-    findMd(atlasConfig.guideSrc);
+    findMd(markguideConfig.guideSrc);
 
-    findComponents(atlasConfig.guideSrc, docSet.subPages, '', mdFiles);
+    findComponents(markguideConfig.guideSrc, docSet.subPages, '', mdFiles);
     removeEmptyCategories(docSet.subPages);
 
     //console.log(docSet.coverage.all, ' : ', docSet.coverage.all - docSet.coverage.notcovered);
 
-    if (atlasConfig.additionalPages.length) {
-        atlasConfig.additionalPages.forEach(page => docSet.subPages.unshift(page));
+    if (markguideConfig.additionalPages.length) {
+        markguideConfig.additionalPages.forEach(page => docSet.subPages.unshift(page));
     }
 
     return docSet;

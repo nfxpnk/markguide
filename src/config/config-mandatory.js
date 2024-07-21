@@ -41,7 +41,7 @@ function getMandatoryBaseConfig(config) {
     }
 
     // Process mandatory configs
-    const atlasConfig = {
+    const markguideConfig = {
         guideSrc: fs.existsSync(config.guideSrc) ? config.guideSrc : absPath(config.guideSrc),
         cssSrc: fs.existsSync(config.cssSrc) ? config.cssSrc : absPath(config.cssSrc),
         guideDest: fs.existsSync(config.guideDest) ? config.guideDest : absPath(config.guideDest)
@@ -50,20 +50,20 @@ function getMandatoryBaseConfig(config) {
     // Check and create destination directory if needed
     const createDestination = config.createDestFolder || false;
 
-    if (fs.existsSync(atlasConfig.guideDest) === false) {
+    if (fs.existsSync(markguideConfig.guideDest) === false) {
         if (createDestination) {
-            fs.mkdirSync(atlasConfig.guideDest);
-            log(c.yellow('Warning: ') + '"guideDest": ' + atlasConfig.guideDest + ' directory created');
+            fs.mkdirSync(markguideConfig.guideDest);
+            log(c.yellow('Warning: ') + '"guideDest": ' + markguideConfig.guideDest + ' directory created');
         } else {
-            log(c.red('Error: ') + '"guideDest" (' + atlasConfig.guideDest + ') in config unavailable or unreadable. ' +
+            log(c.red('Error: ') + '"guideDest" (' + markguideConfig.guideDest + ') in config unavailable or unreadable. ' +
                 'Please check this path in config');
             return corruptedConfig;
         }
     }
 
-    //console.log(atlasConfig, config);
+    //console.log(markguideConfig, config);
 
-    return atlasConfig;
+    return markguideConfig;
 }
 
 module.exports = getMandatoryBaseConfig;
