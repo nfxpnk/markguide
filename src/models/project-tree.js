@@ -7,12 +7,16 @@ let excludedDirs;
 let guideDest;
 let templates;
 
-function isDocumented(filePath) {
-    const file = fs.readFileSync(filePath, 'utf8');
-    const docComment = /\/\*md(\r\n|\n)(((\r\n|\n)|.)*?)\*\//g;
-    const exec = docComment.exec(file);
 
-    return !!(exec !== null && exec[2].trim());
+function isDocumented(filePath) {
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const docCommentPattern = /\/\*md(\r\n|\n)(((\r\n|\n)|.)*?)\*\//g;
+    const match = docCommentPattern.exec(fileContent);
+
+    // Check if a match is found and the content inside the block is not empty
+    const hasDocumentation = match !== null && match[2].trim().length > 0;
+
+    return hasDocumentation;
 }
 
 /**
@@ -99,7 +103,7 @@ function makeProjectTree(markguideConfig) {
      * @param {string} categoryName - category name that will be used as component prefix. 'markguide' as start point,
      * directory name in all future cases.
      */
-    function findComponents(url, config, categoryName, mdFiles) {
+    function findComponents(url, config, categoryName) {
         const dir = fs.readdirSync(url);
         dir.forEach(res => {
             let name = res;
@@ -138,32 +142,12 @@ function makeProjectTree(markguideConfig) {
             } else if (resource.isDirectory() && !isExcludedDirectory(name)) {
                 const id = 'section-' + path.basename(name);
                 config.push(categoryConfig(id, name));
-                findComponents(target, config[config.length - 1].subPages, categoryName + name + '-', mdFiles);
+                findComponents(target, config[config.length - 1].subPages, categoryName + name + '-');
             }
         });
     }
 
-    let mdFiles = [];
-    function findMd(url) {
-        const dir = fs.readdirSync(url);
-
-        dir.forEach(res => {
-            let target = path.join(url, res);
-            let resource = fs.statSync(target);
-
-            if (resource.isFile()) {
-                if (path.extname(res) === '.md') {
-                    mdFiles.push(target.split('.')[0]);
-                }
-            } else if (resource.isDirectory() && !isExcludedDirectory(res)) {
-                findMd(target);
-            }
-        });
-    }
-
-    findMd(markguideConfig.guideSrc);
-
-    findComponents(markguideConfig.guideSrc, docSet.subPages, '', mdFiles);
+    findComponents(markguideConfig.guideSrc, docSet.subPages, '');
     removeEmptyCategories(docSet.subPages);
 
     //console.log(docSet.coverage.all, ' : ', docSet.coverage.all - docSet.coverage.notcovered);
