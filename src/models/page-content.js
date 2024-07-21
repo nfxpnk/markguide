@@ -71,8 +71,6 @@ function getCommentContent(filePath) {
     const statRegexp = /@no-stat(\r\n|\n)/g;
     const match = documentationCommentRegexp.exec(file);
 
-    console.log(filePath);
-
     if (match !== null) {
         const fullContent = match[2];
         const strippedContent = fullContent.replace(statRegexp, '');
@@ -81,7 +79,7 @@ function getCommentContent(filePath) {
             content: strippedContent
         };
     } else {
-        log(c.yellow('Warn: ') + 'Content for import not found in ' + filePath);
+        //log(c.yellow('Warn: ') + 'Content for import not found in ' + filePath);
 
         return {
             content: ''

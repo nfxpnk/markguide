@@ -5,38 +5,25 @@ const { fs, path, log, c } = require('./common-utils.js');
 const mustache = require('mustache');
 
 function writeNavigation(markguideConfig, projectTree) {
-    const tpl = `
-    const asideNav = \`;;;;;;\`;
+    log('Writing navigation file');
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const asideNavContainer = document.getElementById('js-atlas-navigation');
-        asideNavContainer.innerHTML = asideNav;
+    const navigationPartial = fs.readFileSync(markguideConfig.partials['navigation'], 'utf8');
 
-        const event = new CustomEvent('MyEventFired', {
-            detail: { message: 'Hello, world!' } // Optional: pass additional data here
-        });
-
-       document.dispatchEvent(event);
-    });
-    `;
-
-    log('Writing navigation file....');
-
-    //console.log(projectTree);
-
-    let js = mustache.render(
-        fs.readFileSync(markguideConfig.partials.navigation, 'utf8'),
+    const jsHtmlContent = mustache.render(
+        navigationPartial,
         projectTree,
-        {
-            'navigation': fs.readFileSync(markguideConfig.partials.navigation, 'utf8')
-        }
+        {navigation: navigationPartial}
     );
 
-    js = tpl.replace(';;;;;;', js);
+    const jsContent = mustache.render(
+        fs.readFileSync(markguideConfig.partials['navigation-javascript'], 'utf8'),
+        {navigationHtml: jsHtmlContent}
+    );
+
 
     fs.writeFileSync(
         markguideConfig.guideDest + 'nav.js',
-        js,
+        jsContent,
         error => {
             if (error) {
                 log(error);
