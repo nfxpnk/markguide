@@ -11,7 +11,7 @@
     Copier.prototype.showMessage = function() {
         const message = 'Copied!';
         let messageBlock = document.createElement('div');
-        messageBlock.setAttribute('class', 'atlas-copier__message');
+        messageBlock.setAttribute('class', 'markguide-copier__message');
         messageBlock.appendChild(document.createTextNode(message));
         this.instance.appendChild(messageBlock);
         setTimeout(function() {

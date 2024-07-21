@@ -1,8 +1,8 @@
-.atlas-style-breaks {
+.markguide-style-breaks {
 	display: flex;
-	font-family: $font-mono-atlas;
-	font-size: $atlas-scale-mono-small;
-	margin-bottom: $space-lg-atlas;
+	font-family: $font-mono-markguide;
+	font-size: $markguide-scale-mono-small;
+	margin-bottom: $space-lg-markguide;
 
 	&__item {
 		align-items: center;
@@ -10,17 +10,17 @@
 		display: flex;
 
 		&::before {
-			color: $color-blue-atlas;
+			color: $color-blue-markguide;
 			content: counter(breaks);
 			display: inline-block;
-			font-family: $font-sans-atlas;
+			font-family: $font-sans-markguide;
 			font-size: 35px;
-			padding-right: $space-sm-atlas;
+			padding-right: $space-sm-markguide;
 		}
 	}
 
 	&__item-inner {
-		padding-right: $space-lg-atlas;
+		padding-right: $space-lg-markguide;
 	}
 
 	&__name {
@@ -30,8 +30,8 @@
 	}
 }
 
-.atlas-style-breaks-graph {
-	.atlas-tick-breaks {
+.markguide-style-breaks-graph {
+	.markguide-tick-breaks {
 		line {
 			stroke: deeppink;
 			stroke-width: 2px;
@@ -39,25 +39,25 @@
 
 		text {
 			fill: deeppink;
-			font-family: $font-mono-atlas;
+			font-family: $font-mono-markguide;
 			font-size: 11px;
 		}
 	}
 
-	.atlas-tick-lines {
+	.markguide-tick-lines {
 		line {
-			stroke: $color-grey80-atlas;
+			stroke: $color-grey80-markguide;
 		}
 	}
 
-	.atlas-tick-hints {
+	.markguide-tick-hints {
 		line {
-			stroke: $color-grey80-atlas;
+			stroke: $color-grey80-markguide;
 		}
 
 		text {
-			fill: $color-blue-atlas;
-			font-family: $font-mono-atlas;
+			fill: $color-blue-markguide;
+			font-family: $font-mono-markguide;
 		}
 	}
 }

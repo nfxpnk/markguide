@@ -1,4 +1,4 @@
-.atlas-style-scale {
+.markguide-style-scale {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
@@ -24,10 +24,10 @@
 	}
 
 	&__name {
-		font-family: $font-mono-atlas;
-		font-size: $atlas-scale-mono-small;
+		font-family: $font-mono-markguide;
+		font-size: $markguide-scale-mono-small;
 		min-width: 200px;
-		padding-left: $space-md-atlas;
+		padding-left: $space-md-markguide;
 		width: 200px;
 	}
 }

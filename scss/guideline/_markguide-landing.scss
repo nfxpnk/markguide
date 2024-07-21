@@ -1,8 +1,8 @@
-$bg: $color-yellow-atlas;
-$fg: $color-white-atlas;
-$accent: $atlas-color-text;
+$bg: $color-yellow-markguide;
+$fg: $color-white-markguide;
+$accent: $markguide-color-text;
 
-.atlas-landing {
+.markguide-landing {
 	&__content {
 		display: flex;
 		flex-flow: column nowrap;

@@ -1,10 +1,10 @@
-.atlas-toc {
+.markguide-toc {
 	padding-top: 30px;
 	font-size: 13px;
 
 	&__info {
-		border: 1px solid $color-grey80-atlas;
-		border-radius: $atlas-radius;
+		border: 1px solid $color-grey80-markguide;
+		border-radius: $markguide-radius;
 		display: flex;
 		flex-flow: column nowrap;
 		font-size: 14px;
@@ -14,11 +14,11 @@
 	}
 
 	&__path {
-		font-family: $font-mono-atlas;
+		font-family: $font-mono-markguide;
 	}
 
 	&__date {
-		font-family: $font-mono-atlas;
+		font-family: $font-mono-markguide;
 	}
 
 	&__item {
@@ -26,18 +26,18 @@
 	}
 
 	&__ln {
-		color: $color-blue-atlas;
+		color: $color-blue-markguide;
 		display: block;
 		text-decoration: underline;
 		text-overflow: ellipsis;
 
 		&:hover,
 		&:focus {
-			color: darken($color-blue-atlas, 15%);
+			color: darken($color-blue-markguide, 15%);
 		}
 
 		&:active {
-			color: $color-orange-atlas;
+			color: $color-orange-markguide;
 		}
 
 		&_1 {
@@ -47,23 +47,23 @@
 
 		&_2 {
 			font-weight: bold;
-			margin-left: $space-md-atlas;
+			margin-left: $space-md-markguide;
 		}
 
 		&_3 {
-			margin-left: $space-md-atlas * 2;
+			margin-left: $space-md-markguide * 2;
 		}
 
 		&_4 {
-			margin-left: $space-md-atlas * 3;
+			margin-left: $space-md-markguide * 3;
 		}
 
 		&_5 {
-			margin-left: $space-md-atlas * 4;
+			margin-left: $space-md-markguide * 4;
 		}
 
 		&_6 {
-			margin-left: $space-md-atlas * 5;
+			margin-left: $space-md-markguide * 5;
 		}
 	}
 }

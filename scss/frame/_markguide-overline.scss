@@ -1,13 +1,13 @@
-.atlas-overline {
-	font-family: $font-sans-atlas;
-	font-size: $scale-lg-atlas;
-	line-height: $space-md-atlas;
-	margin-bottom: -#{$space-md-atlas};
-	padding-top: $space-md-atlas;
+.markguide-overline {
+	font-family: $font-sans-markguide;
+	font-size: $scale-lg-markguide;
+	line-height: $space-md-markguide;
+	margin-bottom: -#{$space-md-markguide};
+	padding-top: $space-md-markguide;
 	text-transform: capitalize;
 
 	svg {
-		color: $color-blue-atlas;
+		color: $color-blue-markguide;
 		height: 24px;
 		position: relative;
 		top: 4px;

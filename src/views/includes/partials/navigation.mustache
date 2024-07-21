@@ -1,6 +1,6 @@
 {{#subPages}}
-    <div role="listitem" class="atlas-nav__item {{#type}}atlas-nav__item_{{type}}{{/type}}">
-        <a class="atlas-nav__ln {{#type}}_{{type}}{{/type}} {{#noDocumentation}}_empty{{/noDocumentation}} js-atlas-nav-ln js-collapsed "{{#id}}href="{{id}}.html"
+    <div role="listitem" class="markguide-nav__item {{#type}}markguide-nav__item_{{type}}{{/type}}">
+        <a class="markguide-nav__ln {{#type}}_{{type}}{{/type}} {{#noDocumentation}}_empty{{/noDocumentation}} js-markguide-nav-ln js-collapsed "{{#id}}href="{{id}}.html"
             id="nav-link-{{id}}"{{/id}}
             data-name="{{title}}"
          >
@@ -8,7 +8,7 @@
             <span style="pointer-events: none;">{{title}}</span>
         </a>
         {{#subPages.length}}
-            <div role="list" class="atlas-nav__sub-nav">
+            <div role="list" class="markguide-nav__sub-nav">
                 {{>navigation}}
             </div>
         {{/subPages.length}}

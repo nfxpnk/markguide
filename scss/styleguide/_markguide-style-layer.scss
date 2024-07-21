@@ -1,4 +1,4 @@
-.atlas-style-layer {
+.markguide-style-layer {
 	padding-bottom: 100%;
 	position: relative;
 	width: 100%;
@@ -6,8 +6,8 @@
 	&__box {
 		align-items: center;
 		display: flex;
-		font-family: $font-mono-atlas;
-		font-size: $atlas-scale-mono-small;
+		font-family: $font-mono-markguide;
+		font-size: $markguide-scale-mono-small;
 		height: 100%;
 		justify-content: center;
 		position: absolute;

@@ -28,16 +28,16 @@ body {
 	padding: 0;
 }
 
-.atlas-page {
+.markguide-page {
 	margin: 0;
 	padding: 0;
 }
 
-.atlas-content {
+.markguide-content {
 	box-sizing: border-box;
 	display: block;
 }
-.atlas-content__inner {
+.markguide-content__inner {
 	margin: 0 auto;
 	min-height: calc(100vh - 40px);
 	padding: 20px;
@@ -45,7 +45,7 @@ body {
 	position: relative;
 }
 
-.atlas {
+.markguide {
 	all: initial;
 	color: hsl(210, 0%, 35%);
 	font-family: "Arial", "FreeSans", sans-serif;
@@ -54,19 +54,19 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-weight: normal;
 }
-.atlas-title {
+.markguide-title {
 	display: block;
 }
-.atlas-title_1, .atlas-title_2, .atlas-title_3 {
+.markguide-title_1, .markguide-title_2, .markguide-title_3 {
 	margin-bottom: 20px;
 	margin-top: 40px;
 }
-.atlas-title_1, .atlas-title_2, .atlas-title_3, .atlas-title_4, .atlas-title_5, .atlas-title_6 {
+.markguide-title_1, .markguide-title_2, .markguide-title_3, .markguide-title_4, .markguide-title_5, .markguide-title_6 {
 	font-weight: bold;
 	letter-spacing: -0.03em;
 	margin-bottom: 20px;
 }
-.atlas-title_1 {
+.markguide-title_1 {
 	font-size: 39px;
 	font-weight: bold;
 	letter-spacing: -0.04em;
@@ -74,78 +74,78 @@ body {
 	margin-top: 20px;
 	padding-top: 16px;
 }
-.atlas-title_2 {
+.markguide-title_2 {
 	font-size: 25px;
 	line-height: 40px;
 }
-.atlas-title_3 {
+.markguide-title_3 {
 	font-size: 20px;
 	line-height: 20px;
 }
-.atlas-title_4 {
+.markguide-title_4 {
 	font-size: 15px;
 	font-weight: bold;
 	line-height: 20px;
 	text-transform: uppercase;
 }
-.atlas-title_5 {
+.markguide-title_5 {
 	font-size: 12.8px;
 	font-weight: bold;
 	line-height: 20px;
 	text-transform: uppercase;
 }
-.atlas-title_6 {
+.markguide-title_6 {
 	font-size: 12.8px;
 	line-height: 20px;
 }
-.atlas-p {
+.markguide-p {
 	display: block;
 	margin: 0 0 20px;
 	padding: 0;
 }
-.atlas-p a {
+.markguide-p a {
 	color: #263740;
 	text-decoration: underline;
 	word-break: break-word;
 }
-.atlas-p img {
+.markguide-p img {
 	max-width: 100%;
 }
-.atlas-hr {
+.markguide-hr {
 	border: none;
 	border-top: 1px solid;
 	color: hsl(0, 0%, 80%);
 	display: block;
 	margin: 40px auto;
 }
-.atlas-ol, .atlas-ul {
+.markguide-ol, .markguide-ul {
 	display: block;
 	list-style: disc;
 	margin-bottom: 20px;
 	margin-top: 20px;
 	padding-left: 20px;
 }
-.atlas-ol li, .atlas-ul li {
+.markguide-ol li, .markguide-ul li {
 	margin: 0;
 	padding: 0;
 }
-.atlas-ol {
+.markguide-ol {
 	list-style: decimal;
 }
-.atlas-table {
+.markguide-table {
 	border-collapse: collapse;
 	display: table;
 	margin-bottom: 20px;
 }
-.atlas-table th,
-.atlas-table td {
+.markguide-table th,
+.markguide-table td {
 	padding: 5px 10px 5px 0;
 }
-.atlas-table th {
+.markguide-table th {
 	border-bottom: 2px solid hsl(0, 0%, 70%);
 	font-weight: bold;
 }
-.atlas-code {
+.markguide-code {
 	display: block;
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 	font-weight: 400;
@@ -153,7 +153,7 @@ body {
 	position: relative;
 	text-align: left;
 }
-.atlas-code code {
+.markguide-code code {
 	direction: ltr;
 	overflow: auto;
 	text-align: left;
@@ -162,7 +162,7 @@ body {
 	word-spacing: normal;
 	word-wrap: normal;
 }
-.atlas-code pre {
+.markguide-code pre {
 	background-color: #fcfcfc;
 	border: 1px solid hsl(0, 0%, 95%);
 	border-radius: 3px;
@@ -170,34 +170,34 @@ body {
 	overflow: auto;
 	padding: 10px;
 }
-.atlas-code pre code {
+.markguide-code pre code {
 	background: transparent;
 	border: none;
 	border-radius: 0;
 	padding: 0;
 }
-.atlas-code[class*=_bad]::after, .atlas-code[class*=_good]::after {
+.markguide-code[class*=_bad]::after, .markguide-code[class*=_good]::after {
 	display: block;
 	font-size: 0.8em;
 	font-weight: bold;
 	line-height: 20px;
 	margin: -20px 0 20px;
 }
-.atlas-code[class*=_bad] pre {
+.markguide-code[class*=_bad] pre {
 	border-color: #fa8989;
 }
-.atlas-code[class*=_bad]::after {
+.markguide-code[class*=_bad]::after {
 	color: hsl(0, 92%, 60%);
 	content: "Don’t.";
 }
-.atlas-code[class*=_good] pre {
+.markguide-code[class*=_good] pre {
 	border-color: #c8e79d;
 }
-.atlas-code[class*=_good]::after {
+.markguide-code[class*=_good]::after {
 	color: hsl(85, 60%, 60%);
 	content: "Do.";
 }
-.atlas code {
+.markguide code {
 	background-color: #f2f2f2;
 	border: 1px solid hsl(0, 0%, 90%);
 	border-radius: 5px;
@@ -207,36 +207,36 @@ body {
 	padding: 0.1em 0.3em;
 }
 
-.atlas-title__text,
-.atlas-p,
-.atlas-ul,
-.atlas-ol,
-.atlas-code {
+.markguide-title__text,
+.markguide-p,
+.markguide-ul,
+.markguide-ol,
+.markguide-code {
 	color: hsl(210, 0%, 35%);
 }
 
-.atlas-content__inner .atlas-title_1 + .atlas-p {
+.markguide-content__inner .markguide-title_1 + .markguide-p {
 	font-size: 20px;
 	line-height: 1.2;
 	margin-bottom: 40px;
 }
 
-.atlas-title { /* stylelint-disable-line */
+.markguide-title { /* stylelint-disable-line */
 	align-items: flex-end;
 	display: flex;
 	justify-content: space-between;
 	position: relative;
 }
-.atlas-title__text {
+.markguide-title__text {
 	position: relative;
 	z-index: 1;
 }
-.atlas-title__anchor {
+.markguide-title__anchor {
 	color: hsl(0, 0%, 80%);
 	font-size: 20px;
 	padding-left: 20px;
 }
-.atlas-title__anchor::after {
+.markguide-title__anchor::after {
 	background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)) no-repeat right bottom;
 	background-size: 100%;
 	bottom: 0;
@@ -247,20 +247,20 @@ body {
 	transition: width ease 0.4s;
 	width: 0;
 }
-.atlas-title__anchor:hover, .atlas-title__anchor:focus {
+.markguide-title__anchor:hover, .markguide-title__anchor:focus {
 	color: hsl(0, 0%, 60%);
 }
-.atlas-title__anchor:hover::after, .atlas-title__anchor:focus::after {
+.markguide-title__anchor:hover::after, .markguide-title__anchor:focus::after {
 	width: 100%;
 }
-.atlas-title__anchor:active {
+.markguide-title__anchor:active {
 	color: #263740;
 }
-.atlas-title__anchor svg {
+.markguide-title__anchor svg {
 	height: 14px;
 	width: 14px;
 }
-.atlas-title__highlight {
+.markguide-title__highlight {
 	bottom: -5px;
 	left: -20px;
 	pointer-events: none;
@@ -270,22 +270,22 @@ body {
 	z-index: 0;
 }
 
-.atlas-anchor {
+.markguide-anchor {
 	pointer-events: none;
 	position: absolute;
 	transform: translateY(-70px);
 }
 
-.atlas-anchor:target + .atlas-title .atlas-title__highlight {
+.markguide-anchor:target + .markguide-title .markguide-title__highlight {
 	animation: target-highlight 2s ease;
 }
 
-.atlas-section {
+.markguide-section {
 	padding: 1px 0;
 	position: relative;
 }
 
-.atlas-title_2 { /* stylelint-disable-line */
+.markguide-title_2 { /* stylelint-disable-line */
 	background: rgba(255, 255, 255, 0.9);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	margin: 0 -20px 40px;
@@ -295,13 +295,13 @@ body {
 	z-index: 5;
 }
 @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-	.atlas-title_2 {
+	.markguide-title_2 {
 		-webkit-backdrop-filter: saturate(180%) blur(10px);
 		        backdrop-filter: saturate(180%) blur(10px);
 		background: rgba(255, 255, 255, 0.7);
 	}
 }
-.atlas-title_2 .atlas-title__highlight {
+.markguide-title_2 .markguide-title__highlight {
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -316,7 +316,7 @@ body {
 		background-color: transparent;
 	}
 }
-.atlas-overline {
+.markguide-overline {
 	font-family: "Arial", "FreeSans", sans-serif;
 	font-size: 20px;
 	line-height: 20px;
@@ -324,7 +324,7 @@ body {
 	padding-top: 20px;
 	text-transform: capitalize;
 }
-.atlas-overline svg {
+.markguide-overline svg {
 	color: #263740;
 	height: 24px;
 	position: relative;
@@ -333,7 +333,7 @@ body {
 	width: 24px;
 }
 
-.atlas-message-global {
+.markguide-message-global {
 	clear: both;
 	font-family: "Arial", "FreeSans", sans-serif;
 	font-size: 12.8px;
@@ -343,20 +343,20 @@ body {
 	padding: 10px;
 	text-align: center;
 }
-.atlas-message-global.error {
+.markguide-message-global.error {
 	background: hsl(0, 92%, 60%);
 	color: hsl(0, 0%, 100%);
 }
-.atlas-message-global._warn {
+.markguide-message-global._warn {
 	background-color: hsl(38, 92%, 60%);
 	color: hsl(210, 0%, 35%);
 }
 
-.atlas-toc {
+.markguide-toc {
 	padding-top: 30px;
 	font-size: 13px;
 }
-.atlas-toc__info {
+.markguide-toc__info {
 	border: 1px solid hsl(0, 0%, 80%);
 	border-radius: 5px;
 	display: flex;
@@ -366,59 +366,59 @@ body {
 	margin-bottom: 30px;
 	padding: 10px;
 }
-.atlas-toc__path {
+.markguide-toc__path {
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 }
-.atlas-toc__date {
+.markguide-toc__date {
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 }
-.atlas-toc__item {
+.markguide-toc__item {
 	display: block;
 }
-.atlas-toc__ln {
+.markguide-toc__ln {
 	color: #263740;
 	display: block;
 	text-decoration: underline;
 	text-overflow: ellipsis;
 }
-.atlas-toc__ln:hover, .atlas-toc__ln:focus {
+.markguide-toc__ln:hover, .markguide-toc__ln:focus {
 	color: #0a0e10;
 }
-.atlas-toc__ln:active {
+.markguide-toc__ln:active {
 	color: hsl(38, 92%, 60%);
 }
-.atlas-toc__ln_1 {
+.markguide-toc__ln_1 {
 	font-size: 14px;
 	font-weight: bold;
 }
-.atlas-toc__ln_2 {
+.markguide-toc__ln_2 {
 	font-weight: bold;
 	margin-left: 20px;
 }
-.atlas-toc__ln_3 {
+.markguide-toc__ln_3 {
 	margin-left: 40px;
 }
-.atlas-toc__ln_4 {
+.markguide-toc__ln_4 {
 	margin-left: 60px;
 }
-.atlas-toc__ln_5 {
+.markguide-toc__ln_5 {
 	margin-left: 80px;
 }
-.atlas-toc__ln_6 {
+.markguide-toc__ln_6 {
 	margin-left: 100px;
 }
 
-.atlas-landing__content {
+.markguide-landing__content {
 	display: flex;
 	flex-flow: column nowrap;
 	gap: 20px;
 	position: relative;
 }
-.atlas-landing__main {
+.markguide-landing__main {
 	width: 100%;
 }
 
-.atlas-component-aside {
+.markguide-component-aside {
 	all: initial;
 	background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)) no-repeat;
 	background-size: 1px 100%;
@@ -434,27 +434,27 @@ body {
 	width: 250px;
 	z-index: 1;
 }
-.atlas-component-aside__section {
+.markguide-component-aside__section {
 	margin: 20px 0;
 }
-.atlas-component-aside__title {
+.markguide-component-aside__title {
 	font-weight: bold;
 	margin-bottom: 5px;
 }
-.atlas-component-aside__list-item {
+.markguide-component-aside__list-item {
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 	font-size: 11px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.atlas-component-aside__list-item svg {
+.markguide-component-aside__list-item svg {
 	color: #263740;
 	position: relative;
 	top: 2px;
 	vertical-align: text-bottom;
 }
-.atlas-info-digit {
+.markguide-info-digit {
 	align-items: flex-end;
 	display: flex;
 	font-size: 12.8px;
@@ -463,21 +463,21 @@ body {
 	position: relative;
 	width: 50%;
 }
-.atlas-info-digit__digit {
+.markguide-info-digit__digit {
 	color: #263740;
 	font-size: 48px;
 	font-weight: normal;
 	line-height: 1;
 	margin-right: 5px;
 }
-.atlas-info-digit__details {
+.markguide-info-digit__details {
 	margin-bottom: 0.4em;
 }
-.atlas-info-digit__title {
+.markguide-info-digit__title {
 	font-size: 16px;
 	font-weight: bold;
 }
-.atlas-info-digit__popup {
+.markguide-info-digit__popup {
 	background: rgba(255, 255, 255, 0.97);
 	border: 1px solid #e0e0e0;
 	border-left: 7px solid #263740;
@@ -491,7 +491,7 @@ body {
 	position: absolute;
 	z-index: 10;
 }
-.atlas-info-digit__popup::before {
+.markguide-info-digit__popup::before {
 	border-bottom: 7px solid transparent;
 	border-right: 7px solid #263740;
 	border-top: 7px solid transparent;
@@ -503,20 +503,20 @@ body {
 	position: absolute;
 	width: 0;
 }
-.atlas-info-digit:hover .atlas-info-digit__popup {
+.markguide-info-digit:hover .markguide-info-digit__popup {
 	display: block;
 }
-.atlas-info-digit__list {
+.markguide-info-digit__list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-.atlas-info-digit._primary .atlas-info-digit__digit {
+.markguide-info-digit._primary .markguide-info-digit__digit {
 	font-size: 64px;
 	font-weight: normal;
 }
 
-.atlas-component-footer {
+.markguide-component-footer {
 	all: initial;
 	background: #fafafa;
 	clear: both;
@@ -530,21 +530,21 @@ body {
 	justify-content: space-between;
 	margin: 40px -20px -20px;
 }
-.atlas-component-footer__item {
+.markguide-component-footer__item {
 	padding: 20px;
 	width: 50%;
 }
-.atlas-component-footer__section {
+.markguide-component-footer__section {
 	display: flex;
 	margin: 0;
 	padding: 20px 0 0;
 	position: relative;
 }
-.atlas-component-footer__section + .atlas-component-footer__section {
+.markguide-component-footer__section + .markguide-component-footer__section {
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.atlas-info-list {
+.markguide-info-list {
 	display: flex;
 	flex-wrap: wrap;
 	font-weight: bold;
@@ -554,60 +554,60 @@ body {
 	text-transform: capitalize;
 	width: 100%;
 }
-.atlas-info-list__item {
+.markguide-info-list__item {
 	margin: 0 0 20px;
 	width: 33.3333333333%;
 }
-.atlas-info-list__total {
+.markguide-info-list__total {
 	color: #263740;
 	font-size: 32px;
 	font-weight: normal;
 	padding-right: 5px;
 }
-.atlas-info-list__name {
+.markguide-info-list__name {
 	padding-right: 10px;
 }
 
-.atlas-constant {
+.markguide-constant {
 	text-transform: none;
 	width: 100%;
 }
-.atlas-constant__item {
+.markguide-constant__item {
 	display: flex;
 	margin: 20px 0;
 }
-.atlas-constant__caption {
+.markguide-constant__caption {
 	min-width: 33.3333333333%;
 }
-.atlas-constant__details {
+.markguide-constant__details {
 	display: block;
 	width: 100%;
 }
-.atlas-constant__name {
+.markguide-constant__name {
 	font-weight: bold;
 	text-transform: capitalize;
 }
-.atlas-constant__name::after {
+.markguide-constant__name::after {
 	content: ":";
 }
-.atlas-constant__status {
+.markguide-constant__status {
 	display: block;
 	font-size: 12.8px;
 	font-weight: normal;
 	line-height: 1.6;
 }
-.atlas-constant__status svg {
+.markguide-constant__status svg {
 	height: 16px;
 	margin-bottom: -3px;
 	width: 12px;
 }
-.atlas-constant__status._success {
+.markguide-constant__status._success {
 	color: hsl(85, 60%, 60%);
 }
-.atlas-constant__status._error {
+.markguide-constant__status._error {
 	color: hsl(0, 92%, 60%);
 }
-.atlas-constant__list {
+.markguide-constant__list {
 	display: block;
 	font-size: 12.8px;
 	font-weight: normal;
@@ -615,7 +615,7 @@ body {
 	padding-left: 16px;
 	position: relative;
 }
-.atlas-constant__counter {
+.markguide-constant__counter {
 	display: inline-block;
 	font-size: 10px;
 	font-weight: bold;
@@ -627,50 +627,50 @@ body {
 	top: 2px;
 	width: 12px;
 }
-.atlas-constant__counter svg {
+.markguide-constant__counter svg {
 	height: 16px;
 	left: -2px;
 	position: absolute;
 	top: -2px;
 	width: 11px;
 }
-.atlas-constant__counter-digit {
+.markguide-constant__counter-digit {
 	position: relative;
 	z-index: 1;
 }
-.atlas-constant__counter._warn {
+.markguide-constant__counter._warn {
 	color: hsl(0, 0%, 100%);
 }
-.atlas-constant__counter._warn svg {
+.markguide-constant__counter._warn svg {
 	color: hsl(38, 92%, 60%);
 }
-.atlas-constant__counter._error {
+.markguide-constant__counter._error {
 	color: hsl(0, 0%, 100%);
 }
-.atlas-constant__counter._error svg {
+.markguide-constant__counter._error svg {
 	color: hsl(0, 92%, 60%);
 }
-.atlas-constant__counter._1 {
+.markguide-constant__counter._1 {
 	color: transparent;
 	text-shadow: none;
 }
-.atlas-constant code {
+.markguide-constant code {
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 	font-size: 11.2px;
 }
 
-.atlas-component-structure {
+.markguide-component-structure {
 	margin-bottom: 40px;
 	margin-top: 40px;
 }
-.atlas-component-structure__title {
+.markguide-component-structure__title {
 	display: none;
 	font-size: 20px;
 	font-weight: bold;
 	line-height: 20px;
 	margin-bottom: 20px;
 }
-.atlas-component-structure__nodes {
+.markguide-component-structure__nodes {
 	background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)) no-repeat;
 	background-position: 26px 0;
 	background-size: 1px 100%;
@@ -681,7 +681,7 @@ body {
 	padding-left: 20px;
 	position: relative;
 }
-.atlas-component-structure__nodes::after {
+.markguide-component-structure__nodes::after {
 	background-color: rgba(0, 0, 0, 0.3);
 	border-radius: 5px;
 	bottom: 0;
@@ -691,19 +691,19 @@ body {
 	position: absolute;
 	width: 3px;
 }
-.atlas-component-structure__nodes .atlas-component-structure__nodes {
+.markguide-component-structure__nodes .markguide-component-structure__nodes {
 	background: none;
 	padding-bottom: 0;
 }
-.atlas-component-structure__nodes .atlas-component-structure__nodes::after {
+.markguide-component-structure__nodes .markguide-component-structure__nodes::after {
 	display: none;
 }
-.atlas-component-structure__node {
+.markguide-component-structure__node {
 	font-size: 12.8px;
 	line-height: 1.4;
 	margin: 5px 0;
 }
-.atlas-component-structure__type {
+.markguide-component-structure__type {
 	background: grey;
 	border-radius: 3px;
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
@@ -720,86 +720,86 @@ body {
 	top: -1px;
 	width: 15px;
 }
-.atlas-component-structure__type._container, .atlas-component-structure__type._mixin {
+.markguide-component-structure__type._container, .markguide-component-structure__type._mixin {
 	background-color: white;
 	color: hsl(210, 0%, 35%);
 	text-shadow: none;
 }
-.atlas-component-structure__type._container::before, .atlas-component-structure__type._mixin::before {
+.markguide-component-structure__type._container::before, .markguide-component-structure__type._mixin::before {
 	background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2357595b%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%3E%3Cpath%20stroke-width%3D%223.068%22%20d%3D%22M20.575%203.425L3.221%2020.779%22%2F%3E%3Cpath%20d%3D%22M16.236%2020.778H3.221V7.763%22%20stroke-width%3D%223.06772%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center center no-repeat;
 	background-size: 80%;
 	color: transparent;
 	content: "↙";
 }
-.atlas-component-structure__type._container {
+.markguide-component-structure__type._container {
 	transform: rotate(45deg);
 }
-.atlas-component-structure__type._condition {
+.markguide-component-structure__type._condition {
 	background-color: white;
 	color: hsl(210, 0%, 35%);
 	text-shadow: none;
 }
-.atlas-component-structure__type._condition::before {
+.markguide-component-structure__type._condition::before {
 	content: "?";
 }
-.atlas-component-structure__type._extend {
+.markguide-component-structure__type._extend {
 	background-color: white;
 	color: hsl(210, 0%, 35%);
 	text-shadow: none;
 }
-.atlas-component-structure__type._extend::before {
+.markguide-component-structure__type._extend::before {
 	background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2357595b%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%3E%3Cpath%20stroke-width%3D%223.068%22%20d%3D%22M3.221%2020.779L20.575%203.425%22%2F%3E%3Cpath%20d%3D%22M7.56%203.425h13.015V16.44%22%20stroke-width%3D%223.06772%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center center no-repeat;
 	background-size: 80%;
 	color: transparent;
 	content: "↗";
 }
-.atlas-component-structure__type._component {
+.markguide-component-structure__type._component {
 	background-color: #e56daa;
 }
-.atlas-component-structure__type._component::before {
+.markguide-component-structure__type._component::before {
 	content: "c";
 }
-.atlas-component-structure__type._modifier {
+.markguide-component-structure__type._modifier {
 	background-color: #2196f3;
 }
-.atlas-component-structure__type._modifier::before {
+.markguide-component-structure__type._modifier::before {
 	content: "m";
 }
-.atlas-component-structure__type._modifier-adjacent {
+.markguide-component-structure__type._modifier-adjacent {
 	background-color: #0c7cd5;
 }
-.atlas-component-structure__type._modifier-adjacent::before {
+.markguide-component-structure__type._modifier-adjacent::before {
 	content: "ma";
 }
-.atlas-component-structure__type._modifier-implicit {
+.markguide-component-structure__type._modifier-implicit {
 	background-color: #51adf6;
 }
-.atlas-component-structure__type._modifier-implicit::before {
+.markguide-component-structure__type._modifier-implicit::before {
 	content: "mi";
 }
-.atlas-component-structure__type._modifier-context {
+.markguide-component-structure__type._modifier-context {
 	background-color: #0c7cd5;
 }
-.atlas-component-structure__type._modifier-context::before {
+.markguide-component-structure__type._modifier-context::before {
 	content: "mc";
 }
-.atlas-component-structure__type._element {
+.markguide-component-structure__type._element {
 	background-color: #6d7ce5;
 }
-.atlas-component-structure__type._element::before {
+.markguide-component-structure__type._element::before {
 	content: "e";
 }
-.atlas-component-structure__type._element-implicit {
+.markguide-component-structure__type._element-implicit {
 	background-color: #98a3ed;
 }
-.atlas-component-structure__type._element-implicit::before {
+.markguide-component-structure__type._element-implicit::before {
 	content: "ei";
 }
-.atlas-component-structure__brackets {
+.markguide-component-structure__brackets {
 	color: rgba(0, 0, 0, 0.3);
 }
 
-.atlas-colors {
+.markguide-colors {
 	list-style: none;
 	padding: 0;
 	display: flex;
@@ -808,21 +808,21 @@ body {
 	flex-wrap: wrap;
 }
 
-.atlas-colors__item {
+.markguide-colors__item {
 	width: 20%;
 	margin-bottom: 10px;
 	padding: 5px;
 	box-sizing: border-box;
 }
 
-.atlas-color {
+.markguide-color {
 	background: white;
 	border: 1px solid black;
 	margin: 0;
 	padding: 0;
 }
 
-.atlas-color__figure {
+.markguide-color__figure {
 	position: relative;
 	background-image: linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent 75%, #f1f1f1 75%, #f1f1f1), linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent 75%, #f1f1f1 75%, #f1f1f1);
 	background-position: 0 0, 6px 6px;
@@ -830,7 +830,7 @@ body {
 	height: 3em;
 }
 
-.atlas-color__figure-color {
+.markguide-color__figure-color {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -838,22 +838,22 @@ body {
 	bottom: 0;
 }
 
-.atlas-color__caption {
+.markguide-color__caption {
 	padding: 0.5em;
 }
 
-.atlas-color__name {
+.markguide-color__name {
 	display: block;
 	font-weight: bold;
 	color: black;
 }
 
-.atlas-color__code {
+.markguide-color__code {
 	display: block;
 	color: black;
 }
 
-.atlas-icons_example {
+.markguide-icons_example {
 	align-items: stretch;
 	display: flex;
 	flex-wrap: wrap;
@@ -862,25 +862,25 @@ body {
 	text-align: center;
 }
 
-.atlas-icons_example-item {
+.markguide-icons_example-item {
 	border: 1px solid lightgrey;
 	border-radius: 6px;
 	flex-basis: 124px;
 	padding: 10px 5px;
 }
 
-.atlas-icons_example-item svg {
+.markguide-icons_example-item svg {
 	background: #dfdfdf;
 	display: block;
 	margin: 0 auto 10px;
 }
 
-.atlas-icons_section h2 {
+.markguide-icons_section h2 {
 	font-size: 24px;
 	margin-bottom: 10px;
 }
 
-.atlas-icons_isml {
+.markguide-icons_isml {
 	background: white;
 	border: 1px solid grey;
 	padding: 10px;
@@ -890,11 +890,11 @@ body {
 	z-index: 900;
 }
 
-.atlas-copier {
+.markguide-copier {
 	cursor: pointer;
 	position: relative;
 }
-.atlas-copier__message {
+.markguide-copier__message {
 	background-color: rgba(0, 0, 0, 0.5);
 	border-radius: 5px;
 	color: hsl(0, 0%, 100%);
@@ -914,7 +914,7 @@ body {
 	transition-property: opacity, visibility;
 	z-index: 10;
 }
-.atlas-copier__text {
+.markguide-copier__text {
 	-webkit-appearance: none;
 	        appearance: none;
 	background-color: transparent;
@@ -924,48 +924,48 @@ body {
 	font-size: inherit;
 	text-align: inherit;
 }
-.atlas-copier__text:focus {
+.markguide-copier__text:focus {
 	outline: none;
 }
-.atlas-copier:hover .atlas-copier__text {
+.markguide-copier:hover .markguide-copier__text {
 	color: #263740;
 }
 
 /* TODO: Temp location, move to some file.scss */
-.atlas-html {
+.markguide-html {
 	padding: 10px;
 	margin-bottom: 20px;
 	border: 1px solid grey;
 }
-.atlas-html__item {
+.markguide-html__item {
 	margin-bottom: 20px;
 }
-.atlas-html__item h2 {
+.markguide-html__item h2 {
 	margin-bottom: 10px;
 }
-.atlas-html__item:last-child {
+.markguide-html__item:last-child {
 	margin: 0;
 }
 
-.atlas-markup {
+.markguide-markup {
 	position: relative;
 	outline: none !important;
 	margin-bottom: 20px;
 }
-.atlas-markup:focus {
+.markguide-markup:focus {
 	outline: none !important;
 }
-.atlas-markup summary {
+.markguide-markup summary {
 	border: 1px solid grey;
 	cursor: pointer;
 	padding-left: 10px;
 	-webkit-user-select: none;
 	        user-select: none;
 }
-.atlas-markup summary:focus {
+.markguide-markup summary:focus {
 	outline: none !important;
 }
-.atlas-markup__copy-button {
+.markguide-markup__copy-button {
 	-webkit-appearance: none;
 	        appearance: none;
 	background-color: transparent;
@@ -975,6 +975,6 @@ body {
 	right: 15px;
 	top: 0;
 }
-.atlas-markup__copy-button:hover {
+.markguide-markup__copy-button:hover {
 	text-decoration: underline;
 }

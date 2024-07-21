@@ -1,32 +1,32 @@
 @charset "UTF-8";
 
-@import "dev-atlas-definitions";
+@import "dev-markguide-definitions";
 
 @import "global/global-normalization";
 
-@import "frame/atlas-page";
-@import "frame/atlas-content";
-@import "frame/atlas";
-@import "frame/atlas-overline";
-@import "frame/atlas-message-global";
+@import "frame/markguide-page";
+@import "frame/markguide-content";
+@import "frame/markguide";
+@import "frame/markguide-overline";
+@import "frame/markguide-message-global";
 
-@import "guideline/atlas-toc";
-@import "guideline/atlas-landing";
+@import "guideline/markguide-toc";
+@import "guideline/markguide-landing";
 
-@import "component/atlas-component-aside";
-@import "component/atlas-info-digit";
-@import "component/atlas-component-footer";
-@import "component/atlas-info-list";
-@import "component/atlas-constant";
-@import "component/atlas-component-structure";
-@import "component/atlas-colors";
-@import "component/atlas-icons";
+@import "component/markguide-component-aside";
+@import "component/markguide-info-digit";
+@import "component/markguide-component-footer";
+@import "component/markguide-info-list";
+@import "component/markguide-constant";
+@import "component/markguide-component-structure";
+@import "component/markguide-colors";
+@import "component/markguide-icons";
 
-@import "styleguide/atlas-copier";
+@import "styleguide/markguide-copier";
 
 
 /* TODO: Temp location, move to some file.scss */
-.atlas-html {
+.markguide-html {
 	padding: 10px;
 	margin-bottom: 20px;
 	border: 1px solid grey;
@@ -44,7 +44,7 @@
 	}
 }
 
-.atlas-markup {
+.markguide-markup {
 	position: relative;
 	outline: none !important;
 	margin-bottom: 20px;

@@ -1,8 +1,8 @@
-.atlas-aside {
+.markguide-aside {
 	all: initial;
-	background-color: $atlas-aside-bg;
+	background-color: $markguide-aside-bg;
 	bottom: 0;
-	color: $atlas-color-text;
+	color: $markguide-color-text;
 	display: flex;
 	flex-direction: column;
 	-moz-osx-font-smoothing: grayscale;
@@ -13,7 +13,7 @@
 	z-index: 1;
 
 	&__header {
-		padding: $space-sm-atlas;
+		padding: $space-sm-markguide;
 	}
 
 	&__content {
@@ -25,22 +25,22 @@
 
 	&__footer {
 		margin-top: auto;
-		padding-top: $space-md-atlas;
+		padding-top: $space-md-markguide;
 		position: relative;
 
 		&::after {
 			background: linear-gradient(
-				rgba($color-white-atlas, 0),
-				$atlas-aside-bg
+				rgba($color-white-markguide, 0),
+				$markguide-aside-bg
 			);
 			content: "";
 			display: block;
-			height: $space-md-atlas;
+			height: $space-md-markguide;
 			left: 4px;
 			pointer-events: none;
 			position: absolute;
 			right: 0;
-			top: -#{$space-md-atlas};
+			top: -#{$space-md-markguide};
 			z-index: 2;
 		}
 	}
@@ -48,9 +48,9 @@
 
 // hide this elements when aside is hidden
 .js-aside-panel-hidden {
-	.atlas-aside__header,
-	.atlas-aside__footer,
-	.atlas-aside__content {
+	.markguide-aside__header,
+	.markguide-aside__footer,
+	.markguide-aside__content {
 		display: none;
 	}
 }

@@ -3,8 +3,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     (function () {
         let end = null;
-        const navigation = document.getElementById('js-atlas-navigation');
-        const navigationContent = document.getElementById('js-atlas-aside-content');
+        const navigation = document.getElementById('js-markguide-navigation');
+        const navigationContent = document.getElementById('js-markguide-aside-content');
         const savedState = JSON.parse(window.sessionStorage.getItem("navState")) || {};
 
         function menuCollapse(ev) {
@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 return false;
             }
 
-            end = element.classList.contains('atlas-nav');
+            end = element.classList.contains('markguide-nav');
 
-            if (element.classList.contains('atlas-nav__item_category')) {
+            if (element.classList.contains('markguide-nav__item_category')) {
                 element.querySelector('._category').classList.remove('js-collapsed');
             }
             findParent(element.parentElement);
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const linkPosition = linkCurrent.getBoundingClientRect().top;
                 navigationContent.scrollTo && navigationContent.scrollTo(0, linkPosition - (window.innerHeight / 2));
             } else {
-                document.getElementById('js-atlas-aside-content').scrollTo(0, storedValue);
+                document.getElementById('js-markguide-aside-content').scrollTo(0, storedValue);
             }
         }
 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('beforeunload', populateStorage);
 
         document.addEventListener('MyEventFired', function(event) {
-            const navItems = document.querySelectorAll(".atlas-nav__ln");
+            const navItems = document.querySelectorAll(".markguide-nav__ln");
 
             navItems.forEach(item => {
                 const itemId = item.getAttribute("id");

@@ -1,26 +1,26 @@
-.atlas-component-footer {
+.markguide-component-footer {
 	all: initial;
 	background: #fafafa;
 	clear: both;
-	color: $atlas-color-text;
+	color: $markguide-color-text;
 	display: flex;
 	float: none;
-	font-family: $font-sans-atlas;
-	font-size: $atlas-scale-primary;
+	font-family: $font-sans-markguide;
+	font-size: $markguide-scale-primary;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	justify-content: space-between;
-	margin: $space-lg-atlas -#{$space-md-atlas} -#{$space-md-atlas};
+	margin: $space-lg-markguide -#{$space-md-markguide} -#{$space-md-markguide};
 
 	&__item {
-		padding: $space-md-atlas;
+		padding: $space-md-markguide;
 		width: 50%;
 	}
 
 	&__section {
 		display: flex;
 		margin: 0;
-		padding: $space-md-atlas 0 0;
+		padding: $space-md-markguide 0 0;
 		position: relative;
 
 		& + & {

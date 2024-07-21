@@ -1,43 +1,43 @@
 @use "sass:math";
 
-.atlas-component-aside {
+.markguide-component-aside {
 	all: initial;
 	background: linear-gradient(to top, rgba(black, 0), rgba(black, 0.1))
 		no-repeat;
 	background-size: 1px 100%;
-	color: $atlas-color-text;
+	color: $markguide-color-text;
 	float: right;
-	font-family: $font-sans-atlas;
-	font-size: $atlas-scale-secondary;
+	font-family: $font-sans-markguide;
+	font-size: $markguide-scale-secondary;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	margin-left: $space-md-atlas;
-	padding-left: $space-md-atlas;
+	margin-left: $space-md-markguide;
+	padding-left: $space-md-markguide;
 	position: relative;
 	width: 250px;
 	z-index: 1;
 
 	&__section {
-		margin: $space-md-atlas 0;
+		margin: $space-md-markguide 0;
 	}
 
 	&__title {
 		font-weight: bold;
-		margin-bottom: math.div($space-sm-atlas, 2);
+		margin-bottom: math.div($space-sm-markguide, 2);
 	}
 
 	&__list {
 	}
 
 	&__list-item {
-		font-family: $font-mono-atlas;
-		font-size: $atlas-scale-mono-small;
+		font-family: $font-mono-markguide;
+		font-size: $markguide-scale-mono-small;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 
 		svg {
-			color: $color-blue-atlas;
+			color: $color-blue-markguide;
 			position: relative;
 			top: 2px;
 			vertical-align: text-bottom;

@@ -1,9 +1,9 @@
-.atlas-nav {
-	// atlas-outline-view
-	font-family: $font-sans-atlas;
-	font-size: $atlas-scale-secondary;
+.markguide-nav {
+	// markguide-outline-view
+	font-family: $font-sans-markguide;
+	font-size: $markguide-scale-secondary;
 	list-style: none;
-	padding-bottom: $space-md-atlas;
+	padding-bottom: $space-md-markguide;
 
 	&__item {
 		display: block;
@@ -20,8 +20,8 @@
 		color: inherit;
 		cursor: pointer;
 		display: flex;
-		font-family: $font-sans-atlas;
-		font-size: $atlas-scale-secondary;
+		font-family: $font-sans-markguide;
+		font-size: $markguide-scale-secondary;
 		gap: 6px;
 		overflow: hidden;
 		padding: 5px 0;
@@ -39,11 +39,11 @@
 		}
 
 		&:active {
-			color: $color-blue-atlas;
+			color: $color-blue-markguide;
 		}
 
 		&.js-current-page {
-			background-color: $atlas-aside-selected;
+			background-color: $markguide-aside-selected;
 			color: black;
 			cursor: default;
 			pointer-events: none;
@@ -59,13 +59,13 @@
 
 		&._category {
 			svg {
-				color: $color-blue-atlas;
+				color: $color-blue-markguide;
 			}
 		}
 
 		&.js-collapsed._category {
 			svg {
-				color: $color-grey70-atlas;
+				color: $color-grey70-markguide;
 			}
 		}
 
@@ -77,10 +77,10 @@
 
 	/* stylelint-disable */
 	// Recursive nesting level structure - refactor me later
-	> .atlas-nav__item {
-		> .atlas-nav__ln {
-			background: $atlas-aside-bg;
-			padding: $space-sm-atlas 0 $space-sm-atlas $space-md-atlas;
+	> .markguide-nav__item {
+		> .markguide-nav__ln {
+			background: $markguide-aside-bg;
+			padding: $space-sm-markguide 0 $space-sm-markguide $space-md-markguide;
 			position: sticky;
 			top: 0;
 			z-index: 1;
@@ -90,25 +90,25 @@
 				bottom: 0;
 				content: "";
 				height: 1px;
-				left: $space-md-atlas;
+				left: $space-md-markguide;
 				position: absolute;
-				right: $space-md-atlas;
+				right: $space-md-markguide;
 			}
 		}
 
-		.atlas-nav__item {
-			> .atlas-nav__ln {
-				padding-left: ($space-md-atlas * 2);
+		.markguide-nav__item {
+			> .markguide-nav__ln {
+				padding-left: ($space-md-markguide * 2);
 			}
 
-			.atlas-nav__item {
-				> .atlas-nav__ln {
-					padding-left: ($space-md-atlas * 3);
+			.markguide-nav__item {
+				> .markguide-nav__ln {
+					padding-left: ($space-md-markguide * 3);
 				}
 
-				.atlas-nav__item {
-					> .atlas-nav__ln {
-						padding-left: ($space-md-atlas * 4);
+				.markguide-nav__item {
+					> .markguide-nav__ln {
+						padding-left: ($space-md-markguide * 4);
 					}
 				}
 			}
@@ -116,19 +116,19 @@
 	}
 	/* stylelint-enable */
 
-	.atlas-nav__ln._category {
+	.markguide-nav__ln._category {
 		svg {
 		}
 	}
 
-	.atlas-nav__ln._category.js-collapsed {
+	.markguide-nav__ln._category.js-collapsed {
 		/* stylelint-disable-line */
 		svg {
 			/* stylelint-disable-line */
 			transform: rotate(0);
 		}
 
-		+ .atlas-nav__sub-nav {
+		+ .markguide-nav__sub-nav {
 			/* stylelint-disable-line */
 			display: none;
 		}
@@ -136,29 +136,29 @@
 }
 
 .js-searching {
-	.atlas-nav__ln {
-		color: lighten($atlas-color-text, 40%);
+	.markguide-nav__ln {
+		color: lighten($markguide-color-text, 40%);
 		cursor: default;
 		pointer-events: none;
 
 		&._category {
 			svg {
-				color: lighten($atlas-color-text, 40%);
+				color: lighten($markguide-color-text, 40%);
 			}
 		}
 	}
 }
 
 .js-found {
-	.atlas-nav__ln {
-		color: lighten($atlas-color-text, 40%);
+	.markguide-nav__ln {
+		color: lighten($markguide-color-text, 40%);
 		cursor: default;
 		display: none;
 		pointer-events: none;
 	}
 
-	.atlas-nav__ln.js-relevant {
-		color: $atlas-color-text;
+	.markguide-nav__ln.js-relevant {
+		color: $markguide-color-text;
 		cursor: pointer;
 		display: block;
 		pointer-events: initial;
@@ -169,12 +169,12 @@
 		}
 
 		&:active {
-			color: $color-blue-atlas;
+			color: $color-blue-markguide;
 		}
 	}
 
-	.atlas-nav__sub-nav,
-	.atlas-nav__ln._category {
+	.markguide-nav__sub-nav,
+	.markguide-nav__ln._category {
 		display: block !important; /* stylelint-disable-line */
 	}
 }

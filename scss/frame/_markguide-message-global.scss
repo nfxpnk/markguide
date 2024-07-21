@@ -1,20 +1,20 @@
-.atlas-message-global {
+.markguide-message-global {
 	clear: both;
-	font-family: $font-sans-atlas;
-	font-size: $atlas-scale-secondary;
+	font-family: $font-sans-markguide;
+	font-size: $markguide-scale-secondary;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	margin: 0 -#{$space-md-atlas};
-	padding: $space-sm-atlas;
+	margin: 0 -#{$space-md-markguide};
+	padding: $space-sm-markguide;
 	text-align: center;
 
 	&.error {
-		background: $color-red-atlas;
-		color: $color-white-atlas;
+		background: $color-red-markguide;
+		color: $color-white-markguide;
 	}
 
 	&._warn {
-		background-color: $color-orange-atlas;
-		color: $atlas-color-text;
+		background-color: $color-orange-markguide;
+		color: $markguide-color-text;
 	}
 }

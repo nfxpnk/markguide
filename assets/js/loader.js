@@ -1,6 +1,6 @@
 'use strict';
 (function () {
-    const loader = document.querySelector('.atlas-loader');
+    const loader = document.querySelector('.markguide-loader');
 
     if (!loader) {
         return;

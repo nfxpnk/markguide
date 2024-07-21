@@ -1,11 +1,11 @@
 @use "sass:math";
 
-.atlas-style-columns {
+.markguide-style-columns {
 	display: flex;
 	flex-wrap: wrap;
 
 	&__item {
-		margin-bottom: $space-md-atlas;
+		margin-bottom: $space-md-markguide;
 
 		&._bottom {
 			align-self: flex-end;
@@ -13,13 +13,13 @@
 	}
 
 	&._span6 {
-		.atlas-style-columns__item {
+		.markguide-style-columns__item {
 			width: math.div(100%, 6);
 		}
 	}
 
 	&._span3 {
-		.atlas-style-columns__item {
+		.markguide-style-columns__item {
 			min-width: math.div(100%, 3);
 			width: math.div(100%, 3);
 		}
@@ -28,7 +28,7 @@
 	&._box {
 		align-items: flex-end;
 
-		.atlas-style-columns__item {
+		.markguide-style-columns__item {
 			margin: 1px;
 		}
 	}

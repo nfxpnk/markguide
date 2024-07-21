@@ -1,4 +1,4 @@
-.atlas-aside-ctrl {
+.markguide-aside-ctrl {
 	background: rgba(0, 0, 0, 0);
 	border: none;
 	bottom: 0;
@@ -32,7 +32,7 @@
 
 	&:hover,
 	&:focus {
-		color: $color-blue-atlas;
+		color: $color-blue-markguide;
 	}
 
 	.js-aside-panel-hidden & {
@@ -41,7 +41,7 @@
 	}
 }
 
-.atlas-aside-resizer-overlay {
+.markguide-aside-resizer-overlay {
 	bottom: 0;
 	display: none;
 	left: 0;

@@ -4,8 +4,8 @@
     "cssSrc": "assets/css/",
     "projectCompiledFiles": "_example/projects-static-files/",
     "copyInternalAssets": true,
-    "excludedSassFiles": "_dev-atlas-settings|_dev-atlas-definitions",
-    "componentPrefixes": ["atlas-", "l-"],
+    "excludedSassFiles": "_dev-markguide-settings|_dev-markguide-definitions",
+    "componentPrefixes": ["markguide-", "l-"],
     "plugins": [
         "colors"
     ]

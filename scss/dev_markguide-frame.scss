@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
-@import "dev-atlas-definitions";
+@import "dev-markguide-definitions";
 
-@import "frame/l-atlas-container";
-@import "frame/atlas-search";
-@import "frame/atlas-aside-ctrl";
-@import "frame/atlas-header";
-@import "frame/atlas-aside";
-@import "frame/atlas-nav";
-@import "frame/atlas-footer-copyright";
-@import "frame/atlas-loader";
+@import "frame/l-markguide-container";
+@import "frame/markguide-search";
+@import "frame/markguide-aside-ctrl";
+@import "frame/markguide-header";
+@import "frame/markguide-aside";
+@import "frame/markguide-nav";
+@import "frame/markguide-footer-copyright";
+@import "frame/markguide-loader";

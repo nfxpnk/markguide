@@ -1,9 +1,9 @@
-.atlas-style-section {
+.markguide-style-section {
 	color: hsl(210, 0%, 35%);
 	margin: 20px 0 60px;
 	position: relative;
 }
-.atlas-style-section__title {
+.markguide-style-section__title {
 	font-family: "Arial", "FreeSans", sans-serif;
 	font-size: 25px;
 	font-weight: bold;
@@ -11,68 +11,68 @@
 	margin-bottom: 40px;
 }
 
-.atlas-style-columns {
+.markguide-style-columns {
 	display: flex;
 	flex-wrap: wrap;
 }
-.atlas-style-columns__item {
+.markguide-style-columns__item {
 	margin-bottom: 20px;
 }
-.atlas-style-columns__item._bottom {
+.markguide-style-columns__item._bottom {
 	align-self: flex-end;
 }
-.atlas-style-columns._span6 .atlas-style-columns__item {
+.markguide-style-columns._span6 .markguide-style-columns__item {
 	width: 16.6666666667%;
 }
-.atlas-style-columns._span3 .atlas-style-columns__item {
+.markguide-style-columns._span3 .markguide-style-columns__item {
 	min-width: 33.3333333333%;
 	width: 33.3333333333%;
 }
-.atlas-style-columns._box {
+.markguide-style-columns._box {
 	align-items: flex-end;
 }
-.atlas-style-columns._box .atlas-style-columns__item {
+.markguide-style-columns._box .markguide-style-columns__item {
 	margin: 1px;
 }
 
-.atlas-style-palette {
+.markguide-style-palette {
 	font-family: "Arial", "FreeSans", sans-serif;
 	text-align: center;
 }
-.atlas-style-palette__swatch {
+.markguide-style-palette__swatch {
 	width: 100%;
 }
-.atlas-style-palette__text {
+.markguide-style-palette__text {
 	font-size: 32px;
 }
-.atlas-style-palette__caption {
+.markguide-style-palette__caption {
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 	font-size: 11px;
 }
 
-.atlas-style-scale {
+.markguide-style-scale {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 0.5em;
 	width: 100%;
 }
-.atlas-style-scale__text {
+.markguide-style-scale__text {
 	line-height: 1.2;
 	overflow: hidden;
 	position: relative;
 }
-.atlas-style-scale__text-content {
+.markguide-style-scale__text-content {
 	overflow: hidden;
 	text-indent: 70px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	width: 100%;
 }
-.atlas-style-scale__text-content::after {
+.markguide-style-scale__text-content::after {
 	content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.";
 }
-.atlas-style-scale__name {
+.markguide-style-scale__name {
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 	font-size: 11px;
 	min-width: 200px;
@@ -80,10 +80,10 @@
 	width: 200px;
 }
 
-.atlas-style-font {
+.markguide-style-font {
 	margin-right: 20px;
 }
-.atlas-style-font__caption {
+.markguide-style-font__caption {
 	border-top: 1px solid hsl(0, 0%, 70%);
 	display: flex;
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
@@ -91,45 +91,45 @@
 	margin-top: 10px;
 	padding-top: 10px;
 }
-.atlas-style-font__name {
+.markguide-style-font__name {
 	margin-bottom: 10px;
 	margin-right: 10px;
 	white-space: nowrap;
 }
-.atlas-style-font__name::after {
+.markguide-style-font__name::after {
 	content: ":";
 }
-.atlas-style-font__example._logo {
+.markguide-style-font__example._logo {
 	font-size: 64px;
 	line-height: 1;
 }
-.atlas-style-font__example._logo::before {
+.markguide-style-font__example._logo::before {
 	content: "Aa";
 }
-.atlas-style-font__example._characters {
+.markguide-style-font__example._characters {
 	overflow: hidden;
 	white-space: nowrap;
 }
-.atlas-style-font__example._characters::before {
+.markguide-style-font__example._characters::before {
 	content: "a b c d e f g h i j k l m n o p q r s t u v w x y z";
 }
-.atlas-style-font__example._characters-capital {
+.markguide-style-font__example._characters-capital {
 	overflow: hidden;
 	white-space: nowrap;
 }
-.atlas-style-font__example._characters-capital::before {
+.markguide-style-font__example._characters-capital::before {
 	content: "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
 }
-.atlas-style-font__example._digits::before {
+.markguide-style-font__example._digits::before {
 	content: "1 2 3 4 5 6 7 8 9 0";
 }
 
-.atlas-style-layer {
+.markguide-style-layer {
 	padding-bottom: 100%;
 	position: relative;
 	width: 100%;
 }
-.atlas-style-layer__box {
+.markguide-style-layer__box {
 	align-items: center;
 	display: flex;
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
@@ -141,22 +141,22 @@
 	width: 100%;
 }
 
-.atlas-style-motion {
+.markguide-style-motion {
 	display: flex;
 }
-.atlas-style-motion__caption {
+.markguide-style-motion__caption {
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 	font-size: 11px;
 	line-height: 20px;
 	min-width: 200px;
 	width: 200px;
 }
-.atlas-style-motion__frame {
+.markguide-style-motion__frame {
 	height: 20px;
 	position: relative;
 	width: 100%;
 }
-.atlas-style-motion__ball {
+.markguide-style-motion__ball {
 	animation-play-state: paused !important; /* stylelint-disable-line */
 	background-color: #263740;
 	border-radius: 100%;
@@ -167,11 +167,11 @@
 	transform: translateY(50%);
 	width: 10px;
 }
-.atlas-style-motion:hover .atlas-style-motion__ball {
+.markguide-style-motion:hover .markguide-style-motion__ball {
 	animation-play-state: initial !important; /* stylelint-disable-line */
 }
 
-@keyframes atlas-transition-example {
+@keyframes markguide-transition-example {
 	0% {
 		left: 0;
 	}
@@ -179,42 +179,42 @@
 		left: 100%;
 	}
 }
-.atlas-style-space {
+.markguide-style-space {
 	margin: 40px 0;
 }
-.atlas-style-space__text {
+.markguide-style-space__text {
 	background-color: hsl(213, 66%, 79%);
 	color: hsl(213, 66%, 79%);
 }
-.atlas-style-space__name {
+.markguide-style-space__name {
 	left: 0;
 	position: absolute;
 	right: 0;
 	text-align: center;
 }
-.atlas-style-space__spacer {
+.markguide-style-space__spacer {
 	background-color: #e6effa;
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 	font-size: 11px;
 	position: relative;
 	text-align: center;
 }
-.atlas-style-space._vertical {
+.markguide-style-space._vertical {
 	display: flex;
 	overflow: hidden;
 	overflow-x: auto;
 }
-.atlas-style-space._vertical .atlas-style-space__item {
+.markguide-style-space._vertical .markguide-style-space__item {
 	display: flex;
 	text-align: justify;
 }
-.atlas-style-space._vertical .atlas-style-space__name {
+.markguide-style-space._vertical .markguide-style-space__name {
 	padding-left: 10px;
 	transform: rotate(90deg);
 	white-space: nowrap;
 }
 
-.atlas-style-space-ruler {
+.markguide-style-space-ruler {
 	border-style: solid solid solid none;
 	border-width: 1px;
 	bottom: 0;
@@ -229,12 +229,12 @@
 	top: 0;
 	width: 0;
 }
-.atlas-style-space-ruler span {
+.markguide-style-space-ruler span {
 	display: block;
 	position: absolute;
 	right: 13px;
 }
-.atlas-style-space-ruler._bottom {
+.markguide-style-space-ruler._bottom {
 	border-style: none solid solid;
 	height: 5px;
 	left: 0;
@@ -244,32 +244,32 @@
 	top: initial;
 	width: 100%;
 }
-.atlas-style-space-ruler._bottom span {
+.markguide-style-space-ruler._bottom span {
 	display: block;
 	position: absolute;
 	right: 0;
 	top: 13px;
 }
-.atlas-style-space-ruler._left {
+.markguide-style-space-ruler._left {
 	border-style: solid none solid solid;
 	left: 60px;
 	right: initial;
 }
-.atlas-style-space-ruler._left span {
+.markguide-style-space-ruler._left span {
 	display: block;
 	position: absolute;
 	right: 15px;
 }
-.atlas-style-space-ruler._middle {
+.markguide-style-space-ruler._middle {
 	right: 50%;
 }
 
-.atlas-style-box {
+.markguide-style-box {
 	background-color: #e6effa;
 	box-sizing: border-box;
 	position: relative;
 }
-.atlas-style-box__inner {
+.markguide-style-box__inner {
 	align-items: center;
 	background-color: hsl(0, 0%, 100%);
 	box-sizing: border-box;
@@ -281,18 +281,18 @@
 	width: 100px;
 }
 
-.atlas-style-breaks {
+.markguide-style-breaks {
 	display: flex;
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 	font-size: 11px;
 	margin-bottom: 40px;
 }
-.atlas-style-breaks__item {
+.markguide-style-breaks__item {
 	align-items: center;
 	counter-increment: breaks;
 	display: flex;
 }
-.atlas-style-breaks__item::before {
+.markguide-style-breaks__item::before {
 	color: #263740;
 	content: counter(breaks);
 	display: inline-block;
@@ -300,25 +300,25 @@
 	font-size: 35px;
 	padding-right: 10px;
 }
-.atlas-style-breaks__item-inner {
+.markguide-style-breaks__item-inner {
 	padding-right: 40px;
 }
-.atlas-style-breaks-graph .atlas-tick-breaks line {
+.markguide-style-breaks-graph .markguide-tick-breaks line {
 	stroke: deeppink;
 	stroke-width: 2px;
 }
-.atlas-style-breaks-graph .atlas-tick-breaks text {
+.markguide-style-breaks-graph .markguide-tick-breaks text {
 	fill: deeppink;
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 	font-size: 11px;
 }
-.atlas-style-breaks-graph .atlas-tick-lines line {
+.markguide-style-breaks-graph .markguide-tick-lines line {
 	stroke: hsl(0, 0%, 80%);
 }
-.atlas-style-breaks-graph .atlas-tick-hints line {
+.markguide-style-breaks-graph .markguide-tick-hints line {
 	stroke: hsl(0, 0%, 80%);
 }
-.atlas-style-breaks-graph .atlas-tick-hints text {
+.markguide-style-breaks-graph .markguide-tick-hints text {
 	fill: #263740;
 	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
 }

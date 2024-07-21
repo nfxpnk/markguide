@@ -2,10 +2,10 @@
 
 window.onload = function() {
     (function() {
-        const asidePanel = document.getElementById('js-atlas-aside');
-        const searchField = document.getElementById('js-atlas-search');
-        const searchClearBtn = document.getElementById('js-atlas-search-clear');
-        const links = document.querySelectorAll('.js-atlas-nav-ln');
+        const asidePanel = document.getElementById('js-markguide-aside');
+        const searchField = document.getElementById('js-markguide-search');
+        const searchClearBtn = document.getElementById('js-markguide-search-clear');
+        const links = document.querySelectorAll('.js-markguide-nav-ln');
         let timeoutId = null;
         const waitForSearch = 'js-searching';
         const hasResults = 'js-found';

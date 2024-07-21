@@ -1,18 +1,18 @@
-.atlas-copier {
+.markguide-copier {
 	cursor: pointer;
 	position: relative;
 
 	&__message {
 		background-color: rgba(black, 0.5);
 		border-radius: 5px;
-		color: $color-white-atlas;
-		font-family: $font-mono-atlas;
-		font-size: $atlas-scale-secondary;
+		color: $color-white-markguide;
+		font-family: $font-mono-markguide;
+		font-size: $markguide-scale-secondary;
 		font-style: normal;
 		left: 50%;
 		line-height: 10px;
 		min-width: 20px;
-		padding: $space-md-atlas;
+		padding: $space-md-markguide;
 		pointer-events: none;
 		position: absolute;
 		text-align: center;
@@ -38,6 +38,6 @@
 	}
 
 	&:hover &__text {
-		color: $color-blue-atlas;
+		color: $color-blue-markguide;
 	}
 }

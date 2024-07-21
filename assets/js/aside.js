@@ -1,11 +1,11 @@
 'use strict';
 
 (function () {
-    const container = document.getElementById('js-atlas-container');
-    const aside = document.getElementById('js-atlas-aside');
-    const main = document.getElementById('js-atlas-main');
-    const resizer = document.getElementById('js-atlas-aside-resizer');
-    const resizerOverlay = document.getElementById('js-atlas-aside-resizer-overlay');
+    const container = document.getElementById('js-markguide-container');
+    const aside = document.getElementById('js-markguide-aside');
+    const main = document.getElementById('js-markguide-main');
+    const resizer = document.getElementById('js-markguide-aside-resizer');
+    const resizerOverlay = document.getElementById('js-markguide-aside-resizer-overlay');
 
     function resizeTo(width) {
         aside.style.width = width + 'px';

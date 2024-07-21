@@ -1,5 +1,5 @@
-.atlas-style-palette {
-	font-family: $font-sans-atlas;
+.markguide-style-palette {
+	font-family: $font-sans-markguide;
 	text-align: center;
 
 	&__swatch {
@@ -11,7 +11,7 @@
 	}
 
 	&__caption {
-		font-family: $font-mono-atlas;
-		font-size: $atlas-scale-mono-small;
+		font-family: $font-mono-markguide;
+		font-size: $markguide-scale-mono-small;
 	}
 }
