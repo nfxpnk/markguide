@@ -7,22 +7,18 @@ const mustache = require('mustache');
 function writeNavigation(markguideConfig, projectTree) {
     log('Writing navigation file');
 
-    const navigationPartial = fs.readFileSync(markguideConfig.partials['navigation'], 'utf8');
+    const navigationPartialPath = markguideConfig.partials['navigation'];
+    const navigationJsPartialPath = markguideConfig.partials['navigation-javascript'];
+    const navigationOutputPath = path.join(markguideConfig.guideDest, 'nav.js');
 
-    const jsHtmlContent = mustache.render(
-        navigationPartial,
-        projectTree,
-        {navigation: navigationPartial}
-    );
+    const navigationPartial = fs.readFileSync(navigationPartialPath, 'utf8');
+    const navigationJsPartial = fs.readFileSync(navigationJsPartialPath, 'utf8');
 
-    const jsContent = mustache.render(
-        fs.readFileSync(markguideConfig.partials['navigation-javascript'], 'utf8'),
-        {navigationHtml: jsHtmlContent}
-    );
-
+    const navigationHtmlContent = mustache.render(navigationPartial, projectTree, { navigation: navigationPartial });
+    const jsContent = mustache.render(navigationJsPartial, { navigationHtml: navigationHtmlContent });
 
     fs.writeFileSync(
-        markguideConfig.guideDest + 'nav.js',
+        navigationOutputPath,
         jsContent,
         error => {
             if (error) {
