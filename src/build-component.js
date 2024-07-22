@@ -51,11 +51,11 @@ module.exports = function(markguideConfig, projectTree) {
      * Walk though documented files in project and generate particular page (if path specified)
      * or full docset if no path provided.
      * @public
-     * @param {string} [url] - path to file. If no string provided or function is passed this build all components
+     * @param {string} [filePath] - path to file. If no string provided or function is passed this build all components
      * @return {Promise<string>}
      */
-    function buildComponent(url) {
-        const source = normalizePath(url);
+    function buildComponent(filePath) {
+        const filePath = normalizePath(filePath);
         let docSet = [];
 
         function traverseDocumentedTree(components, sourcePath) {
@@ -89,7 +89,7 @@ module.exports = function(markguideConfig, projectTree) {
             });
         }
 
-        traverseDocumentedTree(projectTree.subPages, source);
+        traverseDocumentedTree(projectTree.subPages, filePath);
 
         return Promise.all(docSet.map(writePage));
     }
