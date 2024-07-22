@@ -6,12 +6,12 @@ const mustache = require('mustache');
 
 let cachedContent = {};
 
-const isContentChanged = (url, content) => {
-    if (url === undefined) {
+const isContentChanged = (filePath, content) => {
+    if (filePath === undefined) {
         return true;
     }
-    if (content !== cachedContent[url]) {
-        cachedContent[url] = content;
+    if (content !== cachedContent[filePath]) {
+        cachedContent[filePath] = content;
         return true;
     } else {
         return false;
