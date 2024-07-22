@@ -30,6 +30,7 @@ function isDocumented(filePath) {
 /**
  * Traverse array of objects and removes those objects
  * which are categories and doesn't have any sub-pages
+ *
  * @param {Array} collection - array of objects
  */
 function removeEmptyCategories(collection) {
@@ -82,6 +83,7 @@ function categoryConfig(id, title) {
  * @property {string} [template] - template type that used for html
  * @property {array} subPages - list of contained resources
  */
+
 /**
  * Subtract documented components tree from project tree.
  * This will be used as data for pages generation and as high availability project map to prevent unnecessary direct
