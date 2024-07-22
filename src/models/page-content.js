@@ -51,10 +51,8 @@ const renderer = {
 
     hr() {
         return mustache.render(elements.hr);
-    },
+    }
 }
-
-
 
 /**
  * @typedef {Object} commentContent
