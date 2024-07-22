@@ -55,18 +55,18 @@ module.exports = function(markguideConfig, projectTree) {
      * @return {Promise<string>}
      */
     function buildComponent(filePath) {
-        const filePath = normalizePath(filePath);
+        filePath = normalizePath(filePath);
         let docSet = [];
 
-        function traverseDocumentedTree(components, sourcePath) {
+        function traverseDocumentedTree(components, filePath) {
             components.forEach(component => {
-                const isMakeAllComponents = sourcePath === undefined;
-                const isFileInConfig = isMakeAllComponents ? true : sourcePath === component.src;
+                const isMakeAllComponents = filePath === undefined;
+                const isFileInConfig = isMakeAllComponents ? true : filePath === component.src;
                 const isFile = component.target;
 
                 if (isFile && isFileInConfig) {
                     const content = prepareContent(component);
-                    if (isContentChanged(sourcePath, content.documentation)) {
+                    if (isContentChanged(filePath, content.documentation)) {
                         docSet.push({
                             id: component.id,
                             title: component.title,
@@ -84,7 +84,7 @@ module.exports = function(markguideConfig, projectTree) {
                 }
 
                 if (component.subPages.length) {
-                    traverseDocumentedTree(component.subPages, sourcePath);
+                    traverseDocumentedTree(component.subPages, filePath);
                 }
             });
         }
