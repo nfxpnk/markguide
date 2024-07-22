@@ -28,8 +28,8 @@ function withConfig(configPath) {
     console.log(config);
 
     const tree = projectTree(config);
-    const writeNavigation = require('./utils/write-navigation.js');
 
+    const writeNavigation = require('./utils/write-navigation.js');
     writeNavigation(config, tree);
 
     const buildComponent = require('./build-component.js')(config, tree).buildComponent;

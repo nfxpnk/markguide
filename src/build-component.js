@@ -5,6 +5,7 @@ const { fs, path, log, c } = require('./utils/common-utils.js');
 const mustache = require('mustache');
 
 let cachedContent = {};
+
 const isContentChanged = (url, content) => {
     if (url === undefined) {
         return true;
@@ -26,9 +27,10 @@ module.exports = function(markguideConfig, projectTree) {
 
     // Prepare guide page content model depending on component type
     function prepareContent(component) {
+        let page;
+
         let content;
         let tableOfContent;
-        let page;
         let path;
 
         if (component.src !== '') { // could be stat pages or custom defined file
