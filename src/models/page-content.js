@@ -49,8 +49,8 @@ const renderer = {
         return mustache.render(elements.table, {header: header, body: body});
     },
 
-    hr() { /// ???????????????????
-        return elements.hr;
+    hr() {
+        return mustache.render(elements.hr);
     },
 }
 
