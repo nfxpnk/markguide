@@ -10,6 +10,7 @@ const isContentChanged = (filePath, content) => {
     if (filePath === undefined) {
         return true;
     }
+
     if (content !== cachedContent[filePath]) {
         cachedContent[filePath] = content;
         return true;
@@ -43,13 +44,11 @@ module.exports = function(markguideConfig, projectTree) {
                 const isFile = component.target;
 
                 if (isFile && isFileInConfig) {
-                    let page;
-
                     let pageContent;
                     let tableOfContent;
 
                     if (component.src !== '') {
-                        page = renderedPageContent(component.src, {'title': component.title});
+                        const page = renderedPageContent(component.src, {'title': component.title});
                         pageContent = page.content;
                         tableOfContent = page.toc;
                     }
