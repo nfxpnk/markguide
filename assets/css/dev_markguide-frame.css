@@ -146,12 +146,29 @@
 }
 
 .markguide-header__logo {
-	padding-bottom: 10px;
+	padding: 10px 0 20px;
 	text-align: center;
 }
 .markguide-header__logo svg {
 	height: 30px;
 }
+.markguide-logo {
+	margin: 0 auto;
+	background-color: var(--color, #000);
+	background-size: 400% 400%;
+	-webkit-mask-image: var(--svg-image);
+	        mask-image: var(--svg-image);
+	-webkit-mask-position: 50%;
+	        mask-position: 50%;
+	-webkit-mask-repeat: no-repeat;
+	        mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	        mask-size: contain;
+	min-height: var(--height);
+	font-size: 0;
+	text-indent: -1000px;
+}
+
 .markguide-aside {
 	all: initial;
 	background-color: hsl(0, 0%, 95%);
@@ -287,11 +304,15 @@
 .markguide-nav > .markguide-nav__item .markguide-nav__item .markguide-nav__item .markguide-nav__item > .markguide-nav__ln {
 	padding-left: 80px;
 }
-.markguide-nav .markguide-nav__ln._category.js-collapsed { /* stylelint-disable-line */ }
-.markguide-nav .markguide-nav__ln._category.js-collapsed svg { /* stylelint-disable-line */
+.markguide-nav .markguide-nav__ln._category.js-collapsed {
+	/* stylelint-disable-line */
+}
+.markguide-nav .markguide-nav__ln._category.js-collapsed svg {
+	/* stylelint-disable-line */
 	transform: rotate(0);
 }
-.markguide-nav .markguide-nav__ln._category.js-collapsed + .markguide-nav__sub-nav { /* stylelint-disable-line */
+.markguide-nav .markguide-nav__ln._category.js-collapsed + .markguide-nav__sub-nav {
+	/* stylelint-disable-line */
 	display: none;
 }
 

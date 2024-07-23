@@ -1,6 +1,6 @@
 .markguide-header {
 	&__logo {
-		padding-bottom: $space-sm-markguide;
+		padding: $space-sm-markguide 0 $space-sm-markguide*2;
 		text-align: center;
 
 		svg {

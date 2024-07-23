@@ -17,7 +17,7 @@ if (fs.existsSync(currentConfig) === false) {
 
 log('Current config file is: ' + c.cyan(currentConfig));
 
-const markguide = require('./app/markguide.js').withConfig(currentConfig);
+const markguide = require('./src/markguide.js').withConfig(currentConfig);
 const config = require(currentConfig);
 
 // Styles source

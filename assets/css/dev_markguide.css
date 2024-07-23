@@ -221,7 +221,8 @@ body {
 	margin-bottom: 40px;
 }
 
-.markguide-title { /* stylelint-disable-line */
+.markguide-title {
+	/* stylelint-disable-line */
 	align-items: flex-end;
 	display: flex;
 	justify-content: space-between;
@@ -285,7 +286,8 @@ body {
 	position: relative;
 }
 
-.markguide-title_2 { /* stylelint-disable-line */
+.markguide-title_2 {
+	/* stylelint-disable-line */
 	background: rgba(255, 255, 255, 0.9);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	margin: 0 -20px 40px;

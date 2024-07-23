@@ -141,44 +141,6 @@
 	width: 100%;
 }
 
-.markguide-style-motion {
-	display: flex;
-}
-.markguide-style-motion__caption {
-	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
-	font-size: 11px;
-	line-height: 20px;
-	min-width: 200px;
-	width: 200px;
-}
-.markguide-style-motion__frame {
-	height: 20px;
-	position: relative;
-	width: 100%;
-}
-.markguide-style-motion__ball {
-	animation-play-state: paused !important; /* stylelint-disable-line */
-	background-color: #263740;
-	border-radius: 100%;
-	height: 10px;
-	left: 0;
-	position: absolute;
-	top: 0;
-	transform: translateY(50%);
-	width: 10px;
-}
-.markguide-style-motion:hover .markguide-style-motion__ball {
-	animation-play-state: initial !important; /* stylelint-disable-line */
-}
-
-@keyframes markguide-transition-example {
-	0% {
-		left: 0;
-	}
-	100% {
-		left: 100%;
-	}
-}
 .markguide-style-space {
 	margin: 40px 0;
 }
