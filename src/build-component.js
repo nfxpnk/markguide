@@ -25,28 +25,6 @@ module.exports = function(markguideConfig, projectTree) {
 
     const writePage = require('./utils/write-page.js')(markguideConfig, projectTree).writePage;
 
-    // Prepare guide page content model depending on component type
-    function prepareContent(component) {
-        let page;
-
-        let content;
-        let tableOfContent;
-        let path;
-
-        if (component.src !== '') { // could be stat pages or custom defined file
-            page = renderedPageContent(component.src, {'title': component.title});
-            content = page.content;
-            tableOfContent = page.toc;
-            path = component.src.split('\\scss\\')[1];
-        }
-
-        return {
-            documentation: content,
-            toc: tableOfContent,
-            path: path
-        };
-    }
-
     /**
      * Walk though documented files in project and generate particular page (if path specified)
      * or full docset if no path provided.
@@ -65,7 +43,22 @@ module.exports = function(markguideConfig, projectTree) {
                 const isFile = component.target;
 
                 if (isFile && isFileInConfig) {
-                    const content = prepareContent(component);
+                    let page;
+
+                    let pageContent;
+                    let tableOfContent;
+
+                    if (component.src !== '') {
+                        page = renderedPageContent(component.src, {'title': component.title});
+                        pageContent = page.content;
+                        tableOfContent = page.toc;
+                    }
+
+                    const content = {
+                        documentation: pageContent,
+                        toc: tableOfContent
+                    };
+
                     if (isContentChanged(filePath, content.documentation)) {
                         docSet.push({
                             id: component.id,
@@ -74,6 +67,7 @@ module.exports = function(markguideConfig, projectTree) {
                             //template: component.template,
                             type: component.type,
                             icon: component.icon,
+                            src: component.src,
                             content: content
                         });
                     }
@@ -90,6 +84,8 @@ module.exports = function(markguideConfig, projectTree) {
         }
 
         traverseDocumentedTree(projectTree.subPages, filePath);
+
+        //docSet.forEach(ds => {console.log(ds);});
 
         return Promise.all(docSet.map(writePage));
     }
