@@ -366,8 +366,9 @@ body {
 }
 
 .markguide-toc {
+	font-family: "Arial", "FreeSans", sans-serif;
+	font-size: 14px;
 	padding-top: 30px;
-	font-size: 13px;
 }
 .markguide-toc__info {
 	border: 1px solid hsl(0, 0%, 80%);
@@ -387,6 +388,7 @@ body {
 }
 .markguide-toc__item {
 	display: block;
+	padding: 3px 0;
 }
 .markguide-toc__ln {
 	color: #263740;
