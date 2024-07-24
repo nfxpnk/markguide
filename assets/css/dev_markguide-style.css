@@ -172,7 +172,8 @@
 }
 .markguide-style-space._vertical .markguide-style-space__name {
 	padding-left: 10px;
-	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	        transform: rotate(90deg);
 	white-space: nowrap;
 }
 

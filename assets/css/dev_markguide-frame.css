@@ -180,7 +180,8 @@
 	-webkit-font-smoothing: antialiased;
 	height: 100%;
 	overflow: hidden;
-	transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
 	z-index: 1;
 }
 .markguide-aside__header {
@@ -189,6 +190,7 @@
 .markguide-aside__content {
 	overflow-y: auto;
 	-webkit-overscroll-behavior: contain;
+	-ms-scroll-chaining: none;
 	overscroll-behavior: contain; /* stylelint-disable-line */
 }
 .markguide-aside__footer {
@@ -246,6 +248,7 @@
 	text-overflow: ellipsis;
 	transition: opacity ease 0.2s;
 	-webkit-user-select: none;
+	    -ms-user-select: none;
 	        user-select: none;
 	white-space: nowrap;
 }
@@ -309,7 +312,8 @@
 }
 .markguide-nav .markguide-nav__ln._category.js-collapsed svg {
 	/* stylelint-disable-line */
-	transform: rotate(0);
+	-webkit-transform: rotate(0);
+	        transform: rotate(0);
 }
 .markguide-nav .markguide-nav__ln._category.js-collapsed + .markguide-nav__sub-nav {
 	/* stylelint-disable-line */

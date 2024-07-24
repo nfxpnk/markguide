@@ -82,9 +82,7 @@ gulp.task('server:reload:guide', () =>
  */
 const sassCompile = config => {
     const postProcessors = [
-        autoprefixer({
-            flexbox: 'no-2009'
-        })
+        autoprefixer({overrideBrowserslist: ['last 1 version']})
     ];
 
     log(`[SCSS COMPILE:] ${c.magenta(config.source)}`);
@@ -164,7 +162,7 @@ gulp.task('markguide:watch', done => {
  * Complex tasks
  */
 
-gulp.task('dev', gulp.parallel('server:up', 'styles:compile:all2', 'scss:watch'));
+gulp.task('dev', gulp.parallel('server:up', 'compile:styles:assets:markguide', 'scss:watch'));
 
 
 // change to markguide:compile for regular projects, for our cases we compile all markguide in dev workflow
