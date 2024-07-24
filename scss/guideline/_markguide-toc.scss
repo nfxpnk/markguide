@@ -1,6 +1,7 @@
 .markguide-toc {
+	font-family: $font-sans-markguide;
+	font-size: 14px;
 	padding-top: 30px;
-	font-size: 13px;
 
 	&__info {
 		border: 1px solid $color-grey80-markguide;
@@ -23,6 +24,7 @@
 
 	&__item {
 		display: block;
+		padding: 3px 0;
 	}
 
 	&__ln {
