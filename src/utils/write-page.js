@@ -14,6 +14,7 @@ const prepareView = function(config, projectInfo, subPages) {
     this.content = config.content;
     this.type = config.type;
     this.icon = config.icon; // Icon in page header
+    this.src = config.src;
     this.subPages = subPages.subPages; // Aside navigation pages tree
 };
 
