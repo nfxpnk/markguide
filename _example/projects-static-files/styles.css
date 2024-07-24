@@ -1,11 +1,9 @@
 /*md
 
-# g-link
+# g-example
 
 This component is designed to provide same styles of text-type links (hyperlinks)
 across different components.
-
-For UI type links see `g-link_ui`.
 
 ## Usage
 
@@ -25,9 +23,103 @@ For UI type links see `g-link_ui`.
 */
 /*md
 
-# Test page
+# Example page
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:focus - Focus
+-->
+<!--
+Parent Styles:
+background: black; color: white;
+-->
+<button type="submit" class="b-button [modifier class]">
+    Primary
+</button>
+```
+
+## No styles
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:focus - Focus
+-->
+<button type="submit" class="b-button [modifier class]">
+    Primary
+</button>
+```
+
+## Include
+
+```html_example
+<!--
+Include: _b-example.html
+-->
+```
+
+## Include PUG
+
+```html_example
+<!--
+Include: _b-example.pug
+-->
+```
+
+## Include modifier
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:focus - Focus
+-->
+<!--
+Include: _b-example.html
+-->
+```
 
 */
-.code {
-  background: white;
+.b-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.b-button.m-width_full {
+  width: 100%;
+}
+.b-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+.b-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+.b-button:active {
+  background-color: #004085;
+  border-color: #004085;
+}
+.b-button:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
 }
