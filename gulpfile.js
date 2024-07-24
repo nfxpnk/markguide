@@ -10,25 +10,31 @@ const sourcemaps = require('gulp-sourcemaps');
 const log = require('fancy-log');
 const c = require('ansi-colors');
 
-let currentConfig = './.markguiderc.current.json';
-if (fs.existsSync(currentConfig) === false) {
-    currentConfig = './.markguiderc.json';
+// Load configurations
+let currentConfigPath = './.markguiderc.current.json';
+if (fs.existsSync(currentConfigPath) === false) {
+    currentConfigPath = './.markguiderc.json';
 }
 
-log('Current config file is: ' + c.cyan(currentConfig));
+log(`Current config file is: ${c.cyan(currentConfigPath)}`);
 
-const markguide = require('./src/markguide.js').withConfig(currentConfig);
-const config = require(currentConfig);
+const markguide = require('./src/markguide.js').withConfig(currentConfigPath);
+const config = require(currentConfigPath);
 
 // Styles source
 config.sassSrc = './scss/';
 config.sassDest = './assets/css/';
 config.alsoSearchIn = '';
 
-log('Style Guide scss folder: ' + c.cyan(config.sassSrc));
-log('Style Guide assets compiled css folder: ' + c.cyan(config.sassDest));
+log(`Style Guide scss folder: ${c.cyan(config.sassSrc)}`);
+log(`Style Guide assets compiled css folder: ${c.cyan(config.sassDest)}`);
 
 let changedFilePath = '';
+
+const notifyChange = path => {
+    changedFilePath = path;
+    log(`[CHANGED:] ${c.green(path)}`);
+};
 
 /*
  * Local server for static assets with live reload
@@ -51,7 +57,7 @@ gulp.task('server:up', done => {
             start: true,
             port: 9000
         },
-        middleware() {
+        middleware: function(connect, opt) {
             return [cors];
         },
         https: false // disable it due to https://github.com/intesso/connect-livereload/issues/79
@@ -62,17 +68,13 @@ gulp.task('server:up', done => {
 
 // Reload the page right after 'markguide:compile:incremental' task is returned
 gulp.task('server:reload:guide', () =>
-    gulp.src(config.guideDest + '*.html') // full page reload
+    gulp.src(`${config.guideDest}/*.html`) // full page reload
         .pipe(connect.reload()));
 
 /*
  * Sass compilation
  */
 
-const notifyChange = path => {
-    changedFilePath = path;
-    log('[CHANGED:] ' + c.green(path));
-};
 
 /**
  * Configurable Sass compilation
@@ -85,8 +87,8 @@ const sassCompile = config => {
         })
     ];
 
-    log('[SCSS COMPILE:] ' + c.magenta(config.source));
-    log('[SCSS COMPILE OUTPUT:] ' + c.magenta(config.dest));
+    log(`[SCSS COMPILE:] ${c.magenta(config.source)}`);
+    log(`[SCSS COMPILE OUTPUT:] ${c.magenta(config.dest)}`);
 
     return gulp.src(config.source, {allowEmpty: true})
         // .pipe(sourcemaps.init({
@@ -114,14 +116,14 @@ const sassCompile = config => {
 };
 
 // Compile assets scss
-gulp.task('styles:compile:all', () => sassCompile({
+gulp.task('compile:styles:assets', () => sassCompile({
     source: config.sassSrc + '*.scss',
     dest: config.sassDest,
     alsoSearchIn: [config.alsoSearchIn]
 }));
 
-// Compile assets scss into guide destination
-gulp.task('styles:compile:all2', () => sassCompile({
+// Compile assets scss into markguide destination
+gulp.task('compile:styles:assets:markguide', () => sassCompile({
     source: config.sassSrc + '*.scss',
     dest: config.guideDest + 'assets/css/',
     alsoSearchIn: [config.alsoSearchIn]
@@ -131,7 +133,7 @@ gulp.task('styles:compile:all2', () => sassCompile({
 gulp.task('scss:watch', done => {
     gulp.watch(
         config.sassSrc + '**/*.scss',
-        gulp.series('styles:compile:all2')
+        gulp.series('compile:styles:assets:markguide')
     ).on('change', notifyChange);
     done();
 });
@@ -167,4 +169,4 @@ gulp.task('dev', gulp.parallel('server:up', 'styles:compile:all2', 'scss:watch')
 
 // change to markguide:compile for regular projects, for our cases we compile all markguide in dev workflow
 gulp.task('dev:markguide', gulp.parallel('server:up', 'markguide:compile:all', 'markguide:watch'));
-gulp.task('build', gulp.parallel('styles:compile:all', 'styles:compile:all2', 'markguide:compile:all'));
+gulp.task('build', gulp.parallel('compile:styles:assets', 'compile:styles:assets:markguide', 'markguide:compile:all'));
