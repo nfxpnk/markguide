@@ -19,8 +19,7 @@ class iconsPlugin extends basePlugin {
             title: 'Icons',
             target: '/icons.html',
             type: 'guide',
-            icon: 'hash-16',
-            options: { filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss' }
+            icon: 'hash-16'
         };
     }
 

@@ -19,8 +19,7 @@ class colorsPlugin extends basePlugin {
             title: 'Colors',
             target: '/colors.html',
             type: 'guide',
-            icon: 'paintbrush-16',
-            options: { filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss' }
+            icon: 'paintbrush-16'
         };
     }
 
