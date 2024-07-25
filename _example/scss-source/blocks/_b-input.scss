@@ -1,0 +1,51 @@
+/*md
+
+# Example input
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:active - Active
+:focus - Focus
+-->
+<input type="text" class="b-input [modifier class]" placeholder="Text"/>
+```
+*/
+
+.b-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    // Full width modifier
+    &.m-width_full {
+        width: 100%;
+    }
+
+    // States
+    &:hover {
+        border-color: #007bff;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+
+    &:disabled {
+        background-color: #e9ecef;
+        border-color: #ccc;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
+}
