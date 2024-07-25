@@ -488,17 +488,7 @@ Other steps should be simple:
     "guideSrc": "path/to/components/directory/",
     "guideDest": "path/where/markguide/will/be/placed/",
     "cssSrc": "path/to/css/",
-    "scssAdditionalImportsArray": ["path/to/additional/sass/files"],
-    "projectConstants": {
-        "constantsSrc": ["path/to/project-settings.scss", "path/to/other-file.scss"],
-        "colorPrefix": "color",
-        "fontPrefix": "font",
-        "scalePrefix": "scale",
-        "spacePrefix": "space",
-        "motionPrefix": "motion",
-        "depthPrefix": "depth",
-        "breakpointPrefix": "break"
-    }
+    "scssAdditionalImportsArray": ["path/to/additional/sass/files"]
 }
 ```
 
