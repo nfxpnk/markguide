@@ -13,7 +13,18 @@ class colorsPlugin extends basePlugin {
         // Optional initialization logic
     }
 
-    run() {
+    getConfiguration() {
+        return {
+            id: 'colors',
+            title: 'Colors',
+            target: '/colors.html',
+            type: 'guide',
+            icon: 'paintbrush-16',
+            options: { filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss' }
+        };
+    }
+
+    getContent() {
         const colors = this.readColorsFromFile(this.options.filePath);
 
         return this.generateColorsPage(colors);

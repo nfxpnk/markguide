@@ -4,7 +4,7 @@ const { fs, path, log, c } = require('../../utils/common-utils.js');
 const mustache = require('mustache');
 const basePlugin = require('../../models/base-plugin.js');
 
-class colorsPlugin extends basePlugin {
+class iconsPlugin extends basePlugin {
     constructor(options) {
         super(options);
     }
@@ -13,33 +13,20 @@ class colorsPlugin extends basePlugin {
         // Optional initialization logic
     }
 
-    run() {
-        const colors = this.readColorsFromFile(this.options.filePath);
-
-        return this.generateColorsPage(colors);
+    getConfiguration() {
+        return {
+            id: 'icons',
+            title: 'Icons',
+            target: '/icons.html',
+            type: 'guide',
+            icon: 'hash-16',
+            options: { filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss' }
+        };
     }
 
-    readColorsFromFile(filePath) {
-        const content = fs.readFileSync(filePath, 'utf-8');
-        const colorRegex = /\$([\w-]+):\s*(#[0-9a-fA-F]{3,6}|rgba?\(.+?\));/g;
-        let match;
-        const colors = [];
-
-        while ((match = colorRegex.exec(content)) !== null) {
-            colors.push({ name: match[1], value: match[2] });
-        }
-
-        return colors;
-    }
-
-    generateColorsPage(colors) {
-        const htmlContent = colors.map(color => `
-      <div style="background-color: ${color.value}; padding: 10px;">
-        ${color.name}: ${color.value}
-      </div>
-    `).join('');
-        return htmlContent;
+    getContent() {
+        return 'ICONS CONTENT';
     }
 }
 
-module.exports = colorsPlugin;
+module.exports = iconsPlugin;

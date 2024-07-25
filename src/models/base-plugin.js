@@ -1,15 +1,18 @@
 'use strict';
 
-class BasePlugin {
+class basePlugin {
     constructor(options) {
-        if (new.target === BasePlugin) {
-            throw new TypeError(`Cannot construct BasePlugin instances directly`);
+        if (new.target === basePlugin) {
+            throw new TypeError(`Cannot construct basePlugin instances directly`);
         }
-        if (typeof this.init !== 'function') {
+        if (this.init === basePlugin.prototype.init) {
             throw new TypeError(`Must override method 'init'`);
         }
-        if (typeof this.run !== 'function') {
-            throw new TypeError(`Must override method 'run'`);
+        if (this.getConfiguration === basePlugin.prototype.getConfiguration) {
+            throw new TypeError(`Must override method 'getConfiguration'`);
+        }
+        if (this.getContent === basePlugin.prototype.getContent) {
+            throw new TypeError(`Must override method 'getContent'`);
         }
         this.options = options;
     }
@@ -18,9 +21,13 @@ class BasePlugin {
         throw new Error(`init() must be implemented`);
     }
 
-    run() {
-        throw new Error(`run() must be implemented`);
+    getConfiguration() {
+        throw new Error(`getConfiguration() must be implemented`);
+    }
+
+    getContent() {
+        throw new Error(`getContent() must be implemented`);
     }
 }
 
-module.exports = BasePlugin;
+module.exports = basePlugin;

@@ -101,28 +101,29 @@ function initPlugins(baseMandatory) {
     const plugins = [];
 
     // get this from configuration
-    const enabledPlugins = [{
-            id: 'colors',
-            title: 'Colors',
-            target: '/colors.html',
-            type: 'guide',
-            icon: 'paintbrush-16',
-            path: '../plugins/colors/index.js',
+    const enabledPlugins = [
+        {
+            name: 'colors',
+            options: { filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss' }
+        },
+        {
+            name: 'icons',
             options: { filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss' }
         }
     ];
 
-
-    enabledPlugins.forEach(config => {
-        const pluginClass = require(config.path);
-        const pluginInstance = new pluginClass(config.options);
+    enabledPlugins.forEach(plugin => {
+        const pluginClass = require(path.join('../plugins', plugin.name, 'index.js'));
+        const pluginInstance = new pluginClass(plugin.options);
 
         if (!(pluginInstance instanceof basePlugin)) {
             throw new Error(`Plugin does not extend basePlugin: ${pluginInstance.constructor.name}`);
         }
         try {
             pluginInstance.init();
-            const content = pluginInstance.run();
+
+            const config = pluginInstance.getConfiguration();
+            const content = pluginInstance.getContent();
 
             plugins.push({
                 id: config.id,
@@ -131,7 +132,7 @@ function initPlugins(baseMandatory) {
                 target: path.join(baseMandatory.guideDest, config.target),
                 type: config.type,
                 icon: config.icon,
-                content: {documentation: content, toc: '3444'},
+                content: {documentation: content, toc: 'TOC'},
                 subPages: []
             });
         } catch (error) {
