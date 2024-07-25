@@ -23,7 +23,7 @@ function withConfig(configPath) {
     copyAssets(config.internalAssetsPath, config.guideDest);
 
 
-    // setup plugins
+    // Setup plugins
 
     console.log(config);
 

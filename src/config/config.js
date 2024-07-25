@@ -70,14 +70,22 @@ function getBaseConfig(configRaw) {
 
     const templates = { templates: fillTemplatesConfig(config.templates, '../views/templates/', 'template') };
 
-    const getIndexPageSource = require('./index-page-source.js');
-
     const additionalPages = {
-        additionalPages: require('./additional-pages.js')(
-            templates.templates,
-            baseMandatory.guideDest,
-            getIndexPageSource(projectRoot, baseMandatory.guideSrc, baseOptional.indexPageSource)
-        )
+        additionalPages: [{
+            id: 'index',
+            title: 'About',
+            src: path.join('./README.md'),
+            target: path.join(baseMandatory.guideDest, '/index.html'),
+            type: 'about',
+            icon: 'info-16',
+            subPages: []
+        }]
+    };
+
+    const pluginsPages = {
+         pluginsPages: [{
+            id: 'testtest'
+         }]
     };
 
     const partials = { partials: fillTemplatesConfig(config.partials, '../views/includes/partials/', 'partial') };

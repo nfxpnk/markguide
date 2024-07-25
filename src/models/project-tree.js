@@ -162,8 +162,12 @@ function makeProjectTree(markguideConfig) {
 
     //console.log(docSet.coverage.all, ' : ', docSet.coverage.all - docSet.coverage.notcovered);
 
-    if (markguideConfig.additionalPages.length) {
+    if (markguideConfig.additionalPages && markguideConfig.additionalPages.length > 0) {
         markguideConfig.additionalPages.forEach(page => docSet.subPages.unshift(page));
+    }
+
+    if (markguideConfig.pluginsPages && markguideConfig.pluginsPages.length > 0) {
+        markguideConfig.pluginsPages.forEach(page => docSet.subPages.unshift(page));
     }
 
     return docSet;
