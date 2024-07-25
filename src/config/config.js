@@ -70,6 +70,10 @@ function getBaseConfig(configRaw) {
 
     const templates = { templates: fillTemplatesConfig(config.templates, '../views/templates/', 'template') };
 
+    const partials = { partials: fillTemplatesConfig(config.partials, '../views/includes/partials/', 'partial') };
+
+    const projectInfo = { projectInfo: getProjectInfo(config) };
+
     const additionalPages = {
         additionalPages: [{
             id: 'index',
@@ -84,15 +88,18 @@ function getBaseConfig(configRaw) {
 
     const pluginsPages = {
          pluginsPages: [{
-            id: 'testtest'
-         }]
+            id: 'plugin',
+            title: 'Plugin',
+            src: '',
+            target: path.join(baseMandatory.guideDest, '/plugin.html'),
+            type: 'guide',
+            icon: 'paintbrush-16',
+            content: {documentation: '<h1>fffff</h1>', toc: '3444'},
+            subPages: []
+        }]
     };
 
-    const partials = { partials: fillTemplatesConfig(config.partials, '../views/includes/partials/', 'partial') };
-
-    const projectInfo = { projectInfo: getProjectInfo(config) };
-
-    return Object.assign({}, baseMandatory, baseOptional, templates, additionalPages, partials, projectInfo);
+    return Object.assign({}, baseMandatory, baseOptional, templates, additionalPages, partials, projectInfo, pluginsPages);
 }
 
 module.exports = getBaseConfig;

@@ -44,19 +44,17 @@ module.exports = function(markguideConfig, projectTree) {
                 const isFile = component.target;
 
                 if (isFile && isFileInConfig) {
-                    let pageContent;
-                    let tableOfContent;
+                    let content;
 
                     if (component.src !== '') {
                         const page = renderedPageContent(component.src, {'title': component.title});
-                        pageContent = page.content;
-                        tableOfContent = page.toc;
+                        content = {
+                            documentation: page.content,
+                            toc: page.toc
+                        }
+                    } else {
+                        content = component.content;
                     }
-
-                    const content = {
-                        documentation: pageContent,
-                        toc: tableOfContent
-                    };
 
                     if (isContentChanged(filePath, content.documentation)) {
                         docSet.push({

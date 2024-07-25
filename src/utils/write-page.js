@@ -60,21 +60,22 @@ module.exports = function init(markguideConfig, subPages) {
      */
     const writePage = function(config) {
         return new Promise(
-            (resolve, reject) => fs.writeFile(
-                config.target,
-                mustache.render(
-                    getCachedTemplates(config.type),
-                    view(config),
-                    cachedPartials
-                ),
-                error => {
-                    if (error) {
-                        reject(error);
-                    } else {
-                        resolve('Page saved');
+            (resolve, reject) => {
+                fs.writeFile(
+                    config.target,
+                    mustache.render(
+                        getCachedTemplates(config.type),
+                        view(config),
+                        cachedPartials
+                    ),
+                    error => {
+                        if (error) {
+                            reject(error);
+                        } else {
+                            resolve('Page saved');
+                        }
                     }
-                }
-            )
+                )}
         );
     };
 
