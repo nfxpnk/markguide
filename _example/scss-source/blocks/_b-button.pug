@@ -1,0 +1,6 @@
+mixin button(text, modifier)
+  button.b-button(class=modifier type="submit") #{text}
+
+- let buttons = ['Primary', 'Secondary', 'Tertiary']
+each val, index in buttons
+  +button(val, '')
