@@ -61,7 +61,9 @@ function getBaseConfig(configRaw) {
     if (config === undefined) {
         return { isCorrupted: true };
     }
+
     const baseMandatory = require('./config-mandatory.js')(config);
+
     if (baseMandatory.isCorrupted) {
         return { isCorrupted: true };
     }
@@ -87,19 +89,57 @@ function getBaseConfig(configRaw) {
     };
 
     const pluginsPages = {
-         pluginsPages: [{
-            id: 'plugin',
-            title: 'Plugin',
-            src: '',
-            target: path.join(baseMandatory.guideDest, '/plugin.html'),
-            type: 'guide',
-            icon: 'paintbrush-16',
-            content: {documentation: '<h1>fffff</h1>', toc: '3444'},
-            subPages: []
-        }]
+         pluginsPages: initPlugins(baseMandatory)
     };
 
     return Object.assign({}, baseMandatory, baseOptional, templates, additionalPages, partials, projectInfo, pluginsPages);
+}
+
+function initPlugins(baseMandatory) {
+    const basePlugin = require('../models/base-plugin.js');
+
+    const plugins = [];
+
+    // get this from configuration
+    const enabledPlugins = [{
+            id: 'colors',
+            title: 'Colors',
+            target: '/colors.html',
+            type: 'guide',
+            icon: 'paintbrush-16',
+            path: '../plugins/colors/index.js',
+            options: { filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss' }
+        }
+    ];
+
+
+    enabledPlugins.forEach(config => {
+        const pluginClass = require(config.path);
+        const pluginInstance = new pluginClass(config.options);
+
+        if (!(pluginInstance instanceof basePlugin)) {
+            throw new Error(`Plugin does not extend basePlugin: ${pluginInstance.constructor.name}`);
+        }
+        try {
+            pluginInstance.init();
+            const content = pluginInstance.run();
+
+            plugins.push({
+                id: config.id,
+                title: config.title,
+                src: '',
+                target: path.join(baseMandatory.guideDest, config.target),
+                type: config.type,
+                icon: config.icon,
+                content: {documentation: content, toc: '3444'},
+                subPages: []
+            });
+        } catch (error) {
+            console.error(`Error running plugin: ${pluginInstance.constructor.name}`, error);
+        }
+    });
+
+    return plugins;
 }
 
 module.exports = getBaseConfig;
