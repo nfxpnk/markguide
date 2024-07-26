@@ -108,7 +108,7 @@ function initPlugins(baseMandatory) {
         },
         {
             name: 'icons',
-            options: { iconsFolder: 'H:/github/markguide/_example/' }
+            options: { iconsFolder: 'H:/github/markguide/_example/projects-static-files/icons/standalone' }
         }
     ];
 

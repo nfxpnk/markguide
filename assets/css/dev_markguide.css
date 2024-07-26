@@ -911,41 +911,141 @@ body {
 	color: black;
 }
 
-.markguide-icons_example {
-	align-items: stretch;
-	display: flex;
-	flex-wrap: wrap;
-	font-size: 14px;
-	gap: 6px;
-	text-align: center;
+.markguide-icons {
+	font-size: 0;
+}
+.markguide-icons__item {
+	vertical-align: top;
+	font-size: initial;
+	box-sizing: border-box;
+	display: inline-block;
+	width: 20%;
+	padding: 5px;
+	box-sizing: border-box;
 }
 
-.markguide-icons_example-item {
-	border: 1px solid lightgrey;
-	border-radius: 6px;
-	flex-basis: 124px;
-	padding: 10px 5px;
+.markguide-icon {
+	border: 1px solid var(--color-markguide-border);
+	border-radius: 5px;
+	padding: 10px 10px 40px;
+	position: relative;
 }
-
-.markguide-icons_example-item svg {
-	background: #dfdfdf;
+.markguide-icon:hover .markguide-icon__data {
+	display: none;
+}
+.markguide-icon:hover .markguide-icon__code {
 	display: block;
+}
+.markguide-icon:hover .markguide-icon__grid {
+	display: block;
+}
+.markguide-icon:hover .markguide-icon__svg {
+	background-color: #dfdfdf;
+}
+.markguide-icon__svg {
+	text-align: center;
+	max-width: 64px;
+	height: 64px;
 	margin: 0 auto 10px;
+	position: relative;
 }
-
-.markguide-icons_section h2 {
+.markguide-icon__svg svg {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	display: block;
+}
+.markguide-icon__grid {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	--padding: 4px;
+}
+.markguide-icon__grid-top, .markguide-icon__grid-bottom, .markguide-icon__grid-left, .markguide-icon__grid-right {
+	position: absolute;
+	background: #242add;
+}
+.markguide-icon__grid-top, .markguide-icon__grid-bottom {
+	left: 0;
+	right: 0;
+	height: 1px;
+}
+.markguide-icon__grid-top {
+	top: var(--padding);
+	bottom: auto;
+}
+.markguide-icon__grid-bottom {
+	bottom: var(--padding);
+	top: auto;
+}
+.markguide-icon__grid-left, .markguide-icon__grid-right {
+	top: 0;
+	bottom: 0;
+	width: 1px;
+}
+.markguide-icon__grid-left {
+	left: var(--padding);
+	right: auto;
+}
+.markguide-icon__grid-right {
+	left: auto;
+	right: var(--padding);
+}
+.markguide-icon__data {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: lightgray;
+	padding: 5px 0;
+	border-radius: 6px;
+	border-top: 1px solid var(--color-markguide-border);
+}
+.markguide-icon__data pre {
+	font-size: 11px;
+	text-align: center;
+	margin: 0;
+	white-space: normal;
+}
+.markguide-icon__data b {
+	font-weight: 700;
+}
+.markguide-icon__name {
+	font-size: 80%;
+	font-weight: 700;
+	text-align: center;
+	line-height: 1;
+	color: var(--color-markguide-icon-path);
+	padding: 5px 0;
+}
+.markguide-icon__font {
+	color: var(--color-markguide-icon-path);
+	text-align: center;
+	padding: 5px 0;
 	font-size: 24px;
-	margin-bottom: 10px;
 }
-
-.markguide-icons_isml {
-	background: white;
-	border: 1px solid grey;
-	padding: 10px;
-	position: fixed;
-	right: 20px;
-	top: 10px;
-	z-index: 900;
+.markguide-icon__code {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+.markguide-icon__code code {
+	background-color: lightgray;
+	color: gray;
+	border-top: 1px solid var(--color-markguide-border);
+}
+.markguide-icon__code ::selection {
+	background-color: blue;
+	color: white;
 }
 
 /* TODO: Temp location, move to some file.scss */
