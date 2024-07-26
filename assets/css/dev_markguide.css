@@ -948,6 +948,10 @@ body {
 	color: #263740;
 }
 
+.test-test-test {
+	border: 1px solid blue;
+}
+
 /* TODO: Temp location, move to some file.scss */
 .markguide-html {
 	padding: 10px;

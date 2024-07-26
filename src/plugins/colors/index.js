@@ -44,7 +44,7 @@ class colorsPlugin extends basePlugin {
 
     generateColorsPage(colors) {
         const htmlContent = colors.map(color => `
-      <div style="background-color: ${color.value}; padding: 10px;">
+      <div class="test-test-test" style="background-color: ${color.value}; padding: 10px;">
         ${color.name}: ${color.value}
       </div>
     `).join('');
