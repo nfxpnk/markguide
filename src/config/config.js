@@ -108,7 +108,7 @@ function initPlugins(baseMandatory) {
         },
         {
             name: 'icons',
-            options: { filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss' }
+            options: { iconsFolder: 'H:/github/markguide/_example/' }
         }
     ];
 
