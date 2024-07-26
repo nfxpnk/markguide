@@ -6,6 +6,7 @@
     "copyInternalAssets": true,
     "excludedSassFiles": "_dev-markguide-settings|_dev-markguide-definitions",
     "componentPrefixes": ["markguide-", "l-"],
+    "customPluginsPath": "",
     "plugins": [
         "colors"
     ]
