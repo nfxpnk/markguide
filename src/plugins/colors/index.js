@@ -43,11 +43,9 @@ class colorsPlugin extends basePlugin {
     }
 
     generateColorsPage(colors) {
-        const htmlContent = colors.map(color => `
-      <div class="test-test-test" style="background-color: ${color.value}; padding: 10px;">
-        ${color.name}: ${color.value}
-      </div>
-    `).join('');
+        const template = fs.readFileSync(path.join(__dirname, 'templates/template.mustache'), 'utf-8');
+        const htmlContent = mustache.render(template, {colors: colors});
+
         return htmlContent;
     }
 }

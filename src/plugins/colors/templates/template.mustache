@@ -1,8 +1,17 @@
-<div>
-  <h1>{{component}}</h1>
-  <ul>
-    {{#cssVariables}}
-    <li>{{.}}</li>
-    {{/cssVariables}}
-  </ul>
+<div class="markguide-colors">
+    {{#colors}}
+    <div class="markguide-colors__item">
+        <figure class="markguide-color">
+            <div class="markguide-color__figure">
+                <span class="markguide-color__figure-color" style="background:{{value}}"></span>
+            </div>
+            <figcaption class="markguide-color__caption">
+                <strong class="markguide-color__name">{{name}}</strong>
+                <code class="markguide-color__code"></code>
+                <code class="markguide-color__code">{{value}}</code>
+                <span class="markguide-color__description"></span>
+            </figcaption>
+        </figure>
+    </div>
+    {{/colors}}
 </div>

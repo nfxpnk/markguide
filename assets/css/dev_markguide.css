@@ -815,6 +815,48 @@ body {
 	color: rgba(0, 0, 0, 0.3);
 }
 
+.markguide-copier {
+	cursor: pointer;
+	position: relative;
+}
+.markguide-copier__message {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+	color: hsl(0, 0%, 100%);
+	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
+	font-size: 12.8px;
+	font-style: normal;
+	left: 50%;
+	line-height: 10px;
+	min-width: 20px;
+	padding: 20px;
+	pointer-events: none;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	transition: ease 0.6s;
+	transition-property: opacity, visibility;
+	z-index: 10;
+}
+.markguide-copier__text {
+	-webkit-appearance: none;
+	        appearance: none;
+	background-color: transparent;
+	border: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	text-align: inherit;
+}
+.markguide-copier__text:focus {
+	outline: none;
+}
+.markguide-copier:hover .markguide-copier__text {
+	color: #263740;
+}
+
 .markguide-colors {
 	list-style: none;
 	padding: 0;
@@ -904,52 +946,6 @@ body {
 	right: 20px;
 	top: 10px;
 	z-index: 900;
-}
-
-.markguide-copier {
-	cursor: pointer;
-	position: relative;
-}
-.markguide-copier__message {
-	background-color: rgba(0, 0, 0, 0.5);
-	border-radius: 5px;
-	color: hsl(0, 0%, 100%);
-	font-family: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
-	font-size: 12.8px;
-	font-style: normal;
-	left: 50%;
-	line-height: 10px;
-	min-width: 20px;
-	padding: 20px;
-	pointer-events: none;
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-	transition: ease 0.6s;
-	transition-property: opacity, visibility;
-	z-index: 10;
-}
-.markguide-copier__text {
-	-webkit-appearance: none;
-	        appearance: none;
-	background-color: transparent;
-	border: none;
-	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
-	text-align: inherit;
-}
-.markguide-copier__text:focus {
-	outline: none;
-}
-.markguide-copier:hover .markguide-copier__text {
-	color: #263740;
-}
-
-.test-test-test {
-	border: 1px solid blue;
 }
 
 /* TODO: Temp location, move to some file.scss */
