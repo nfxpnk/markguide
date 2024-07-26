@@ -104,11 +104,16 @@ function initPlugins(baseMandatory) {
     const enabledPlugins = [
         {
             name: 'colors',
-            options: { filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss' }
+            options: {
+                filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss',
+            }
         },
         {
             name: 'icons',
-            options: { iconsFolder: 'H:/github/markguide/_example/projects-static-files/icons/standalone' }
+            options: {
+                iconsFolder: 'H:/github/markguide/_example/projects-static-files/icons/standalone',
+                fileExtension: 'isml'
+            }
         }
     ];
 

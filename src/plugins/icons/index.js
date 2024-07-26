@@ -7,7 +7,8 @@ const basePlugin = require('../../models/base-plugin.js');
 class iconsPlugin extends basePlugin {
     constructor(options) {
         super(options);
-        this.iconsFolder = options.iconsFolder; // Path to the folder with SVG files
+        this.iconsFolder = options.iconsFolder; // Path to the folder with icons files
+        this.fileExtension = options.fileExtension;
     }
 
     init() {
@@ -35,7 +36,7 @@ class iconsPlugin extends basePlugin {
 
     readSvgFiles() {
         try {
-            return fs.readdirSync(this.iconsFolder).filter(file => file.endsWith('.isml')).map(file => path.join(this.iconsFolder, file));
+            return fs.readdirSync(this.iconsFolder).filter(file => file.endsWith('.' + this.fileExtension)).map(file => path.join(this.iconsFolder, file));
         } catch (error) {
             log.error(`Error reading SVG files from ${this.iconsFolder}: ${error.message}`);
             return [];
@@ -65,7 +66,7 @@ class iconsPlugin extends basePlugin {
                 height,
                 viewBoxWidth,
                 viewBoxHeight,
-                name: path.basename(filePath, '.svg'),
+                name: path.basename(filePath),
                 filename: path.basename(filePath)
             };
         } catch (error) {

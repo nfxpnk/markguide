@@ -7,6 +7,7 @@ const basePlugin = require('../../models/base-plugin.js');
 class colorsPlugin extends basePlugin {
     constructor(options) {
         super(options);
+        this.filePath = options.filePath;
     }
 
     init() {
@@ -24,7 +25,7 @@ class colorsPlugin extends basePlugin {
     }
 
     getContent() {
-        const colors = this.readColorsFromFile(this.options.filePath);
+        const colors = this.readColorsFromFile(this.filePath);
 
         return this.generateColorsPage(colors);
     }
