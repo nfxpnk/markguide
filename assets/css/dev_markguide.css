@@ -919,16 +919,16 @@ body {
 	font-size: 0;
 }
 .markguide-icons__item {
-	vertical-align: top;
-	font-size: initial;
 	box-sizing: border-box;
 	display: inline-block;
-	width: 20%;
+	font-size: initial;
 	padding: 5px;
-	box-sizing: border-box;
+	vertical-align: top;
+	width: 20%;
 }
 
 .markguide-icon {
+	--color-markguide-border: #c3c3c3;
 	border: 1px solid var(--color-markguide-border);
 	border-radius: 5px;
 	padding: 10px 10px 40px;
@@ -1066,6 +1066,9 @@ body {
 }
 .markguide-html__item:last-child {
 	margin: 0;
+}
+.markguide-html__item-heading {
+	font-family: "Arial", "FreeSans", sans-serif;
 }
 
 .markguide-markup {
