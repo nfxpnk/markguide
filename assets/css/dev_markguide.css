@@ -873,6 +873,10 @@ body {
 	box-sizing: border-box;
 }
 
+.markguide-color__name {
+	font-family: "Arial", "FreeSans", sans-serif;
+}
+
 .markguide-color {
 	background: white;
 	border: 1px solid black;
