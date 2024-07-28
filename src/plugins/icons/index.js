@@ -34,6 +34,13 @@ class iconsPlugin extends basePlugin {
         return htmlContent;
     }
 
+    removeIscommentTags(svgContent) {
+        // Define the regular expression to match <iscomment> tags and their content
+        const regex = /<iscomment>[\s\S]*?<\/iscomment>/gi;
+        // Use the replace method to remove the matched content
+        return svgContent.replace(regex, '');
+    }
+
     readSvgFiles() {
         try {
             return fs.readdirSync(this.iconsFolder).filter(file => file.endsWith('.' + this.fileExtension)).map(file => path.join(this.iconsFolder, file));
@@ -45,7 +52,10 @@ class iconsPlugin extends basePlugin {
 
     extractSvgDetails(filePath) {
         try {
-            const svgContent = fs.readFileSync(filePath, 'utf8');
+            let svgContent = fs.readFileSync(filePath, 'utf8');
+            console.log(svgContent);
+            svgContent = this.removeIscommentTags(svgContent);
+
             const svgMatch = svgContent.match(/<svg[^>]*>/);
             if (!svgMatch) throw new Error('Invalid SVG content');
 
