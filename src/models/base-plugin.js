@@ -1,7 +1,7 @@
 'use strict';
 
 class basePlugin {
-    constructor(options) {
+    constructor(config, options) {
         if (new.target === basePlugin) {
             throw new TypeError(`Cannot construct basePlugin instances directly`);
         }

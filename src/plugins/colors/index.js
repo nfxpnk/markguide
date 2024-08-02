@@ -5,9 +5,15 @@ const mustache = require('mustache');
 const basePlugin = require('../../models/base-plugin.js');
 
 class colorsPlugin extends basePlugin {
-    constructor(options) {
-        super(options);
-        this.filePath = options.filePath;
+    constructor(config, options) {
+        super(config, options);
+
+        if(path.isAbsolute(options.filePath)) {
+            this.filePath = options.filePath;
+        } else {
+            this.filePath = path.join(config.guideSrc, options.filePath);
+        }
+
     }
 
     init() {

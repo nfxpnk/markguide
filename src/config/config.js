@@ -127,7 +127,7 @@ function initPlugins(baseMandatory) {
 
     baseMandatory.enabledPlugins.forEach(plugin => {
         const pluginClass = require(path.join('../plugins', plugin.name, 'index.js'));
-        const pluginInstance = new pluginClass(plugin.options);
+        const pluginInstance = new pluginClass(baseMandatory, plugin.options);
 
         if (!(pluginInstance instanceof basePlugin)) {
             throw new Error(`Plugin does not extend basePlugin: ${pluginInstance.constructor.name}`);

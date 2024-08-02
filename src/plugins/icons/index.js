@@ -5,9 +5,16 @@ const mustache = require('mustache');
 const basePlugin = require('../../models/base-plugin.js');
 
 class iconsPlugin extends basePlugin {
-    constructor(options) {
-        super(options);
-        this.iconsFolder = options.iconsFolder; // Path to the folder with icons files
+    constructor(config, options) {
+        super(config, options);
+
+        // Path to the folder with icons files
+        if(path.isAbsolute(options.iconsFolder)) {
+            this.iconsFolder = options.iconsFolder;
+        } else {
+            this.iconsFolder = path.join(config.projectCompiledFiles, options.iconsFolder, '/');
+        }
+
         this.fileExtension = options.fileExtension;
     }
 
