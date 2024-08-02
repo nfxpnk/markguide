@@ -5,7 +5,7 @@ const { fs, path, log, c } = require('./common-utils.js');
 const mustache = require('mustache');
 const inline = require('./template-helpers/inline.js');
 
-const prepareView = function(config, projectInfo, subPages) {
+const prepareView = function(config, markguideConfig, projectInfo, subPages) {
     this.projectInfo = {
         name: projectInfo.name,
         version: projectInfo.version
@@ -16,12 +16,13 @@ const prepareView = function(config, projectInfo, subPages) {
     this.icon = config.icon; // Icon in page header
     this.src = config.src;
     this.subPages = subPages.subPages; // Aside navigation pages tree
+    this.projectStyles = markguideConfig.projectStyles;
 };
 
 prepareView.prototype.inline = () => (text, render) => inline(text, render);
 
 module.exports = function init(markguideConfig, subPages) {
-    const view = config => new prepareView(config, markguideConfig.projectInfo, subPages);
+    const view = config => new prepareView(config, markguideConfig, markguideConfig.projectInfo, subPages);
 
     const cachedTemplates = {
         'component': fs.readFileSync(markguideConfig.templates.component, 'utf8'),

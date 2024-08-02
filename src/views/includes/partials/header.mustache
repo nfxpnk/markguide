@@ -11,7 +11,9 @@
     <link rel="stylesheet" type="text/css" href="assets/css/dev_markguide-frame.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/prism.css"/>
 
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
+    {{#projectStyles}}
+    <link rel="stylesheet" type="text/css" href="styles/{{.}}"/>
+    {{/projectStyles}}
 
     {{> assetshead}}
 </head>
