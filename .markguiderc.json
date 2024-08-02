@@ -3,6 +3,12 @@
     "guideDest": "_example/markguide-static/",
     "cssSrc": "assets/css/",
     "projectCompiledFiles": "_example/projects-static-files/",
+    "projectStyles": [
+        "styles.css"
+    ],
+    "projectScripts": [
+        "main.js"
+    ],
     "internalAssetsPath": "assets",
     "excludedSassFiles": "_dev-markguide-settings|_dev-markguide-definitions",
     "customPluginsPath": "_example/custom-plugins/",
