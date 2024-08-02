@@ -2,6 +2,7 @@
 
 const { fs, path, log, c } = require('../utils/common-utils.js');
 
+// Get the current working directory as the project root
 const projectRoot = process.cwd();
 
 const fillTemplatesConfig = (templatesConfig, internalTemplatesPath, name) => {
@@ -31,9 +32,6 @@ const fillTemplatesConfig = (templatesConfig, internalTemplatesPath, name) => {
 
     return templates;
 };
-
-// Get the current working directory as the project root
-const projectRoot = process.cwd();
 
 // Find and load the configuration
 function findConfig(config) {
