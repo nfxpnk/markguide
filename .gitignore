@@ -36,9 +36,13 @@ _example/markguide-static/*.html
 _example/markguide-static/*.js
 _example/markguide-static/assets
 
-# Helpers
+# Styles
 _example/markguide-static/styles/*
 !_example/markguide-static/styles/styles.css
+
+# Scripts
+_example/markguide-static/scripts/*
+!_example/markguide-static/scritps/main.js
 
 # Helpers
 _helpers/icons/octicons/*

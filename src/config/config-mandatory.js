@@ -47,6 +47,7 @@ function getMandatoryBaseConfig(config) {
     markguideConfig.enabledPlugins = config.enabledPlugins || undefined;
     markguideConfig.customPluginsPath = makePathAbsolute(config.customPluginsPath) || '';
     markguideConfig.projectStyles = config.projectStyles || [];
+    markguideConfig.projectScripts = config.projectScripts || [];
 
     return markguideConfig;
 }

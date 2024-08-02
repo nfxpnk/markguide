@@ -15,6 +15,14 @@
     <link rel="stylesheet" type="text/css" href="styles/{{.}}"/>
     {{/projectStyles}}
 
+    <script>
+        window.contexts = ["global"]
+    </script>
+
+    {{#projectScripts}}
+    <script async="async" src="scripts/{{.}}" crossorigin="anonymous"></script>
+    {{/projectScripts}}
+
     {{> assetshead}}
 </head>
 <body class="markguide-page markguide-page_{{type}}">

@@ -16,7 +16,9 @@ const prepareView = function(config, markguideConfig, projectInfo, subPages) {
     this.icon = config.icon; // Icon in page header
     this.src = config.src;
     this.subPages = subPages.subPages; // Aside navigation pages tree
+
     this.projectStyles = markguideConfig.projectStyles;
+    this.projectScripts = markguideConfig.projectScripts;
 };
 
 prepareView.prototype.inline = () => (text, render) => inline(text, render);
