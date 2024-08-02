@@ -4,36 +4,16 @@ const { fs, path, log, c } = require('../utils/common-utils.js');
 
 const projectRoot = process.cwd();
 
-function absPath(relPath) {
-    return path.join(projectRoot, relPath, '/');
-}
-
-function isPathReachable(destination, name) {
-    if (!destination) {
-        log(c.red('Error: ') + '"' + name + '" not defined. This field is mandatory');
-
-        return false;
+function makePathAbsolute(p) {
+    if(path.isAbsolute(p)) {
+        return p;
+    } else {
+        return path.join(projectRoot, p, '/');
     }
-
-    if (fs.existsSync(destination) === false && fs.existsSync(absPath(destination)) === false) {
-        log(c.red('Error: ') +
-            '"' + name + '" (' + destination + ', ' + absPath(destination) + ')' +
-            ' in config unavailable or unreadable. ' +
-            'Please check this path in config');
-
-        return false;
-    }
-
-    return true;
 }
 
 function getMandatoryBaseConfig(config) {
     const corruptedConfig = { isCorrupted: true };
-
-    if (!isPathReachable(config.guideSrc, 'guideSrc') ||
-        !isPathReachable(config.cssSrc, 'cssSrc')) {
-        return corruptedConfig; // return with corrupted config if we don't have critical info
-    }
 
     if (!config.guideDest) {
         log(c.red('Error: ') + '"guideDest" not defined. This field is mandatory');
@@ -42,21 +22,19 @@ function getMandatoryBaseConfig(config) {
 
     // Process mandatory configs
     const markguideConfig = {
-        guideSrc: fs.existsSync(config.guideSrc) ? config.guideSrc : absPath(config.guideSrc),
-        cssSrc: fs.existsSync(config.cssSrc) ? config.cssSrc : absPath(config.cssSrc),
-        guideDest: fs.existsSync(config.guideDest) ? config.guideDest : absPath(config.guideDest)
+        guideSrc: makePathAbsolute(config.guideSrc),
+        cssSrc: makePathAbsolute(config.cssSrc),
+        guideDest: makePathAbsolute(config.guideDest)
     };
 
-    // Check and create destination directory if needed
-    const createDestination = config.createDestFolder || false;
+    // Check if path exist
+    for (const [key, value] of Object.entries(markguideConfig)) {
+        if (fs.existsSync(value) === false) {
+            log(c.red('Error: ') +
+            '"' + key + '" (' + value + ')' +
+            ' in config unavailable or unreadable. ' +
+            'Please check this path in config');
 
-    if (fs.existsSync(markguideConfig.guideDest) === false) {
-        if (createDestination) {
-            fs.mkdirSync(markguideConfig.guideDest);
-            log(c.yellow('Warning: ') + '"guideDest": ' + markguideConfig.guideDest + ' directory created');
-        } else {
-            log(c.red('Error: ') + '"guideDest" (' + markguideConfig.guideDest + ') in config unavailable or unreadable. ' +
-                'Please check this path in config');
             return corruptedConfig;
         }
     }
