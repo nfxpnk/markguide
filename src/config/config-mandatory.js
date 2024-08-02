@@ -45,7 +45,7 @@ function getMandatoryBaseConfig(config) {
     markguideConfig.excludedCssFiles = new RegExp(config.excludedCssFiles || '.^');
     markguideConfig.excludedSassFiles = new RegExp(config.excludedSassFiles || '.^');
     markguideConfig.enabledPlugins = config.enabledPlugins || undefined;
-    markguideConfig.customPluginsPath = config.customPluginsPath || '';
+    markguideConfig.customPluginsPath = makePathAbsolute(config.customPluginsPath) || '';
 
     return markguideConfig;
 }

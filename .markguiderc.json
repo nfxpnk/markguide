@@ -4,8 +4,14 @@
     "cssSrc": "assets/css/",
     "projectCompiledFiles": "_example/projects-static-files/",
     "excludedSassFiles": "_dev-markguide-settings|_dev-markguide-definitions",
-    "customPluginsPath": "",
+    "customPluginsPath": "_example/custom-plugins/",
     "enabledPlugins": [
+        {
+            "name": "dummy",
+            "options": {
+                "filePath": "file.html"
+            }
+        },
         {
             "name": "colors",
             "options": {
