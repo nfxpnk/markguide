@@ -26,7 +26,7 @@ function getMandatoryBaseConfig(config) {
         cssSrc: makePathAbsolute(config.cssSrc),
         projectCompiledFiles: makePathAbsolute(config.projectCompiledFiles),
         guideDest: makePathAbsolute(config.guideDest),
-        internalAssetsPath: path.join(__dirname, '../../assets')
+        internalAssetsPath: makePathAbsolute(config.internalAssetsPath)
     };
 
     // Check if path exist
