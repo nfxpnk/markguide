@@ -126,7 +126,19 @@ function initPlugins(baseMandatory) {
     const plugins = [];
 
     baseMandatory.enabledPlugins.forEach(plugin => {
-        const pluginClass = require(path.join('../plugins', plugin.name, 'index.js'));
+        let pluginPath = path.join(baseMandatory.customPluginsPath, plugin.name, 'index.js');
+
+        if(fs.existsSync(pluginPath) === false) {
+            pluginPath = path.join(projectRoot, 'src/plugins', plugin.name, 'index.js');
+
+            if(fs.existsSync(pluginPath) === false) {
+                throw new Error(`Plugin file does not exist: ${pluginPath}`);
+            }
+        }
+
+        const pluginClass = require(pluginPath);
+
+
         const pluginInstance = new pluginClass(baseMandatory, plugin.options);
 
         if (!(pluginInstance instanceof basePlugin)) {
