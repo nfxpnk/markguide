@@ -3,11 +3,21 @@
     "guideDest": "_example/markguide-static/",
     "cssSrc": "assets/css/",
     "projectCompiledFiles": "_example/projects-static-files/",
-    "copyInternalAssets": true,
     "excludedSassFiles": "_dev-markguide-settings|_dev-markguide-definitions",
-    "componentPrefixes": ["markguide-", "l-"],
     "customPluginsPath": "",
-    "plugins": [
-        "colors"
+    "enabledPlugins": [
+        {
+            "name": "colors",
+            "options": {
+                "filePath": "configuration/_colors.scss"
+            }
+        },
+        {
+            "name": "icons",
+            "options": {
+                "iconsFolder": "icons/standalone",
+                "fileExtension": "isml"
+            }
+        }
     ]
 }

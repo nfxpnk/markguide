@@ -20,11 +20,13 @@ function getMandatoryBaseConfig(config) {
         return corruptedConfig;
     }
 
-    // Process mandatory configs
+    // Process mandatory configs PATHs
     const markguideConfig = {
         guideSrc: makePathAbsolute(config.guideSrc),
         cssSrc: makePathAbsolute(config.cssSrc),
-        guideDest: makePathAbsolute(config.guideDest)
+        projectCompiledFiles: makePathAbsolute(config.cssSrc),
+        guideDest: makePathAbsolute(config.guideDest),
+        internalAssetsPath: path.join(__dirname, '../../assets')
     };
 
     // Check if path exist
@@ -38,6 +40,11 @@ function getMandatoryBaseConfig(config) {
             return corruptedConfig;
         }
     }
+
+    markguideConfig.excludedDirs = new RegExp(config.excludedDirs || '.^');
+    markguideConfig.excludedCssFiles = new RegExp(config.excludedCssFiles || '.^');
+    markguideConfig.excludedSassFiles = new RegExp(config.excludedSassFiles || '.^');
+    markguideConfig.enabledPlugins = config.enabledPlugins || undefined;
 
     return markguideConfig;
 }

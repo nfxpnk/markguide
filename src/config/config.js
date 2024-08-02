@@ -89,8 +89,6 @@ function getBaseConfig(configRaw) {
         return { isCorrupted: true };
     }
 
-    const baseOptional = require('./config-optional.js')(config);
-
     const templates = { templates: fillTemplatesConfig(config.templates, '../views/templates/', 'template') };
 
     const partials = { partials: fillTemplatesConfig(config.partials, '../views/includes/partials/', 'partial') };
@@ -101,7 +99,7 @@ function getBaseConfig(configRaw) {
         additionalPages: [{
             id: 'index',
             title: 'About',
-            src: path.join('./README.md'),
+            src: path.join('./README.md'), // get absolute path ?
             target: path.join(baseMandatory.guideDest, '/index.html'),
             type: 'about',
             icon: 'info-16',
@@ -113,34 +111,21 @@ function getBaseConfig(configRaw) {
          pluginsPages: initPlugins(baseMandatory)
     };
 
-    return Object.assign({}, baseMandatory, baseOptional, templates, additionalPages, partials, projectInfo, pluginsPages);
+    console.log(baseMandatory);
+
+    return Object.assign({}, baseMandatory, templates, additionalPages, partials, projectInfo, pluginsPages);
 }
 
 function initPlugins(baseMandatory) {
+    if(baseMandatory.enabledPlugins === undefined) {
+        return [];
+    }
+
     const basePlugin = require('../models/base-plugin.js');
 
     const plugins = [];
 
-    console.log(baseMandatory);
-
-    // get this from configuration
-    const enabledPlugins = [
-        {
-            name: 'colors',
-            options: {
-                filePath: 'H:/github/markguide/_example/scss-source/configuration/_colors.scss',
-            }
-        },
-        {
-            name: 'icons',
-            options: {
-                iconsFolder: 'H:/github/markguide/_example/projects-static-files/icons/standalone',
-                fileExtension: 'isml'
-            }
-        }
-    ];
-
-    enabledPlugins.forEach(plugin => {
+    baseMandatory.enabledPlugins.forEach(plugin => {
         const pluginClass = require(path.join('../plugins', plugin.name, 'index.js'));
         const pluginInstance = new pluginClass(plugin.options);
 
