@@ -28,8 +28,8 @@ logs
 node_modules
 .nyc_output
 
-# Config file for current project
-.markguiderc.current.json
+# Config files for your projects
+.markguiderc.*.json
 
 # Example static files
 _example/markguide-static/*.html
