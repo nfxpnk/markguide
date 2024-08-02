@@ -42,4 +42,7 @@ function withConfig(configPath) {
     };
 }
 
-module.exports = { withConfig };
+module.exports = {
+    withConfig,
+    basePlugin: require('./models/base-plugin.js')
+};
