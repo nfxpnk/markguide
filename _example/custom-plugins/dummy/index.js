@@ -23,7 +23,7 @@ class dummyPlugin extends basePlugin {
             title: 'Dummy',
             target: '/dummy.html',
             type: 'guide',
-            icon: 'paintbrush-16'
+            icon: 'book-16'
         };
     }
 

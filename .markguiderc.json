@@ -8,22 +8,22 @@
     "customPluginsPath": "_example/custom-plugins/",
     "enabledPlugins": [
         {
-            "name": "dummy",
+            "name": "icons",
             "options": {
-                "filePath": "file.html"
+                "iconsFolder": "icons/standalone",
+                "fileExtension": "isml"
             }
         },
         {
             "name": "colors",
             "options": {
-                "filePath": "configuration/_colors.scss"
+                "filePath": "H:/projects/allergan/ecom-allergan/app_allergan/cartridge/scss/default/core/_includes/base/_variables.scss"
             }
         },
         {
-            "name": "icons",
+            "name": "dummy",
             "options": {
-                "iconsFolder": "icons/standalone",
-                "fileExtension": "isml"
+                "filePath": "file.html"
             }
         }
     ]
