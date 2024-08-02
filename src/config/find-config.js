@@ -12,6 +12,7 @@ function findConfig(config) {
         if (typeof config === 'object') {
             return config;
         }
+
         const configPath = path.join(projectRoot, config);
 
         if (fs.existsSync(configPath)) {
