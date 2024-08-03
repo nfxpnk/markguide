@@ -1,0 +1,32 @@
+<div class="markguide-landing">
+    <div class="markguide-landing__content">
+        <main class="markguide-landing__main">
+            <section class="markguide-section">
+                <h1 class="markguide markguide-title markguide-title_1">
+                    <span class="markguide-title__text">
+                        Typography
+                    </span>
+                    <a class="markguide-title__anchor" href="#h1-markguide" title="Copy link to this title">
+                        <svg width="16" height="16" role="img">
+                            <use href="#link-16"></use>
+                        </svg>
+                    </a>
+                    <span class="markguide-title__highlight"></span>
+                </h1>
+                <p class="markguide markguide-p">Text for typography</p>
+            </section>
+            <section class="markguide-section">
+
+                <div>
+                    {{#fonts}}
+                    <div class="font-sample" style="font-family: '{{family}}'; font-weight: {{weight}}; font-style: {{style}};">
+                        <h2>{{family}} - {{weight}} - {{style}}</h2>
+                        <p>The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                    {{/fonts}}
+                </div>
+
+            </section>
+        </main>
+    </div>
+</div>

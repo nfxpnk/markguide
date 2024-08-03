@@ -16,8 +16,8 @@
         {
             "name": "icons",
             "options": {
-                "iconsFolder": "icons/standalone",
-                "fileExtension": "isml"
+                "iconsFolder": "icons",
+                "fileExtension": "svg"
             }
         },
         {
@@ -27,9 +27,31 @@
             }
         },
         {
+            "name": "typography",
+            "options": {}
+        },
+        {
             "name": "dummy",
             "options": {
                 "filePath": "file.html"
+            }
+        }
+    ],
+    "projectFonts": [
+        {
+            "filename": "roboto-mono-v22-latin-regular.woff2",
+            "properties": {
+                "family": "Roboto",
+                "style": "normal",
+                "weight": "400"
+            }
+        },
+        {
+            "filename": "icons.woff2",
+            "properties": {
+                "family": "icons",
+                "style": "normal",
+                "weight": "400"
             }
         }
     ]

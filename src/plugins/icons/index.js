@@ -60,7 +60,7 @@ class iconsPlugin extends basePlugin {
     extractSvgDetails(filePath) {
         try {
             let svgContent = fs.readFileSync(filePath, 'utf8');
-            console.log(svgContent);
+
             svgContent = this.removeIscommentTags(svgContent);
 
             const svgMatch = svgContent.match(/<svg[^>]*>/);

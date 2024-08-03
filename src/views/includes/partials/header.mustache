@@ -11,6 +11,17 @@
     <link rel="stylesheet" type="text/css" href="assets/css/dev_markguide-frame.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/prism.css"/>
 
+    <style>
+    {{#projectFonts}}
+    @font-face {
+        font-family: '{{properties.family}}';
+        font-style:  {{properties.style}};
+        font-weight: {{properties.weight}};
+        src: url("${URLUtils.staticURL('styles/fonts/{{filename}}')}") format("woff2");
+    }
+    {{/projectFonts}}
+    </style>
+
     {{#projectStyles}}
     <link rel="stylesheet" type="text/css" href="styles/{{.}}.css"/>
     {{/projectStyles}}

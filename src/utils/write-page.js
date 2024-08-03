@@ -18,6 +18,7 @@ const prepareView = function(config, markguideConfig, subPages) {
     this.src = config.src;
     this.subPages = subPages.subPages; // Aside navigation pages tree
 
+    this.projectFonts = markguideConfig.projectFonts;
     this.projectStyles = markguideConfig.projectStyles;
     this.projectScripts = markguideConfig.projectScripts;
 };
