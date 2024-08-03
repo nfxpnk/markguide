@@ -2,7 +2,7 @@
 
 const { fs, path, log, c } = require('./utils/common-utils.js');
 
-const copyAssets = require('./utils/copy-assets.js');
+const copyDirectory = require('./utils/copy-directory.js');
 const markguideConfig = require('./config/config.js');
 const projectTree = require('./models/project-tree.js');
 
@@ -20,8 +20,10 @@ function withConfig(configPath) {
 
     // Copy internal assets to the components destinations
     log(c.green(config.internalAssetsPath), config.guideDest);
-    copyAssets(config.internalAssetsPath, config.guideDest);
+    copyDirectory(config.internalAssetsPath, config.guideDest);
 
+    // Copy fonts
+    copyDirectory(path.join(config.projectStaticFiles, 'fonts'), path.join(config.guideDest, 'styles/fonts'));
 
     // Setup plugins
 

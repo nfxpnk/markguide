@@ -12,7 +12,7 @@ class iconsPlugin extends basePlugin {
         if(path.isAbsolute(options.iconsFolder)) {
             this.iconsFolder = options.iconsFolder;
         } else {
-            this.iconsFolder = path.join(config.projectCompiledFiles, options.iconsFolder, '/');
+            this.iconsFolder = path.join(config.projectStaticFiles, options.iconsFolder, '/');
         }
 
         this.fileExtension = options.fileExtension;

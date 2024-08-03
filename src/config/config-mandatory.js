@@ -24,7 +24,7 @@ function getMandatoryBaseConfig(config) {
     const markguideConfig = {
         guideSrc: makePathAbsolute(config.guideSrc),
         cssSrc: makePathAbsolute(config.cssSrc),
-        projectCompiledFiles: makePathAbsolute(config.projectCompiledFiles),
+        projectStaticFiles: makePathAbsolute(config.projectStaticFiles),
         guideDest: makePathAbsolute(config.guideDest),
         internalAssetsPath: makePathAbsolute(config.internalAssetsPath)
     };
