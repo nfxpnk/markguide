@@ -4,10 +4,10 @@
     "cssSrc": "assets/css/",
     "projectCompiledFiles": "_example/projects-static-files/",
     "projectStyles": [
-        "styles.css"
+        "styles"
     ],
     "projectScripts": [
-        "main.js"
+        "main"
     ],
     "internalAssetsPath": "assets",
     "excludedSassFiles": "_dev-markguide-settings|_dev-markguide-definitions",
