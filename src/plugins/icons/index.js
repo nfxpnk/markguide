@@ -28,7 +28,7 @@ class iconsPlugin extends basePlugin {
             title: 'Icons',
             target: '/icons.html',
             type: 'plugin',
-            icon: 'hash-16'
+            icon: 'icons'
         };
     }
 
