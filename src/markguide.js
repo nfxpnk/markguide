@@ -2,7 +2,7 @@
 
 const { fs, path, log, c } = require('./utils/common-utils.js');
 
-const copyDirectory = require('./utils/copy-directory.js');
+const {copyFiles, copyDirectory} = require('./utils/copy.js');
 const markguideConfig = require('./config/config.js');
 const projectTree = require('./models/project-tree.js');
 
@@ -20,12 +20,27 @@ function withConfig(configPath) {
 
     // Copy internal assets to the components destinations
     log(c.green(config.internalAssetsPath), config.guideDest);
-    copyDirectory(config.internalAssetsPath, config.guideDest);
+    copyDirectory(config.internalAssetsPath, path.join(config.guideDest, 'assets'));
+
+    // Copy images
+    copyDirectory(config.projectImagesFolder, path.join(config.guideDest, 'images'));
+
+    // Copy styles
+    if(config.projectStylesFolder === config.projectStaticFiles) {
+        copyFiles(config.projectStylesFolder, path.join(config.guideDest, 'styles'), 'css');
+    } else {
+        copyDirectory(config.projectStylesFolder, path.join(config.guideDest, 'styles'));
+    }
+
+    // Copy scritps
+    if(config.projectScriptsFolder === config.projectStaticFiles) {
+        copyFiles(config.projectScriptsFolder, path.join(config.guideDest, 'scripts'), 'js');
+    } else {
+        copyDirectory(config.projectScriptsFolder, path.join(config.guideDest, 'scripts'));
+    }
 
     // Copy fonts
-    copyDirectory(path.join(config.projectStaticFiles, 'fonts'), path.join(config.guideDest, 'styles/fonts'));
-
-    // Setup plugins
+    copyDirectory(config.projectFontsFolder, path.join(config.guideDest, 'styles/fonts'));
 
     console.log(config);
 

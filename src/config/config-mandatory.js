@@ -4,11 +4,16 @@ const { fs, path, log, c } = require('../utils/common-utils.js');
 
 const projectRoot = process.cwd();
 
-function makePathAbsolute(p) {
+function makePathAbsolute(p, root = '') {
+    console.log(p, root);
     if(path.isAbsolute(p)) {
         return p;
     } else {
-        return path.join(projectRoot, p, '/');
+        if(path.isAbsolute(root)) {
+            return path.join(root, p, '/');
+        }
+
+        return path.join(projectRoot, root, p, '/');
     }
 }
 
@@ -25,6 +30,10 @@ function getMandatoryBaseConfig(config) {
         guideSrc: makePathAbsolute(config.guideSrc),
         cssSrc: makePathAbsolute(config.cssSrc),
         projectStaticFiles: makePathAbsolute(config.projectStaticFiles),
+        projectImagesFolder: makePathAbsolute(config.projectImagesFolder, config.projectStaticFiles),
+        projectStylesFolder: makePathAbsolute(config.projectStylesFolder, config.projectStaticFiles),
+        projectScriptsFolder: makePathAbsolute(config.projectScriptsFolder, config.projectStaticFiles),
+        projectFontsFolder: makePathAbsolute(config.projectFontsFolder, config.projectStaticFiles),
         guideDest: makePathAbsolute(config.guideDest),
         internalAssetsPath: makePathAbsolute(config.internalAssetsPath)
     };
@@ -44,8 +53,10 @@ function getMandatoryBaseConfig(config) {
     markguideConfig.excludedDirs = new RegExp(config.excludedDirs || '.^');
     markguideConfig.excludedCssFiles = new RegExp(config.excludedCssFiles || '.^');
     markguideConfig.excludedSassFiles = new RegExp(config.excludedSassFiles || '.^');
-    markguideConfig.enabledPlugins = config.enabledPlugins || undefined;
+
     markguideConfig.customPluginsPath = makePathAbsolute(config.customPluginsPath) || '';
+    markguideConfig.enabledPlugins = config.enabledPlugins || undefined;
+
     markguideConfig.projectFonts = config.projectFonts || [];
     markguideConfig.projectStyles = config.projectStyles || [];
     markguideConfig.projectScripts = config.projectScripts || [];

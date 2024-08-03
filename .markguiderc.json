@@ -3,6 +3,10 @@
     "guideDest": "_example/markguide-static/",
     "cssSrc": "assets/css/",
     "projectStaticFiles": "_example/projects-static-files/",
+    "projectImagesFolder": "images",
+    "projectStylesFolder": "",
+    "projectScriptsFolder": "",
+    "projectFontsFolder": "fonts",
     "projectStyles": [
         "styles"
     ],
@@ -39,7 +43,15 @@
     ],
     "projectFonts": [
         {
-            "filename": "roboto-mono-v22-latin-regular.woff2",
+            "filename": "roboto-light.woff2",
+            "properties": {
+                "family": "Roboto",
+                "style": "normal",
+                "weight": "300"
+            }
+        },
+        {
+            "filename": "roboto-regular.woff2",
             "properties": {
                 "family": "Roboto",
                 "style": "normal",
@@ -47,11 +59,11 @@
             }
         },
         {
-            "filename": "icons.woff2",
+            "filename": "roboto-bold.woff2",
             "properties": {
-                "family": "icons",
+                "family": "Roboto",
                 "style": "normal",
-                "weight": "400"
+                "weight": "700"
             }
         }
     ]

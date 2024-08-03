@@ -71,7 +71,7 @@ module.exports = function init(markguideConfig, subPages) {
                     config.target,
                     mustache.render(
                         getCachedTemplates(config.type),
-                        view(config),
+                        view(config), // TODO: pass global variables
                         cachedPartials
                     ),
                     error => {
