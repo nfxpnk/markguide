@@ -1,5 +1,8 @@
 body,
-input, textarea, button {
+input,
+button,
+textarea,
+select {
   font-family: "Roboto", "Arial";
 }
 
