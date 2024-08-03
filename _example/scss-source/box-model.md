@@ -40,3 +40,8 @@ Add the `js-show-box-model` class and relevant data attributes to the elements y
 <div data-show-sizes="true" data-add-padding="true" class="js-show-box-model" style="margin: 15px; padding: 5px;">Example</div>
 </div>
 ```
+
+```html_example
+<h1 data-show-sizes="true" data-add-padding="true" class="js-show-box-model">Heading H1 Example</h1>
+<h2 data-show-sizes="true" data-add-padding="true" class="js-show-box-model">Heading H2 Example</h2>
+```
