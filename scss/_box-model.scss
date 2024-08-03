@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 //cae4fd 7dbcf8 4fc0f6
 $color-margin: #cae4fd;
 $color-padding: #ffd2a5;
@@ -29,8 +31,6 @@ $svg-right: ('M-0 0l8 7-8 7', $vertical-arrow-width, $vertical-arrow-height);
 	@return $icon;
 }
 
-
-
 .highlight-element {
 	position: absolute;
 	left: 0;
@@ -44,9 +44,10 @@ $svg-right: ('M-0 0l8 7-8 7', $vertical-arrow-width, $vertical-arrow-height);
 	}
 }
 
-
 .show-box-model-parent-in {
 	position: relative;
+	display: block; // should be original display property
+	margin: 0 auto;
 
 	&:before {
 		content: "";
@@ -59,9 +60,6 @@ $svg-right: ('M-0 0l8 7-8 7', $vertical-arrow-width, $vertical-arrow-height);
 		display: table;
 		clear: both;
 	}
-
-	display: block; // should be original display property
-	margin: 0 auto;
 }
 
 .padding-bottom,
@@ -173,7 +171,7 @@ $svg-right: ('M-0 0l8 7-8 7', $vertical-arrow-width, $vertical-arrow-height);
 	&::before {
 		width: $vertical-arrow-width;
 		height: $vertical-arrow-height;
-		top: calc(50% - #{$vertical-arrow-height / 2});
+		top: calc(50% - #{math.div($vertical-arrow-height, 2)});
 	}
 }
 
@@ -199,7 +197,7 @@ $svg-right: ('M-0 0l8 7-8 7', $vertical-arrow-width, $vertical-arrow-height);
 	&::before {
 		width: $horizontal-arrow-width;
 		height: $horizontal-arrow-height;
-		left: calc(50% - #{$horizontal-arrow-width / 2});
+		left: calc(50% - #{math.div($horizontal-arrow-width, 2)});
 	}
 }
 
