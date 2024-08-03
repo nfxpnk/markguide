@@ -13,6 +13,7 @@ const icons = [
     'file-code-16',
     'file-directory-fill-16',
     'link-external-16',
+    'link-16',
     'code-16',
     'screen-full-16',
     'screen-normal-16',
@@ -23,7 +24,7 @@ const icons = [
     'icons'
 ];
 
-const iconsFile = '../../app/views/includes/partials/icons.mustache';
+const iconsFile = '../../src/views/includes/partials/icons.mustache';
 
 const header = '<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\r\n';
 const footer = '</svg>\r\n';
