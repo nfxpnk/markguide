@@ -38,11 +38,15 @@ _example/markguide-static/assets
 
 # Styles
 _example/markguide-static/styles/*
-!_example/markguide-static/styles/styles.css
+!_example/markguide-static/styles/.gitkeep
 
 # Scripts
 _example/markguide-static/scripts/*
-!_example/markguide-static/scritps/main.js
+!_example/markguide-static/scripts/.gitkeep
+
+# Images
+_example/markguide-static/images/*
+!_example/markguide-static/images/.gitkeep
 
 # Helpers
 _helpers/icons/octicons/*
