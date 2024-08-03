@@ -26,7 +26,7 @@ class typographyPlugin extends basePlugin {
             title: 'Typography',
             target: '/typography.html',
             type: 'plugin',
-            icon: 'hash-16'
+            icon: 'typography-16'
         };
     }
 
