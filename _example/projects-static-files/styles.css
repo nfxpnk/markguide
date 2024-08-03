@@ -2,28 +2,23 @@
 
 # g-example
 
-This component is designed to provide same styles of text-type links (hyperlinks)
-across different components.
+This component is designed to add border on any block.
 
 ## Usage
 
 ```scss
-// for regular cases
-.b-user_content-link {
-	@include g-link_brand;
+@mixin g-example() {
+	border: 1px solid black;
 }
 
-// for cases when text color is inverted (white, red etc) and action color will not
-// be good (ex blue hover state on red alert banner)
-.b-error_message-link {
-	@include g-link_brand;
+.b-user {
+	@include g-example;
 }
 ```
-
 */
 /*md
 
-# Example page
+# Example button
 
 ```html_example
 <!--
@@ -31,6 +26,7 @@ Classes:
 .m-width_full - Full width
 :disabled - Disabled
 :hover - Hover
+:active - Active
 :focus - Focus
 -->
 <!--
@@ -50,6 +46,7 @@ Classes:
 .m-width_full - Full width
 :disabled - Disabled
 :hover - Hover
+:active - Active
 :focus - Focus
 -->
 <button type="submit" class="b-button [modifier class]">
@@ -61,7 +58,7 @@ Classes:
 
 ```html_example
 <!--
-Include: _b-example.html
+Include: _b-button.html
 -->
 ```
 
@@ -69,7 +66,7 @@ Include: _b-example.html
 
 ```html_example
 <!--
-Include: _b-example.pug
+Include: _b-button.pug
 -->
 ```
 
@@ -81,10 +78,11 @@ Classes:
 .m-width_full - Full width
 :disabled - Disabled
 :hover - Hover
+:active - Active
 :focus - Focus
 -->
 <!--
-Include: _b-example.html
+Include: _b-button.html
 -->
 ```
 
@@ -121,5 +119,50 @@ Include: _b-example.html
   background-color: #cccccc;
   border-color: #cccccc;
   color: #666666;
+  cursor: not-allowed;
+}
+
+/*md
+
+# Example input
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:active - Active
+:focus - Focus
+-->
+<input type="text" class="b-input [modifier class]" placeholder="Text"/>
+```
+*/
+.b-input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.b-input.m-width_full {
+  width: 100%;
+}
+.b-input:hover {
+  border-color: #007bff;
+}
+.b-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+.b-input:disabled {
+  background-color: #e9ecef;
+  border-color: #ccc;
+  color: #6c757d;
   cursor: not-allowed;
 }
