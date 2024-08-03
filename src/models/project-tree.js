@@ -51,11 +51,22 @@ const isExcludedFile = name => excludedSassFiles.test(name);
 const isExcludedDirectory = name => excludedDirs.test(name);
 
 function pageConfig(id, title, target, noDocumentation, isDocs) {
+    let type = 'component';
+    let icon = 'file-code-16';
+
+    if (isDocs) {
+        type = 'guide';
+        icon = 'markdown-16';
+    } else if (/^l-/i.test(title)) {
+        type = 'container';
+        icon = 'file-16';
+    }
+
     return {
         id: id,
         title: title,
-        type: isDocs ? 'guide' : /^l-/i.test(title) ? 'container' : 'component', // TODO: configuration
-        icon: isDocs ? 'markdown-16' : /^l-/i.test(title) ? 'file-16' : 'file-code-16', // TODO: configuration
+        type: type, // TODO: configuration
+        icon: icon, // TODO: icon for each type should be in config
         src: target,
         target: guideDest + id + '.html',
         template: isDocs ? templates.docs : templates.component,

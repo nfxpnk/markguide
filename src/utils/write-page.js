@@ -35,6 +35,7 @@ module.exports = function init(markguideConfig, subPages) {
     const getCachedTemplates = type => {
         switch (type) {
             case 'guide':
+            case 'plugin':
                 return cachedTemplates.guide;
             case 'component':
             case 'container':

@@ -101,7 +101,7 @@ function getBaseConfig(configRaw) {
             title: 'About',
             src: path.join('./README.md'), // get absolute path ?
             target: path.join(baseMandatory.guideDest, '/index.html'),
-            type: 'about',
+            type: 'page',
             icon: 'info-16',
             subPages: []
         }]

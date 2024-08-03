@@ -25,7 +25,7 @@ class colorsPlugin extends basePlugin {
             id: 'colors',
             title: 'Colors',
             target: '/colors.html',
-            type: 'guide',
+            type: 'plugin',
             icon: 'paintbrush-16'
         };
     }
