@@ -112,6 +112,7 @@ function makeProjectTree(markguideConfig) {
     let docSet = {
         'coverage': {
             'all': 0,
+            'covered': 0,
             'notcovered': 0
         },
         'subPages': []
@@ -119,16 +120,33 @@ function makeProjectTree(markguideConfig) {
 
     /**
      * Traverse directories and generate components config
-     * @param {string} url - components source
+     * @param {string} directoryPath - components source
      * @param {object} config - base for generated config
      * @param {string} categoryName - category name that will be used as component prefix. 'markguide' as start point,
      * directory name in all future cases.
      */
-    function findComponents(url, config, categoryName) {
-        const dir = fs.readdirSync(url);
-        dir.forEach(res => {
-            let name = res;
-            let target = path.join(url, name);
+    function findComponents(directoryPath, config, categoryName) {
+        const items = fs.readdirSync(directoryPath);
+
+        const directories = [];
+        const files = [];
+
+        // Separate directories and files
+        items.forEach(item => {
+        const itemPath = path.join(directoryPath, item);
+            if (fs.statSync(itemPath).isDirectory()) {
+                directories.push(item);
+            } else {
+                files.push(item);
+            }
+        });
+
+        // Concatenate directories and files
+        const sortedItems = directories.concat(files);
+
+        sortedItems.forEach(item => {
+            let name = item;
+            let target = path.join(directoryPath, name);
             let resource = fs.statSync(target);
 
             if (resource.isFile()) {
@@ -169,7 +187,7 @@ function makeProjectTree(markguideConfig) {
     }
 
     findComponents(markguideConfig.guideSrc, docSet.subPages, '');
-    removeEmptyCategories(docSet.subPages);
+    //removeEmptyCategories(docSet.subPages);
 
     //console.log(docSet.coverage.all, ' : ', docSet.coverage.all - docSet.coverage.notcovered);
 

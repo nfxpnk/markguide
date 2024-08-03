@@ -5,7 +5,6 @@ const { fs, path, log, c } = require('../utils/common-utils.js');
 const projectRoot = process.cwd();
 
 function makePathAbsolute(p, root = '') {
-    console.log(p, root);
     if(path.isAbsolute(p)) {
         return p;
     } else {

@@ -44,8 +44,6 @@ function copyDirectory(sourceDir, destDir) {
         }
     }
 
-    console.log(sourceDir, destDir);
-
     const items = fs.readdirSync(sourceDir);
 
     items.forEach(item => {
