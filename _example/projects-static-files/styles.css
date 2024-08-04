@@ -6,6 +6,16 @@ select {
   font-family: "Roboto", "Arial";
 }
 
+h1 {
+  font-size: 24px;
+  padding-bottom: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
 /*md
 # Palette
 
@@ -144,6 +154,7 @@ Include: _b-button.html
 <!--
 Classes:
 .m-width_full - Full width
+.m-error - Error
 :disabled - Disabled
 :hover - Hover
 :active - Active
@@ -154,7 +165,6 @@ Classes:
 */
 .b-input {
   display: block;
-  width: 100%;
   padding: 10px;
   font-size: 16px;
   color: #333;
@@ -165,6 +175,9 @@ Classes:
 }
 .b-input.m-width_full {
   width: 100%;
+}
+.b-input.m-error {
+  border-color: #f26262;
 }
 .b-input:hover {
   border-color: #007bff;
