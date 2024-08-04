@@ -51,24 +51,6 @@ This component is designed to add border on any block.
 
 # Example button
 
-```html_example
-<!--
-Classes:
-.m-width_full - Full width
-:disabled - Disabled
-:hover - Hover
-:active - Active
-:focus - Focus
--->
-<!--
-Parent Styles:
-background: black; color: white;
--->
-<button type="submit" class="b-button [modifier class]">
-    Primary
-</button>
-```
-
 ## No styles
 
 ```html_example
@@ -81,6 +63,26 @@ Classes:
 :focus - Focus
 -->
 <button type="submit" class="b-button [modifier class]">
+    Primary
+</button>
+```
+
+## Dark background
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:active - Active
+:focus - Focus
+-->
+<!--
+Parent Styles:
+background: #646464; color: white;
+-->
+<button type="submit" class="b-button m-light [modifier class]">
     Primary
 </button>
 ```
@@ -130,6 +132,29 @@ Include: _b-button.html
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.b-button.m-light {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #fff;
+}
+.b-button.m-light:hover {
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+}
+.b-button.m-light:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+.b-button.m-light:active {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+.b-button.m-light:disabled {
+  background-color: #1c1c1c;
+  border-color: #1c1c1c;
+  color: #cccccc;
+  cursor: not-allowed;
 }
 .b-button.m-width_full {
   width: 100%;
