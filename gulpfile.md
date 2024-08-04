@@ -46,12 +46,12 @@ Watches for changes in Sass files and triggers recompilation and live reload.
 - On change, runs the `compile:styles:assets:markguide` task.
 
 
-## Task: markguide:compile
-Description: Compiles all components pages for the markguide.
+## Task: `markguide:compile`
+Compiles all components pages for the markguide.
 
 #### Key Points:
 
-- Uses the `markguide.build()`` method to compile the pages.
+- Uses the `markguide.build()` method to compile the pages.
 
 ## Task: `markguide:compile:incremental`
 
