@@ -27,6 +27,16 @@
 
 @import "box-model";
 
+@import "frame/l-markguide-container";
+@import "frame/markguide-search";
+@import "frame/markguide-aside-ctrl";
+@import "frame/markguide-header";
+@import "frame/markguide-logo";
+@import "frame/markguide-aside";
+@import "frame/markguide-nav";
+@import "frame/markguide-footer-copyright";
+@import "frame/markguide-loader";
+
 /* TODO: Temp location, move to some file.scss */
 .markguide-html {
 	padding: 10px;

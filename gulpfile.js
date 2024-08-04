@@ -1,6 +1,7 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 const gulp = require('gulp');
 const connect = require('gulp-connect');
 const sass = require('gulp-sass')(require('sass'));
@@ -11,7 +12,7 @@ const log = require('fancy-log');
 const c = require('ansi-colors');
 
 // Load configurations
-let currentConfigPath = './.markguiderc.current.json';
+let currentConfigPath = './.markguiderc.json';
 if (fs.existsSync(currentConfigPath) === false) {
     currentConfigPath = './.markguiderc.json';
 }
@@ -123,7 +124,7 @@ gulp.task('compile:styles:assets', () => sassCompile({
 // Compile assets scss into markguide destination
 gulp.task('compile:styles:assets:markguide', () => sassCompile({
     source: config.sassSrc + '*.scss',
-    dest: config.guideDest + 'assets/css/',
+    dest: path.join(config.guideDest,  'assets/css'),
     alsoSearchIn: [config.alsoSearchIn]
 }));
 
