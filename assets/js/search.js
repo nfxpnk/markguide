@@ -52,13 +52,16 @@ window.onload = function() {
         }
 
         function runSearch(term) {
+            const lowerCaseTerm = term.toLowerCase();
+
             links.forEach(link => {
                 if (link.getAttribute('href') === '') {
                     return;
                 }
-                const elementText = link.textContent;
 
-                if (term.length && ~elementText.indexOf(term)) {
+                const elementText = link.textContent.toLowerCase();
+
+                if (term.length && elementText.includes(lowerCaseTerm)) {
                     asidePanel.classList.add(hasResults);
                     //links[0].focus();
                     link.classList.add(isRelevant);
