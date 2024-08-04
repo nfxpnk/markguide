@@ -16,7 +16,7 @@
         this.instance.appendChild(messageBlock);
         setTimeout(function() {
             messageBlock.parentNode.removeChild(messageBlock);
-        }, 400);
+        }, 700);
     };
 
     Copier.prototype.copyText = function() {

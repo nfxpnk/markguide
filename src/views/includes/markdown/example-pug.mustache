@@ -1,15 +1,14 @@
-<div class="js-copier">
+<div>
     <div class="markguide-html">
         <div class="markguide-html__item">{{{code}}}</div>
     </div>
 
-    <details class="markguide-markup">
+    <details class="js-copier markguide-markup">
         <summary>Code:</summary>
-        <div class="markguide-code">
-        <pre><code class="language-pug">{{pug}}</code></pre>
-
         <button class="markguide-markup__copy-button js-copier-button">Copy</button>
-        <pre><code class="js-copier-text language-html">{{code}}</code></pre>
+        <div class="markguide-code">
+            <pre><code class="language-pug">{{pug}}</code></pre>
+            <pre><code class="js-copier-text language-html">{{code}}</code></pre>
         </div>
         <span role="region" aria-live="polite" class="markguide-markup__notifier js-playground__notifier"></span>
     </details>

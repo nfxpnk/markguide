@@ -14,6 +14,10 @@ body {
 }
 ```
 
+```html_example
+<div class="test">Test div</div>
+```
+
 ```pug_example
 - var n = 0;
 ul
