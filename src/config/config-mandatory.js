@@ -6,7 +6,7 @@ const projectRoot = process.cwd();
 
 function makePathAbsolute(p, root = '') {
     if(path.isAbsolute(p)) {
-        return path.join(p, '');
+        return path.join(p, '/');
     } else {
         if(path.isAbsolute(root)) {
             return path.join(root, p, '/');
