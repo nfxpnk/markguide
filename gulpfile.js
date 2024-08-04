@@ -12,7 +12,7 @@ const log = require('fancy-log');
 const c = require('ansi-colors');
 
 // Load configurations
-let currentConfigPath = './.markguiderc.json';
+let currentConfigPath = './.markguiderc.current.json';
 if (fs.existsSync(currentConfigPath) === false) {
     currentConfigPath = './.markguiderc.json';
 }
@@ -23,7 +23,7 @@ const markguide = require('./src/markguide.js').withConfig(currentConfigPath);
 const config = require(currentConfigPath);
 
 // Styles source
-config.sassSrc = './scss/';
+config.sassSrc = './scss-new/';
 config.sassDest = './assets/css/';
 config.alsoSearchIn = '';
 
@@ -50,7 +50,7 @@ gulp.task('server:up', done => {
     connect.server({
         root: [
             config.guideDest,
-            config.projectCompiledFiles
+            config.projectStaticFiles
         ],
         port: 5000,
         host: '0.0.0.0',

@@ -56,3 +56,5 @@ views/includes/partials/project-head.mustache
 
 # Generated html file from README.md
 README.html
+
+gulpfile.html
