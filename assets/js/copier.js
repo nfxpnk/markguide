@@ -1,52 +1,60 @@
 'use strict';
 
-(function() {
-    function Copier(instance) {
+class Copier {
+    constructor(instance) {
         this.instance = instance;
         this.copyInput = this.instance.querySelector('.js-copier-text');
         this.copyButton = this.instance.querySelector('.js-copier-button') || this.instance;
         this.initListeners();
     }
 
-    Copier.prototype.showMessage = function() {
+    showMessage() {
         const message = 'Copied!';
-        let messageBlock = document.createElement('div');
-        messageBlock.setAttribute('class', 'markguide-copier__message');
-        messageBlock.appendChild(document.createTextNode(message));
+        const messageBlock = document.createElement('div');
+        messageBlock.className = 'markguide-copier__message';
+        messageBlock.textContent = message;
         this.instance.appendChild(messageBlock);
-        setTimeout(function() {
-            messageBlock.parentNode.removeChild(messageBlock);
-        }, 700);
-    };
 
-    Copier.prototype.copyText = function() {
+        setTimeout(() => {
+            messageBlock.remove();
+        }, 700);
+    }
+
+    copyText() {
         let syntheticInput;
-        if (this.copyInput.nodeName !== 'INPUT' && this.copyInput.nodeName !== 'TEXTAREA') {
+        if (!['INPUT', 'TEXTAREA'].includes(this.copyInput.nodeName)) {
             syntheticInput = this.createSyntheticInput();
         }
-        syntheticInput ? syntheticInput.select() : this.copyInput.select();
+
+        const targetInput = syntheticInput || this.copyInput;
+        targetInput.select();
+
         try {
             document.execCommand('copy');
             this.showMessage();
         } catch (e) {
-            console.log(e);
+            console.error('Copy command failed', e);
         }
+
         if (syntheticInput) {
             syntheticInput.remove();
         }
-    };
+    }
 
-    Copier.prototype.createSyntheticInput = function() {
+    createSyntheticInput() {
         const textarea = document.createElement('textarea');
         textarea.value = this.copyInput.textContent;
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
         this.instance.appendChild(textarea);
-
         return textarea;
-    };
+    }
 
-    Copier.prototype.initListeners = function() {
-        this.copyButton.addEventListener('click', this.copyText.bind(this));
-    };
+    initListeners() {
+        this.copyButton.addEventListener('click', () => this.copyText());
+    }
+}
 
+document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.js-copier').forEach(node => new Copier(node));
-})();
+});
