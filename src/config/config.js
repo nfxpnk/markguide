@@ -149,6 +149,7 @@ function initPlugins(baseMandatory) {
 
             const config = pluginInstance.getConfiguration();
             const content = pluginInstance.getContent();
+            const toc = pluginInstance.getToc();
 
             plugins.push({
                 id: config.id,
@@ -158,8 +159,10 @@ function initPlugins(baseMandatory) {
                 type: config.type,
                 icon: config.icon,
                 content: {
-                    sections: content, // TODO: redo this
-                    toc: 'TOC'
+                    sections: [{
+                        content: content
+                    }], // TODO: redo this
+                    toc: toc
                 },
                 subPages: []
             });

@@ -30,6 +30,20 @@ class colorsPlugin extends basePlugin {
         };
     }
 
+    getToc() {
+        const toc = [];
+
+        const heading = {
+            text: 'test',
+            depth: 2,
+            escapedText: 'test'
+        };
+
+        toc.push(heading);
+
+        return toc;
+    }
+
     getContent() {
         const colors = this.readColorsFromFile(this.filePath);
 
