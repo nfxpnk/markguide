@@ -2,6 +2,15 @@
 
 {{> toc}}
 
-{{{content.documentation}}}
+{{#content.sections}}
+    <section
+        {{^block}}
+          class="markdown-body"
+        {{/block}}
+    >
+        {{{content}}}
+    </section>
+{{/content.sections}}
+
 
 {{> footer}}

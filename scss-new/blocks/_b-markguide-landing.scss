@@ -1,0 +1,14 @@
+.b-markguide-landing {
+	border: 3px dashed blue;
+	padding: 10px;
+
+	&__aside {
+		border: 3px dashed green;
+		padding: 10px;
+	}
+
+	&__main {
+		border: 3px dashed orange;
+		padding: 10px;
+	}
+}

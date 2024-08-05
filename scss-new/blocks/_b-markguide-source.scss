@@ -1,0 +1,5 @@
+.b-markguide-source {
+	@include font($size: 14px);
+
+	color: var(--color-markguide-source-text);
+}

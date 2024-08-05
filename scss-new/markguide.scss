@@ -1,0 +1,42 @@
+@import 'variables/layout';
+@import 'variables/typography';
+@import 'variables/misc';
+
+@import 'base/colors';
+@import 'base/colors-theme';
+@import 'base/fonts';
+
+@import 'markdown/all';
+
+@import 'layouts/l-markguide-container';
+
+// Sidebar-area components
+@import 'blocks/b-markguide-aside';
+@import 'blocks/b-markguide-content';
+@import 'blocks/b-markguide-landing';
+
+@import 'blocks/b-markguide-section';
+
+// @import 'blocks/b-markguide-doc-title';
+// @import 'blocks/b-markguide-header';
+// @import 'blocks/b-markguide-hide-button';
+// @import 'blocks/b-markguide-navigation-list';
+// @import 'blocks/b-markguide-navigation';
+
+// // Content-area components
+
+// @import 'blocks/b-markguide-title';
+// @import 'blocks/b-markguide-toolbar';
+@import 'blocks/b-markguide-toc';
+// @import 'blocks/b-markguide-parameters';
+// @import 'blocks/b-markguide-modifier';
+// @import 'blocks/b-markguide-markup';
+// @import 'blocks/b-markguide-colors';
+// @import 'blocks/b-markguide-color';
+// @import 'blocks/b-markguide-icons';
+// @import 'blocks/b-markguide-icon';
+// @import 'blocks/b-markguide-source';
+
+body {
+	border: 2px solid blue;
+}

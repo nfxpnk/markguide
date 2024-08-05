@@ -1,0 +1,10 @@
+.b-markguide-doc-title {
+	@include font($size: $h1-size, $fontWeight: $font-weight-bold);
+
+	color: var(--color-markguide-doc-title);
+	margin: 0;
+
+	@media (min-width: 769px) {
+		font-size: 1.5em;
+	}
+}

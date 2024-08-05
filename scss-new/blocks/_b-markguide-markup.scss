@@ -1,0 +1,24 @@
+.b-markguide-markup {
+	margin: 10px 0;
+	border: $border-width $border-style var(--color-markguide-markup-border);
+
+	&__summary {
+		padding-left: 10px;
+		display: list-item;
+		outline: revert !important;
+		cursor: pointer;
+	}
+
+	&[open] .markguide-markup__summary {
+		border: $border-width $border-style var(--color-markguide-markup-border);
+	}
+
+	pre {
+		margin: 0;
+		border-radius: 0;
+	}
+
+	code {
+		border-radius: 0;
+	}
+}

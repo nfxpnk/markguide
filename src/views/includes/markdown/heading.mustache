@@ -1,16 +1,11 @@
-{{#isSection}}
-    </section>
-    <section class="markguide-section">
-{{/isSection}}
-<span class="markguide-anchor" id="h{{level}}-{{escapedText}}"></span>
-<h{{level}} class="markguide markguide-title markguide-title_{{level}}">
-    <span class="markguide-title__text">
-        {{{text}}}
-    </span>
-    <a class="markguide-title__anchor" href="#h{{level}}-{{escapedText}}" title="Copy link to this title">
+<span class="anchor" id="h{{depth}}-{{escapedText}}"></span>
+<h{{depth}}>
+    <a href="#h{{depth}}-{{escapedText}}">
         <svg width="16" height="16" role="img">
             <use href="#link-16"></use>
         </svg>
     </a>
-    <span class="markguide-title__highlight"></span>
-</h{{level}}>
+    <span>
+        {{{text}}}
+    </span>
+</h{{depth}}>

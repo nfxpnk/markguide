@@ -1,0 +1,12 @@
+.b-markguide-content {
+	box-sizing: border-box;
+	display: block;
+
+	&__inner {
+		margin: 0 auto;
+		//min-height: calc(100vh - #{$space-md-markguide * 2});
+		//padding: $space-md-markguide;
+		padding-top: 0;
+		position: relative;
+	}
+}

@@ -157,7 +157,10 @@ function initPlugins(baseMandatory) {
                 target: path.join(baseMandatory.guideDest, config.target),
                 type: config.type,
                 icon: config.icon,
-                content: {documentation: content, toc: 'TOC'},
+                content: {
+                    sections: content, // TODO: redo this
+                    toc: 'TOC'
+                },
                 subPages: []
             });
         } catch (error) {

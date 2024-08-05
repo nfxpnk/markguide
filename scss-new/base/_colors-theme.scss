@@ -1,0 +1,89 @@
+$c-white: #fff;
+$c-black: #000;
+
+$c-100: #f3f4f3;
+$c-200: #c7c7c7;
+$c-250: #c7c7c7;
+$c-300: #ea3932;
+$c-400: #af7e67;
+$c-500: #2c2c2c;
+
+// $c-100: #f3f7f7;
+// $c-200: #f3b764;
+// $c-300: #a07f7e;
+// $c-400: #56b1c2;
+// $c-500: #5b5170;
+
+.markguide-theme {
+	// Default theme
+	--color-markguide-background: #{$c-100};
+	--color-markguide-text: #{$c-500};
+	--color-markguide-link: #{$c-300};
+	--color-markguide-link-hover: #{$c-500};
+	--color-markguide-link-visited: #{$c-500};
+	--color-markguide-link-active: #{$c-500};
+	--color-markguide-headers: #{$c-500};
+	--color-markguide-blockquote: #{$c-400};
+	--color-markguide-hr: #{$c-500};
+	--color-markguide-border: #{$c-200};
+	--color-markguide-permalink: #{$c-black};
+
+	// markguide-markup
+	--color-markguide-markup-border: #{$c-200};
+
+	// markguide layout - sidebar
+	--color-markguide-sidebar-bg: #{$c-100};
+
+	// markguide layout - main
+	--color-markguide-main-bg: #{$c-100};
+
+	// markguide-markdown
+	--color-markguide-markdown-code-inline: #{$c-200};
+	--color-markguide-markdown-header: #{$c-500};
+	--color-markguide-markdown-text: #{$c-500};
+	--color-markguide-markdown-border-muted: #{$c-200};
+
+	// // markguide-markdown table
+	// --color-markguide-markdown-table-row-bg: #{$c-white};
+	// --color-markguide-markdown-table-even-row-bg: #{$c-grey-200};
+
+	// // markguide-color
+	// --color-markguide-color-background: #{$c-white};
+	// --color-markguide-color-name: #{$c-black};
+	// --color-markguide-color-code: #{$c-black};
+
+	// markguide-icon
+	--color-markguide-icon-path: #{$c-500};
+
+	// markguide-doc-title
+	--color-markguide-doc-title: #{$c-500};
+
+	// markguide-modifier
+	--color-markguide-modifier-bg: #{$c-100};
+
+	// // markguide-nav
+	// --color-markguide-nav-highlight: #{$c-black};
+	// --color-markguide-nav-empty: #{$c-grey};
+	// --color-markguide-nav-ref: #{$c-grey-500};
+
+	// markguide-navigation
+	--color-markguide-navigation-link: #{$c-500};
+	--color-markguide-navigation-item-border: #{$c-200};
+	--color-markguide-navigation-svg-link: #{$c-500};
+	--color-markguide-navigation-svg-link-empty: #{$c-200};
+	--color-markguide-navigation-svg-directory: #{$c-300};
+	--color-markguide-navigation-svg-file: #{$c-500};
+
+	// markguide-title
+	--color-markguide-title-header: #{$c-500};
+	--color-markguide-title-permalink: #{$c-500};
+	--color-markguide-title-permalink-hash: #{$c-200};
+
+	// // markguide-source
+	--color-markguide-source-text: #{$c-500};
+
+	// // markguide-toolbar
+	--color-markguide-toolbar-bg: #{$c-200};
+	--color-markguide-toolbar-svg: #{$c-black};
+	--color-markguide-toolbar-svg-hover: #{$c-black};
+}

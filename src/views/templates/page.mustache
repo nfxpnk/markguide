@@ -1,15 +1,22 @@
 {{> header}}
 
-<div class="markguide-landing">
-    <div class="markguide-landing__content">
-        <div class="markguide-landing__aside">
+<div class="b-markguide-landing">
+    <div class="b-markguide-landing__content">
+        <div class="b-markguide-landing__aside">
             {{> toc}}
         </div>
-        <main class="markguide-landing__main">
-            <section>
-                <!-- this is hacky, but we have sections in markdown, so we need to open and close it on wrapper -->
-                {{{content.documentation}}}
-            </section>
+        <main class="b-markguide-landing__main">
+
+                {{#content.sections}}
+                    <section
+                        {{^block}}
+                          class="markdown-body"
+                        {{/block}}
+                    >
+                        {{{content}}}
+                    </section>
+                {{/content.sections}}
+
         </main>
     </div>
 </div>

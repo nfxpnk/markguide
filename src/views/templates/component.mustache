@@ -9,9 +9,17 @@
     {{type}}
 </div>
 
-<section><!-- this is hack, but we have sections in markdown, so we need to open and close it on wrapper -->
-{{{content.documentation}}}
-</section>
+
+{{#content.sections}}
+    <section
+        {{^block}}
+          class="markdown-body"
+        {{/block}}
+    >
+        {{{content}}}
+    </section>
+{{/content.sections}}
+
 
 {{> componentstatfooter}}
 

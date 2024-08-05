@@ -49,7 +49,7 @@ module.exports = function(markguideConfig, projectTree) {
                     if (component.src !== '') {
                         const page = renderedPageContent(component.src, {'title': component.title});
                         content = {
-                            documentation: page.content,
+                            sections: page.sections,
                             toc: page.toc
                         }
                     } else {
