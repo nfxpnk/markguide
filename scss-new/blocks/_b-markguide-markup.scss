@@ -1,6 +1,8 @@
 .b-markguide-markup {
-	margin: 10px 0;
-	border: $border-width $border-style var(--color-markguide-markup-border);
+	margin: 10px 0 20px;
+	outline: none !important;
+	position: relative;
+	//border: $border-width $border-style var(--color-markguide-markup-border);
 
 	&__summary {
 		padding-left: 10px;
@@ -10,7 +12,7 @@
 	}
 
 	&[open] .markguide-markup__summary {
-		border: $border-width $border-style var(--color-markguide-markup-border);
+		//border: $border-width $border-style var(--color-markguide-markup-border);
 	}
 
 	pre {
@@ -20,5 +22,34 @@
 
 	code {
 		border-radius: 0;
+	}
+
+	&:focus {
+		outline: none !important;
+	}
+
+	summary {
+		border: 1px solid grey;
+		cursor: pointer;
+		padding-left: 10px;
+		user-select: none;
+
+		&:focus {
+			outline: none !important;
+		}
+	}
+
+	&__copy-button {
+		appearance: none;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		position: absolute;
+		right: 15px;
+		top: 0;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
