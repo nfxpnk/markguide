@@ -1,22 +1,27 @@
 {{#subPages}}
     <div role="listitem" class="b-markguide-nav__item {{#type}}b-markguide-nav__item_{{type}}{{/type}}">
-        <div
-        class="b-markguide-nav__item-line {{#type}}_{{type}}{{/type}} {{#noDocumentation}}_empty{{/noDocumentation}} js-markguide-nav-ln js-collapsed"
-        {{#id}}id="nav-link-{{id}}"{{/id}}
+        <a
+            class="
+                b-markguide-nav__item-line
+                {{#type}}_{{type}}{{/type}}
+                {{#noDocumentation}}_empty{{/noDocumentation}}
+                js-markguide-nav-ln
+                js-collapsed
+                "
+            {{#id}}href="{{id}}.html"{{/id}}
+            {{#id}}id="nav-link-{{id}}"{{/id}}
+            data-name="{{title}}"
         >
             {{#depth}}
-                <div class="b-markguide-nav__indent"></div>
+                <span class="b-markguide-nav__indent"></span>
             {{/depth}}
 
             {{#icon}}<svg width="16" height="16" viewBox="0 0 16 16" role="img"><use href="#{{{icon}}}"></use></svg>{{/icon}}
 
-            <a class="b-markguide-nav__ln"
-                {{#id}}href="{{id}}.html"{{/id}}
-                data-name="{{title}}"
-             >
+            <span class="b-markguide-nav__text">
                 {{title}}
-            </a>
-        </div>
+            </sapn>
+        </a>
         {{#subPages.length}}
             <div role="list" class="b-markguide-nav__sub-nav">
                 {{>navigation}}
