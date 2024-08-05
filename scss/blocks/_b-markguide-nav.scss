@@ -17,6 +17,7 @@
 	&__item-line {
 		display: flex;
 		align-items: center;
+		padding: 0 20px;
 
 		&._category {
 
@@ -29,10 +30,6 @@
 		&._empty {
 			opacity: 0.6;
 			font-style: italic;
-		}
-
-		svg {
-			margin-right: 5px;
 		}
 
 		&.js-current-page {
@@ -48,6 +45,11 @@
 			pointer-events: none;
 			vertical-align: text-bottom;
 			width: 16px;
+			margin-right: 5px;
+		}
+
+		&:hover {
+			background: $markguide-aside-selected;
 		}
 	}
 
