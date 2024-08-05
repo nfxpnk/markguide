@@ -117,6 +117,10 @@ body {
 @import 'blocks/b-markguide-aside';
 @import 'blocks/b-markguide-aside-ctrl';
 
+@import 'blocks/b-markguide-header';
+
+@import 'blocks/b-markguide-logo';
+
 // Search
 @import 'blocks/b-markguide-search';
 
@@ -136,24 +140,12 @@ body {
 @import 'blocks/b-markguide-html';
 @import 'blocks/b-markguide-markup';
 
-// @import 'blocks/b-markguide-doc-title';
-// @import 'blocks/b-markguide-header';
-// @import 'blocks/b-markguide-hide-button';
 // @import 'blocks/b-markguide-navigation-list';
 // @import 'blocks/b-markguide-navigation';
 
-// // Content-area components
-
-// @import 'blocks/b-markguide-title';
-// @import 'blocks/b-markguide-toolbar';
 @import 'blocks/b-markguide-toc';
-// @import 'blocks/b-markguide-parameters';
-// @import 'blocks/b-markguide-modifier';
-
-// @import 'blocks/b-markguide-source';
 
 @import 'blocks/b-markguide-copier';
-
 
 @import 'plugins/colors/all';
 @import 'plugins/icons/all';
