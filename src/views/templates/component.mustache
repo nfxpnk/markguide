@@ -1,6 +1,6 @@
 {{> header}}
 
-{{> componentstataside}}
+{{> toc}}
 
 <div class="markguide-overline">
     <svg width="16" height="16" role="img">
@@ -9,11 +9,14 @@
     {{type}}
 </div>
 
-
+<!-- component.mustache -->
 {{#content.sections}}
     <section
         {{^block}}
-          class="markdown-body"
+            class="markdown-body"
+        {{/block}}
+        {{#block}}
+            class="markdown-code"
         {{/block}}
     >
         {{{content}}}

@@ -2,10 +2,14 @@
 
 {{> toc}}
 
+<!-- guide.mustache -->
 {{#content.sections}}
     <section
         {{^block}}
-          class="markdown-body"
+            class="markdown-body"
+        {{/block}}
+        {{#block}}
+            class="markdown-code"
         {{/block}}
     >
         {{{content}}}

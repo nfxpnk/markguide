@@ -6,11 +6,14 @@
             {{> toc}}
         </div>
         <main class="b-markguide-landing__main">
-
+                <!-- page.mustache -->
                 {{#content.sections}}
                     <section
                         {{^block}}
-                          class="markdown-body"
+                            class="markdown-body"
+                        {{/block}}
+                        {{#block}}
+                            class="markdown-code"
                         {{/block}}
                     >
                         {{{content}}}

@@ -25,34 +25,10 @@ const elements = {
     'example': getFile(markdownTemplates + '/example.mustache'),
     'examplePug': getFile(markdownTemplates + '/example-pug.mustache'),
     'exampleArray': getFile(markdownTemplates + '/example-array.mustache'),
-    'code': getFile(markdownTemplates + '/code.mustache'),
-    'hr': getFile(markdownTemplates + '/hr.mustache'),
-    'paragraph': getFile(markdownTemplates + '/paragraph.mustache'),
-    'ol': getFile(markdownTemplates + '/ol.mustache'),
-    'ul': getFile(markdownTemplates + '/ul.mustache'),
-    'table': getFile(markdownTemplates + '/table.mustache')
+    'code': getFile(markdownTemplates + '/code.mustache')
 };
 
-const renderer = {
-    // paragraph(text) {
-    //     return mustache.render(elements.paragraph, {text: text});
-    // },
-
-    // list (body, ordered) {
-    //     const ol = mustache.render(elements.ol, {body: body});
-    //     const ul = mustache.render(elements.ul, {body: body});
-
-    //     return ordered ? ol : ul;
-    // },
-
-    // table(header, body) {
-    //     return mustache.render(elements.table, {header: header, body: body});
-    // },
-
-    // hr() {
-    //     return mustache.render(elements.hr);
-    // }
-}
+const renderer = {};
 
 /**
  * @typedef {Object} commentContent
