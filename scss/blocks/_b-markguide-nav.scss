@@ -1,5 +1,4 @@
 .b-markguide-nav {
-	// markguide-outline-view
 	font-family: $font-sans-markguide;
 	font-size: $markguide-scale-secondary;
 	list-style: none;
@@ -10,8 +9,55 @@
 		position: relative;
 
 		&_index + &_index {
-			display: none;
+			//display: none;
+			border: 1px solid red;
 		}
+	}
+
+	&__item-line {
+		display: flex;
+		align-items: center;
+
+		&._category {
+			.b-markguide-nav__ln {
+				pointer-events: none;
+			}
+		}
+
+		&.js-collapsed._category {
+
+		}
+
+		&._empty {
+			opacity: 0.6;
+			font-style: italic;
+		}
+
+		svg {
+			margin-right: 5px;
+		}
+
+		&.js-current-page {
+			background-color: $markguide-aside-selected;
+			color: black;
+			cursor: default;
+
+			.b-markguide-nav__ln {
+				pointer-events: none;
+			}
+		}
+
+		svg {
+			height: 18px;
+			min-width: 18px;
+			pointer-events: none;
+			vertical-align: text-bottom;
+			width: 18px;
+		}
+	}
+
+	&__indent {
+		width: 25px;
 	}
 
 	&__ln {
@@ -42,45 +88,17 @@
 			color: $color-blue-markguide;
 		}
 
-		&.js-current-page {
-			//background-color: $markguide-aside-selected;
-			color: black;
-			cursor: default;
-			pointer-events: none;
-		}
 
-		svg {
-			height: 18px;
-			min-width: 18px;
-			pointer-events: none;
-			vertical-align: text-bottom;
-			width: 18px;
-		}
 
-		&._category {
-			svg {
-				color: $color-blue-markguide;
-			}
-		}
 
-		&.js-collapsed._category {
-			svg {
-				color: $color-grey70-markguide;
-			}
-		}
-
-		&._empty {
-			opacity: 0.6;
-			font-style: italic;
-		}
 	}
 
 	/* stylelint-disable */
-	// Recursive nesting level structure - refactor me later
+	// TODO: Recursive nesting level structure - refactor me later
 	> .b-markguide-nav__item {
-		> .b-markguide-nav__ln {
+		> .b-markguide-nav__item-line {
 			background: $markguide-aside-bg;
-			padding: $space-sm-markguide 0 $space-sm-markguide $space-md-markguide;
+			//padding: $space-sm-markguide 0 $space-sm-markguide $space-md-markguide;
 			position: sticky;
 			top: 0;
 			z-index: 1;
@@ -90,47 +108,13 @@
 				bottom: 0;
 				content: "";
 				height: 1px;
-				left: $space-md-markguide;
 				position: absolute;
-				right: $space-md-markguide;
-			}
-		}
-
-		.b-markguide-nav__item {
-			> .b-markguide-nav__ln {
-				padding-left: ($space-md-markguide * 2);
-				padding-left: 20px;
-			}
-
-			.b-markguide-nav__item {
-				> .b-markguide-nav__ln {
-					padding-left: ($space-md-markguide * 3);
-					padding-left: 30px
-				}
-
-				.b-markguide-nav__item {
-					> .b-markguide-nav__ln {
-						padding-left: ($space-md-markguide * 4);
-						padding-left: 40px
-					}
-				}
 			}
 		}
 	}
 	/* stylelint-enable */
 
-	.b-markguide-nav__ln._category {
-		svg {
-		}
-	}
-
-	.b-markguide-nav__ln._category.js-collapsed {
-		/* stylelint-disable-line */
-		svg {
-			/* stylelint-disable-line */
-			transform: rotate(0);
-		}
-
+	.b-markguide-nav__item-line._category.js-collapsed {
 		+ .b-markguide-nav__sub-nav {
 			/* stylelint-disable-line */
 			display: none;
@@ -139,32 +123,41 @@
 }
 
 .js-searching {
-	.b-markguide-nav__ln {
+	.b-markguide-nav__item-line {
 		color: lighten($markguide-color-text, 40%);
 		cursor: default;
-		pointer-events: none;
+		.b-markguide-nav__ln {
+			pointer-events: none;
+		}
 
 		&._category {
 			svg {
 				color: lighten($markguide-color-text, 40%);
 			}
 		}
+
 	}
 }
 
+
 .js-found {
-	.b-markguide-nav__ln {
+	.b-markguide-nav__item-line {
 		color: lighten($markguide-color-text, 40%);
 		cursor: default;
 		display: none;
-		pointer-events: none;
+		.b-markguide-nav__ln {
+			pointer-events: none;
+		}
 	}
 
-	.b-markguide-nav__ln.js-relevant {
+	.b-markguide-nav__item-line.js-relevant {
 		color: $markguide-color-text;
 		cursor: pointer;
 		display: block;
-		pointer-events: initial;
+
+		.b-markguide-nav__ln {
+			pointer-events: initial;
+		}
 
 		&:hover,
 		&:focus {
@@ -177,7 +170,7 @@
 	}
 
 	.b-markguide-nav__sub-nav,
-	.b-markguide-nav__ln._category {
+	.b-markguide-nav__item-line._category {
 		display: block !important; /* stylelint-disable-line */
 	}
 }

@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('beforeunload', populateStorage);
 
         document.addEventListener('MyEventFired', function(event) {
-            const navItems = document.querySelectorAll(".b-markguide-nav__ln");
+            const navItems = document.querySelectorAll(".b-markguide-nav__item-line");
 
             navItems.forEach(item => {
                 const itemId = item.getAttribute("id");
