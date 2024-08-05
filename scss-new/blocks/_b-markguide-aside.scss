@@ -13,7 +13,7 @@
 	z-index: 1;
 
 	&__header {
-		//padding: $space-sm-markguide;
+		padding: 20px;
 	}
 
 	&__content {
@@ -25,7 +25,7 @@
 
 	&__footer {
 		margin-top: auto;
-		//padding-top: $space-md-markguide;
+		padding-top: 10px;
 		position: relative;
 
 		&::after {
