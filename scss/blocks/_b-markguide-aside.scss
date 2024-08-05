@@ -1,8 +1,8 @@
 .b-markguide-aside {
 	all: initial;
-	//background-color: $markguide-aside-bg;
+	background-color: $markguide-aside-bg;
 	bottom: 0;
-	//color: $markguide-color-text;
+	color: $markguide-color-text;
 	display: flex;
 	flex-direction: column;
 	-moz-osx-font-smoothing: grayscale;
@@ -29,18 +29,18 @@
 		position: relative;
 
 		&::after {
-			// background: linear-gradient(
-			// 	rgba($color-white-markguide, 0),
-			// 	$markguide-aside-bg
-			// );
+			 background: linear-gradient(
+			 	rgba($color-white-markguide, 0),
+			 	$markguide-aside-bg
+			 );
 			content: "";
 			display: block;
-			//height: $space-md-markguide;
+			height: $space-md-markguide;
 			left: 4px;
 			pointer-events: none;
 			position: absolute;
 			right: 0;
-			//top: -#{$space-md-markguide};
+			top: -#{$space-md-markguide};
 			z-index: 2;
 		}
 	}

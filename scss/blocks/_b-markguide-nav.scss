@@ -1,9 +1,9 @@
 .b-markguide-nav {
 	// markguide-outline-view
-	//font-family: $font-sans-markguide;
-	//font-size: $markguide-scale-secondary;
+	font-family: $font-sans-markguide;
+	font-size: $markguide-scale-secondary;
 	list-style: none;
-	///padding-bottom: $space-md-markguide;
+	padding-bottom: $space-md-markguide;
 
 	&__item {
 		display: block;
@@ -20,8 +20,8 @@
 		color: inherit;
 		cursor: pointer;
 		display: flex;
-		//font-family: $font-sans-markguide;
-		//font-size: $markguide-scale-secondary;
+		font-family: $font-sans-markguide;
+		font-size: $markguide-scale-secondary;
 		gap: 6px;
 		overflow: hidden;
 		padding: 5px 0;
@@ -39,7 +39,7 @@
 		}
 
 		&:active {
-			//color: $color-blue-markguide;
+			color: $color-blue-markguide;
 		}
 
 		&.js-current-page {
@@ -59,13 +59,13 @@
 
 		&._category {
 			svg {
-				//color: $color-blue-markguide;
+				color: $color-blue-markguide;
 			}
 		}
 
 		&.js-collapsed._category {
 			svg {
-				//color: $color-grey70-markguide;
+				color: $color-grey70-markguide;
 			}
 		}
 
@@ -79,8 +79,8 @@
 	// Recursive nesting level structure - refactor me later
 	> .b-markguide-nav__item {
 		> .b-markguide-nav__ln {
-			//background: $markguide-aside-bg;
-			//padding: $space-sm-markguide 0 $space-sm-markguide $space-md-markguide;
+			background: $markguide-aside-bg;
+			padding: $space-sm-markguide 0 $space-sm-markguide $space-md-markguide;
 			position: sticky;
 			top: 0;
 			z-index: 1;
@@ -90,27 +90,27 @@
 				bottom: 0;
 				content: "";
 				height: 1px;
-				//left: $space-md-markguide;
+				left: $space-md-markguide;
 				position: absolute;
-				//right: $space-md-markguide;
+				right: $space-md-markguide;
 			}
 		}
 
 		.b-markguide-nav__item {
 			> .b-markguide-nav__ln {
-				//padding-left: ($space-md-markguide * 2);
+				padding-left: ($space-md-markguide * 2);
 				padding-left: 20px;
 			}
 
 			.b-markguide-nav__item {
 				> .b-markguide-nav__ln {
-					//padding-left: ($space-md-markguide * 3);
+					padding-left: ($space-md-markguide * 3);
 					padding-left: 30px
 				}
 
 				.b-markguide-nav__item {
 					> .b-markguide-nav__ln {
-						//padding-left: ($space-md-markguide * 4);
+						padding-left: ($space-md-markguide * 4);
 						padding-left: 40px
 					}
 				}
@@ -140,13 +140,13 @@
 
 .js-searching {
 	.b-markguide-nav__ln {
-		//color: lighten($markguide-color-text, 40%);
+		color: lighten($markguide-color-text, 40%);
 		cursor: default;
 		pointer-events: none;
 
 		&._category {
 			svg {
-				//color: lighten($markguide-color-text, 40%);
+				color: lighten($markguide-color-text, 40%);
 			}
 		}
 	}
@@ -154,14 +154,14 @@
 
 .js-found {
 	.b-markguide-nav__ln {
-		//color: lighten($markguide-color-text, 40%);
+		color: lighten($markguide-color-text, 40%);
 		cursor: default;
 		display: none;
 		pointer-events: none;
 	}
 
 	.b-markguide-nav__ln.js-relevant {
-		///color: $markguide-color-text;
+		color: $markguide-color-text;
 		cursor: pointer;
 		display: block;
 		pointer-events: initial;
@@ -172,7 +172,7 @@
 		}
 
 		&:active {
-			//color: $color-blue-markguide;
+			color: $color-blue-markguide;
 		}
 	}
 
