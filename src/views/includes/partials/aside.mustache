@@ -5,24 +5,19 @@
     </script>
     <div class="b-markguide-aside">
         <div class="b-markguide-aside__header">
-            <div class="markguide-header">
-                <div class="markguide-header__logo" role="banner">
+            <div class="b-markguide-header">
+                <div class="b-markguide-header__logo" role="banner">
                     {{>logo}}
                 </div>
 
-                <div class="markguide-header__search">
-                    <div class="markguide-search" role="search">
-                        <svg class="markguide-search__icon" width="16" height="16" role="img"><use href="#search-16"></use></svg>
-                        <input class="markguide-search__input" type="search" id="js-markguide-search" placeholder="Filter" autocomplete="off"/>
-                        <button class="markguide-search__clear" id="js-markguide-search-clear" title="Clear input">
-                            <svg width="16" height="16" role="img"><use href="#x-circle-16"></use></svg>
-                        </button>
-                    </div>
+                <div class="b-markguide-header__search">
+                    {{>search}}
                 </div>
+
             </div>
         </div>
         <div class="b-markguide-aside__content" role="navigation" id="js-markguide-aside-content">
-            <div class="markguide-nav" role="list" id="js-markguide-navigation">
+            <div class="b-markguide-nav" role="list" id="js-markguide-navigation">
                 &nbsp;
             </div>
         </div>
@@ -30,6 +25,7 @@
             {{> copyright}}
         </div>
     </div>
+
     <button class="b-markguide-aside-ctrl" id="js-markguide-aside-resizer" title="Double click to toggle aside"></button>
     <div class="b-markguide-aside-resizer-overlay" id="js-markguide-aside-resizer-overlay"></div>
 </div>
