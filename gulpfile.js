@@ -12,7 +12,7 @@ const log = require('fancy-log');
 const c = require('ansi-colors');
 
 // Load configurations
-let currentConfigPath = './.markguiderc.current.json';
+let currentConfigPath = './.markguiderc.json';
 if (fs.existsSync(currentConfigPath) === false) {
     currentConfigPath = './.markguiderc.json';
 }
@@ -23,7 +23,7 @@ const markguide = require('./src/markguide.js').withConfig(currentConfigPath);
 const config = require(currentConfigPath);
 
 // Styles source
-config.sassSrc = './scss-new/';
+config.sassSrc = './scss/';
 config.sassDest = './assets/css/';
 config.alsoSearchIn = '';
 
