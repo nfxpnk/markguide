@@ -10,9 +10,18 @@
 
 @import 'layouts/l-markguide-container';
 
+
 // Sidebar-area components
 @import 'blocks/b-markguide-aside';
+@import 'blocks/b-markguide-aside-ctrl';
+
+// Search
+@import 'blocks/b-markguide-search';
+
+// Navigation
+@import 'blocks/b-markguide-nav';
 @import 'blocks/b-markguide-content';
+
 @import 'blocks/b-markguide-landing';
 
 @import 'blocks/b-markguide-section';
