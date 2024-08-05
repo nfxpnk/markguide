@@ -11,7 +11,7 @@ class Copier {
     showMessage() {
         const message = 'Copied!';
         const messageBlock = document.createElement('div');
-        messageBlock.className = 'markguide-copier__message';
+        messageBlock.className = 'b-markguide-copier__message';
         messageBlock.textContent = message;
         this.instance.appendChild(messageBlock);
 
