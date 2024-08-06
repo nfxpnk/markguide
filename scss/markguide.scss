@@ -111,10 +111,9 @@ body {
 /// @import 'markdown/all';
 
 @import 'layouts/l-markguide-container';
-
+@import 'layouts/l-markguide-aside';
 
 // Sidebar-area components
-@import 'blocks/b-markguide-aside';
 @import 'blocks/b-markguide-aside-ctrl';
 
 @import 'blocks/b-markguide-header';

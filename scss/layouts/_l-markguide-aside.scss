@@ -1,6 +1,6 @@
-.b-markguide-aside {
+.l-markguide-aside {
 	all: initial;
-	background-color: $markguide-aside-bg;
+	background-color: #f6f9fc;
 	bottom: 0;
 	color: $markguide-color-text;
 	display: flex;
@@ -29,10 +29,10 @@
 		position: relative;
 
 		&::after {
-			 background: linear-gradient(
-			 	rgba($color-white-markguide, 0),
-			 	$markguide-aside-bg
-			 );
+			background: linear-gradient(
+				rgba($color-white-markguide, 0),
+				$markguide-aside-bg
+			);
 			content: "";
 			display: block;
 			height: $space-md-markguide;
