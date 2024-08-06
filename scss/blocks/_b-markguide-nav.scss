@@ -44,6 +44,7 @@
 		&._category {
 			.b-markguide-nav__icon-active {
 				display: block;
+				color: #295eae;
 			}
 			.b-markguide-nav__icon {
 				display: none;
@@ -113,8 +114,8 @@
 		all: initial;
 		color: inherit;
 		cursor: pointer;
-		font-family: $font-sans-markguide;
-		font-size: $markguide-scale-secondary;
+		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+		font-size: 13px;
 		overflow: hidden;
 		position: relative;
 		text-decoration: none;
