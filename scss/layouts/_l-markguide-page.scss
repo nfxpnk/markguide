@@ -1,6 +1,6 @@
-.b-markguide-landing {
-	border: 3px dashed blue;
-	padding: 10px;
+.l-markguide-page {
+	box-sizing: border-box;
+	padding: 10px 40px;
 
 	&__content {
 		display: flex;
@@ -8,16 +8,15 @@
 		gap: 20px;
 		position: relative;
 		width: 100%;
+		min-height: calc(100vh - #{$space-md-markguide * 2});
 	}
 
 	&__aside {
-		border: 3px dashed green;
 		padding: 10px;
 		order: 2;
 	}
 
 	&__main {
-		border: 3px dashed orange;
 		padding: 10px;
 		flex-shrink: 1;
 		width: 100%;
