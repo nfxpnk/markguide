@@ -1,22 +1,27 @@
 {{> header}}
 
-{{> overline }}
-
-{{> toc}}
-
-<!-- guide.mustache -->
-{{#content.sections}}
-    <section
-        {{^block}}
-            class="markdown-body"
-        {{/block}}
-        {{#block}}
-            class="markdown-code"
-        {{/block}}
-    >
-        {{{content}}}
-    </section>
-{{/content.sections}}
-
+<div class="l-markguide-page">
+    <div class="l-markguide-page__content">
+        <main class="l-markguide-page__main">
+                {{> overline }}
+                <!-- guide.mustache -->
+                {{#content.sections}}
+                    <section
+                        {{^block}}
+                            class="markdown-body"
+                        {{/block}}
+                        {{#block}}
+                            class="markdown-code"
+                        {{/block}}
+                    >
+                        {{{content}}}
+                    </section>
+                {{/content.sections}}
+        </main>
+        <div class="l-markguide-page__aside">
+            {{> toc}}
+        </div>
+    </div>
+</div>
 
 {{> footer}}

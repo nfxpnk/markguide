@@ -110,6 +110,7 @@ body {
 
 @import 'layouts/l-markguide-container';
 @import 'layouts/l-markguide-aside';
+@import 'layouts/l-markguide-page';
 
 // Sidebar-area components
 @import 'blocks/b-markguide-aside-ctrl';
@@ -124,11 +125,7 @@ body {
 
 @import 'blocks/b-markguide-footer-copyright';
 
-@import 'blocks/b-markguide-content';
-
 @import 'blocks/b-markguide-overline';
-
-@import 'blocks/b-markguide-landing';
 
 @import 'blocks/b-markguide-section';
 
