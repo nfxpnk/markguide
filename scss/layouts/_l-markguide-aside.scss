@@ -1,6 +1,5 @@
 .l-markguide-aside {
 	all: initial;
-	background-color: #f6f9fc;
 	bottom: 0;
 	color: $markguide-color-text;
 	display: flex;
@@ -26,23 +25,6 @@
 	&__footer {
 		margin-top: auto;
 		padding-top: 10px;
-		position: relative;
-
-		&::after {
-			background: linear-gradient(
-				rgba($color-white-markguide, 0),
-				$markguide-aside-bg
-			);
-			content: "";
-			display: block;
-			height: $space-md-markguide;
-			left: 4px;
-			pointer-events: none;
-			position: absolute;
-			right: 0;
-			top: -#{$space-md-markguide};
-			z-index: 2;
-		}
 	}
 }
 

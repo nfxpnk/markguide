@@ -8,9 +8,14 @@
 		display: block;
 		position: relative;
 
-		&_index + &_index {
-			//display: none;
-			border: 1px solid red;
+		&:nth-last-child(1 of .b-markguide-nav__item_page) {
+			&::after {
+				content: '';
+				display: block;
+				height: 1px;
+				margin: 8px 0;
+				background: lightgrey;
+			}
 		}
 	}
 
@@ -41,7 +46,7 @@
 		}
 
 		&.js-current-page {
-			background-color: $markguide-aside-selected;
+			background-color: lightblue;
 			color: black;
 			cursor: default;
 			pointer-events: none;
@@ -57,7 +62,7 @@
 		}
 
 		&:hover {
-			background: $markguide-aside-selected;
+			background: lightblue;
 		}
 	}
 
@@ -111,27 +116,6 @@
 			color: $color-blue-markguide;
 		}
 	}
-
-	/* stylelint-disable */
-	// TODO: Recursive nesting level structure - refactor me later
-	> .b-markguide-nav__item {
-		> .b-markguide-nav__item-line {
-			background: $markguide-aside-bg;
-			//padding: $space-sm-markguide 0 $space-sm-markguide $space-md-markguide;
-			position: sticky;
-			top: 0;
-			z-index: 1;
-
-			&::after {
-				background: lightgrey;
-				bottom: 0;
-				content: "";
-				height: 1px;
-				position: absolute;
-			}
-		}
-	}
-	/* stylelint-enable */
 
 	.b-markguide-nav__item-line._category.js-collapsed {
 		+ .b-markguide-nav__sub-nav {

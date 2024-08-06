@@ -3,7 +3,7 @@
 	border: none;
 	bottom: 0;
 	color: transparent;
-	cursor: ew-resize;
+	cursor: col-resize;
 	outline: none;
 	position: absolute;
 	right: -7px;
@@ -36,8 +36,7 @@
 	}
 
 	.js-aside-panel-hidden & {
-		cursor: e-resize; // wait for implementation of drag
-		cursor: pointer;
+		cursor: col-resize;
 	}
 }
 
