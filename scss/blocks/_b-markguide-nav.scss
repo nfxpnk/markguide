@@ -8,12 +8,23 @@
 		display: block;
 		position: relative;
 
+		&:nth-child(1 of .b-markguide-nav__item_plugin) {
+			&::before {
+				content: '';
+				display: block;
+				height: 1px;
+				// margin: 3px 0;
+				background: lightgrey;
+			}
+		}
+
+		&:nth-last-child(1 of .b-markguide-nav__item_plugin),
 		&:nth-last-child(1 of .b-markguide-nav__item_page) {
 			&::after {
 				content: '';
 				display: block;
 				height: 1px;
-				margin: 8px 0;
+				//margin: 3px 0;
 				background: lightgrey;
 			}
 		}
@@ -23,6 +34,12 @@
 		display: flex;
 		align-items: center;
 		padding: 0 20px;
+		text-decoration: none;
+		color: #000;
+
+		svg {
+			color: #5b8fdd;
+		}
 
 		&._category {
 			.b-markguide-nav__icon-active {
@@ -46,7 +63,7 @@
 		}
 
 		&.js-current-page {
-			background-color: lightblue;
+			background-color: #e6e7ff;
 			color: black;
 			cursor: default;
 			pointer-events: none;
@@ -62,7 +79,7 @@
 		}
 
 		&:hover {
-			background: lightblue;
+			background: #e6e7ff;
 		}
 	}
 
