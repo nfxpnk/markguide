@@ -10,6 +10,7 @@ const icons = [
     'file-16',
     'file-code-16',
     'file-directory-fill-16',
+    'file-directory-open-fill-16',
     'hash-16',
     'info-16',
     'link-16',
