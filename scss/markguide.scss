@@ -143,3 +143,14 @@ body {
 @import 'plugins/icons/all';
 
 @import 'helpers/box-model';
+
+.markdown-code {
+	.b-markguide-code {
+		width: 100%;
+		overflow: auto;
+	}
+}
+
+pre[class*="language-"] {
+	margin: 0 !important;
+}

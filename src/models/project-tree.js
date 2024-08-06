@@ -80,6 +80,7 @@ function pageConfig(id, title, target, noDocumentation, isDocs, depth) {
         title: title,
         type: type, // TODO: configuration
         icon: icon, // TODO: icon for each type should be in config
+        iconActive: false, // No active state
         src: target,
         target: guideDest + id + '.html',
         template: isDocs ? templates.docs : templates.component,
@@ -95,6 +96,7 @@ function categoryConfig(id, title, depth) {
         title: title,
         type: 'category',
         icon: 'file-directory-fill-16',
+        iconActive: 'file-directory-open-fill-16',
         subPages: [],
         depth: createDummyArray(depth)
     };

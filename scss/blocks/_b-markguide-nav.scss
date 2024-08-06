@@ -20,16 +20,24 @@
 		padding: 0 20px;
 
 		&._category {
-
+			.b-markguide-nav__icon-active {
+				display: block;
+			}
+			.b-markguide-nav__icon {
+				display: none;
+			}
 		}
 
 		&.js-collapsed._category {
-
+			.b-markguide-nav__icon-active {
+				display: none;
+			}
+			.b-markguide-nav__icon {
+				display: block;
+			}
 		}
 
 		&._empty {
-			opacity: 0.6;
-			font-style: italic;
 		}
 
 		&.js-current-page {
@@ -55,6 +63,28 @@
 
 	&__indent {
 		width: 25px;
+		height: 30px;
+		flex-shrink: 0;
+		position: relative;
+		display: block;
+
+		&::before {
+			content: '';
+			width: 2px;
+			border-left: 1px solid lightgrey;
+			height: 100%;
+			left: 50%;
+			margin-left: -6px;
+			position: absolute;
+		}
+
+		&:first-child {
+			width: 1px;
+
+			&::before {
+				display: none;
+			}
+		}
 	}
 
 	&__text {
@@ -64,11 +94,9 @@
 		font-family: $font-sans-markguide;
 		font-size: $markguide-scale-secondary;
 		overflow: hidden;
-		padding: 5px 0;
 		position: relative;
 		text-decoration: none;
 		text-overflow: ellipsis;
-		transition: opacity ease 0.2s;
 		user-select: none;
 		white-space: nowrap;
 		pointer-events: none;
@@ -140,7 +168,7 @@
 	.b-markguide-nav__item-line.js-relevant {
 		color: $markguide-color-text;
 		cursor: pointer;
-		display: block;
+		display: flex;
 		pointer-events: initial;
 
 
@@ -154,8 +182,10 @@
 		}
 	}
 
-	.b-markguide-nav__sub-nav,
-	.b-markguide-nav__item-line._category {
+	.b-markguide-nav__sub-nav {
 		display: block !important; /* stylelint-disable-line */
+	}
+	.b-markguide-nav__item-line._category {
+		display: flex !important; /* stylelint-disable-line */
 	}
 }
