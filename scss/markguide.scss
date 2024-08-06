@@ -98,8 +98,6 @@ body {
 	padding: 0;
 }
 
-
-
 @import 'variables/layout';
 @import 'variables/typography';
 @import 'variables/misc';
@@ -115,8 +113,6 @@ body {
 
 // Sidebar-area components
 @import 'blocks/b-markguide-aside-ctrl';
-
-@import 'blocks/b-markguide-header';
 
 @import 'blocks/b-markguide-logo';
 
@@ -138,9 +134,6 @@ body {
 
 @import 'blocks/b-markguide-html';
 @import 'blocks/b-markguide-markup';
-
-// @import 'blocks/b-markguide-navigation-list';
-// @import 'blocks/b-markguide-navigation';
 
 @import 'blocks/b-markguide-toc';
 
