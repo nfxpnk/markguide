@@ -377,6 +377,7 @@
 
 .markdown-body ul,
 .markdown-body ol {
+  list-style: initial;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 2em;
@@ -406,11 +407,11 @@
 }
 
 .markdown-body pre {
-  margin-top: 0;
+/*  margin-top: 0;
   margin-bottom: 0;
   font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
   font-size: 12px;
-  word-wrap: normal;
+  word-wrap: normal;*/
 }
 
 .markdown-body .octicon {
@@ -468,7 +469,7 @@
     height: 28px;
     margin: auto;
     border-radius: var(--borderRadius-small);
-    /*opacity: 1;*/
+    opacity: 0;
     justify-content: center;
     align-items: center;
     transform: translateY(-50%);
@@ -479,7 +480,7 @@
 }
 
 .markdown-heading .heading-element:hover+.anchor {
-    /*opacity: 1;*/
+    opacity: 1;
 }
 
 .markdown-body p,
@@ -787,31 +788,31 @@
 }
 
 .markdown-body pre code {
-  font-size: 100%;
+/*  font-size: 100%;*/
 }
 
 .markdown-body pre>code {
-  padding: 0;
+/*  padding: 0;
   margin: 0;
   word-break: normal;
   white-space: pre;
   background: transparent;
-  border: 0;
+  border: 0;*/
 }
 
 .markdown-body pre {
-  padding: 16px;
+/*  padding: 16px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
   color: var(--fgColor-default);
   background-color: var(--bgColor-muted);
-  border-radius: 6px;
+  border-radius: 6px;*/
 }
 
 .markdown-body pre code,
 .markdown-body pre tt {
-  display: inline;
+/*  display: inline;
   max-width: auto;
   padding: 0;
   margin: 0;
@@ -819,7 +820,7 @@
   line-height: inherit;
   word-wrap: normal;
   background-color: transparent;
-  border: 0;
+  border: 0;*/
 }
 
 .markdown-body .csv-data td,
@@ -1157,4 +1158,8 @@
 
 .markdown-body>*:first-child>.heading-element:first-child {
   margin-top: 0 !important;
+}
+
+.markdown-code {
+  margin-bottom: 16px;
 }
