@@ -1,52 +1,34 @@
-<div class="markguide-landing">
-    <div class="markguide-landing__content">
-        <main class="markguide-landing__main">
-            <section class="markguide-section">
-                <h1 class="markguide markguide-title markguide-title_1">
-                    <span class="markguide-title__text">
-                        Icons
-                    </span>
-                    <a class="markguide-title__anchor" href="#h1-markguide" title="Copy link to this title">
-                        <svg width="16" height="16" role="img">
-                            <use href="#link-16"></use>
-                        </svg>
-                    </a>
-                    <span class="markguide-title__highlight"></span>
-                </h1>
-                <p class="markguide markguide-p">Text for icons</p>
-            </section>
-            <section class="markguide-section">
-                <div class="markguide-icons">
-                    {{#icons}}
-                    <div class="markguide-icons__item">
-                        <div class="markguide-icon">
-                            <div class="markguide-icon__data">
-                                <pre>width: <b>{{width}}</b> height: <b>{{height}}</b> viewBox: <b>0 0 {{viewBoxWidth}} {{viewBoxHeight}}</b></pre>
-                            </div>
-                            <div class="markguide-icon__svg" style="max-width: 64px; height: 64px;">
-                                {{{svg}}}
+<h1 class="heading-element">
+    Icons
+</h1>
 
-                                <div class="markguide-icon__grid">
-                                    <div class="markguide-icon__grid-top"></div>
-                                    <div class="markguide-icon__grid-bottom"></div>
-                                    <div class="markguide-icon__grid-left"></div>
-                                    <div class="markguide-icon__grid-right"></div>
-                                </div>
-                            </div>
-                            <div class="markguide-icon__font" style="">
+<div class="b-markguide-icons">
+    {{#icons}}
+    <div class="b-markguide-icons__item">
+        <div class="b-markguide-icon">
+            <div class="b-markguide-icon__data">
+                <pre>width: <b>{{width}}</b> height: <b>{{height}}</b> viewBox: <b>0 0 {{viewBoxWidth}} {{viewBoxHeight}}</b></pre>
+            </div>
+            <div class="b-markguide-icon__svg" style="max-width: 64px; height: 64px;">
+                {{{svg}}}
 
-                            </div>
-                            <div class="markguide-icon__name">
-                                {{fileName}}
-                            </div>
-                            <div class="markguide-icon__code">
-                                <code class="hljs language-none">@include icon({{name}}) {}</code>
-                            </div>
-                        </div>
-                    </div>
-                    {{/icons}}
+                <div class="b-markguide-icon__grid">
+                    <div class="b-markguide-icon__grid-top"></div>
+                    <div class="b-markguide-icon__grid-bottom"></div>
+                    <div class="b-markguide-icon__grid-left"></div>
+                    <div class="b-markguide-icon__grid-right"></div>
                 </div>
-            </section>
-        </main>
+            </div>
+            <div class="b-markguide-icon__font" style="">
+
+            </div>
+            <div class="b-markguide-icon__name">
+                {{fileName}}
+            </div>
+            <div class="b-markguide-icon__code">
+                <code class="hljs language-none">@include icon({{name}}) {}</code>
+            </div>
+        </div>
     </div>
+    {{/icons}}
 </div>

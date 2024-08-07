@@ -1,17 +1,20 @@
-.markguide-icons {
-	font-size: 0;
+.b-markguide-icons {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	gap: 10px;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex-wrap: wrap;
 
 	&__item {
 		box-sizing: border-box;
-		display: inline-block;
 		font-size: initial;
-		padding: 5px;
-		vertical-align: top;
-		width: 20%;
+		width: calc(20% - 8px);
 	}
 }
 
-.markguide-icon {
+.b-markguide-icon {
 	--color-markguide-border: #c3c3c3;
 
 	border: 1px solid var(--color-markguide-border);
@@ -20,19 +23,19 @@
 	position: relative;
 
 	&:hover {
-		.markguide-icon__data {
+		.b-markguide-icon__data {
 			display: none;
 		}
 
-		.markguide-icon__code {
+		.b-markguide-icon__code {
 			display: block;
 		}
 
-		.markguide-icon__grid {
+		.b-markguide-icon__grid {
 			display: block;
 		}
 
-		.markguide-icon__svg {
+		.b-markguide-icon__svg {
 			background-color: #dfdfdf;
 		}
 	}
