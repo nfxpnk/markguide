@@ -1,41 +1,23 @@
-<div class="markguide-landing">
-    <div class="markguide-landing__content">
-        <main class="markguide-landing__main">
-            <section class="markguide-section">
-                <h1 class="markguide markguide-title markguide-title_1">
-                    <span class="markguide-title__text">
-                        Colors
-                    </span>
-                    <a class="markguide-title__anchor" href="#h1-markguide" title="Copy link to this title">
-                        <svg width="16" height="16" role="img">
-                            <use href="#link-16"></use>
-                        </svg>
-                    </a>
-                    <span class="markguide-title__highlight"></span>
-                </h1>
-                <p class="markguide markguide-p">Text for colors</p>
-            </section>
-            <section class="markguide-section">
+<div class="markdown-heading">
+    <h1 class="heading-element">
+        Colors
+    </h1>
+</div>
 
-                <div class="markguide-colors">
-                    {{#colors}}
-                    <div class="markguide-colors__item">
-                        <figure class="markguide-color">
-                            <div class="markguide-color__figure">
-                                <span class="markguide-color__figure-color" style="background:{{value}}"></span>
-                            </div>
-                            <figcaption class="markguide-color__caption">
-                                <strong class="markguide-color__name">{{name}}</strong>
-                                <code class="markguide-color__code"></code>
-                                <code class="markguide-color__code">{{value}}</code>
-                                <span class="markguide-color__description"></span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    {{/colors}}
-                </div>
-
-            </section>
-        </main>
+<div class="markguide-colors">
+    {{#colors}}
+    <div class="markguide-colors__item">
+        <div class="markguide-color">
+            <div class="markguide-color__figure">
+                <span class="markguide-color__figure-color" style="background:{{value}}"></span>
+            </div>
+            <div class="markguide-color__caption">
+                <strong class="markguide-color__name">{{name}}</strong>
+                <div class="markguide-color__code"></div>
+                <div class="markguide-color__code">{{value}}</div>
+                <span class="markguide-color__description"></span>
+            </div>
+        </div>
     </div>
+    {{/colors}}
 </div>
