@@ -2,7 +2,8 @@
 
 <div class="l-markguide-page">
     <div class="l-markguide-page__content">
-        <main class="l-markguide-page__main">
+        <div class="l-markguide-page__main">
+            <div class="l-markguide-page__main-content">
                 {{> overline }}
                 <!-- page.mustache -->
                 {{#content.sections}}
@@ -17,7 +18,8 @@
                         {{{content}}}
                     </section>
                 {{/content.sections}}
-        </main>
+            </div>
+        </div>
         <div class="l-markguide-page__aside">
             {{> toc}}
         </div>
