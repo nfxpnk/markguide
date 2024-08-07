@@ -1,0 +1,55 @@
+.b-markguide-aside-ctrl {
+	background: rgba(0, 0, 0, 0);
+	border: none;
+	bottom: 0;
+	color: transparent;
+	cursor: col-resize;
+	outline: none;
+	position: absolute;
+	right: -7px;
+	top: 0;
+	transition: color ease 0.2s;
+	width: 10px;
+	z-index: 2;
+
+	&::after {
+		border-left: 2px solid;
+		bottom: 0;
+		content: "";
+		position: absolute;
+		top: 0;
+	}
+
+	&::before {
+		border-left: 2px solid;
+		border-radius: 5px;
+		content: "";
+		height: 20px;
+		margin: auto;
+		position: absolute;
+		right: -1px;
+	}
+
+	&:hover,
+	&:focus {
+		color: $color-blue-markguide;
+	}
+
+	.js-aside-panel-hidden & {
+		cursor: col-resize;
+	}
+}
+
+.b-markguide-aside-resizer-overlay {
+	bottom: 0;
+	display: none;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 11;
+
+	&.js-dragging {
+		display: block;
+	}
+}

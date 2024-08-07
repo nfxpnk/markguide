@@ -1,0 +1,195 @@
+.b-markguide-nav {
+	font-family: $font-sans-markguide;
+	font-size: $markguide-scale-secondary;
+	list-style: none;
+	padding-bottom: $space-md-markguide;
+
+	&__item {
+		display: block;
+		position: relative;
+
+		&:nth-child(1 of .b-markguide-nav__item_plugin) {
+			&::before {
+				content: '';
+				display: block;
+				height: 1px;
+				// margin: 3px 0;
+				background: lightgrey;
+			}
+		}
+
+		&:nth-last-child(1 of .b-markguide-nav__item_plugin),
+		&:nth-last-child(1 of .b-markguide-nav__item_page) {
+			&::after {
+				content: '';
+				display: block;
+				height: 1px;
+				//margin: 3px 0;
+				background: lightgrey;
+			}
+		}
+	}
+
+	&__item-line {
+		display: flex;
+		align-items: center;
+		padding: 0 20px;
+		text-decoration: none;
+		color: #000;
+
+		svg {
+			color: #5b8fdd;
+		}
+
+		&._category {
+			.b-markguide-nav__icon-active {
+				display: block;
+				color: #295eae;
+			}
+			.b-markguide-nav__icon {
+				display: none;
+			}
+		}
+
+		&.js-collapsed._category {
+			.b-markguide-nav__icon-active {
+				display: none;
+			}
+			.b-markguide-nav__icon {
+				display: block;
+			}
+		}
+
+		&._empty {
+			fong-style: italic;
+			color: lightgrey;
+		}
+
+		&.js-current-page {
+			background-color: #e6e7ff;
+			color: black;
+			cursor: default;
+			pointer-events: none;
+		}
+
+		svg {
+			height: 16px;
+			min-width: 16px;
+			pointer-events: none;
+			vertical-align: text-bottom;
+			width: 16px;
+			margin-right: 5px;
+		}
+
+		&:hover {
+			background: #e6e7ff;
+		}
+	}
+
+	&__indent {
+		width: 25px;
+		height: 30px;
+		flex-shrink: 0;
+		position: relative;
+		display: block;
+
+		&::before {
+			content: '';
+			width: 2px;
+			border-left: 1px solid lightgrey;
+			height: 100%;
+			left: 50%;
+			margin-left: -6px;
+			position: absolute;
+		}
+
+		&:first-child {
+			width: 1px;
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	&__text {
+		all: initial;
+		color: inherit;
+		cursor: pointer;
+		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+		font-size: 13px;
+		overflow: hidden;
+		position: relative;
+		text-decoration: none;
+		text-overflow: ellipsis;
+		user-select: none;
+		white-space: nowrap;
+		pointer-events: none;
+
+		&:hover,
+		&:focus {
+			color: black;
+			text-decoration: none;
+		}
+
+		&:active {
+			color: $color-blue-markguide;
+		}
+	}
+
+	.b-markguide-nav__item-line._category.js-collapsed {
+		+ .b-markguide-nav__sub-nav {
+			/* stylelint-disable-line */
+			display: none;
+		}
+	}
+}
+
+.js-searching {
+	.b-markguide-nav__item-line {
+		color: lighten($markguide-color-text, 40%);
+		cursor: default;
+		pointer-events: none;
+
+		&._category {
+			svg {
+				color: lighten($markguide-color-text, 40%);
+			}
+		}
+
+	}
+}
+
+
+.js-found {
+	.b-markguide-nav__item-line {
+		color: lighten($markguide-color-text, 40%);
+		cursor: default;
+		display: none;
+		pointer-events: none;
+	}
+
+	.b-markguide-nav__item-line.js-relevant {
+		color: $markguide-color-text;
+		cursor: pointer;
+		display: flex;
+		pointer-events: initial;
+
+
+		&:hover,
+		&:focus {
+			color: black;
+		}
+
+		&:active {
+			color: $color-blue-markguide;
+		}
+	}
+
+	.b-markguide-nav__sub-nav {
+		display: block !important; /* stylelint-disable-line */
+	}
+	.b-markguide-nav__item-line._category {
+		display: flex !important; /* stylelint-disable-line */
+	}
+}

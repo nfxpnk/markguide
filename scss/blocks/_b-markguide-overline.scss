@@ -1,0 +1,17 @@
+.b-markguide-overline {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	text-transform: capitalize;
+	margin-bottom: 15px;
+
+	svg {
+		///color: $color-blue-markguide;
+		height: 24px;
+		width: 24px;
+	}
+
+	span {
+		line-height: 1;
+	}
+}

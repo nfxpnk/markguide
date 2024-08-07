@@ -32,6 +32,20 @@ class iconsPlugin extends basePlugin {
         };
     }
 
+    getToc() {
+        const toc = [];
+
+        const heading = {
+            text: 'test',
+            depth: 2,
+            escapedText: 'test'
+        };
+
+        toc.push(heading);
+
+        return toc;
+    }
+
     getContent() {
         const svgFiles = this.readSvgFiles();
         const icons = svgFiles.map(file => this.extractSvgDetails(file));

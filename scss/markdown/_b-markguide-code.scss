@@ -1,0 +1,46 @@
+.markdown-body {
+	code {
+		font-family: $mono-font;
+		padding: 0.2em 0.4em;
+		margin: 0;
+		font-size: 85%;
+		border-radius: $border-radius;
+
+		br {
+			display: none;
+		}
+	}
+
+	ul, p {
+		code {
+			background-color: var(--color-markguide-markdown-code-inline);
+		}
+	}
+
+	del code {
+		text-decoration: inherit;
+	}
+
+	samp {
+		font-size: 85%;
+	}
+
+	pre {
+		word-wrap: normal;
+		overflow: auto;
+		font-size: 85%;
+		line-height: 1.45;
+		border-radius: $border-radius;
+
+		code {
+			font-size: 100%;
+		}
+
+		// Code tags within code blocks (<pre>s)
+		>code {
+			padding: $spacer-3;
+			word-break: normal;
+			white-space: pre;
+		}
+	}
+}

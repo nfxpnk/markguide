@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/markguide.css"/>
 
+    <link rel="stylesheet" type="text/css" href="assets/css/github-markdown.css"/>
+
     <link rel="stylesheet" type="text/css" href="assets/css/prism.css"/>
 
     <style>
@@ -35,8 +37,13 @@
     {{/projectScripts}}
 
     {{> assetshead}}
+
+    <script>
+        // Retrieve `asideWidth` from sessionStorage if available
+        const asideWidth = window.sessionStorage ? window.sessionStorage.getItem('asideWidth') : false;
+    </script>
 </head>
-<body class="markguide-page markguide-page_{{type}}">
+<body class="b-markguide-page b-markguide-page_{{type}}">
 
 <div id="js-markguide-icons"></div>
 {{> icons}}
@@ -45,10 +52,6 @@
     {{> aside}}
     <main role="main" class="l-markguide-container__main" id="js-markguide-main">
         <script>
-            document.getElementById('js-markguide-main').style.marginLeft =
-                window.sessionStorage && window.sessionStorage.getItem('asideWidth') ?
-                    window.sessionStorage.getItem('asideWidth') + 'px' : '';
+            const mainElement = document.getElementById('js-markguide-main');
+            mainElement.style.marginLeft = asideWidth ? `${asideWidth}px` : '';
         </script>
-        <div class="markguide-content">
-            <div class="markguide-content__inner">
-

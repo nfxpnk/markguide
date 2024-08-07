@@ -25,6 +25,10 @@ class basePlugin {
         throw new Error(`getConfiguration() must be implemented`);
     }
 
+    getToc() {
+        throw new Error(`getToc() must be implemented`);
+    }
+
     getContent() {
         throw new Error(`getContent() must be implemented`);
     }

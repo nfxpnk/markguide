@@ -1,36 +1,24 @@
 <div class="l-markguide-container__aside" id="js-markguide-aside" role="contentinfo">
     <script>
-        document.getElementById('js-markguide-aside').style.width =
-            window.sessionStorage && (window.sessionStorage.getItem('asideWidth')) ?
-                window.sessionStorage.getItem('asideWidth') + 'px' : '';
+        const asideElement = document.getElementById('js-markguide-aside');
+        asideElement.style.width = asideWidth ? `${asideWidth}px` : '';
     </script>
-    <div class="markguide-aside">
-        <div class="markguide-aside__header">
-            <div class="markguide-header">
-                <div class="markguide-header__logo" role="banner">
-                    {{>logo}}
-                </div>
+    <div class="l-markguide-aside">
+        <div class="l-markguide-aside__header">
+            {{>logo}}
 
-                <div class="markguide-header__search">
-                    <div class="markguide-search" role="search">
-                        <svg class="markguide-search__icon" width="16" height="16" role="img"><use href="#search-16"></use></svg>
-                        <input class="markguide-search__input" type="search" id="js-markguide-search" placeholder="Filter" autocomplete="off"/>
-                        <button class="markguide-search__clear" id="js-markguide-search-clear" title="Clear input">
-                            <svg width="16" height="16" role="img"><use href="#x-circle-16"></use></svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            {{>search}}
         </div>
-        <div class="markguide-aside__content" role="navigation" id="js-markguide-aside-content">
-            <div class="markguide-nav" role="list" id="js-markguide-navigation">
+        <div class="l-markguide-aside__content" role="navigation" id="js-markguide-aside-content">
+            <div class="b-markguide-nav" role="list" id="js-markguide-navigation">
                 &nbsp;
             </div>
         </div>
-        <div class="markguide-aside__footer">
+        <div class="l-markguide-aside__footer">
             {{> copyright}}
         </div>
     </div>
-    <button class="markguide-aside-ctrl" id="js-markguide-aside-resizer" title="Double click to toggle aside"></button>
-    <div class="markguide-aside-resizer-overlay" id="js-markguide-aside-resizer-overlay"></div>
+
+    <button class="b-markguide-aside-ctrl" id="js-markguide-aside-resizer" title="Double click to toggle aside"></button>
+    <div class="b-markguide-aside-resizer-overlay" id="js-markguide-aside-resizer-overlay"></div>
 </div>

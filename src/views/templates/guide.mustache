@@ -1,7 +1,29 @@
 {{> header}}
 
-{{> toc}}
-
-{{{content.documentation}}}
+<div class="l-markguide-page">
+    <div class="l-markguide-page__content">
+        <div class="l-markguide-page__main">
+            <div class="l-markguide-page__main-content">
+                {{> overline }}
+                <!-- guide.mustache -->
+                {{#content.sections}}
+                    <section
+                        {{^block}}
+                            class="markdown-body"
+                        {{/block}}
+                        {{#block}}
+                            class="markdown-code"
+                        {{/block}}
+                    >
+                        {{{content}}}
+                    </section>
+                {{/content.sections}}
+            </div>
+        </div>
+        <div class="l-markguide-page__aside">
+            {{> toc}}
+        </div>
+    </div>
+</div>
 
 {{> footer}}

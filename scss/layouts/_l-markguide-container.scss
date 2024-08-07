@@ -1,0 +1,31 @@
+.l-markguide-container {
+	height: 100%;
+
+	&__aside {
+		box-shadow: 1px 0 0 0 $markguide-aside-bd;
+		bottom: 0;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 250px;
+		z-index: 2;
+	}
+
+	&__main {
+		background-color: #fff;
+		margin-left: 250px;
+		position: relative;
+		z-index: 1;
+	}
+
+	&.js-aside-panel-hidden {
+		.l-markguide-container__aside {
+			min-width: 5px;
+			width: 5px;
+		}
+
+		.l-markguide-container__main {
+			margin-left: 5px;
+		}
+	}
+}

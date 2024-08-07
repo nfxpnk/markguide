@@ -1,18 +1,29 @@
 {{> header}}
 
-{{> componentstataside}}
-
-<div class="markguide-overline">
-    <svg width="16" height="16" role="img">
-        <use href="#{{icon}}"></use>
-    </svg>
-    {{type}}
+<div class="l-markguide-page">
+    <div class="l-markguide-page__content">
+        <div class="l-markguide-page__main">
+            <div class="l-markguide-page__main-content">
+                {{> overline }}
+                <!-- component.mustache -->
+                {{#content.sections}}
+                    <section
+                        {{^block}}
+                            class="markdown-body"
+                        {{/block}}
+                        {{#block}}
+                            class="markdown-code"
+                        {{/block}}
+                    >
+                        {{{content}}}
+                    </section>
+                {{/content.sections}}
+            </div>
+        </div>
+        <div class="l-markguide-page__aside">
+            {{> toc}}
+        </div>
+    </div>
 </div>
-
-<section><!-- this is hack, but we have sections in markdown, so we need to open and close it on wrapper -->
-{{{content.documentation}}}
-</section>
-
-{{> componentstatfooter}}
 
 {{> footer}}

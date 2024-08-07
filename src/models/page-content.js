@@ -25,34 +25,10 @@ const elements = {
     'example': getFile(markdownTemplates + '/example.mustache'),
     'examplePug': getFile(markdownTemplates + '/example-pug.mustache'),
     'exampleArray': getFile(markdownTemplates + '/example-array.mustache'),
-    'code': getFile(markdownTemplates + '/code.mustache'),
-    'hr': getFile(markdownTemplates + '/hr.mustache'),
-    'paragraph': getFile(markdownTemplates + '/paragraph.mustache'),
-    'ol': getFile(markdownTemplates + '/ol.mustache'),
-    'ul': getFile(markdownTemplates + '/ul.mustache'),
-    'table': getFile(markdownTemplates + '/table.mustache')
+    'code': getFile(markdownTemplates + '/code.mustache')
 };
 
-const renderer = {
-    paragraph(text) {
-        return mustache.render(elements.paragraph, {text: text});
-    },
-
-    list (body, ordered) {
-        const ol = mustache.render(elements.ol, {body: body});
-        const ul = mustache.render(elements.ul, {body: body});
-
-        return ordered ? ol : ul;
-    },
-
-    table(header, body) {
-        return mustache.render(elements.table, {header: header, body: body});
-    },
-
-    hr() {
-        return mustache.render(elements.hr);
-    }
-}
+const renderer = {};
 
 /**
  * @typedef {Object} commentContent
@@ -85,21 +61,21 @@ function getCommentContent(filePath) {
     }
 }
 
-function mdImport(fileURL, options) {
+function renderedPageContent(fileURL, options) {
     options = options || {};
 
     let codeItemCount = 0;
     let content = '';
     let toc = [];
 
-    // We need to keep renderers here because they changes page to page
+    //We need to keep renderers here because they changes page to page
     renderer.heading = (text, depth) => {
         const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+
         const heading = {
             text: text,
-            level: depth,
-            escapedText: escapedText,
-            isSection: depth <= 2
+            depth: depth,
+            escapedText: escapedText
         };
 
         toc.push(heading);
@@ -235,18 +211,61 @@ function mdImport(fileURL, options) {
         breaks: false
     });
 
-
+    let markdownContent = '';
     if (path.extname(fileURL) === '.md') {
-        content = marked.parse(fs.readFileSync(fileURL, 'utf8'));
+        markdownContent = fs.readFileSync(fileURL, 'utf8');
     } else {
         const comment = getCommentContent(fileURL);
-        content = marked.parse(comment.content);
+        markdownContent = comment.content;
+    }
+
+    const tokens = marked.lexer(markdownContent);
+
+    let regularSections = [];
+    let codesSections = [];
+    let contentChunk = [];
+    let sectionIndex = 0;
+
+    tokens.forEach((token, index) => {
+        if (token.type === 'code') {
+            if (contentChunk.length > 0) {
+                regularSections[sectionIndex] = contentChunk.join('');
+                contentChunk = [];
+                sectionIndex++;
+            }
+
+            codesSections[sectionIndex] = token.raw;
+            sectionIndex++;
+            return;
+        }
+
+        contentChunk.push(token.raw);
+    });
+
+    if (contentChunk.length > 0) {
+        regularSections[sectionIndex] = contentChunk.join('');
+    }
+
+    let sections = [];
+    for (let i = 0; i < tokens.length; i++) {
+        if (regularSections[i] !== undefined) {
+            sections.push({
+                    content: marked.parse(regularSections[i])
+                }
+            );
+        }
+        if (codesSections[i] !== undefined) {
+            sections.push({
+                content: marked.parse(codesSections[i]),
+                block: 'code'
+            });
+        }
     }
 
     return {
-        content: content,
+        sections: sections,
         toc: toc
     };
 }
 
-module.exports = mdImport;
+module.exports = renderedPageContent;

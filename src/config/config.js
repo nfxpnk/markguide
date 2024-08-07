@@ -149,6 +149,7 @@ function initPlugins(baseMandatory) {
 
             const config = pluginInstance.getConfiguration();
             const content = pluginInstance.getContent();
+            const toc = pluginInstance.getToc();
 
             plugins.push({
                 id: config.id,
@@ -157,7 +158,12 @@ function initPlugins(baseMandatory) {
                 target: path.join(baseMandatory.guideDest, config.target),
                 type: config.type,
                 icon: config.icon,
-                content: {documentation: content, toc: 'TOC'},
+                content: {
+                    sections: [{
+                        content: content
+                    }], // TODO: redo this
+                    toc: toc
+                },
                 subPages: []
             });
         } catch (error) {

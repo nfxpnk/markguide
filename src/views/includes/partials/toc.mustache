@@ -1,12 +1,12 @@
-<div class="markguide-toc">
+<div class="b-markguide-toc">
     {{#src}}
-    <div class="markguide-toc__info">
-        <div class="markguide-toc__path"><strong>Path:</strong> {{src}}</div>
-    </div>
+    <!-- <div class="b-markguide-toc__info">
+        <div class="b-markguide-toc__path"><strong>Path:</strong> {{src}}</div>
+    </div> -->
     {{/src}}
     {{#content.toc}}
-        <div class="markguide-toc__item" role="listitem">
-            <a class="markguide-toc__ln markguide-toc__ln_{{level}}" href="#h{{level}}-{{escapedText}}">
+        <div class="b-markguide-toc__item" role="listitem">
+            <a class="b-markguide-toc__ln b-markguide-toc__ln_{{depth}}" href="#h{{depth}}-{{escapedText}}">
                 {{{text}}}
             </a>
         </div>

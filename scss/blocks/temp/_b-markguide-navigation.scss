@@ -1,0 +1,92 @@
+.b-markguide-navigation {
+	@include font($size: 16px);
+
+	&__item {
+		display: flex;
+		margin: 7px 0;
+		border-right: 2px solid transparent;
+
+		&:hover {
+			border-color: var(--color-markguide-navigation-item-border);
+
+			.b-markguide-navigation__icon-svg--link {
+				fill: var(--color-markguide-navigation-svg-link);
+			}
+		}
+
+		&--active {
+			.b-markguide-navigation__link {
+				font-weight: 700;
+			}
+		}
+
+		&--empty {
+			.b-markguide-navigation__link {
+				color: var(--color-markguide-navigation-svg-link-empty);
+				text-decoration: none;
+			}
+		}
+
+	}
+
+	&__indent {
+		width: 25px;
+	}
+
+	&__icon {
+		width: 24px;
+		position: relative;
+	}
+
+	&__icon-svg {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 2px;
+		top: 4px;
+
+		&--directory {
+			fill: var(--color-markguide-navigation-svg-directory);
+		}
+
+		&--file {
+			fill: var(--color-markguide-navigation-svg-file);
+		}
+
+		&--page {
+			fill: var(--color-markguide-navigation-svg-file);
+		}
+
+		&--link {
+			fill: transparent;
+			width: 14px;
+			height: 14px;
+			right: 0;
+			top: 6px;
+		}
+	}
+
+	&__link {
+		outline: revert !important;
+		text-decoration: none;
+		color: var(--color-markguide-navigation-link);
+	}
+
+	&__standalone-link {
+		font-size: 0;
+		width: 16px;
+		position: relative;
+		margin-left: auto;
+		margin-right: 10px;
+
+		&--root {
+			display: none;
+		}
+	}
+
+	&--hide-empty {
+		.b-markguide-navigation__item--empty {
+			display: none;
+		}
+	}
+}

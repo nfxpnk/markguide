@@ -1,0 +1,93 @@
+.b-markguide-search {
+	position: relative;
+
+	$filter-icon-size: 16px;
+	$clear-icon-size: 16px;
+	$icon-indent: 8px;
+
+	&__input {
+		-webkit-appearance: none;
+		background: transparent;
+		border: 1px solid $markguide-aside-bd;
+		border-radius: $markguide-radius;
+		box-sizing: border-box;
+		font-family: $font-sans-markguide;
+		font-size: 12px;
+		height: 34px;
+		line-height: 34px;
+		outline: none;
+		padding: 0 $space-sm-markguide;
+		text-indent: $filter-icon-size + 2px;
+		width: 100%;
+
+		&:focus {
+			background: darken($markguide-aside-bg, 5%);
+		}
+
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			display: none;
+		}
+
+		&::-ms-clear {
+			display: none;
+		}
+	}
+
+	&__icon {
+		color: $markguide-color-text;
+		height: $filter-icon-size;
+		left: $icon-indent;
+		position: absolute;
+		top: 50%;
+		margin-top: -8px;
+		width: $filter-icon-size;
+
+		.js-found & {
+			color: $color-blue-markguide;
+		}
+	}
+
+	&__clear {
+		border: none;
+		color: $color-white-markguide;
+		cursor: pointer;
+		height: $clear-icon-size;
+		line-height: $clear-icon-size;
+		outline: none;
+		opacity: 0;
+		padding: 0;
+		position: absolute;
+		right: $icon-indent;
+		top: 50%;
+		margin-top: -8px;
+		width: $clear-icon-size;
+
+		svg {
+			display: block;
+			color: $color-blue-markguide;
+		}
+
+		&:hover {
+			svg {
+				color: darken($markguide-aside-bd, 40%);
+			}
+		}
+
+		&:focus {
+			svg {
+				color: $color-blue-markguide;
+			}
+		}
+
+		&:active {
+			svg {
+				color: darken($markguide-aside-bd, 50%);
+			}
+		}
+
+		.js-found & {
+			opacity: 1;
+		}
+	}
+}

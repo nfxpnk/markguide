@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 return false;
             }
 
-            end = element.classList.contains('markguide-nav');
+            end = element.classList.contains('b-markguide-nav');
 
-            if (element.classList.contains('markguide-nav__item_category')) {
+            if (element.classList.contains('b-markguide-nav__item_category')) {
                 element.querySelector('._category').classList.remove('js-collapsed');
             }
             findParent(element.parentElement);
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('beforeunload', populateStorage);
 
         document.addEventListener('MyEventFired', function(event) {
-            const navItems = document.querySelectorAll(".markguide-nav__ln");
+            const navItems = document.querySelectorAll(".b-markguide-nav__item-line");
 
             navItems.forEach(item => {
                 const itemId = item.getAttribute("id");

@@ -50,7 +50,20 @@ function removeEmptyCategories(collection) {
 const isExcludedFile = name => excludedSassFiles.test(name);
 const isExcludedDirectory = name => excludedDirs.test(name);
 
-function pageConfig(id, title, target, noDocumentation, isDocs) {
+function createDummyArray(num) {
+  // Initialize an empty array
+  let dummyArray = [];
+
+  // Populate the array with dummy items
+  for (let i = 0; i < num; i++) {
+    dummyArray.push(`spacer`);
+  }
+
+  // Return the resulting array
+  return dummyArray;
+}
+
+function pageConfig(id, title, target, noDocumentation, isDocs, depth) {
     let type = 'component';
     let icon = 'file-code-16';
 
@@ -67,21 +80,25 @@ function pageConfig(id, title, target, noDocumentation, isDocs) {
         title: title,
         type: type, // TODO: configuration
         icon: icon, // TODO: icon for each type should be in config
+        iconActive: false, // No active state
         src: target,
         target: guideDest + id + '.html',
         template: isDocs ? templates.docs : templates.component,
         noDocumentation: noDocumentation,
-        subPages: []
+        subPages: [],
+        depth: createDummyArray(depth)
     };
 }
 
-function categoryConfig(id, title) {
+function categoryConfig(id, title, depth) {
     return {
         id: id,
         title: title,
         type: 'category',
         icon: 'file-directory-fill-16',
-        subPages: []
+        iconActive: 'file-directory-open-fill-16',
+        subPages: [],
+        depth: createDummyArray(depth)
     };
 }
 
@@ -125,7 +142,7 @@ function makeProjectTree(markguideConfig) {
      * @param {string} categoryName - category name that will be used as component prefix. 'markguide' as start point,
      * directory name in all future cases.
      */
-    function findComponents(directoryPath, config, categoryName) {
+    function findComponents(directoryPath, config, categoryName, depth=0) {
         const items = fs.readdirSync(directoryPath);
 
         const directories = [];
@@ -169,19 +186,19 @@ function makeProjectTree(markguideConfig) {
                     }
 
                     if (isDocumentedValue || path.basename(name).startsWith('_')) {
-                        config.push(pageConfig(id, title, target, !isDocumentedValue));
+                        config.push(pageConfig(id, title, target, !isDocumentedValue, false, depth));
                     }
                 }
 
                 if (path.extname(name) === '.md' && !/^README\.md/.test(categoryName + name)) { // this is hacky way
                     // to exclude root README.md
                     const id = categoryName + 'doc-' + path.basename(name, '.md');
-                    config.push(pageConfig(id, title, target, false, true));
+                    config.push(pageConfig(id, title, target, false, true, depth));
                 }
             } else if (resource.isDirectory() && !isExcludedDirectory(name)) {
                 const id = 'section-' + path.basename(name);
-                config.push(categoryConfig(id, name));
-                findComponents(target, config[config.length - 1].subPages, categoryName + name + '-');
+                config.push(categoryConfig(id, name, depth));
+                findComponents(target, config[config.length - 1].subPages, categoryName + name + '-', depth+1);
             }
         });
     }

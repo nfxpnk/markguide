@@ -1,0 +1,38 @@
+.l-markguide-aside {
+	all: initial;
+	bottom: 0;
+	color: $markguide-color-text;
+	display: flex;
+	flex-direction: column;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	height: 100%;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0);
+	z-index: 1;
+
+	&__header {
+		padding: 20px;
+	}
+
+	&__content {
+		overflow-y: auto;
+		-webkit-overscroll-behavior: contain;
+		-ms-scroll-chaining: none;
+		overscroll-behavior: contain;
+	}
+
+	&__footer {
+		margin-top: auto;
+		padding-top: 10px;
+	}
+}
+
+// hide this elements when aside is hidden
+.js-aside-panel-hidden {
+	.l-markguide-aside__header,
+	.l-markguide-aside__footer,
+	.l-markguide-aside__content {
+		display: none;
+	}
+}

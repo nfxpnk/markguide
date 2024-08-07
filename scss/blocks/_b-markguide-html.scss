@@ -1,0 +1,21 @@
+.b-markguide-html {
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid grey;
+
+	&__item {
+		margin-bottom: 20px;
+
+		h2 {
+			margin-bottom: 10px;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	&__item-heading {
+		font-family: $font-sans-markguide;
+	}
+}

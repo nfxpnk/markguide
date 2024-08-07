@@ -1,0 +1,153 @@
+@use "sass:math";
+
+// Palette
+$color-grey60-markguide: hsl(0, 0%, 60%);
+$color-grey70-markguide: hsl(0, 0%, 70%);
+$color-grey80-markguide: hsl(0, 0%, 80%);
+$color-grey90-markguide: hsl(0, 0%, 90%);
+$color-grey95-markguide: hsl(0, 0%, 95%);
+$color-white-markguide: hsl(0, 0%, 100%);
+
+$color-blue-markguide: #263740;
+$color-blue79-markguide: hsl(213, 66%, 79%);
+
+$color-pink-markguide: hsl(328, 100%, 60%);
+$color-red-markguide: hsl(0, 92%, 60%);
+$color-orange-markguide: hsl(38, 92%, 60%);
+$color-yellow-markguide: hsl(53, 92%, 60%);
+$color-green-markguide: hsl(85, 60%, 60%);
+
+// Fonts
+$font-sans-markguide: "Arial", "FreeSans", sans-serif;
+$font-mono-markguide: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
+
+// Sizes
+$size-font-markguide: 16px; // 16px
+$size-line-markguide: $size-font-markguide * 1.25; // 20px
+
+// Scales
+$scale-sm-markguide: 12.8px;
+$scale-md-markguide: 15px;
+$scale-lg-markguide: 20px;
+$scale-xl-markguide: 25px;
+$scale-xxl-markguide: 39px;
+$scale-xxxl-markguide: 48.8px;
+
+// Spaces
+$space-sm-markguide: math.div($size-line-markguide, 2); // 10px
+$space-md-markguide: $size-line-markguide; // 20px
+$space-xm-markguide: math.div($size-line-markguide, 2) * 3; // 30px
+$space-lg-markguide: $size-line-markguide * 2; // 40px
+$space-xl-markguide: $size-line-markguide * 3; // 60px
+
+// Depth
+$depth--1: inset 0 3px 10px 1px rgba(black, 0.34);
+$depth-0: none;
+$depth-1: 0 3px 10px 1px rgba(black, 0.34);
+$depth-2: 0 9px 30px 3px rgba(black, 0.44);
+$depth-3: 0 30px 50px 5px rgba(black, 0.44);
+$depth-4: 0 45px 60px 6px rgba(black, 0.44);
+
+// Breakpoints
+$break-xl: 1367px;
+$break-md: 1024px;
+$break-sm: 767px;
+
+// Applied colors
+$markguide-color-text: hsl(210, 0%, 35%);
+$markguide-color-divider: $color-grey70-markguide;
+$markguide-aside-bg: $color-grey95-markguide;
+$markguide-aside-bd: hsl(0, 0%, 87%);
+$markguide-aside-selected: hsl(0, 0%, 88%);
+
+// Applied sizes
+$markguide-scale-mono-small: 11px;
+$markguide-scale-primary: $scale-md-markguide;
+$markguide-scale-secondary: $scale-sm-markguide;
+
+// Applied radiuses
+$markguide-radius: 5px;
+
+
+// ul,
+// ol,
+// p {
+// 	list-style: none;
+// 	margin: 0;
+// 	padding: 0;
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	margin: 0;
+}
+
+figure {
+	margin: 0;
+}
+
+body {
+	background: $color-white-markguide;
+	color: $markguide-color-text;
+	margin: 0;
+	padding: 0;
+}
+
+@import 'variables/layout';
+@import 'variables/typography';
+@import 'variables/misc';
+
+@import 'base/colors';
+@import 'base/colors-theme';
+@import 'base/fonts';
+
+/// @import 'markdown/all';
+
+@import 'layouts/l-markguide-container';
+@import 'layouts/l-markguide-aside';
+@import 'layouts/l-markguide-page';
+
+// Sidebar-area components
+@import 'blocks/b-markguide-aside-ctrl';
+
+@import 'blocks/b-markguide-logo';
+
+// Search
+@import 'blocks/b-markguide-search';
+
+// Navigation
+@import 'blocks/b-markguide-nav';
+
+@import 'blocks/b-markguide-footer-copyright';
+
+@import 'blocks/b-markguide-overline';
+
+@import 'blocks/b-markguide-section';
+
+@import 'blocks/b-markguide-html';
+@import 'blocks/b-markguide-markup';
+
+@import 'blocks/b-markguide-toc';
+
+@import 'blocks/b-markguide-copier';
+
+@import 'plugins/colors/all';
+@import 'plugins/icons/all';
+
+@import 'helpers/box-model';
+
+.markdown-code {
+	.b-markguide-code {
+		width: 100%;
+		overflow: auto;
+	}
+}
+
+pre[class*="language-"] {
+	margin: 0 !important;
+}

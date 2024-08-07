@@ -1,0 +1,74 @@
+// Needs refactoring
+// stylelint-disable selector-max-compound-selectors, selector-max-specificity
+// stylelint-disable selector-max-type
+.markdown-body {
+	// Headings
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: var(--color-markguide-markdown-header);
+		margin-top: $spacer-4;
+		margin-bottom: $spacer-3;
+		font-weight: $font-weight-bold;
+		line-height: $lh-default;
+
+		tt,
+		code {
+			padding: 0 0.2em;
+			font-size: inherit;
+		}
+	}
+
+	h1 {
+		padding-bottom: 0.3em;
+		font-size: 2em;
+		border-bottom: 1px solid var(--color-markguide-markdown-border-muted);
+	}
+
+	h2 {
+		padding-bottom: 0.3em;
+		font-size: 1.5em;
+		border-bottom: 1px solid var(--color-markguide-markdown-border-muted);
+	}
+
+	h3 {
+		font-size: 1.25em;
+	}
+
+	h4 {
+		font-size: 1em;
+	}
+
+	h5 {
+		font-size: 0.875em;
+	}
+
+	h6 {
+		font-size: 0.85em;
+		color: var(--color-fg-muted);
+	}
+
+	summary {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			display: inline-block;
+
+			.anchor {
+				margin-left: -40px;
+			}
+		}
+
+		h1,
+		h2 {
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
+	}
+}

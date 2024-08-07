@@ -1,23 +1,23 @@
 <div>
-    <div class="markguide-html" style="{{{style}}}">
-        <div class="markguide-html__item">
-            <h2 class="markguide-html__item-heading">Default</h2>
+    <div class="b-markguide-html" style="{{{style}}}">
+        <div class="b-markguide-html__item">
+            <h2 class="b-markguide-html__item-heading">Default</h2>
             <div>{{{code}}}</div>
         </div>
         {{#codeArray}}
-            <div class="markguide-html__item">
-                <h2 class="markguide-html__item-heading">{{class}} - {{name}}</h2>
+            <div class="b-markguide-html__item">
+                <h2 class="b-markguide-html__item-heading">{{class}} - {{name}}</h2>
                 <div>{{{html}}}</div>
             </div>
         {{/codeArray}}
     </div>
 
-    <details class="js-copier markguide-markup">
+    <details class="js-copier b-markguide-markup">
         <summary>Code:</summary>
-        <button class="markguide-markup__copy-button js-copier-button">Copy</button>
-        <div class="markguide-code">
+        <button class="b-markguide-markup__copy-button js-copier-button">Copy</button>
+        <div class="b-markguide-code">
             <pre><code class="js-copier-text language-{{language}}">{{code}}</code></pre>
         </div>
-        <span role="region" aria-live="polite" class="markguide-markup__notifier js-playground__notifier"></span>
+        <span role="region" aria-live="polite" class="b-markguide-markup__notifier js-playground__notifier"></span>
     </details>
 </div>
