@@ -479,6 +479,10 @@
   outline: none;
 }
 
+.markdown-heading .anchor:hover {
+  opacity: 1;
+}
+
 .markdown-heading .heading-element:hover+.anchor {
     opacity: 1;
 }
