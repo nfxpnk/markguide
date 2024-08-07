@@ -27,6 +27,20 @@ class dummyPlugin extends basePlugin {
         };
     }
 
+    getToc() {
+        const toc = [];
+
+        const heading = {
+            text: 'test',
+            depth: 2,
+            escapedText: 'test'
+        };
+
+        toc.push(heading);
+
+        return toc;
+    }
+
     getContent() {
         const template = fs.readFileSync(path.join(__dirname, 'templates/template.mustache'), 'utf-8');
         const htmlContent = mustache.render(template, {data: 'data from plugin:' + this.filePath});

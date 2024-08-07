@@ -108,7 +108,7 @@ function getBaseConfig(configRaw) {
     };
 
     const pluginsPages = {
-         pluginsPages: initPlugins(baseMandatory)
+         pluginsPages: initPlugins(Object.assign({}, baseMandatory))
     };
 
     console.log(baseMandatory);
