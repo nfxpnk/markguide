@@ -91,23 +91,19 @@
 
 	details {
 		display: block;
-	}
+		margin-top: 0;
+		margin-bottom: 16px;
 
-	details summary {
-		cursor: pointer;
-	}
-
-	summary {
-		display: list-item;
+		summary {
+			cursor: pointer;
+		}
+		summary {
+			display: list-item;
+		}
 	}
 
 	details:not([open]) > *:not(summary) {
 		display: none;
-	}
-
-	details {
-		margin-top: 0;
-		margin-bottom: 16px;
 	}
 
 	summary:focus:not(:focus-visible) {
