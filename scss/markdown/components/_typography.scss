@@ -48,10 +48,10 @@
 	}
 
 	blockquote {
-		margin-top: 0;
-		margin-bottom: 16px;
-		color: var(--fgColor-muted);
 		border-left: 0.25em solid var(--borderColor-default);
+		color: var(--fgColor-muted);
+		margin-bottom: 16px;
+		margin-top: 0;
 	}
 
 	blockquote > :first-child {

@@ -4,9 +4,9 @@
 
 .markdown-body {
 	pre {
-		margin-top: 0;
-		margin-bottom: 16px;
 		font-size: 12px;
+		margin-bottom: 16px;
+		margin-top: 0;
 
 		br {
 			display: none;
@@ -14,14 +14,13 @@
 	}
 
 	code {
-		font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
-		font-size: 12px;
-		padding: 0.2em 0.4em;
-		margin: 0;
-		font-size: 85%;
-		white-space: break-spaces;
 		background-color: var(--bgColor-neutral-muted);
 		border-radius: 6px;
+		font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
+		font-size: 12px;
+		margin: 0;
+		padding: 0.2em 0.4em;
+		white-space: break-spaces;
 
 		br {
 			display: none;

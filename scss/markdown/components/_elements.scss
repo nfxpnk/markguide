@@ -15,12 +15,12 @@
 	}
 
 	input {
-		font: inherit;
-		margin: 0;
-		overflow: visible;
 		font-family: inherit;
 		font-size: inherit;
+		font: inherit;
 		line-height: inherit;
+		margin: 0;
+		overflow: visible;
 	}
 
 	[type="button"],
@@ -55,9 +55,9 @@
 	input[type="checkbox"] {
 		&:focus,
 		&:focus-visible {
-			outline: 2px solid var(--focus-outlineColor);
-			outline-offset: -2px;
 			box-shadow: none;
+			outline-offset: -2px;
+			outline: 2px solid var(--focus-outlineColor);
 		}
 
 		&:focus:not(:focus-visible) {
@@ -75,23 +75,22 @@
 
 	input::-webkit-outer-spin-button,
 	input::-webkit-inner-spin-button {
-		margin: 0;
-		-webkit-appearance: none;
 		appearance: none;
+		margin: 0;
 	}
 
 	details {
 		display: block;
-		margin-top: 0;
 		margin-bottom: 16px;
+		margin-top: 0;
 
 		summary {
 			cursor: pointer;
 			display: list-item;
 
 			&:focus:not(:focus-visible) {
-				outline: none;
 				box-shadow: none;
+				outline: none;
 			}
 		}
 	}
@@ -114,17 +113,16 @@
 	}
 
 	kbd {
+		background-color: var(--bgColor-muted);
+		border-radius: 6px;
+		border: solid 1px var(--borderColor-neutral-muted);
+		box-shadow: inset 0 -1px 0 var(--borderColor-neutral-muted);
+		color: var(--fgColor-default);
 		display: inline-block;
-		padding: 3px 5px;
 		font: 11px var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
 		line-height: 10px;
-		color: var(--fgColor-default);
+		padding: 3px 5px;
 		vertical-align: middle;
-		background-color: var(--bgColor-muted);
-		border: solid 1px var(--borderColor-neutral-muted);
-		border-bottom-color: var(--borderColor-neutral-muted);
-		border-radius: 6px;
-		box-shadow: inset 0 -1px 0 var(--borderColor-neutral-muted);
 	}
 
 	samp {

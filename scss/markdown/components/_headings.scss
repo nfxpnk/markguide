@@ -5,10 +5,10 @@
 	h4,
 	h5,
 	h6 {
-		margin-top: 24px;
-		margin-bottom: 16px;
 		font-weight: var(--base-text-weight-semibold, 600);
 		line-height: 1.25;
+		margin-bottom: 16px;
+		margin-top: 24px;
 
 		&:hover {
 			.anchor {
@@ -18,22 +18,22 @@
 
 		tt,
 		code {
-			padding: 0 0.2em;
 			font-size: inherit;
+			padding: 0 0.2em;
 		}
 	}
 
 	h1 {
+		border-bottom: 1px solid var(--borderColor-muted);
+		font-size: 2em;
 		margin: 0.67em 0;
 		padding-bottom: 0.3em;
-		font-size: 2em;
-		border-bottom: 1px solid var(--borderColor-muted);
 	}
 
 	h2 {
-		padding-bottom: 0.3em;
-		font-size: 1.5em;
 		border-bottom: 1px solid var(--borderColor-muted);
+		font-size: 1.5em;
+		padding-bottom: 0.3em;
 	}
 
 	h3 {
@@ -49,8 +49,8 @@
 	}
 
 	h6 {
-		font-size: 0.85em;
 		color: var(--fgColor-muted);
+		font-size: 0.85em;
 	}
 
 	summary h1,
@@ -68,9 +68,9 @@
 
 	.octicon {
 		display: inline-block;
+		fill: currentColor;
 		overflow: visible !important;
 		vertical-align: text-bottom;
-		fill: currentColor;
 	}
 }
 
@@ -78,18 +78,18 @@
 	position: relative;
 
 	.anchor {
+		align-items: center;
+		border-radius: var(--borderRadius-small);
+		display: flex;
+		height: 28px;
+		justify-content: center;
+		left: -28px;
+		margin: auto;
+		opacity: 0;
 		position: absolute;
 		top: 50%;
-		left: -28px;
-		display: flex;
-		width: 28px;
-		height: 28px;
-		margin: auto;
-		border-radius: var(--borderRadius-small);
-		opacity: 0;
-		justify-content: center;
-		align-items: center;
 		transform: translateY(-50%);
+		width: 28px;
 
 		&:focus {
 			outline: none;

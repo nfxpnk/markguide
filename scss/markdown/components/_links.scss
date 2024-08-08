@@ -5,9 +5,9 @@
 		text-decoration: none;
 
 		&:focus {
-			outline: 2px solid var(--focus-outlineColor);
-			outline-offset: -2px;
 			box-shadow: none;
+			outline-offset: -2px;
+			outline: 2px solid var(--focus-outlineColor);
 		}
 
 		&:hover {
@@ -15,14 +15,14 @@
 		}
 
 		&:focus:not(:focus-visible) {
-			outline: none;
 			box-shadow: none;
+			outline: none;
 		}
 
 		&:focus-visible {
-			outline: 2px solid var(--focus-outlineColor);
-			outline-offset: -2px;
 			box-shadow: none;
+			outline-offset: -2px;
+			outline: 2px solid var(--focus-outlineColor);
 		}
 
 		&:not([class]) {
