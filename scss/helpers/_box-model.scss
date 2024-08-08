@@ -49,13 +49,13 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 	display: block; // should be original display property
 	margin: 0 auto;
 
-	&:before {
+	&::before {
 		content: "";
 		display: table;
 		clear: both;
 	}
 
-	&:after {
+	&::after {
 		content: "";
 		display: table;
 		clear: both;
