@@ -38,25 +38,25 @@
 	word-wrap: break-word;
 	scroll-behavior: auto;
 
-	@include clearfix();
-}
-
-.markdown-body [hidden] {
-	display: none !important;
-}
-
-.markdown-body hr {
-	box-sizing: content-box;
-	overflow: hidden;
-	background: transparent;
-	border-bottom: 1px solid var(--borderColor-muted);
-	height: 0.25em;
-	padding: 0;
-	margin: 24px 0;
-	background-color: var(--borderColor-default);
-	border: 0;
+	[hidden] {
+		display: none !important;
+	}
 
 	@include clearfix();
+
+	hr {
+		box-sizing: content-box;
+		overflow: hidden;
+		background: transparent;
+		border-bottom: 1px solid var(--borderColor-muted);
+		height: 0.25em;
+		padding: 0;
+		margin: 24px 0;
+		background-color: var(--borderColor-default);
+		border: 0;
+
+		@include clearfix();
+	}
 }
 
 @import "components/typography";
@@ -69,12 +69,4 @@
 
 .markdown-body > *:first-child > .heading-element:first-child {
 	margin-top: 0 !important;
-}
-
-.markdown-body > *:first-child {
-	/*margin-top: 0 !important;*/
-}
-
-.markdown-body > *:last-child {
-	/*margin-bottom: 0 !important;*/
 }
