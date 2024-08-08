@@ -23,15 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Create CSS content
         const cssContent =
-            'font-family: ' + fontFamily + '\n' +
-            'font-size: ' + fontSize + '/' + lineHeight + '\n' +
-            'font-weight: ' + fontWeight + '\n' +
-            'line-height: ' + lineHeightEm + '\n' +
-            'letter-spacing: ' + letterSpacingEm + 'em (' + letterSpacing + ')' + '\n';
+            'font-family: ' + fontFamily + ';\n' +
+            'font-size: ' + fontSize + '/' + lineHeight + ';\n' +
+            'font-weight: ' + fontWeight + ';\n' +
+            'line-height: ' + lineHeightEm + ';\n' +
+            'letter-spacing: ' + letterSpacingEm + 'em (' + letterSpacing + ')' + ';\n';
 
         // Create <pre><code> element to display CSS
+        const div = document.createElement('div');
+        div.className = 'b-markguide-code';
         const pre = document.createElement('pre');
         const code = document.createElement('code');
+        code.className = 'language-css';
         code.textContent = cssContent;
         pre.appendChild(code);
 
