@@ -1,4 +1,19 @@
 .markdown-body {
+	::-webkit-input-placeholder {
+		color: inherit;
+		opacity: 0.54;
+	}
+
+	::-webkit-file-upload-button {
+		appearance: button;
+		font: inherit;
+	}
+
+	::placeholder {
+		color: var(--fgColor-muted);
+		opacity: 1;
+	}
+
 	input {
 		font: inherit;
 		margin: 0;
@@ -35,25 +50,11 @@
 		appearance: none;
 	}
 
-	::-webkit-input-placeholder {
-		color: inherit;
-		opacity: 0.54;
-	}
-
-	::-webkit-file-upload-button {
-		appearance: button;
-		font: inherit;
-	}
-
-	::placeholder {
-		color: var(--fgColor-muted);
-		opacity: 1;
-	}
-
 	[role="button"],
 	input[type="radio"],
 	input[type="checkbox"] {
-		&:focus {
+		&:focus,
+		&:focus-visible {
 			outline: 2px solid var(--focus-outlineColor);
 			outline-offset: -2px;
 			box-shadow: none;
@@ -61,12 +62,6 @@
 
 		&:focus:not(:focus-visible) {
 			outline: solid 1px transparent;
-		}
-
-		&:focus-visible {
-			outline: 2px solid var(--focus-outlineColor);
-			outline-offset: -2px;
-			box-shadow: none;
 		}
 	}
 

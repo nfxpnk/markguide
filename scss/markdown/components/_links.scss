@@ -25,9 +25,11 @@
 			box-shadow: none;
 		}
 
-		&:not([class]):focus,
-		&:not([class]):focus-visible {
-			outline-offset: 0;
+		&:not([class]) {
+			&:focus,
+			&:focus-visible {
+				outline-offset: 0;
+			}
 		}
 
 		&:not([href]) {

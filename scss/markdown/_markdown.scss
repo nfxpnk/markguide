@@ -27,9 +27,7 @@
 	--borderColor-attention-emphasis: #bf8700;
 	--borderColor-danger-emphasis: #cf222e;
 	--borderColor-done-emphasis: #8250df;
-}
 
-.markdown-body {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	margin: 0;
@@ -39,18 +37,10 @@
 	line-height: 1.5;
 	word-wrap: break-word;
 	scroll-behavior: auto;
+
+	@include clearfix();
 }
 
-.markdown-body::before {
-	display: table;
-	content: "";
-}
-
-.markdown-body::after {
-	display: table;
-	clear: both;
-	content: "";
-}
 .markdown-body [hidden] {
 	display: none !important;
 }
@@ -65,20 +55,9 @@
 	margin: 24px 0;
 	background-color: var(--borderColor-default);
 	border: 0;
-}
 
-.markdown-body hr::before {
-	display: table;
-	content: "";
+	@include clearfix();
 }
-
-.markdown-body hr::after {
-	display: table;
-	clear: both;
-	content: "";
-}
-
-//@import 'base';
 
 @import "components/typography";
 @import "components/headings";
@@ -87,8 +66,6 @@
 @import "components/lists";
 @import "components/code";
 @import "components/images";
-
-//@import 'utilities';
 
 .markdown-body > *:first-child > .heading-element:first-child {
 	margin-top: 0 !important;

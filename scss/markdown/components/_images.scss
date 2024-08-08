@@ -4,14 +4,14 @@
 		max-width: 100%;
 		box-sizing: content-box;
 		background-color: var(--bgColor-default);
-	}
 
-	img[align="right"] {
-		padding-left: 20px;
-	}
+		&[align="right"] {
+			padding-left: 20px;
+		}
 
-	img[align="left"] {
-		padding-right: 20px;
+		&[align="left"] {
+			padding-right: 20px;
+		}
 	}
 
 	.emoji {
@@ -20,92 +20,91 @@
 		background-color: transparent;
 	}
 
-	span.frame {
-		display: block;
-		overflow: hidden;
-	}
+	span {
+		&.frame {
+			display: block;
+			overflow: hidden;
 
-	span.frame > span {
-		display: block;
-		float: left;
-		width: auto;
-		padding: 7px;
-		margin: 13px 0 0;
-		overflow: hidden;
-		border: 1px solid var(--borderColor-default);
-	}
+			> span {
+				display: block;
+				float: left;
+				width: auto;
+				padding: 7px;
+				margin: 13px 0 0;
+				overflow: hidden;
+				border: 1px solid var(--borderColor-default);
+			}
 
-	span.frame span img {
-		display: block;
-		float: left;
-	}
+			span {
+				img {
+					display: block;
+					float: left;
+				}
+				span {
+					display: block;
+					padding: 5px 0 0;
+					clear: both;
+					color: var(--fgColor-default);
+				}
+			}
+		}
 
-	span.frame span span {
-		display: block;
-		padding: 5px 0 0;
-		clear: both;
-		color: var(--fgColor-default);
-	}
+		&.align-center {
+			display: block;
+			overflow: hidden;
+			clear: both;
+			> span {
+				display: block;
+				margin: 13px auto 0;
+				overflow: hidden;
+				text-align: center;
+			}
+			span img {
+				margin: 0 auto;
+				text-align: center;
+			}
+		}
 
-	span.align-center {
-		display: block;
-		overflow: hidden;
-		clear: both;
-	}
+		&.align-right {
+			display: block;
+			overflow: hidden;
+			clear: both;
+			> span {
+				display: block;
+				margin: 13px 0 0;
+				overflow: hidden;
+				text-align: right;
+			}
+			span img {
+				margin: 0;
+				text-align: right;
+			}
+		}
 
-	span.align-center > span {
-		display: block;
-		margin: 13px auto 0;
-		overflow: hidden;
-		text-align: center;
-	}
+		&.float-left {
+			display: block;
+			float: left;
+			margin-right: 13px;
+			overflow: hidden;
 
-	span.align-center span img {
-		margin: 0 auto;
-		text-align: center;
-	}
+			span {
+				margin: 13px 0 0;
+			}
+		}
 
-	span.align-right {
-		display: block;
-		overflow: hidden;
-		clear: both;
-	}
+		&.float-right {
+			display: block;
+			float: right;
+			margin-left: 13px;
+			overflow: hidden;
 
-	span.align-right > span {
-		display: block;
-		margin: 13px 0 0;
-		overflow: hidden;
-		text-align: right;
-	}
-
-	span.align-right span img {
-		margin: 0;
-		text-align: right;
-	}
-
-	span.float-left {
-		display: block;
-		float: left;
-		margin-right: 13px;
-		overflow: hidden;
-	}
-
-	span.float-left span {
-		margin: 13px 0 0;
-	}
-
-	span.float-right {
-		display: block;
-		float: right;
-		margin-left: 13px;
-		overflow: hidden;
-	}
-
-	span.float-right > span {
-		display: block;
-		margin: 13px auto 0;
-		overflow: hidden;
-		text-align: right;
+			> span {
+				display: block;
+				margin: 13px auto 0;
+				overflow: hidden;
+				text-align: right;
+			}
+		}
 	}
 
 	g-emoji {
