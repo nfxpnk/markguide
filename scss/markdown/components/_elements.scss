@@ -127,17 +127,7 @@
 	kbd {
 		display: inline-block;
 		padding: 3px 5px;
-		font: 11px
-			var(
-				--fontStack-monospace,
-				ui-monospace,
-				SFMono-Regular,
-				SF Mono,
-				Menlo,
-				Consolas,
-				Liberation Mono,
-				monospace
-			);
+		font: 11px var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
 		line-height: 10px;
 		color: var(--fgColor-default);
 		vertical-align: middle;
@@ -155,16 +145,7 @@
 	}
 
 	samp {
-		font-family: var(
-			--fontStack-monospace,
-			ui-monospace,
-			SFMono-Regular,
-			SF Mono,
-			Menlo,
-			Consolas,
-			Liberation Mono,
-			monospace
-		);
+		font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
 		font-size: 12px;
 	}
 }

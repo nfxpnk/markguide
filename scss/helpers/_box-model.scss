@@ -15,11 +15,7 @@ $vertical-arrow-width: $arrow-box-height;
 $vertical-arrow-height: $arrow-box-width;
 
 $svg-up: ("M-0 8l7-8 7 8", $horizontal-arrow-width, $horizontal-arrow-height);
-$svg-down: (
-	"M14 0l-7 8-7-8",
-	$horizontal-arrow-width,
-	$horizontal-arrow-height
-);
+$svg-down: ("M14 0l-7 8-7-8", $horizontal-arrow-width, $horizontal-arrow-height);
 
 $svg-left: ("M8 14l-8-7 8-7", $vertical-arrow-width, $vertical-arrow-height);
 $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
