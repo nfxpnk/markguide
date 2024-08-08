@@ -69,7 +69,8 @@ function renderedPageContent(fileURL, options) {
     let toc = [];
 
     //We need to keep renderers here because they changes page to page
-    renderer.heading = (text, depth) => {
+    renderer.heading = (tokens, depth) => {
+        const text = tokens.text;
         const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
 
         const heading = {
@@ -83,10 +84,11 @@ function renderedPageContent(fileURL, options) {
         return mustache.render(elements.heading, heading);
     };
 
-    renderer.code = (text, lang) => {
+    renderer.code = (tokens, lang) => {
+        //console.log(text);
 
-        let language = lang;
-        let code = text;
+        let language = tokens.lang;
+        let code = tokens.text;
 
         if (language === undefined) {
             language = 'text';
