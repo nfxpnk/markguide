@@ -1,5 +1,14 @@
 .markdown-code {
 	margin-bottom: 16px;
+
+	.b-markguide-code {
+		width: 100%;
+		overflow: auto;
+	}
+
+	pre[class*="language-"] {
+		margin: 0 !important;
+	}
 }
 
 .markdown-body {
