@@ -1,11 +1,6 @@
 .markdown-body {
 	p {
 		margin-top: 0;
-		margin-bottom: 10px;
-	}
-
-	p {
-		margin-top: 0;
 		margin-bottom: 16px;
 	}
 
@@ -53,8 +48,8 @@
 	}
 
 	blockquote {
-		margin: 0;
-		padding: 0 1em;
+		margin-top: 0;
+		margin-bottom: 16px;
 		color: var(--fgColor-muted);
 		border-left: 0.25em solid var(--borderColor-default);
 	}
@@ -65,10 +60,5 @@
 
 	blockquote > :last-child {
 		margin-bottom: 0;
-	}
-
-	blockquote {
-		margin-top: 0;
-		margin-bottom: 16px;
 	}
 }

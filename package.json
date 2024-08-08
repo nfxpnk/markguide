@@ -56,7 +56,7 @@
     "scripts": {
         "lint": "eslint ./ && stylelint ./",
         "lintscss": "npx stylelint \"{./scss/*.scss,./scss/**/*.scss,./scss/**/**/*.scss}\"",
-        "formatscss": "npx prettier \"{./scss/*.scss,./scss/**/*.scss,./scss/**/**/*.scss}\" --write --ignore-path=./.prettierignore",
+        "formatscss": "npx prettier \"{./scss/*.scss,./scss/**/*.scss,./scss/**/**/*.scss}\" --print-width 255 --write --ignore-path=./.prettierignore",
         "build": "gulp build",
         "copyhooks": "node .githooks/copy-hooks.js",
         "version": "npm run build && git add -A assets",

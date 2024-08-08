@@ -105,7 +105,7 @@ body {
 @import "base/colors-theme";
 @import "base/fonts";
 
-/// @import 'markdown/all';
+@import "mixins/clearfix";
 
 @import "layouts/l-markguide-container";
 @import "layouts/l-markguide-aside";
@@ -137,7 +137,7 @@ body {
 
 @import "plugins/colors/b-markguide-colors";
 @import "plugins/icons/b-markguide-icons";
-@import "plugins/icons/b-markguide-typography";
+@import "plugins/typography/b-markguide-typography";
 
 @import "helpers/box-model";
 
