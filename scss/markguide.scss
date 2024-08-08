@@ -68,14 +68,6 @@ $markguide-scale-secondary: $scale-sm-markguide;
 // Applied radiuses
 $markguide-radius: 5px;
 
-// ul,
-// ol,
-// p {
-// 	list-style: none;
-// 	margin: 0;
-// 	padding: 0;
-// }
-
 h1,
 h2,
 h3,
@@ -135,9 +127,9 @@ body {
 
 @import "blocks/b-markguide-copier";
 
-@import "plugins/colors/b-markguide-colors";
-@import "plugins/icons/b-markguide-icons";
-@import "plugins/typography/b-markguide-typography";
+@import "plugins/b-markguide-colors";
+@import "plugins/b-markguide-icons";
+@import "plugins/b-markguide-typography";
 
 @import "helpers/box-model";
 
