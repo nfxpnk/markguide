@@ -1,137 +1,165 @@
-.markdown-body input {
-	font: inherit;
-	margin: 0;
-	overflow: visible;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-}
+.markdown-body {
+	input {
+		font: inherit;
+		margin: 0;
+		overflow: visible;
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+	}
 
-.markdown-body [type="button"],
-.markdown-body [type="reset"],
-.markdown-body [type="submit"] {
-	-webkit-appearance: button;
-	appearance: button;
-}
+	[type="button"],
+	[type="reset"],
+	[type="submit"] {
+		-webkit-appearance: button;
+		appearance: button;
+	}
 
-.markdown-body button:focus:not(:focus-visible) {
-	outline: none;
-	box-shadow: none;
-}
+	button:focus:not(:focus-visible) {
+		outline: none;
+		box-shadow: none;
+	}
 
-.markdown-body [type="checkbox"],
-.markdown-body [type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
-}
+	[type="checkbox"],
+	[type="radio"] {
+		box-sizing: border-box;
+		padding: 0;
+	}
 
-.markdown-body [type="number"]::-webkit-inner-spin-button,
-.markdown-body [type="number"]::-webkit-outer-spin-button {
-	height: auto;
-}
+	[type="number"]::-webkit-inner-spin-button,
+	[type="number"]::-webkit-outer-spin-button {
+		height: auto;
+	}
 
-.markdown-body [type="search"]::-webkit-search-cancel-button,
-.markdown-body [type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
-	appearance: none;
-}
+	[type="search"]::-webkit-search-cancel-button,
+	[type="search"]::-webkit-search-decoration {
+		-webkit-appearance: none;
+		appearance: none;
+	}
 
-.markdown-body ::-webkit-input-placeholder {
-	color: inherit;
-	opacity: 0.54;
-}
+	::-webkit-input-placeholder {
+		color: inherit;
+		opacity: 0.54;
+	}
 
-.markdown-body ::-webkit-file-upload-button {
-	-webkit-appearance: button;
-	appearance: button;
-	font: inherit;
-}
+	::-webkit-file-upload-button {
+		-webkit-appearance: button;
+		appearance: button;
+		font: inherit;
+	}
 
-.markdown-body ::placeholder {
-	color: var(--fgColor-muted);
-	opacity: 1;
-}
+	::placeholder {
+		color: var(--fgColor-muted);
+		opacity: 1;
+	}
 
-.markdown-body [role="button"]:focus,
-.markdown-body input[type="radio"]:focus,
-.markdown-body input[type="checkbox"]:focus {
-	outline: 2px solid var(--focus-outlineColor);
-	outline-offset: -2px;
-	box-shadow: none;
-}
+	[role="button"]:focus,
+	input[type="radio"]:focus,
+	input[type="checkbox"]:focus {
+		outline: 2px solid var(--focus-outlineColor);
+		outline-offset: -2px;
+		box-shadow: none;
+	}
 
-.markdown-body [role="button"]:focus:not(:focus-visible),
-.markdown-body input[type="radio"]:focus:not(:focus-visible),
-.markdown-body input[type="checkbox"]:focus:not(:focus-visible) {
-	outline: solid 1px transparent;
-}
+	[role="button"]:focus:not(:focus-visible),
+	input[type="radio"]:focus:not(:focus-visible),
+	input[type="checkbox"]:focus:not(:focus-visible) {
+		outline: solid 1px transparent;
+	}
 
-.markdown-body [role="button"]:focus-visible,
-.markdown-body input[type="radio"]:focus-visible,
-.markdown-body input[type="checkbox"]:focus-visible {
-	outline: 2px solid var(--focus-outlineColor);
-	outline-offset: -2px;
-	box-shadow: none;
-}
+	[role="button"]:focus-visible,
+	input[type="radio"]:focus-visible,
+	input[type="checkbox"]:focus-visible {
+		outline: 2px solid var(--focus-outlineColor);
+		outline-offset: -2px;
+		box-shadow: none;
+	}
 
-.markdown-body input[type="radio"]:focus,
-.markdown-body input[type="radio"]:focus-visible,
-.markdown-body input[type="checkbox"]:focus,
-.markdown-body input[type="checkbox"]:focus-visible {
-	outline-offset: 0;
-}
+	input[type="radio"]:focus,
+	input[type="radio"]:focus-visible,
+	input[type="checkbox"]:focus,
+	input[type="checkbox"]:focus-visible {
+		outline-offset: 0;
+	}
 
-.markdown-body input::-webkit-outer-spin-button,
-.markdown-body input::-webkit-inner-spin-button {
-	margin: 0;
-	-webkit-appearance: none;
-	appearance: none;
-}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		margin: 0;
+		-webkit-appearance: none;
+		appearance: none;
+	}
 
-.markdown-body details {
-	display: block;
-}
+	details {
+		display: block;
+	}
 
-.markdown-body details summary {
-	cursor: pointer;
-}
+	details summary {
+		cursor: pointer;
+	}
 
-.markdown-body summary {
-	display: list-item;
-}
+	summary {
+		display: list-item;
+	}
 
-.markdown-body details:not([open]) > *:not(summary) {
-	display: none;
-}
+	details:not([open]) > *:not(summary) {
+		display: none;
+	}
 
-.markdown-body details {
-	margin-top: 0;
-	margin-bottom: 16px;
-}
+	details {
+		margin-top: 0;
+		margin-bottom: 16px;
+	}
 
-.markdown-body summary:focus:not(:focus-visible) {
-	outline: none;
-	box-shadow: none;
-}
+	summary:focus:not(:focus-visible) {
+		outline: none;
+		box-shadow: none;
+	}
 
-.markdown-body details-dialog:focus:not(:focus-visible) {
-	outline: none;
-}
+	details-dialog:focus:not(:focus-visible) {
+		outline: none;
+	}
 
-.markdown-body figure {
-	margin: 1em 40px;
-}
+	figure {
+		margin: 1em 40px;
+	}
 
-.markdown-body figcaption,
-.markdown-body figure {
-	display: block;
-}
+	figcaption,
+	figure {
+		display: block;
+	}
 
-.markdown-body kbd {
-	display: inline-block;
-	padding: 3px 5px;
-	font: 11px
-		var(
+	kbd {
+		display: inline-block;
+		padding: 3px 5px;
+		font: 11px
+			var(
+				--fontStack-monospace,
+				ui-monospace,
+				SFMono-Regular,
+				SF Mono,
+				Menlo,
+				Consolas,
+				Liberation Mono,
+				monospace
+			);
+		line-height: 10px;
+		color: var(--fgColor-default);
+		vertical-align: middle;
+		background-color: var(--bgColor-muted);
+		border: solid 1px var(--borderColor-neutral-muted);
+		border-bottom-color: var(--borderColor-neutral-muted);
+		border-radius: 6px;
+		box-shadow: inset 0 -1px 0 var(--borderColor-neutral-muted);
+	}
+
+	kbd,
+	samp {
+		font-family: monospace;
+		font-size: 1em;
+	}
+
+	samp {
+		font-family: var(
 			--fontStack-monospace,
 			ui-monospace,
 			SFMono-Regular,
@@ -141,32 +169,6 @@
 			Liberation Mono,
 			monospace
 		);
-	line-height: 10px;
-	color: var(--fgColor-default);
-	vertical-align: middle;
-	background-color: var(--bgColor-muted);
-	border: solid 1px var(--borderColor-neutral-muted);
-	border-bottom-color: var(--borderColor-neutral-muted);
-	border-radius: 6px;
-	box-shadow: inset 0 -1px 0 var(--borderColor-neutral-muted);
-}
-
-.markdown-body kbd,
-.markdown-body samp {
-	font-family: monospace;
-	font-size: 1em;
-}
-
-.markdown-body samp {
-	font-family: var(
-		--fontStack-monospace,
-		ui-monospace,
-		SFMono-Regular,
-		SF Mono,
-		Menlo,
-		Consolas,
-		Liberation Mono,
-		monospace
-	);
-	font-size: 12px;
+		font-size: 12px;
+	}
 }
