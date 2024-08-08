@@ -75,7 +75,7 @@ function renderedPageContent(fileURL, options) {
 
         const heading = {
             text: text,
-            depth: depth,
+            depth: tokens.depth,
             escapedText: escapedText
         };
 
@@ -85,8 +85,6 @@ function renderedPageContent(fileURL, options) {
     };
 
     renderer.code = (tokens, lang) => {
-        //console.log(text);
-
         let language = tokens.lang;
         let code = tokens.text;
 
