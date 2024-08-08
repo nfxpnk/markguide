@@ -68,7 +68,6 @@ $markguide-scale-secondary: $scale-sm-markguide;
 // Applied radiuses
 $markguide-radius: 5px;
 
-
 // ul,
 // ol,
 // p {
@@ -98,53 +97,50 @@ body {
 	padding: 0;
 }
 
-@import 'variables/layout';
-@import 'variables/typography';
-@import 'variables/misc';
+@import "variables/layout";
+@import "variables/typography";
+@import "variables/misc";
 
-@import 'base/colors';
-@import 'base/colors-theme';
-@import 'base/fonts';
+@import "base/colors";
+@import "base/colors-theme";
+@import "base/fonts";
 
 /// @import 'markdown/all';
 
-@import 'layouts/l-markguide-container';
-@import 'layouts/l-markguide-aside';
-@import 'layouts/l-markguide-page';
+@import "layouts/l-markguide-container";
+@import "layouts/l-markguide-aside";
+@import "layouts/l-markguide-page";
 
 // Sidebar-area components
-@import 'blocks/b-markguide-aside-ctrl';
+@import "blocks/b-markguide-aside-ctrl";
 
-@import 'blocks/b-markguide-logo';
+@import "blocks/b-markguide-logo";
 
 // Search
-@import 'blocks/b-markguide-search';
+@import "blocks/b-markguide-search";
 
 // Navigation
-@import 'blocks/b-markguide-nav';
+@import "blocks/b-markguide-nav";
 
-@import 'blocks/b-markguide-footer-copyright';
+@import "blocks/b-markguide-footer-copyright";
 
-@import 'blocks/b-markguide-overline';
+@import "blocks/b-markguide-overline";
 
-@import 'blocks/b-markguide-section';
+@import "blocks/b-markguide-section";
 
-@import 'blocks/b-markguide-html';
-@import 'blocks/b-markguide-markup';
+@import "blocks/b-markguide-html";
+@import "blocks/b-markguide-markup";
 
-@import 'blocks/b-markguide-toc';
+@import "blocks/b-markguide-toc";
 
-@import 'blocks/b-markguide-copier';
+@import "blocks/b-markguide-copier";
 
-@import 'plugins/colors/b-markguide-colors';
-@import 'plugins/icons/b-markguide-icons';
+@import "plugins/colors/b-markguide-colors";
+@import "plugins/icons/b-markguide-icons";
 
-@import 'helpers/box-model';
+@import "helpers/box-model";
 
-
-@import 'markdown/markdown';
-
-
+@import "markdown/markdown";
 
 .markdown-code {
 	.b-markguide-code {
