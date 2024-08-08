@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use "sass:math";
 
 //cae4fd 7dbcf8 4fc0f6
 $color-margin: #cae4fd;
@@ -14,11 +14,15 @@ $horizontal-arrow-height: $arrow-box-height;
 $vertical-arrow-width: $arrow-box-height;
 $vertical-arrow-height: $arrow-box-width;
 
-$svg-up: ('M-0 8l7-8 7 8', $horizontal-arrow-width, $horizontal-arrow-height);
-$svg-down: ('M14 0l-7 8-7-8', $horizontal-arrow-width, $horizontal-arrow-height);
+$svg-up: ("M-0 8l7-8 7 8", $horizontal-arrow-width, $horizontal-arrow-height);
+$svg-down: (
+	"M14 0l-7 8-7-8",
+	$horizontal-arrow-width,
+	$horizontal-arrow-height
+);
 
-$svg-left: ('M8 14l-8-7 8-7', $vertical-arrow-width, $vertical-arrow-height);
-$svg-right: ('M-0 0l8 7-8 7', $vertical-arrow-width, $vertical-arrow-height);
+$svg-left: ("M8 14l-8-7 8-7", $vertical-arrow-width, $vertical-arrow-height);
+$svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 
 @function create-svg($name, $fill-color) {
 	$path: nth($name, 1);
@@ -26,7 +30,7 @@ $svg-right: ('M-0 0l8 7-8 7', $vertical-arrow-width, $vertical-arrow-height);
 	$h: nth($name, 3);
 
 	$fill-color: str-slice(inspect($fill-color), 2);
-	$fill-color: '%23' + $fill-color;
+	$fill-color: "%23" + $fill-color;
 	$icon: 'data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="#{$w}" height="#{$h}"%3E%3Cpath fill="#{$fill-color}" d="#{$path}"/%3E%3C/svg%3E%0A';
 	@return $icon;
 }
@@ -72,7 +76,7 @@ $svg-right: ('M-0 0l8 7-8 7', $vertical-arrow-width, $vertical-arrow-height);
 .margin-left {
 	position: absolute;
 	background-blend-mode: screen;
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEX///8AAABVwtN+AAAAEklEQVQI12M4wNDBIMFgwJAAAAvqAfHBRIxpAAAAAElFTkSuQmCC');
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEX///8AAABVwtN+AAAAEklEQVQI12M4wNDBIMFgwJAAAAvqAfHBRIxpAAAAAElFTkSuQmCC");
 	span {
 		position: absolute;
 		color: #0c4b7c;
@@ -85,7 +89,7 @@ $svg-right: ('M-0 0l8 7-8 7', $vertical-arrow-width, $vertical-arrow-height);
 			background-repeat: no-repeat;
 			background-position: 50%;
 			background-size: 100%;
-			content: '';
+			content: "";
 		}
 	}
 
@@ -206,7 +210,6 @@ $svg-right: ('M-0 0l8 7-8 7', $vertical-arrow-width, $vertical-arrow-height);
 	transform: translate(-50%, -100%);
 	&::before {
 		bottom: -($horizontal-arrow-height - 2);
-		
 	}
 }
 
