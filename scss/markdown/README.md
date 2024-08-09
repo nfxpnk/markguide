@@ -1,0 +1,1 @@
+breakdown of results - https://github.com/sindresorhus/generate-github-markdown-css
