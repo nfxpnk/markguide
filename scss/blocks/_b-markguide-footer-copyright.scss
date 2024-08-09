@@ -1,11 +1,11 @@
 .b-markguide-footer-copyright {
 	@include font($size: 10px);
 
-	color: $markguide-color-text;
+	color: #000;
 	display: block;
 	margin: 0;
 	overflow: hidden;
-	padding: $space-sm-markguide;
+	padding: 10px;
 	text-align: center;
 	text-overflow: ellipsis;
 	white-space: nowrap;

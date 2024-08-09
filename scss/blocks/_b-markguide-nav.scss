@@ -2,7 +2,7 @@
 	@include font(13px, 400);
 
 	list-style: none;
-	padding-bottom: $space-md-markguide;
+	padding-bottom: 20px;
 
 	&__item {
 		display: block;
@@ -133,7 +133,7 @@
 		}
 
 		&:active {
-			color: $color-blue-markguide;
+			color: blue;
 		}
 	}
 
@@ -147,13 +147,13 @@
 
 .js-searching {
 	.b-markguide-nav__item-line {
-		color: lighten($markguide-color-text, 40%);
+		color: #000;
 		cursor: default;
 		pointer-events: none;
 
 		&._category {
 			svg {
-				color: lighten($markguide-color-text, 40%);
+				color: #000;
 			}
 		}
 	}
@@ -161,14 +161,14 @@
 
 .js-found {
 	.b-markguide-nav__item-line {
-		color: lighten($markguide-color-text, 40%);
+		color: #000;
 		cursor: default;
 		display: none;
 		pointer-events: none;
 	}
 
 	.b-markguide-nav__item-line.js-relevant {
-		color: $markguide-color-text;
+		color: #000;
 		cursor: pointer;
 		display: flex;
 		pointer-events: initial;
@@ -179,7 +179,7 @@
 		}
 
 		&:active {
-			color: $color-blue-markguide;
+			color: blue;
 		}
 	}
 

@@ -9,17 +9,17 @@
 		@include font(12px, 400, 34px);
 
 		background: transparent;
-		border: 1px solid $markguide-aside-bd;
-		border-radius: $markguide-radius;
+		border: 1px solid black;
+		border-radius: 6px;
 		box-sizing: border-box;
 		height: 34px;
 		outline: none;
-		padding: 0 $space-sm-markguide;
+		padding: 0 10px;
 		text-indent: $filter-icon-size + 2px;
 		width: 100%;
 
 		&:focus {
-			background: darken($markguide-aside-bg, 5%);
+			background: #ccc;
 		}
 
 		&::-webkit-search-cancel-button,
@@ -33,7 +33,7 @@
 	}
 
 	&__icon {
-		color: $markguide-color-text;
+		color: black;
 		height: $filter-icon-size;
 		left: $icon-indent;
 		position: absolute;
@@ -42,13 +42,13 @@
 		width: $filter-icon-size;
 
 		.js-found & {
-			color: $color-blue-markguide;
+			color: gray;
 		}
 	}
 
 	&__clear {
 		border: none;
-		color: $color-white-markguide;
+		color: #fff;
 		cursor: pointer;
 		height: $clear-icon-size;
 		line-height: $clear-icon-size;
@@ -63,24 +63,24 @@
 
 		svg {
 			display: block;
-			color: $color-blue-markguide;
+			color: blue;
 		}
 
 		&:hover {
 			svg {
-				color: darken($markguide-aside-bd, 40%);
+				color: black;
 			}
 		}
 
 		&:focus {
 			svg {
-				color: $color-blue-markguide;
+				color: blue;
 			}
 		}
 
 		&:active {
 			svg {
-				color: darken($markguide-aside-bd, 50%);
+				color: black;
 			}
 		}
 
