@@ -1,6 +1,6 @@
 .b-markguide-nav {
-	font-family: $font-sans-markguide;
-	font-size: $markguide-scale-secondary;
+	@include font(13px, 400);
+
 	list-style: none;
 	padding-bottom: $space-md-markguide;
 
@@ -13,7 +13,6 @@
 				content: "";
 				display: block;
 				height: 1px;
-				// margin: 3px 0;
 				background: lightgrey;
 			}
 		}
@@ -114,10 +113,11 @@
 
 	&__text {
 		all: initial;
+
+		@include font(13px);
+
 		color: inherit;
 		cursor: pointer;
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-		font-size: 13px;
 		overflow: hidden;
 		position: relative;
 		text-decoration: none;

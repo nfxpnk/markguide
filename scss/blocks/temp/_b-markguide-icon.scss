@@ -111,7 +111,8 @@
 		border-top: $border-width $border-style var(--color-markguide-border);
 
 		pre {
-			font-size: 11px;
+			@include fontMono(11px);
+
 			text-align: center;
 			margin: 0;
 			white-space: normal;

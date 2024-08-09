@@ -15,7 +15,7 @@
 }
 
 .b-markguide-color__name {
-	//font-family: $font-sans-markguide;
+
 }
 
 .b-markguide-color {
@@ -34,6 +34,7 @@
 	background-size: 12px 12px;
 	height: 3em;
 }
+
 .b-markguide-color__figure-color {
 	position: absolute;
 	left: 0;
@@ -41,14 +42,16 @@
 	right: 0;
 	bottom: 0;
 }
+
 .b-markguide-color__caption {
 	padding: 0.5em;
 }
+
 .b-markguide-color__name {
 	display: block;
-	font-weight: bold;
 	color: black;
 }
+
 .b-markguide-color__code {
 	display: block;
 	color: black;

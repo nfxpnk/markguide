@@ -1,0 +1,6 @@
+@mixin fontMono($size, $fontWeight: 400, $lineHeight: 1.5) {
+	font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+	font-size: $size;
+	font-weight: $fontWeight;
+	line-height: $lineHeight;
+}

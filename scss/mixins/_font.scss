@@ -1,0 +1,6 @@
+@mixin font($size, $fontWeight: 400, $lineHeight: 1.5) {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: $size;
+	font-weight: $fontWeight;
+	line-height: $lineHeight;
+}

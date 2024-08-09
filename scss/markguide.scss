@@ -17,10 +17,6 @@ $color-orange-markguide: hsl(38, 92%, 60%);
 $color-yellow-markguide: hsl(53, 92%, 60%);
 $color-green-markguide: hsl(85, 60%, 60%);
 
-// Fonts
-$font-sans-markguide: "Arial", "FreeSans", sans-serif;
-$font-mono-markguide: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace;
-
 // Sizes
 $size-font-markguide: 16px; // 16px
 $size-line-markguide: $size-font-markguide * 1.25; // 20px
@@ -77,15 +73,14 @@ body {
 	padding: 0;
 }
 
-@import "variables/layout";
-@import "variables/typography";
 @import "variables/misc";
 
 @import "base/colors-default";
 @import "base/colors-dark";
-@import "base/fonts";
 
 @import "mixins/clearfix";
+@import "mixins/font";
+@import "mixins/font-mono";
 
 @import "layouts/l-markguide-container";
 @import "layouts/l-markguide-aside";

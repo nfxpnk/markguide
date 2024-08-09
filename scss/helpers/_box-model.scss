@@ -74,12 +74,13 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 	background-blend-mode: screen;
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEX///8AAABVwtN+AAAAEklEQVQI12M4wNDBIMFgwJAAAAvqAfHBRIxpAAAAAElFTkSuQmCC");
 	span {
+		@include fontMono(12px, 400);
 		position: absolute;
 		color: #0c4b7c;
 		z-index: 1000;
-		font-size: 12px;
 		padding: 4px;
 		border-radius: 2px;
+
 		&::before {
 			position: absolute;
 			background-repeat: no-repeat;

@@ -1,9 +1,8 @@
 .b-markguide-footer-copyright {
+	@include font($size: 10px);
+
 	color: $markguide-color-text;
 	display: block;
-	font-family: $font-sans-markguide;
-	font-size: 10px;
-	line-height: 1.2;
 	margin: 0;
 	overflow: hidden;
 	padding: $space-sm-markguide;
