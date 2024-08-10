@@ -70,7 +70,7 @@ function renderedPageContent(fileURL, options) {
 
     //We need to keep renderers here because they changes page to page
     renderer.heading = (tokens, depth) => {
-        const text = tokens.text;
+        const text = marked.parseInline(tokens.text);
         const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
 
         const heading = {
