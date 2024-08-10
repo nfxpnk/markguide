@@ -1,4 +1,4 @@
-.b-markguide-nav {
+.b-markguide-navigation {
 	@include font(13px, 400);
 
 	list-style: none;
@@ -8,7 +8,7 @@
 		display: block;
 		position: relative;
 
-		&:nth-child(1 of .b-markguide-nav__item_plugin) {
+		&:nth-child(1 of .b-markguide-navigation__item_plugin) {
 			&::before {
 				content: "";
 				display: block;
@@ -17,8 +17,8 @@
 			}
 		}
 
-		&:nth-last-child(1 of .b-markguide-nav__item_plugin),
-		&:nth-last-child(1 of .b-markguide-nav__item_page) {
+		&:nth-last-child(1 of .b-markguide-navigation__item_plugin),
+		&:nth-last-child(1 of .b-markguide-navigation__item_page) {
 			&::after {
 				content: "";
 				display: block;
@@ -41,20 +41,20 @@
 		}
 
 		&._category {
-			.b-markguide-nav__icon-active {
+			.b-markguide-navigation__icon-active {
 				display: block;
 				color: #295eae;
 			}
-			.b-markguide-nav__icon {
+			.b-markguide-navigation__icon {
 				display: none;
 			}
 		}
 
 		&.js-collapsed._category {
-			.b-markguide-nav__icon-active {
+			.b-markguide-navigation__icon-active {
 				display: none;
 			}
-			.b-markguide-nav__icon {
+			.b-markguide-navigation__icon {
 				display: block;
 			}
 		}
@@ -137,8 +137,8 @@
 		}
 	}
 
-	.b-markguide-nav__item-line._category.js-collapsed {
-		+ .b-markguide-nav__sub-nav {
+	.b-markguide-navigation__item-line._category.js-collapsed {
+		+ .b-markguide-navigation__sub-nav {
 			/* stylelint-disable-line */
 			display: none;
 		}
@@ -146,7 +146,7 @@
 }
 
 .js-searching {
-	.b-markguide-nav__item-line {
+	.b-markguide-navigation__item-line {
 		color: #000;
 		cursor: default;
 		pointer-events: none;
@@ -160,14 +160,14 @@
 }
 
 .js-found {
-	.b-markguide-nav__item-line {
+	.b-markguide-navigation__item-line {
 		color: #000;
 		cursor: default;
 		display: none;
 		pointer-events: none;
 	}
 
-	.b-markguide-nav__item-line.js-relevant {
+	.b-markguide-navigation__item-line.js-relevant {
 		color: #000;
 		cursor: pointer;
 		display: flex;
@@ -183,10 +183,10 @@
 		}
 	}
 
-	.b-markguide-nav__sub-nav {
+	.b-markguide-navigation__sub-nav {
 		display: block !important; /* stylelint-disable-line */
 	}
-	.b-markguide-nav__item-line._category {
+	.b-markguide-navigation__item-line._category {
 		display: flex !important; /* stylelint-disable-line */
 	}
 }

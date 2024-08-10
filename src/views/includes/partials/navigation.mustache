@@ -1,8 +1,8 @@
 {{#subPages}}
-    <div role="listitem" class="b-markguide-nav__item {{#type}}b-markguide-nav__item_{{type}}{{/type}}">
+    <div role="listitem" class="b-markguide-navigation__item {{#type}}b-markguide-navigation__item_{{type}}{{/type}}">
         <a
             class="
-                b-markguide-nav__item-line
+                b-markguide-navigation__item-line
                 {{#type}}_{{type}}{{/type}}
                 {{#noDocumentation}}_empty{{/noDocumentation}}
                 js-markguide-nav-ln
@@ -12,24 +12,24 @@
             {{#id}}id="nav-link-{{id}}"{{/id}}
             data-name="{{title}}"
         >
-            <span class="b-markguide-nav__indent"></span>
+            <span class="b-markguide-navigation__indent"></span>
             {{#depth}}
-                <span class="b-markguide-nav__indent"></span>
+                <span class="b-markguide-navigation__indent"></span>
             {{/depth}}
 
             {{#icon}}
                 <svg width="16" height="16" viewBox="0 0 16 16" role="img">
-                    <use class="b-markguide-nav__icon" href="#{{{icon}}}"></use>
-                    {{#iconActive}}<use class="b-markguide-nav__icon-active" href="#{{{iconActive}}}"></use>{{/iconActive}}
+                    <use class="b-markguide-navigation__icon" href="#{{{icon}}}"></use>
+                    {{#iconActive}}<use class="b-markguide-navigation__icon-active" href="#{{{iconActive}}}"></use>{{/iconActive}}
                 </svg>
             {{/icon}}
 
-            <span class="b-markguide-nav__text">
+            <span class="b-markguide-navigation__text">
                 {{title}}
             </sapn>
         </a>
         {{#subPages.length}}
-            <div role="list" class="b-markguide-nav__sub-nav">
+            <div role="list" class="b-markguide-navigation__sub-nav">
                 {{>navigation}}
             </div>
         {{/subPages.length}}
