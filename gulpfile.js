@@ -28,7 +28,7 @@ config.sassDest = './assets/css/';
 config.alsoSearchIn = '';
 
 config.sassExampleSrc = './_example/scss-source/';
-config.sassExampleDest = './_example/markguide-static/styles/';
+config.sassExampleDest = './_example/projects-static-files/';
 
 log(`Style Guide scss folder: ${c.cyan(config.sassSrc)}`);
 log(`Style Guide assets compiled css folder: ${c.cyan(config.sassDest)}`);

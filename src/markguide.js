@@ -6,18 +6,7 @@ const {copyFiles, copyDirectory} = require('./utils/copy.js');
 const markguideConfig = require('./config/config.js');
 const projectTree = require('./models/project-tree.js');
 
-function withConfig(configPath) {
-    // Prepare config and basic models
-    const config = markguideConfig(configPath);
-
-    // If config has no proper fields
-    if (config.isCorrupted) {
-        return {
-            build: () => Promise.reject(new Error('Config is corrupted')),
-            buildAll: () => Promise.reject(new Error('Config is corrupted'))
-        };
-    }
-
+function copyFiles(config) {
     // Copy internal assets to the components destinations
     log(c.green(config.internalAssetsPath), config.guideDest);
     copyDirectory(config.internalAssetsPath, path.join(config.guideDest, 'assets'));
@@ -41,6 +30,21 @@ function withConfig(configPath) {
 
     // Copy fonts
     copyDirectory(config.projectFontsFolder, path.join(config.guideDest, 'styles/fonts'));
+}
+
+function withConfig(configPath) {
+    // Prepare config and basic models
+    const config = markguideConfig(configPath);
+
+    // If config has no proper fields
+    if (config.isCorrupted) {
+        return {
+            build: () => Promise.reject(new Error('Config is corrupted')),
+            buildAll: () => Promise.reject(new Error('Config is corrupted'))
+        };
+    }
+
+    copyFiles(config);
 
     console.log(config);
 

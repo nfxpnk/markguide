@@ -3,24 +3,26 @@ input,
 button,
 textarea,
 select {
-  font-family: "Roboto", "Arial";
+	font-family: "Roboto", "Arial";
 }
 
 input,
 button,
 textarea,
 select {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 h1 {
-  font-size: 24px;
-  padding-bottom: 20px;
+	font-size: 24px;
+	padding-bottom: 20px;
+	margin: 10px 0;
 }
 
 h2 {
-  font-size: 18px;
-  padding-bottom: 10px;
+	font-size: 18px;
+	padding-bottom: 10px;
+	margin: 10px 0;
 }
 
 /*md
@@ -121,61 +123,61 @@ Include: _b-button.html
 
 */
 .b-button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
-  border: 1px solid #007bff;
-  border-radius: 4px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #007bff;
+	border: 1px solid #007bff;
+	border-radius: 4px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 .b-button.m-light {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #fff;
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #fff;
 }
 .b-button.m-light:hover {
-  background-color: #f0f0f0;
-  border-color: #f0f0f0;
+	background-color: #f0f0f0;
+	border-color: #f0f0f0;
 }
 .b-button.m-light:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 .b-button.m-light:active {
-  background-color: #e0e0e0;
-  border-color: #e0e0e0;
+	background-color: #e0e0e0;
+	border-color: #e0e0e0;
 }
 .b-button.m-light:disabled {
-  background-color: #1c1c1c;
-  border-color: #1c1c1c;
-  color: #cccccc;
-  cursor: not-allowed;
+	background-color: #1c1c1c;
+	border-color: #1c1c1c;
+	color: #cccccc;
+	cursor: not-allowed;
 }
 .b-button.m-width_full {
-  width: 100%;
+	width: 100%;
 }
 .b-button:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+	background-color: #0056b3;
+	border-color: #0056b3;
 }
 .b-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 .b-button:active {
-  background-color: #004085;
-  border-color: #004085;
+	background-color: #004085;
+	border-color: #004085;
 }
 .b-button:disabled {
-  background-color: #cccccc;
-  border-color: #cccccc;
-  color: #666666;
-  cursor: not-allowed;
+	background-color: #cccccc;
+	border-color: #cccccc;
+	color: #666666;
+	cursor: not-allowed;
 }
 
 /*md
@@ -196,32 +198,32 @@ Classes:
 ```
 */
 .b-input {
-  display: block;
-  padding: 10px;
-  font-size: 16px;
-  color: #333;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+	display: block;
+	padding: 10px;
+	font-size: 16px;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	transition: border-color 0.3s, box-shadow 0.3s;
 }
 .b-input.m-width_full {
-  width: 100%;
+	width: 100%;
 }
 .b-input.m-error {
-  border-color: #f26262;
+	border-color: #f26262;
 }
 .b-input:hover {
-  border-color: #007bff;
+	border-color: #007bff;
 }
 .b-input:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 .b-input:disabled {
-  background-color: #e9ecef;
-  border-color: #ccc;
-  color: #6c757d;
-  cursor: not-allowed;
+	background-color: #e9ecef;
+	border-color: #ccc;
+	color: #6c757d;
+	cursor: not-allowed;
 }
