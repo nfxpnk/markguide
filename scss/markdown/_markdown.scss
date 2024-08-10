@@ -1,33 +1,21 @@
 .markdown-body {
 	@include font(16px, 400, 1.5);
 
-	--base-size-4: 0.25rem;
-	--base-size-8: 0.5rem;
-	--base-size-16: 1rem;
-	--base-text-weight-normal: 400;
-	--base-text-weight-medium: 500;
-	--base-text-weight-semibold: 600;
-
 	--focus-outlineColor: #0969da;
 	--fgColor-default: #1f2328;
 	--fgColor-muted: #636c76;
 	--fgColor-accent: #0969da;
-	--fgColor-success: #1a7f37;
-	--fgColor-attention: #9a6700;
-	--fgColor-danger: #d1242f;
-	--fgColor-done: #8250df;
+
+
 	--bgColor-default: #ffffff;
 	--bgColor-muted: #f6f8fa;
 	--bgColor-neutral-muted: #afb8c133;
 	--bgColor-attention-muted: #fff8c5;
+
 	--borderColor-default: #d0d7de;
 	--borderColor-muted: #d0d7deb3;
 	--borderColor-neutral-muted: #afb8c133;
-	--borderColor-accent-emphasis: #0969da;
-	--borderColor-success-emphasis: #1a7f37;
-	--borderColor-attention-emphasis: #bf8700;
-	--borderColor-danger-emphasis: #cf222e;
-	--borderColor-done-emphasis: #8250df;
+
 
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
