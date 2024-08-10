@@ -27,6 +27,9 @@ config.sassSrc = './scss/';
 config.sassDest = './assets/css/';
 config.alsoSearchIn = '';
 
+config.sassExampleSrc = './_example/scss-source/';
+config.sassExampleDest = './_example/markguide-static/styles/';
+
 log(`Style Guide scss folder: ${c.cyan(config.sassSrc)}`);
 log(`Style Guide assets compiled css folder: ${c.cyan(config.sassDest)}`);
 
@@ -118,6 +121,13 @@ const sassCompile = config => {
 gulp.task('compile:styles:assets', () => sassCompile({
     source: config.sassSrc + '*.scss',
     dest: config.sassDest,
+    alsoSearchIn: [config.alsoSearchIn]
+}));
+
+// Compile example scss
+gulp.task('compile:styles:example', () => sassCompile({
+    source: config.sassExampleSrc + '*.scss',
+    dest: config.sassExampleDest,
     alsoSearchIn: [config.alsoSearchIn]
 }));
 
