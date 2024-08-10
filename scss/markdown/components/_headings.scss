@@ -16,7 +16,7 @@
 
 		tt,
 		code {
-			@include fontMono(16px, 600);
+			font-size: inherit;
 
 			padding: 0 0.2em;
 		}
