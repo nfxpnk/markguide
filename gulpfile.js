@@ -19,7 +19,7 @@ if (fs.existsSync(currentConfigPath) === false) {
 
 log(`Current config file is: ${c.cyan(currentConfigPath)}`);
 
-const markguide = require('./src/markguide.js').withConfig(currentConfigPath);
+const markguide = require('./src/markguide.js');
 const config = require(currentConfigPath);
 
 // Styles source
@@ -153,12 +153,27 @@ gulp.task('scss:watch', done => {
 
 
 // Compile all components pages
-gulp.task('markguide:compile', done => markguide.build().then(done()));
+gulp.task('markguide:compile', done =>
+    markguide
+        .withConfig(currentConfigPath)
+        .build()
+        .then(done())
+);
 
 // Compile particular page from the guide
-gulp.task('markguide:compile:incremental', done => markguide.build(changedFilePath).then(done()));
+gulp.task('markguide:compile:incremental', done =>
+    markguide
+        .withConfig(currentConfigPath)
+        .build(changedFilePath)
+        .then(done())
+);
 
-gulp.task('markguide:compile:all', done => markguide.buildAll().then(done()));
+gulp.task('markguide:compile:all', done =>
+    markguide
+        .withConfig(currentConfigPath)
+        .buildAll()
+        .then(done())
+);
 
 // Compile Guide and watch changes
 gulp.task('markguide:watch', done => {

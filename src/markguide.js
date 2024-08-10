@@ -6,7 +6,7 @@ const {copyFiles, copyDirectory} = require('./utils/copy.js');
 const markguideConfig = require('./config/config.js');
 const projectTree = require('./models/project-tree.js');
 
-function copyFiles(config) {
+function copyDirectoriesAndFiles(config) {
     // Copy internal assets to the components destinations
     log(c.green(config.internalAssetsPath), config.guideDest);
     copyDirectory(config.internalAssetsPath, path.join(config.guideDest, 'assets'));
@@ -44,7 +44,7 @@ function withConfig(configPath) {
         };
     }
 
-    copyFiles(config);
+    copyDirectoriesAndFiles(config);
 
     console.log(config);
 
