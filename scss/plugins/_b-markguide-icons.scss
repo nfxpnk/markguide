@@ -33,7 +33,7 @@
 		}
 
 		.b-markguide-icon__svg {
-			background-color: #dfdfdf;
+			background-color: var(--color-mg-icon-svg__background--hover);
 		}
 	}
 
@@ -77,7 +77,7 @@
 		&-left,
 		&-right {
 			position: absolute;
-			background: #242add;
+			background-color: var(--color-mg-icon-grid__background);
 		}
 
 		&-top,
@@ -116,20 +116,20 @@
 	}
 
 	&__data {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		background: lightgray;
-		padding: 5px 0;
+		background: var(--color-mg-icon__background);
 		border-radius: 6px;
 		border-top: 1px solid var(--color-mg-icon__border);
+		bottom: 0;
+		left: 0;
+		padding: 5px 0;
+		position: absolute;
+		right: 0;
 
 		pre {
 			@include fontMono(11px, 400);
 
-			text-align: center;
 			margin: 0;
+			text-align: center;
 			white-space: normal;
 		}
 	}
@@ -149,17 +149,17 @@
 	}
 
 	&__code {
-		position: absolute;
 		bottom: 0;
-		left: 0;
-		right: 0;
 		display: none;
-		text-align: center;
-		padding: 0;
+		left: 0;
 		margin: 0;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		text-align: center;
 
 		code {
-			background-color: lightgray;
+			background-color: var(--color-mg-icon-code__background);
 			color: gray;
 			border-top: 1px solid var(--color-mg-icon-code__border);
 		}

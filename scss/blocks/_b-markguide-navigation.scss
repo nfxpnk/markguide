@@ -127,12 +127,12 @@
 
 		&:hover,
 		&:focus {
-			color: black;
+			color: var(--color-mg-navigation-text__color--hover);
 			text-decoration: none;
 		}
 
 		&:active {
-			color: blue;
+			color: var(--color-mg-navigation-text__color--active);
 		}
 	}
 
@@ -173,11 +173,11 @@
 
 		&:hover,
 		&:focus {
-			color: black;
+			color: var(--color-mg-navigation-relevant-item-line__color--hover);
 		}
 
 		&:active {
-			color: blue;
+			color: var(--color-mg-navigation-relevant-item-line__color--active);
 		}
 	}
 
