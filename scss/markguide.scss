@@ -7,44 +7,40 @@ body {
 
 //@import "variables/misc";
 
+// Colors
 @import "base/colors-default";
 @import "base/colors-dark";
 //@import "base/colors-alternative";
 
+// Mixins
 @import "mixins/clearfix";
 @import "mixins/font";
 @import "mixins/font-mono";
 
+// Layouts
 @import "layouts/l-markguide-container";
 @import "layouts/l-markguide-aside";
 @import "layouts/l-markguide-page";
 
-// Sidebar-area components
+// Blocks
 @import "blocks/b-markguide-aside-ctrl";
-
-// Search
 @import "blocks/b-markguide-search";
-
-// Navigation
 @import "blocks/b-markguide-navigation";
-
 @import "blocks/b-markguide-footer-copyright";
-
 @import "blocks/b-markguide-overline";
-
 @import "blocks/b-markguide-section";
-
 @import "blocks/b-markguide-html";
 @import "blocks/b-markguide-markup";
-
 @import "blocks/b-markguide-toc";
-
 @import "blocks/b-markguide-copier";
 
+// Default Plugins
 @import "plugins/b-markguide-colors";
 @import "plugins/b-markguide-icons";
 @import "plugins/b-markguide-typography";
 
+// Helpers
 @import "helpers/box-model";
 
+// Markdown
 @import "markdown/markdown";

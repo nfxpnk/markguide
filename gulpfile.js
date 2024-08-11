@@ -179,7 +179,10 @@ gulp.task('markguide:compile:all', done =>
 gulp.task('markguide:watch', done => {
     gulp.watch(
         [config.guideSrc + '**/*.scss', config.guideSrc + '**/*.md'],
-        gulp.series('markguide:compile:incremental', 'server:reload:guide')
+        gulp.series(
+            'markguide:compile:incremental',
+            'server:reload:guide'
+        )
     ).on('change', notifyChange);
     done();
 });
@@ -188,9 +191,20 @@ gulp.task('markguide:watch', done => {
  * Complex tasks
  */
 
-gulp.task('dev', gulp.parallel('server:up', 'compile:styles:assets:markguide', 'scss:watch'));
+gulp.task('dev', gulp.parallel(
+    'server:up',
+    'compile:styles:assets:markguide',
+    'scss:watch')
+);
 
+gulp.task('dev:markguide', gulp.parallel(
+    'server:up',
+    'markguide:compile:all',
+    'markguide:watch')
+);
 
-// change to markguide:compile for regular projects, for our cases we compile all markguide in dev workflow
-gulp.task('dev:markguide', gulp.parallel('server:up', 'markguide:compile:all', 'markguide:watch'));
-gulp.task('build', gulp.parallel('compile:styles:assets', 'compile:styles:assets:markguide', 'markguide:compile:all'));
+gulp.task('build', gulp.parallel(
+    'compile:styles:assets',
+    'compile:styles:assets:markguide',
+    'markguide:compile:all')
+);
