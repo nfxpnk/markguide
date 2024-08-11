@@ -13,7 +13,7 @@
 				content: "";
 				display: block;
 				height: 1px;
-				background-color: var(--color-markguide-navigation-background);
+				background-color: var(--color-mg-navigation__background);
 			}
 		}
 
@@ -23,7 +23,7 @@
 				content: "";
 				display: block;
 				height: 1px;
-				background-color: var(--color-markguide-navigation-background);
+				background-color: var(--color-mg-navigation__background);
 			}
 		}
 	}
@@ -33,16 +33,16 @@
 		align-items: center;
 		padding: 0 20px;
 		text-decoration: none;
-		color: var(--color-markguide-navigation-item-line-color);
+		color: var(--color-mg-navigation-item-line__color);
 
 		svg {
-			color: var(--color-markguide-navigation-icon-color);
+			color: var(--color-mg-navigation-icon__color);
 		}
 
 		&._category {
 			.b-markguide-navigation__icon-active {
 				display: block;
-				color: var(--color-markguide-navigation-icon-active-color);
+				color: var(--color-mg-navigation-icon__color--active);
 			}
 			.b-markguide-navigation__icon {
 				display: none;
@@ -60,12 +60,12 @@
 
 		&._empty {
 			font-style: italic;
-			color: var(--color-markguide-navigation-item-empty-color);
+			color: var(--color-mg-navigation-item-empty__color);
 		}
 
 		&.js-current-page {
-			background-color: var(--color-markguide-navigation-item-current-backgound);
-			color: var(--color-markguide-navigation-item-current-color);
+			background-color: var(--color-mg-navigation-item-current__backgound);
+			color: var(--color-mg-navigation-item-current__color);
 			cursor: default;
 			pointer-events: none;
 		}
@@ -80,7 +80,7 @@
 		}
 
 		&:hover {
-			background-color: var(--color-markguide-navigation-item-current-backgound-hover);
+			background-color: var(--color-mg-navigation-item-current__backgound--hover);
 		}
 	}
 
@@ -94,7 +94,7 @@
 		&::before {
 			content: "";
 			width: 2px;
-			border-left: 1px solid var(--color-markguide-navigation-indent-border);
+			border-left: 1px solid var(--color-mg-navigation-indent__border);
 			height: 100%;
 			left: 50%;
 			margin-left: -6px;
@@ -145,13 +145,13 @@
 
 .js-searching {
 	.b-markguide-navigation__item-line {
-		color: var(--color-markguide-navigation-searching-item-line-color);
+		color: var(--color-mg-navigation-searching-item-line__color);
 		cursor: default;
 		pointer-events: none;
 
 		&._category {
 			svg {
-				color: var(--color-markguide-navigation-searching-icon-color);
+				color: var(--color-mg-navigation-searching-icon__color);
 			}
 		}
 	}
@@ -159,14 +159,14 @@
 
 .js-found {
 	.b-markguide-navigation__item-line {
-		color: var(--color-markguide-navigation-found-item-line-color);
+		color: var(--color-mg-navigation-found-item-line__color);
 		cursor: default;
 		display: none;
 		pointer-events: none;
 	}
 
 	.b-markguide-navigation__item-line.js-relevant {
-		color: var(--color-markguide-navigation-relevant-item-line-color);
+		color: var(--color-mg-navigation-relevant-item-line__color);
 		cursor: pointer;
 		display: flex;
 		pointer-events: initial;

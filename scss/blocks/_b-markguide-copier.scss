@@ -5,9 +5,9 @@
 	&__message {
 		@include font($size: 10px);
 
-		background-color: var(--color-markguide-copier-background);
+		background-color: var(--color-mg-copier-message__background);
 		border-radius: 5px;
-		color: var(--color-markguide-copier-color);
+		color: var(--color-mg-copier-message__color);
 		left: 50%;
 		min-width: 20px;
 		padding: 20px;
@@ -34,6 +34,6 @@
 	}
 
 	&:hover &__text {
-		color: var(--color-markguide-copier-color-hover);
+		color: var(--color-mg-copier-text__color--hover);
 	}
 }
