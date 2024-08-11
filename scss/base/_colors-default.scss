@@ -11,38 +11,33 @@ $c-blue-400: #54aeff;
 $c-blue-500: #0645ad;
 $c-blue-600: #0d3880;
 
+$temp-all: #79aea5;
+
+$c-white: $temp-all;
+$c-black: $temp-all;
+$c-grey: $temp-all;
+
+$c-grey-200: $temp-all;
+$c-grey-300: $temp-all;
+$c-grey-500: $temp-all;
+
+$c-blue-200: $temp-all;
+$c-blue-400: $temp-all;
+$c-blue-500: $temp-all;
+$c-blue-600: $temp-all;
+
 :root {
 	// Default theme
 	--color-markguide-background: #{$c-grey-200};
 	--color-markguide-text: #{$c-black};
-	--color-markguide-link: #{$c-blue-600};
-	--color-markguide-link-hover: #{$c-blue-500};
-	--color-markguide-link-visited: #{$c-blue-600};
-	--color-markguide-link-active: #{$c-blue-500};
-	--color-markguide-headers: #{$c-black};
-	--color-markguide-blockquote: #{$c-blue-400};
-	--color-markguide-hr: #{$c-blue-400};
-	--color-markguide-border: #{$c-grey};
-	--color-markguide-permalink: #{$c-black};
+
+	--color-markguide-copier-background: #{$c-blue-600};
+	--color-markguide-copier-color: #{$c-blue-600};
+	--color-markguide-copier-color-hover: #{$c-blue-600};
+
 
 	// markguide-markup
 	--color-markguide-markup-border: #{$c-grey};
-
-	// markguide layout - sidebar
-	--color-markguide-sidebar-bg: #{$c-grey-200};
-
-	// markguide layout - main
-	--color-markguide-main-bg: #{$c-grey-200};
-
-	// markguide-markdown
-	--color-markguide-markdown-code-inline: #{$c-blue-200};
-	--color-markguide-markdown-header: #{$c-black};
-	--color-markguide-markdown-text: #{$c-black};
-	--color-markguide-markdown-border-muted: #{$c-grey};
-
-	// markguide-markdown table
-	--color-markguide-markdown-table-row-bg: #{$c-white};
-	--color-markguide-markdown-table-even-row-bg: #{$c-grey-200};
 
 	// markguide-color
 	--color-markguide-color-background: #{$c-white};
@@ -52,35 +47,45 @@ $c-blue-600: #0d3880;
 	// markguide-icon
 	--color-markguide-icon-path: #{$c-grey-500};
 
-	// markguide-doc-title
-	--color-markguide-doc-title: #{$c-black};
+	--color-markguide-aside-box-shadow: #{$c-black};
+	--color-markguide-aside-ctrl-background: #{$c-black};
+	--color-markguide-aside-ctrl-color-hover: #{$c-black};
 
-	// markguide-modifier
-	--color-markguide-modifier-bg: #fff;
+	--color-markguide-footer-copyright-color: #{$c-black};
 
-	// markguide-nav
-	--color-markguide-nav-highlight: #{$c-black};
-	--color-markguide-nav-empty: #{$c-grey};
-	--color-markguide-nav-ref: #{$c-grey-500};
+	--color-markguide-html-border: #{$c-grey-300};
 
 	// markguide-navigation
-	--color-markguide-navigation-link: #{$c-blue-500};
-	--color-markguide-navigation-item-border: #{$c-grey};
-	--color-markguide-navigation-svg-link: #{$c-black};
-	--color-markguide-navigation-svg-link-empty: #{$c-grey};
-	--color-markguide-navigation-svg-directory: #{$c-blue-400};
-	--color-markguide-navigation-svg-file: #{$c-grey-500};
+	--color-markguide-navigation-background: #{$c-grey-300};
+	--color-markguide-navigation-item-line-color: #{$c-black};
+	--color-markguide-navigation-icon-color: #{$c-blue-400};
+	--color-markguide-navigation-icon-active-color: #{$c-blue-600};
+	--color-markguide-navigation-item-current-backgound: #{$c-blue-200};
+	--color-markguide-navigation-item-current-backgound-hover: #{$c-white};
+	--color-markguide-navigation-item-current-color: #{$c-black};
+	--color-markguide-navigation-item-empty-color: #{$c-grey-300};
+	--color-markguide-navigation-indent-border: #{$c-black};
+	--color-markguide-navigation-searching-item-line-color: #{$c-grey-300};
+	--color-markguide-navigation-searching-icon-color: #{$c-grey-300};
+	--color-markguide-navigation-found-item-line-color: #{$c-black};
+	--color-markguide-navigation-relevant-item-line-color: #{$c-grey-300};
 
-	// markguide-title
-	--color-markguide-title-header: #{$c-grey-300};
-	--color-markguide-title-permalink: #{$c-black};
-	--color-markguide-title-permalink-hash: #{$c-grey};
+	// markguide-search
+	--color-markguide-search-input-border: #{$c-grey-300};
+	--color-markguide-search-input-focus-background: #{$c-grey-200};
+	--color-markguide-search-icon-color: #{$c-blue-400};
+	--color-markguide-search-icon-found-color: #{$c-blue-600};
+	--color-markguide-search-clear-color: #{$c-blue-400};
+	--color-markguide-search-icon-clear-color: #{$c-blue-400};
+	--color-markguide-search-icon-clear-color-hover: #{$c-blue-400};
+	--color-markguide-search-icon-clear-color-focus: #{$c-blue-400};
+	--color-markguide-search-icon-clear-color-active: #{$c-blue-400};
 
-	// markguide-source
-	--color-markguide-source-text: #{$c-black};
+	// markguide colors
+	--color-markguide-color-border: #{$c-grey-300};
+	--color-markguide-color-name-color: #{$c-black};
+	--color-markguide-color-code-color: #{$c-black};
 
-	// markguide-toolbar
-	--color-markguide-toolbar-bg: #{$c-grey-200};
-	--color-markguide-toolbar-svg: #{$c-grey};
-	--color-markguide-toolbar-svg-hover: #{$c-black};
+	// markdown
+	--color-markdown-body-heading-border: #{$c-grey-300};
 }
