@@ -2,7 +2,7 @@
 	margin: 10px 0 20px;
 	outline: none !important;
 	position: relative;
-	//border: $border-width $border-style var(--color-markguide-markup-border);
+	border: 1px solid var(--color-markguide-markup-border);
 
 	&__summary {
 		padding-left: 10px;
@@ -12,7 +12,7 @@
 	}
 
 	&[open] .markguide-markup__summary {
-		//border: $border-width $border-style var(--color-markguide-markup-border);
+		border: 1px solid var(--color-markguide-markup-border);
 	}
 
 	pre {
@@ -29,7 +29,7 @@
 	}
 
 	summary {
-		border: 1px solid grey;
+		border: 1px solid var(--color-markguide-markup-border);
 		cursor: pointer;
 		padding-left: 10px;
 		user-select: none;

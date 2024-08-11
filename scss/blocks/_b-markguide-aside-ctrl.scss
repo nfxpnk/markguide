@@ -1,5 +1,5 @@
 .b-markguide-aside-ctrl {
-	background: rgba(0, 0, 0, 0);
+	background: var(--color-markguide-aside-ctrl-background);
 	border: none;
 	bottom: 0;
 	color: transparent;
@@ -32,7 +32,7 @@
 
 	&:hover,
 	&:focus {
-		color: blue;
+		color: var(--color-markguide-aside-ctrl-color-hover);
 	}
 
 	.js-aside-panel-hidden & {

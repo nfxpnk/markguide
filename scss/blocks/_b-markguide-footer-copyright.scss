@@ -1,7 +1,7 @@
 .b-markguide-footer-copyright {
 	@include font($size: 10px);
 
-	color: #000;
+	color: var(--color-markguide-footer-copyright-color);
 	display: block;
 	margin: 0;
 	overflow: hidden;

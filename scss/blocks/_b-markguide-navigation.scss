@@ -13,7 +13,7 @@
 				content: "";
 				display: block;
 				height: 1px;
-				background: lightgrey;
+				background-color: var(--color-markguide-navigation-background);
 			}
 		}
 
@@ -23,8 +23,7 @@
 				content: "";
 				display: block;
 				height: 1px;
-				//margin: 3px 0;
-				background: lightgrey;
+				background-color: var(--color-markguide-navigation-background);
 			}
 		}
 	}
@@ -34,16 +33,16 @@
 		align-items: center;
 		padding: 0 20px;
 		text-decoration: none;
-		color: #000;
+		color: var(--color-markguide-navigation-item-line-color);
 
 		svg {
-			color: #5b8fdd;
+			color: var(--color-markguide-navigation-icon-color);
 		}
 
 		&._category {
 			.b-markguide-navigation__icon-active {
 				display: block;
-				color: #295eae;
+				color: var(--color-markguide-navigation-icon-active-color);
 			}
 			.b-markguide-navigation__icon {
 				display: none;
@@ -60,13 +59,13 @@
 		}
 
 		&._empty {
-			fong-style: italic;
-			color: lightgrey;
+			font-style: italic;
+			color: var(--color-markguide-navigation-item-empty-color);
 		}
 
 		&.js-current-page {
-			background-color: #e6e7ff;
-			color: black;
+			background-color: var(--color-markguide-navigation-item-current-backgound);
+			color: var(--color-markguide-navigation-item-current-color);
 			cursor: default;
 			pointer-events: none;
 		}
@@ -81,7 +80,7 @@
 		}
 
 		&:hover {
-			background: #e6e7ff;
+			background-color: var(--color-markguide-navigation-item-current-backgound-hover);
 		}
 	}
 
@@ -95,7 +94,7 @@
 		&::before {
 			content: "";
 			width: 2px;
-			border-left: 1px solid lightgrey;
+			border-left: 1px solid var(--color-markguide-navigation-indent-border);
 			height: 100%;
 			left: 50%;
 			margin-left: -6px;
@@ -139,7 +138,6 @@
 
 	.b-markguide-navigation__item-line._category.js-collapsed {
 		+ .b-markguide-navigation__sub-nav {
-			/* stylelint-disable-line */
 			display: none;
 		}
 	}
@@ -147,13 +145,13 @@
 
 .js-searching {
 	.b-markguide-navigation__item-line {
-		color: #000;
+		color: var(--color-markguide-navigation-searching-item-line-color);
 		cursor: default;
 		pointer-events: none;
 
 		&._category {
 			svg {
-				color: #000;
+				color: var(--color-markguide-navigation-searching-icon-color);
 			}
 		}
 	}
@@ -161,14 +159,14 @@
 
 .js-found {
 	.b-markguide-navigation__item-line {
-		color: #000;
+		color: var(--color-markguide-navigation-found-item-line-color);
 		cursor: default;
 		display: none;
 		pointer-events: none;
 	}
 
 	.b-markguide-navigation__item-line.js-relevant {
-		color: #000;
+		color: var(--color-markguide-navigation-relevant-item-line-color);
 		cursor: pointer;
 		display: flex;
 		pointer-events: initial;
@@ -184,9 +182,9 @@
 	}
 
 	.b-markguide-navigation__sub-nav {
-		display: block !important; /* stylelint-disable-line */
+		display: block !important;
 	}
 	.b-markguide-navigation__item-line._category {
-		display: flex !important; /* stylelint-disable-line */
+		display: flex !important;
 	}
 }
