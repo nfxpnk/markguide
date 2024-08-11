@@ -1,6 +1,6 @@
 body {
-	background: #fff;
-	color: #000;
+	background: var(--color-markguide-background);
+	color: var(--color-markguide-text);
 	margin: 0;
 	padding: 0;
 }
@@ -9,7 +9,7 @@ body {
 
 // Colors
 @import "base/colors-default";
-@import "base/colors-dark";
+//@import "base/colors-dark";
 //@import "base/colors-alternative";
 
 // Mixins

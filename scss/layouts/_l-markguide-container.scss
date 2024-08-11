@@ -2,7 +2,7 @@
 	height: 100%;
 
 	&__aside {
-		box-shadow: 1px 0 0 0 #DEDEDE;
+		box-shadow: 1px 0 0 0 var(--color-markguide-aside-box-shadow);
 		bottom: 0;
 		left: 0;
 		position: fixed;
@@ -12,7 +12,7 @@
 	}
 
 	&__main {
-		background-color: #fff;
+		background-color: var(--color-markguide-background);
 		margin-left: 250px;
 		position: relative;
 		z-index: 1;
