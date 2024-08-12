@@ -10,11 +10,15 @@ const autoprefixer = require('autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const log = require('fancy-log');
 const c = require('ansi-colors');
+const yargs = require('yargs');
+const argv = yargs.argv;
+
+console.log(argv);
 
 // Load configurations
 let currentConfigPath = './.markguiderc.json';
-if (fs.existsSync(currentConfigPath) === false) {
-    currentConfigPath = './.markguiderc.json';
+if (argv.config) {
+    currentConfigPath = './' + argv.config;
 }
 
 log(`Current config file is: ${c.cyan(currentConfigPath)}`);

@@ -12,5 +12,9 @@
 	}
 
 	&__item-heading {
+		@include font(18px, 600);
+
+		padding: 0 0 10px;
+		margin: 0;
 	}
 }
