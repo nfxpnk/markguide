@@ -11,9 +11,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const log = require('fancy-log');
 const c = require('ansi-colors');
 const yargs = require('yargs');
-const argv = yargs.argv;
 
-console.log(argv);
+const argv = yargs.argv;
 
 // Load configurations
 let currentConfigPath = './.markguiderc.json';
