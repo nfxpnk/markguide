@@ -28,7 +28,7 @@
     },
     "devDependencies": {
         "autoprefixer": "10.4.20",
-        "eslint": "9.8.0",
+        "eslint": "9.9.0",
         "gulp": "^5.0.0",
         "gulp-connect": "5.7.0",
         "gulp-postcss": "10.0.0",
