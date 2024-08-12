@@ -18,7 +18,11 @@ console.log(argv);
 // Load configurations
 let currentConfigPath = './.markguiderc.json';
 if (argv.config) {
-    currentConfigPath = './' + argv.config;
+    if(path.isAbsolute(argv.config)) {
+        currentConfigPath = argv.config;
+    } else {
+        currentConfigPath = './' + argv.config;
+    }
 }
 
 log(`Current config file is: ${c.cyan(currentConfigPath)}`);
