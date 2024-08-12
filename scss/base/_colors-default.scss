@@ -71,7 +71,7 @@ $color-primary-button__background--hover
 :root {
 	// Default theme
 	--color-mg-background: #{$c-grey-200};
-	--color-mg-text: #{$c-black};
+	--color-mg-text: #{$c-grey-400};
 
 	--color-mg-copier-message__background: #{$c-blue-600};
 	--color-mg-copier-message__color: #{$c-blue-600};
@@ -90,6 +90,7 @@ $color-primary-button__background--hover
 	--color-mg-icon-grid__background: #{$c-blue-400};
 	--color-mg-icon-name__color: #{$c-black};
 	--color-mg-icon-svg__background--hover: #{$c-blue-100};
+	--color-mg-icon-svg__background: #{$c-grey-400};
 	--color-mg-icon__background: #{$c-grey-200};
 	--color-mg-icon__border: #{$c-grey};
 
@@ -147,7 +148,7 @@ $color-primary-button__background--hover
 	--color-markdown-blockquote__color: #{$c-grey-400};
 	--color-markdown-body-heading__border: #{$c-grey};
 	--color-markdown-body__color--placeholder: #{$c-grey};
-	--color-markdown-code__background: #{$c-grey};
+	--color-markdown-code__background: #{$c-blue-200};
 	--color-markdown-hr__background: #{$c-grey};
 	--color-markdown-hr__border: #{$c-grey};
 	--color-markdown-img__background: #{$c-white};
