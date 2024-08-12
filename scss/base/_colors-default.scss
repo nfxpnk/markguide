@@ -4,11 +4,13 @@ $c-grey: #ccc;
 
 $c-grey-200: #f7f7f7;
 $c-grey-300: #717171;
+$c-grey-400: #434643;
 $c-grey-500: #333;
 
+$c-blue-100: #e2edf9;
 $c-blue-200: #c0daf7;
-$c-blue-400: #54aeff;
-$c-blue-500: #0645ad;
+$c-blue-400: #5a9cd8;
+$c-blue-500: #3a7ac1;
 $c-blue-600: #0d3880;
 
 $temp-all: #79aea5;
@@ -19,6 +21,7 @@ $temp-all: #79aea5;
 
 // $c-grey-200: $temp-all;
 // $c-grey-300: $temp-all;
+// $c-grey-400: $temp-all;
 // $c-grey-500: $temp-all;
 
 // $c-blue-200: $temp-all;
@@ -78,38 +81,38 @@ $color-primary-button__background--hover
 	--color-mg-markup__border: #{$c-grey};
 
 	// markguide-icon
-	--color-mg-icon-code__border: #{$c-black};
+	--color-mg-icon-code__background--selection: #{$c-blue-500};
 	--color-mg-icon-code__background: #{$c-black};
+	--color-mg-icon-code__border: #{$c-black};
+	--color-mg-icon-code__color--selection: #{$c-white};
 	--color-mg-icon-code__color: #{$c-white};
 	--color-mg-icon-font__color: #{$c-black};
-	--color-mg-icon-grid__background: #{$c-black};
+	--color-mg-icon-grid__background: #{$c-blue-400};
 	--color-mg-icon-name__color: #{$c-black};
-	--color-mg-icon-svg__background--hover: #{$c-blue-200};
+	--color-mg-icon-svg__background--hover: #{$c-blue-100};
 	--color-mg-icon__background: #{$c-grey-200};
-	--color-mg-icon__border:#{$c-grey-500};
-	--color-mg-icon-code__background--selection: #{$c-blue-500};
-	--color-mg-icon-code__color--selection: #{$c-white};
+	--color-mg-icon__border: #{$c-grey};
 
 
-	--color-mg-container-aside__box-shadow: #{$c-grey-300};
+	--color-mg-container-aside__box-shadow: #{$c-grey};
 	--color-mg-container-main__background: #{$c-grey-200};
 
 	--color-mg-aside-ctrl__color--hover: #{$c-black};
 
 	--color-mg-footer-copyright__color: #{$c-black};
 
-	--color-mg-html__border: #{$c-grey-300};
+	--color-mg-html__border: #{$c-grey};
 
 	// markguide-navigation
-	--color-mg-navigation__background: #{$c-grey-300};
+	--color-mg-navigation-item-border__background: #{$c-grey};
 	--color-mg-navigation-item-line__color: #{$c-black};
 	--color-mg-navigation-icon__color: #{$c-blue-400};
-	--color-mg-navigation-icon__color--active: #{$c-blue-600};
-	--color-mg-navigation-item-current__backgound: #{$c-blue-200};
+	--color-mg-navigation-icon__color--active: #{$c-blue-500};
+	--color-mg-navigation-item-current__backgound: #{$c-blue-100};
 	--color-mg-navigation-item-current__backgound--hover: #{$c-white};
 	--color-mg-navigation-item-current__color: #{$c-black};
 	--color-mg-navigation-item-empty__color: #{$c-grey-300};
-	--color-mg-navigation-indent__border: #{$c-black};
+	--color-mg-navigation-indent__border: #{$c-blue-200};
 	--color-mg-navigation-searching-item-line__color: #{$c-grey-300};
 	--color-mg-navigation-searching-icon__color: #{$c-grey-300};
 	--color-mg-navigation-found-item-line__color: #{$c-black};
@@ -121,7 +124,7 @@ $color-primary-button__background--hover
 
 	// markguide-search
 	--color-mg-search-input__color--placeholder: #{$c-grey-300};
-	--color-mg-search-input__border: #{$c-grey-300};
+	--color-mg-search-input__border: #{$c-grey};
 	--color-mg-search-input__background--focus: #{$c-grey-200};
 	--color-mg-search-icon__color: #{$c-blue-400};
 	--color-mg-search-icon-found__color: #{$c-blue-600};
@@ -133,32 +136,32 @@ $color-primary-button__background--hover
 
 	// markguide colors
 	--color-mg-color__background: #{$c-white};
-	--color-mg-color__border: #{$c-grey-300};
+	--color-mg-color__border: #{$c-grey};
 	--color-mg-color-name__color: #{$c-black};
 	--color-mg-color-code__color: #{$c-black};
 
 	// markdown
-	--color-markdown-a__color: #0969da;
-	--color-markdown-a__outline--focus: #0969da;
-	--color-markdown-blockquote__border: #d0d7de;
-	--color-markdown-blockquote__color: #636c76;
-	--color-markdown-body-heading__border: #{$c-grey-300};
-	--color-markdown-body__color--placeholder: #636c76;
-	--color-markdown-code__background: #afb8c133;
-	--color-markdown-hr__background: #d0d7de;
-	--color-markdown-hr__border: #d0d7deb3;
-	--color-markdown-img__background: #ffffff;
-	--color-markdown-input__outline--focus: #0969da;
-	--color-markdown-kbd__background: #f6f8fa;
-	--color-markdown-kbd__border: #afb8c133;
-	--color-markdown-kbd__box-shadow: #afb8c133;
-	--color-markdown-kbd__color: #1f2328;
+	--color-markdown-a__color: #{$c-blue-500};
+	--color-markdown-a__outline--focus: #{$c-blue-500};
+	--color-markdown-blockquote__border: #{$c-grey};
+	--color-markdown-blockquote__color: #{$c-grey-400};
+	--color-markdown-body-heading__border: #{$c-grey};
+	--color-markdown-body__color--placeholder: #{$c-grey};
+	--color-markdown-code__background: #{$c-grey};
+	--color-markdown-hr__background: #{$c-grey};
+	--color-markdown-hr__border: #{$c-grey};
+	--color-markdown-img__background: #{$c-white};
+	--color-markdown-input__outline--focus: #{$c-blue-500};
+	--color-markdown-kbd__background: #{$c-grey};
+	--color-markdown-kbd__border: #{$c-grey-400};
+	--color-markdown-kbd__box-shadow: #{$c-grey-400};
+	--color-markdown-kbd__color: #{$c-grey-500};
 	--color-markdown-mark__background: #fff8c5;
-	--color-markdown-mark__color: #1f2328;
-	--color-markdown-span__border: #d0d7de;
-	--color-markdown-span__color: #1f2328;
-	--color-markdown-th-td_border: #d0d7de;
-	--color-markdown-tr-2n__background: #f6f8fa;
-	--color-markdown-tr__background: #ffffff;
-	--color-markdown-tr__border: #d0d7deb3;
+	--color-markdown-mark__color: #{$c-grey-500};
+	--color-markdown-span__border: #{$c-grey};
+	--color-markdown-span__color: #{$c-grey-500};
+	--color-markdown-th-td_border: #{$c-grey};
+	--color-markdown-tr-2n__background: #{$c-grey-200};
+	--color-markdown-tr__background: #{$c-white};
+	--color-markdown-tr__border: #{$c-grey};
 }
