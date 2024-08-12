@@ -43,7 +43,7 @@ class dummyPlugin extends basePlugin {
 
     getContent() {
         const template = fs.readFileSync(path.join(__dirname, 'templates/template.mustache'), 'utf-8');
-        const htmlContent = mustache.render(template, {data: 'data from plugin:' + this.filePath});
+        const htmlContent = mustache.render(template, {page: this.getConfiguration(), data: 'data from plugin:' + this.filePath});
 
         return htmlContent;
     }

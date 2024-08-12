@@ -50,7 +50,7 @@ class iconsl360Plugin extends basePlugin {
         const svgFiles = this.readSvgFiles();
         const icons = svgFiles.map(file => this.extractSvgDetails(file));
         const template = this.getTemplate();
-        const htmlContent = mustache.render(template, { icons });
+        const htmlContent = mustache.render(template, { page: this.getConfiguration(), icons: icons });
 
         return htmlContent;
     }

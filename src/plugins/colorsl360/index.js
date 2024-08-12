@@ -156,7 +156,7 @@ class colorsl360Plugin extends basePlugin {
 
     generateColorsPage(colors) {
         const template = fs.readFileSync(path.join(__dirname, 'templates/template.mustache'), 'utf-8');
-        const htmlContent = mustache.render(template, {colors: colors});
+        const htmlContent = mustache.render(template, {page: this.getConfiguration(), colors: colors});
 
         return htmlContent;
     }
