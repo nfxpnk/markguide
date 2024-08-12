@@ -22,9 +22,9 @@ class colorsl360Plugin extends basePlugin {
 
     getConfiguration() {
         return {
-            id: 'colors',
+            id: 'colorsl360',
             title: 'Colors',
-            target: '/colors.html',
+            target: '/colorsl360.html',
             type: 'plugin',
             icon: 'paintbrush-16'
         };
