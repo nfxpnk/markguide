@@ -4,7 +4,7 @@ const { fs, path, log, c } = require('../../utils/common-utils.js');
 const mustache = require('mustache');
 const basePlugin = require('../../models/base-plugin.js');
 
-class colorsPlugin extends basePlugin {
+class colorsl360Plugin extends basePlugin {
     constructor(config, options) {
         super(config, options);
 
@@ -146,8 +146,8 @@ class colorsPlugin extends basePlugin {
         }
 
         // Debug section
-        console.log(JSON.stringify(colorSections, null, 4));
-        console.log(scssVariablesArray);
+        // console.log(JSON.stringify(colorSections, null, 4));
+        // console.log(scssVariablesArray);
 
         return {
             colorSections: colorSections
@@ -162,4 +162,4 @@ class colorsPlugin extends basePlugin {
     }
 }
 
-module.exports = colorsPlugin;
+module.exports = colorsl360Plugin;
