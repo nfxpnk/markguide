@@ -1,6 +1,6 @@
 .markdown-body {
 	img {
-		background-color: var(--bgColor-default);
+		background-color: var(--color-markdown-img__background);
 		border-style: none;
 		box-sizing: content-box;
 		max-width: 100%;
@@ -26,7 +26,7 @@
 			overflow: hidden;
 
 			> span {
-				border: 1px solid var(--borderColor-default);
+				border: 1px solid var(--color-markdown-span__border);
 				display: block;
 				float: left;
 				margin: 13px 0 0;
@@ -42,7 +42,7 @@
 				}
 				span {
 					clear: both;
-					color: var(--fgColor-default);
+					color: var(--color-markdown-span__color);
 					display: block;
 					padding: 5px 0 0;
 				}

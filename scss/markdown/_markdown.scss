@@ -1,22 +1,6 @@
 .markdown-body {
 	@include font(16px, 400, 1.5);
 
-	--focus-outlineColor: #0969da;
-	--fgColor-default: #1f2328;
-	--fgColor-muted: #636c76;
-	--fgColor-accent: #0969da;
-
-
-	--bgColor-default: #ffffff;
-	--bgColor-muted: #f6f8fa;
-	--bgColor-neutral-muted: #afb8c133;
-	--bgColor-attention-muted: #fff8c5;
-
-	--borderColor-default: #d0d7de;
-	--borderColor-muted: #d0d7deb3;
-	--borderColor-neutral-muted: #afb8c133;
-
-
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	margin: 0;
@@ -33,11 +17,11 @@
 		box-sizing: content-box;
 		overflow: hidden;
 		background: transparent;
-		border-bottom: 1px solid var(--borderColor-muted);
+		border-bottom: 1px solid var(--color-markdown-hr__border);
 		height: 0.25em;
 		padding: 0;
 		margin: 24px 0;
-		background-color: var(--borderColor-default);
+		background-color: var(--color-markdown-hr__background);
 		border: 0;
 
 		@include clearfix();

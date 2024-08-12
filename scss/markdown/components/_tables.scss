@@ -10,17 +10,17 @@
 		width: max-content;
 
 		tr {
-			background-color: var(--bgColor-default);
-			border-top: 1px solid var(--borderColor-muted);
+			background-color: var(--color-markdown-tr__background);
+			border-top: 1px solid var(--color-markdown-tr__border);
 
 			&:nth-child(2n) {
-				background-color: var(--bgColor-muted);
+				background-color: var(--color-markdown-tr-2n__background);
 			}
 		}
 
 		td,
 		th {
-			border: 1px solid var(--borderColor-default);
+			border: 1px solid var(--color-markdown-th-td_border);
 			padding: 6px 13px;
 		}
 

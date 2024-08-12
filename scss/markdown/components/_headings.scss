@@ -51,8 +51,6 @@
 
 	h6 {
 		@include font(0.85em, 600, 1.25);
-
-		color: var(--fgColor-muted);
 	}
 
 	summary h1,

@@ -10,8 +10,8 @@
 	}
 
 	mark {
-		background-color: var(--bgColor-attention-muted);
-		color: var(--fgColor-default);
+		background-color: var(--color-markdown-mark__background);
+		color: var(--color-markdown-mark__color);
 	}
 
 	small {
@@ -48,8 +48,8 @@
 	}
 
 	blockquote {
-		border-left: 0.25em solid var(--borderColor-default);
-		color: var(--fgColor-muted);
+		border-left: 0.25em solid var(--color-markdown-blockquote__border);
+		color: var(--color-markdown-blockquote__color);
 		margin-bottom: 16px;
 		margin-top: 0;
 	}
