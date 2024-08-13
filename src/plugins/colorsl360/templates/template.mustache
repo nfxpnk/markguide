@@ -12,22 +12,24 @@
     </div>
 </div>
 
-{{#colors.colorSections}}
-<h2>{{ name }}</h2>
-<div class="b-markguide-colors">
-    {{#values}}
-    <div class="b-markguide-colors__item">
-        <div class="b-markguide-color">
-            <div class="b-markguide-color__figure">
-                <span class="b-markguide-color__figure-color" style="background:{{hex}}"></span>
-            </div>
-            <div class="b-markguide-color__caption">
-                <strong class="b-markguide-color__name">{{name}}</strong>
-                <div class="b-markguide-color__code">{{scssVariable}}</div>
-                <div class="b-markguide-color__code">{{hex}}</div>
+<div class="plugin-body">
+    {{#colors.colorSections}}
+    <h2>{{ name }}</h2>
+    <div class="b-markguide-colors">
+        {{#values}}
+        <div class="b-markguide-colors__item">
+            <div class="b-markguide-color">
+                <div class="b-markguide-color__figure">
+                    <span class="b-markguide-color__figure-color" style="background: {{hex}}"></span>
+                </div>
+                <div class="b-markguide-color__caption">
+                    <strong class="b-markguide-color__name">{{name}}</strong>
+                    <div class="b-markguide-color__code">{{scssVariable}}</div>
+                    <div class="b-markguide-color__code">{{hex}}</div>
+                </div>
             </div>
         </div>
+        {{/values}}
     </div>
-    {{/values}}
+    {{/colors.colorSections}}
 </div>
-{{/colors.colorSections}}

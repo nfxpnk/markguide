@@ -10,6 +10,9 @@ const { basePlugin } = require('H:/github/markguide/src/markguide.js');
 class dummyPlugin extends basePlugin {
     constructor(config, options) {
         super(config, options);
+
+        this.baseDir = __dirname;
+
         this.filePath = options.filePath;
     }
 
@@ -42,7 +45,7 @@ class dummyPlugin extends basePlugin {
     }
 
     getContent() {
-        const template = fs.readFileSync(path.join(__dirname, 'templates/template.mustache'), 'utf-8');
+        const template = this.getTemplate('templates/template.mustache');
         const htmlContent = mustache.render(template, {page: this.getConfiguration(), data: 'data from plugin:' + this.filePath});
 
         return htmlContent;

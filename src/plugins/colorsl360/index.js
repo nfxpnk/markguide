@@ -8,6 +8,8 @@ class colorsl360Plugin extends basePlugin {
     constructor(config, options) {
         super(config, options);
 
+        this.baseDir = __dirname;
+
         if(path.isAbsolute(options.filePath)) {
             this.filePath = options.filePath;
         } else {
@@ -85,7 +87,7 @@ class colorsl360Plugin extends basePlugin {
         let sharedColors = null;
         for (let i = 0; i <= lines.length; ++i) {
             let line = lines[i];
-            console.log(line);
+
             if (typeof line === 'undefined') {
                 continue;
             }
@@ -155,7 +157,7 @@ class colorsl360Plugin extends basePlugin {
     }
 
     generateColorsPage(colors) {
-        const template = fs.readFileSync(path.join(__dirname, 'templates/template.mustache'), 'utf-8');
+        const template = this.getTemplate('templates/template.mustache');
         const htmlContent = mustache.render(template, {page: this.getConfiguration(), colors: colors});
 
         return htmlContent;

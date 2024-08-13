@@ -8,6 +8,8 @@ class iconsl360Plugin extends basePlugin {
     constructor(config, options) {
         super(config, options);
 
+        this.baseDir = __dirname;
+
         // Path to the folder with icons files
         if(path.isAbsolute(options.filePath)) {
             this.filePath = options.filePath;
@@ -53,16 +55,6 @@ class iconsl360Plugin extends basePlugin {
         const htmlContent = mustache.render(template, { page: this.getConfiguration(), icons: icons }, {item: itemPartial});
 
         return htmlContent;
-    }
-
-    getTemplate(filePath) {
-        try {
-            const templatePath = path.join(__dirname, filePath);
-            return fs.readFileSync(templatePath, 'utf8');
-        } catch (error) {
-            log.error(`Error reading template file: ${error.message}`);
-            return '';
-        }
     }
 }
 

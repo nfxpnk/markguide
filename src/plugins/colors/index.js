@@ -8,6 +8,8 @@ class colorsPlugin extends basePlugin {
     constructor(config, options) {
         super(config, options);
 
+        this.baseDir = __dirname;
+
         if(path.isAbsolute(options.filePath)) {
             this.filePath = options.filePath;
         } else {
@@ -64,7 +66,7 @@ class colorsPlugin extends basePlugin {
     }
 
     generateColorsPage(colors) {
-        const template = fs.readFileSync(path.join(__dirname, 'templates/template.mustache'), 'utf-8');
+        const template = this.getTemplate('templates/template.mustache');
         const htmlContent = mustache.render(template, {page: this.getConfiguration(), colors: colors});
 
         return htmlContent;

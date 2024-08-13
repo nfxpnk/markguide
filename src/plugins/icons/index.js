@@ -8,6 +8,8 @@ class iconsPlugin extends basePlugin {
     constructor(config, options) {
         super(config, options);
 
+        this.baseDir = __dirname;
+
         // Path to the folder with icons files
         if(path.isAbsolute(options.iconsFolder)) {
             this.iconsFolder = options.iconsFolder;
@@ -49,7 +51,7 @@ class iconsPlugin extends basePlugin {
     getContent() {
         const svgFiles = this.readSvgFiles();
         const icons = svgFiles.map(file => this.extractSvgDetails(file));
-        const template = this.getTemplate();
+        const template = this.getTemplate('templates/template.mustache');
         const htmlContent = mustache.render(template, { page: this.getConfiguration(), icons: icons });
 
         return htmlContent;
@@ -103,16 +105,6 @@ class iconsPlugin extends basePlugin {
         } catch (error) {
             log.error(`Error extracting details from SVG file ${filePath}: ${error.message}`);
             return null;
-        }
-    }
-
-    getTemplate() {
-        try {
-            const templatePath = path.join(__dirname, 'templates/template.mustache');
-            return fs.readFileSync(templatePath, 'utf8');
-        } catch (error) {
-            log.error(`Error reading template file: ${error.message}`);
-            return '';
         }
     }
 }

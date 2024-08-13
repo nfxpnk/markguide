@@ -10,20 +10,22 @@
     </a>
 </div>
 
-<div class="b-markguide-colors">
-    {{#colors}}
-    <div class="b-markguide-colors__item">
-        <div class="b-markguide-color">
-            <div class="b-markguide-color__figure">
-                <span class="b-markguide-color__figure-color" style="background:{{value}}"></span>
-            </div>
-            <div class="b-markguide-color__caption">
-                <strong class="b-markguide-color__name">{{name}}</strong>
-                <div class="b-markguide-color__code"></div>
-                <div class="b-markguide-color__code">{{value}}</div>
-                <span class="b-markguide-color__description"></span>
+<div class="plugin-body">
+    <div class="b-markguide-colors">
+        {{#colors}}
+        <div class="b-markguide-colors__item">
+            <div class="b-markguide-color">
+                <div class="b-markguide-color__figure">
+                    <span class="b-markguide-color__figure-color" style="background:{{value}}"></span>
+                </div>
+                <div class="b-markguide-color__caption">
+                    <strong class="b-markguide-color__name">{{name}}</strong>
+                    <div class="b-markguide-color__code"></div>
+                    <div class="b-markguide-color__code">{{value}}</div>
+                    <span class="b-markguide-color__description"></span>
+                </div>
             </div>
         </div>
+        {{/colors}}
     </div>
-    {{/colors}}
 </div>

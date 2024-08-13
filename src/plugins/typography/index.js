@@ -8,6 +8,8 @@ class typographyPlugin extends basePlugin {
     constructor(config, options) {
         super(config, options);
 
+        this.baseDir = __dirname;
+
         this.fonts = config.projectFonts.map(font => ({
             filename: font.filename,
             family: font.properties.family,
@@ -57,7 +59,7 @@ class typographyPlugin extends basePlugin {
     }
 
     generateTypographyPage(fonts) {
-        const template = fs.readFileSync(path.join(__dirname, 'templates/template.mustache'), 'utf-8');
+        const template = this.getTemplate('templates/template.mustache');
         const htmlContent = mustache.render(template, {
             page: this.getConfiguration(),
             alphabet: this.alphabet,

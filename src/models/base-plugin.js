@@ -1,5 +1,7 @@
 'use strict';
 
+const { fs, path, log, c } = require('../utils/common-utils.js');
+
 class basePlugin {
     constructor(config, options) {
         if (new.target === basePlugin) {
@@ -15,6 +17,7 @@ class basePlugin {
             throw new TypeError(`Must override method 'getContent'`);
         }
         this.options = options;
+        this.baseDir = __dirname;
     }
 
     init() {
@@ -31,6 +34,17 @@ class basePlugin {
 
     getContent() {
         throw new Error(`getContent() must be implemented`);
+    }
+
+    getTemplate(filePath) {
+        try {
+            const templatePath = path.join(this.baseDir, filePath);
+
+            return fs.readFileSync(templatePath, 'utf8');
+        } catch (error) {
+            log.error(`Error reading template file: ${error.message}`);
+            return '';
+        }
     }
 }
 
