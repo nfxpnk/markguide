@@ -45,8 +45,9 @@ class iconsl360Plugin extends basePlugin {
     }
 
     getContent() {
-        const template = this.getTemplate();
-        const itemPartial = fs.readFileSync(path.join(__dirname, 'templates/item.mustache'), 'utf8');
+        const template = this.getTemplate('templates/template.mustache');
+        const itemPartial = this.getTemplate('templates/item.mustache');
+
         const icons = JSON.parse(fs.readFileSync(this.filePath, 'utf8'));
 
         const htmlContent = mustache.render(template, { page: this.getConfiguration(), icons: icons }, {item: itemPartial});
@@ -54,10 +55,9 @@ class iconsl360Plugin extends basePlugin {
         return htmlContent;
     }
 
-
-    getTemplate() {
+    getTemplate(filePath) {
         try {
-            const templatePath = path.join(__dirname, 'templates/template.mustache');
+            const templatePath = path.join(__dirname, filePath);
             return fs.readFileSync(templatePath, 'utf8');
         } catch (error) {
             log.error(`Error reading template file: ${error.message}`);
