@@ -557,7 +557,7 @@ $color-primary-button__background--hover
 	outline: revert !important;
 	cursor: pointer;
 }
-.b-markguide-markup[open] .markguide-markup__summary {
+.b-markguide-markup[open] .b-markguide-markup__summary {
 	border: 1px solid var(--color-mg-markup__border);
 }
 .b-markguide-markup pre {
