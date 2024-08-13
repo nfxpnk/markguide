@@ -160,7 +160,8 @@ function initPlugins(baseMandatory) {
                 icon: config.icon,
                 content: {
                     sections: [{
-                        content: content
+                        content: content,
+                        class: ''
                     }], // TODO: redo this
                     toc: toc
                 },

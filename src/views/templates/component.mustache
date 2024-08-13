@@ -7,14 +7,7 @@
                 {{> overline }}
                 <!-- component.mustache -->
                 {{#content.sections}}
-                    <section
-                        {{^block}}
-                            class="markdown-body"
-                        {{/block}}
-                        {{#block}}
-                            class="markdown-code"
-                        {{/block}}
-                    >
+                    <section class="{{class}}">
                         {{{content}}}
                     </section>
                 {{/content.sections}}

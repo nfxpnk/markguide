@@ -250,14 +250,15 @@ function renderedPageContent(fileURL, options) {
     for (let i = 0; i < tokens.length; i++) {
         if (regularSections[i] !== undefined) {
             sections.push({
-                    content: marked.parse(regularSections[i])
+                    content: marked.parse(regularSections[i]),
+                    class: 'markdown-body'
                 }
             );
         }
         if (codesSections[i] !== undefined) {
             sections.push({
                 content: marked.parse(codesSections[i]),
-                block: 'code'
+                class: 'markdown-code'
             });
         }
     }
