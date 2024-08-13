@@ -1,4 +1,6 @@
 .b-markguide-overline {
+	@include font(16px);
+
 	display: flex;
 	gap: 10px;
 	align-items: center;

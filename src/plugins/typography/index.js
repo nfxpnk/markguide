@@ -22,6 +22,13 @@ class typographyPlugin extends basePlugin {
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
         ];
 
+        this.alphabetObjects = this.alphabet.map(function(letter) {
+            return {
+                l: letter,
+                u: letter.toUpperCase()
+            };
+        });
+
         this.digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
     }
@@ -62,7 +69,7 @@ class typographyPlugin extends basePlugin {
         const template = this.getTemplate('templates/template.mustache');
         const htmlContent = mustache.render(template, {
             page: this.getConfiguration(),
-            alphabet: this.alphabet,
+            alphabet: this.alphabetObjects,
             digits: this.digits,
             fonts: fonts
         });

@@ -14,9 +14,6 @@
 	box-sizing: border-box;
 }
 
-.b-markguide-color__name {
-
-}
 
 .b-markguide-color {
 	background: var(--color-mg-color__background);
@@ -44,15 +41,20 @@
 }
 
 .b-markguide-color__caption {
+	@include font(16px);
+
 	padding: 0.5em;
 }
 
 .b-markguide-color__name {
+	@include font(16px);
 	display: block;
 	color: var(--color-mg-color-name__color);
 }
 
 .b-markguide-color__code {
+	@include fontMono(16px);
+
 	display: block;
 	color: var(--color-mg-color-code__color);
 }
