@@ -1,97 +1,133 @@
 body {
-	background: #fff;
-	color: #000;
+	background: var(--color-mg-background);
+	color: var(--color-mg-text);
 	margin: 0;
 	padding: 0;
 }
 
-:root {
-	--color-markguide-background: #f7f7f7;
-	--color-markguide-text: #000;
-	--color-markguide-link: #0d3880;
-	--color-markguide-link-hover: #0645ad;
-	--color-markguide-link-visited: #0d3880;
-	--color-markguide-link-active: #0645ad;
-	--color-markguide-headers: #000;
-	--color-markguide-blockquote: #54aeff;
-	--color-markguide-hr: #54aeff;
-	--color-markguide-border: #ccc;
-	--color-markguide-permalink: #000;
-	--color-markguide-markup-border: #ccc;
-	--color-markguide-sidebar-bg: #f7f7f7;
-	--color-markguide-main-bg: #f7f7f7;
-	--color-markguide-markdown-code-inline: #c0daf7;
-	--color-markguide-markdown-header: #000;
-	--color-markguide-markdown-text: #000;
-	--color-markguide-markdown-border-muted: #ccc;
-	--color-markguide-markdown-table-row-bg: #fff;
-	--color-markguide-markdown-table-even-row-bg: #f7f7f7;
-	--color-markguide-color-background: #fff;
-	--color-markguide-color-name: #000;
-	--color-markguide-color-code: #000;
-	--color-markguide-icon-path: #333;
-	--color-markguide-doc-title: #000;
-	--color-markguide-modifier-bg: #fff;
-	--color-markguide-nav-highlight: #000;
-	--color-markguide-nav-empty: #ccc;
-	--color-markguide-nav-ref: #333;
-	--color-markguide-navigation-link: #0645ad;
-	--color-markguide-navigation-item-border: #ccc;
-	--color-markguide-navigation-svg-link: #000;
-	--color-markguide-navigation-svg-link-empty: #ccc;
-	--color-markguide-navigation-svg-directory: #54aeff;
-	--color-markguide-navigation-svg-file: #333;
-	--color-markguide-title-header: #717171;
-	--color-markguide-title-permalink: #000;
-	--color-markguide-title-permalink-hash: #ccc;
-	--color-markguide-source-text: #000;
-	--color-markguide-toolbar-bg: #f7f7f7;
-	--color-markguide-toolbar-svg: #ccc;
-	--color-markguide-toolbar-svg-hover: #000;
-}
+/*
+# Naming convention for Themes SCSS variables and CSS custom properties
 
-.markguide-theme {
-	--color-markguide-background: #f3f4f3;
-	--color-markguide-text: #2c2c2c;
-	--color-markguide-link: #ea3932;
-	--color-markguide-link-hover: #2c2c2c;
-	--color-markguide-link-visited: #2c2c2c;
-	--color-markguide-link-active: #2c2c2c;
-	--color-markguide-headers: #2c2c2c;
-	--color-markguide-blockquote: #af7e67;
-	--color-markguide-hr: #2c2c2c;
-	--color-markguide-border: #c7c7c7;
-	--color-markguide-permalink: #000;
-	--color-markguide-markup-border: #c7c7c7;
-	--color-markguide-sidebar-bg: #f3f4f3;
-	--color-markguide-main-bg: #f3f4f3;
-	--color-markguide-markdown-code-inline: #c7c7c7;
-	--color-markguide-markdown-header: #2c2c2c;
-	--color-markguide-markdown-text: #2c2c2c;
-	--color-markguide-markdown-border-muted: #c7c7c7;
-	--color-markguide-icon-path: #2c2c2c;
-	--color-markguide-doc-title: #2c2c2c;
-	--color-markguide-modifier-bg: #f3f4f3;
-	--color-markguide-navigation-link: #2c2c2c;
-	--color-markguide-navigation-item-border: #c7c7c7;
-	--color-markguide-navigation-svg-link: #2c2c2c;
-	--color-markguide-navigation-svg-link-empty: #c7c7c7;
-	--color-markguide-navigation-svg-directory: #ea3932;
-	--color-markguide-navigation-svg-file: #2c2c2c;
-	--color-markguide-title-header: #2c2c2c;
-	--color-markguide-title-permalink: #2c2c2c;
-	--color-markguide-title-permalink-hash: #c7c7c7;
-	--color-markguide-source-text: #2c2c2c;
-	--color-markguide-toolbar-bg: #c7c7c7;
-	--color-markguide-toolbar-svg: #000;
-	--color-markguide-toolbar-svg-hover: #000;
+Pattern: `<component-name>__<property>--<state>`
+
+`<component-name>` refers to the name of the component or element that
+the custom property is associated with.
+
+`<property>` refers to the CSS property being defined, such as
+`color`, `background`, `fill`, etc.
+
+`<state>` term refers to the different states or conditions that a component might be in,
+such as `hover`, `active`, `disabled`, `focus`, `invalid`, `error`, `placeholder` etc.
+
+For example, if we have a button component, we might define custom properties for its text color and background color,
+like this:
+
+```scss
+// CSS
+'primary-button__color'
+'primary-button__background'
+
+// SCSS
+$color-primary-button__color
+$color-primary-button__background
+```
+
+If we want to define a variation of the button that has a different background color when it's in a hovered state,
+we can add the state to the custom property name:
+
+```scss
+// CSS
+'primary-button__background--hover'
+
+// SCSS
+$color-primary-button__background--hover
+```
+*/
+:root {
+	--color-mg-background: #f7f7f7;
+	--color-mg-text: #434643;
+	--color-mg-copier-message__background: #0d3880;
+	--color-mg-copier-message__color: #0d3880;
+	--color-mg-copier-text__color--hover: #0d3880;
+	--color-mg-markup__border: #ccc;
+	--color-mg-icon-code__background--selection: #3a7ac1;
+	--color-mg-icon-code__background: #000;
+	--color-mg-icon-code__border: #000;
+	--color-mg-icon-code__color--selection: #fff;
+	--color-mg-icon-code__color: #fff;
+	--color-mg-icon-font__color: #000;
+	--color-mg-icon-grid__background: #5a9cd8;
+	--color-mg-icon-name__color: #000;
+	--color-mg-icon-svg__background--hover: #e2edf9;
+	--color-mg-icon-svg__background: #434643;
+	--color-mg-icon__background: #f7f7f7;
+	--color-mg-icon__border: #ccc;
+	--color-mg-container-aside__box-shadow: #ccc;
+	--color-mg-container-main__background: #f7f7f7;
+	--color-mg-aside-ctrl__color--hover: #000;
+	--color-mg-footer-copyright__color: #000;
+	--color-mg-html__border: #ccc;
+	--color-mg-navigation-item-border__background: #ccc;
+	--color-mg-navigation-item-line__color: #000;
+	--color-mg-navigation-icon__color: #5a9cd8;
+	--color-mg-navigation-icon__color--active: #3a7ac1;
+	--color-mg-navigation-item-current__backgound: #e2edf9;
+	--color-mg-navigation-item-current__backgound--hover: #fff;
+	--color-mg-navigation-item-current__color: #000;
+	--color-mg-navigation-item-empty__color: #717171;
+	--color-mg-navigation-indent__border: #c0daf7;
+	--color-mg-navigation-searching-item-line__color: #717171;
+	--color-mg-navigation-searching-icon__color: #717171;
+	--color-mg-navigation-found-item-line__color: #000;
+	--color-mg-navigation-relevant-item-line__color: #717171;
+	--color-mg-navigation-relevant-item-line__color--hover: #000;
+	--color-mg-navigation-relevant-item-line__color--active: #000;
+	--color-mg-navigation-text__color--hover: #000;
+	--color-mg-navigation-text__color--active: #000;
+	--color-mg-search-input__color--placeholder: #717171;
+	--color-mg-search-input__border: #c0daf7;
+	--color-mg-search-input__background--focus: #f7f7f7;
+	--color-mg-search-icon__color: #5a9cd8;
+	--color-mg-search-icon-found__color: #0d3880;
+	--color-mg-search-clear__color: #5a9cd8;
+	--color-mg-search-icon-clear__color: #5a9cd8;
+	--color-mg-search-icon-clear__color--hover: #5a9cd8;
+	--color-mg-search-icon-clear__color--focus: #5a9cd8;
+	--color-mg-search-icon-clear__color--active: #5a9cd8;
+	--color-mg-color__background: #fff;
+	--color-mg-color__border: #ccc;
+	--color-mg-color-name__color: #000;
+	--color-mg-color-code__color: #000;
+	--color-markdown-a__color: #3a7ac1;
+	--color-markdown-a__outline--focus: #3a7ac1;
+	--color-markdown-blockquote__border: #ccc;
+	--color-markdown-blockquote__color: #434643;
+	--color-markdown-body-heading__border: #ccc;
+	--color-markdown-body__color--placeholder: #ccc;
+	--color-markdown-code__background: #c0daf7;
+	--color-markdown-hr__background: #ccc;
+	--color-markdown-hr__border: #ccc;
+	--color-markdown-img__background: #fff;
+	--color-markdown-input__outline--focus: #3a7ac1;
+	--color-markdown-kbd__background: #ccc;
+	--color-markdown-kbd__border: #434643;
+	--color-markdown-kbd__box-shadow: #434643;
+	--color-markdown-kbd__color: #333;
+	--color-markdown-mark__background: #fff8c5;
+	--color-markdown-mark__color: #333;
+	--color-markdown-span__border: #ccc;
+	--color-markdown-span__color: #333;
+	--color-markdown-th-td_border: #ccc;
+	--color-markdown-tr-2n__background: #f7f7f7;
+	--color-markdown-tr__background: #fff;
+	--color-markdown-tr__border: #ccc;
 }
 
 .l-markguide-container {
 	height: 100%;
 }
 .l-markguide-container__aside {
-	box-shadow: 1px 0 0 0 #DEDEDE;
+	box-shadow: 1px 0 0 0 var(--color-mg-container-aside__box-shadow);
 	bottom: 0;
 	left: 0;
 	position: fixed;
@@ -100,7 +136,7 @@ body {
 	z-index: 2;
 }
 .l-markguide-container__main {
-	background-color: #fff;
+	background-color: var(--color-mg-container-main__background);
 	margin-left: 250px;
 	position: relative;
 	z-index: 1;
@@ -116,7 +152,6 @@ body {
 .l-markguide-aside {
 	all: initial;
 	bottom: 0;
-	color: #000;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -131,7 +166,7 @@ body {
 .l-markguide-aside__content {
 	overflow-y: auto;
 	-ms-scroll-chaining: none;
-	overscroll-behavior: contain;
+	    overscroll-behavior: contain;
 }
 .l-markguide-aside__footer {
 	margin-top: auto;
@@ -167,7 +202,7 @@ body {
 	width: 100%;
 }
 .b-markguide-aside-ctrl {
-	background: rgba(0, 0, 0, 0);
+	background: transparent;
 	border: none;
 	bottom: 0;
 	color: transparent;
@@ -197,7 +232,7 @@ body {
 	right: -1px;
 }
 .b-markguide-aside-ctrl:hover, .b-markguide-aside-ctrl:focus {
-	color: blue;
+	color: var(--color-mg-aside-ctrl__color--hover);
 }
 .js-aside-panel-hidden .b-markguide-aside-ctrl {
 	cursor: col-resize;
@@ -225,7 +260,7 @@ body {
 	font-weight: 400;
 	line-height: 34px;
 	background: transparent;
-	border: 1px solid black;
+	border: 1px solid var(--color-mg-search-input__border);
 	border-radius: 6px;
 	box-sizing: border-box;
 	height: 34px;
@@ -235,7 +270,7 @@ body {
 	width: 100%;
 }
 .b-markguide-search__input:focus {
-	background: #ccc;
+	background-color: var(--color-mg-search-input__background--focus);
 }
 .b-markguide-search__input::-webkit-search-cancel-button, .b-markguide-search__input::-webkit-search-decoration {
 	display: none;
@@ -243,8 +278,20 @@ body {
 .b-markguide-search__input::-ms-clear {
 	display: none;
 }
+.b-markguide-search__input::-webkit-input-placeholder {
+	color: var(--color-mg-search-input__color--placeholder);
+}
+.b-markguide-search__input:-ms-input-placeholder {
+	color: var(--color-mg-search-input__color--placeholder);
+}
+.b-markguide-search__input::-ms-input-placeholder {
+	color: var(--color-mg-search-input__color--placeholder);
+}
+.b-markguide-search__input::placeholder {
+	color: var(--color-mg-search-input__color--placeholder);
+}
 .b-markguide-search__icon {
-	color: black;
+	color: var(--color-mg-search-icon__color);
 	height: 16px;
 	left: 8px;
 	position: absolute;
@@ -253,35 +300,36 @@ body {
 	width: 16px;
 }
 .js-found .b-markguide-search__icon {
-	color: gray;
+	color: var(--color-mg-search-icon-found__color);
 }
 .b-markguide-search__clear {
+	background-color: transparent;
 	border: none;
-	color: #fff;
+	color: var(--color-mg-search-clear__color);
 	cursor: pointer;
 	height: 16px;
 	line-height: 16px;
-	outline: none;
+	margin-top: -8px;
 	opacity: 0;
+	outline: none;
 	padding: 0;
 	position: absolute;
 	right: 8px;
 	top: 50%;
-	margin-top: -8px;
 	width: 16px;
 }
 .b-markguide-search__clear svg {
 	display: block;
-	color: blue;
+	color: var(--color-mg-search-icon-clear__color);
 }
 .b-markguide-search__clear:hover svg {
-	color: black;
+	color: var(--color-mg-search-icon-clear__color--hover);
 }
 .b-markguide-search__clear:focus svg {
-	color: blue;
+	color: var(--color-mg-search-icon-clear__color--focus);
 }
 .b-markguide-search__clear:active svg {
-	color: black;
+	color: var(--color-mg-search-icon-clear__color--active);
 }
 .js-found .b-markguide-search__clear {
 	opacity: 1;
@@ -303,27 +351,27 @@ body {
 	content: "";
 	display: block;
 	height: 1px;
-	background: lightgrey;
+	background-color: var(--color-mg-navigation-item-border__background);
 }
 .b-markguide-navigation__item:nth-last-child(1 of .b-markguide-navigation__item_plugin)::after, .b-markguide-navigation__item:nth-last-child(1 of .b-markguide-navigation__item_page)::after {
 	content: "";
 	display: block;
 	height: 1px;
-	background: lightgrey;
+	background-color: var(--color-mg-navigation-item-border__background);
 }
 .b-markguide-navigation__item-line {
 	display: flex;
 	align-items: center;
 	padding: 0 20px;
 	text-decoration: none;
-	color: #000;
+	color: var(--color-mg-navigation-item-line__color);
 }
 .b-markguide-navigation__item-line svg {
-	color: #5b8fdd;
+	color: var(--color-mg-navigation-icon__color);
 }
 .b-markguide-navigation__item-line._category .b-markguide-navigation__icon-active {
 	display: block;
-	color: #295eae;
+	color: var(--color-mg-navigation-icon__color--active);
 }
 .b-markguide-navigation__item-line._category .b-markguide-navigation__icon {
 	display: none;
@@ -335,12 +383,12 @@ body {
 	display: block;
 }
 .b-markguide-navigation__item-line._empty {
-	fong-style: italic;
-	color: lightgrey;
+	font-style: italic;
+	color: var(--color-mg-navigation-item-empty__color);
 }
 .b-markguide-navigation__item-line.js-current-page {
-	background-color: #e6e7ff;
-	color: black;
+	background-color: var(--color-mg-navigation-item-current__backgound);
+	color: var(--color-mg-navigation-item-current__color);
 	cursor: default;
 	pointer-events: none;
 }
@@ -353,7 +401,7 @@ body {
 	margin-right: 5px;
 }
 .b-markguide-navigation__item-line:hover {
-	background: #e6e7ff;
+	background-color: var(--color-mg-navigation-item-current__backgound--hover);
 }
 .b-markguide-navigation__indent {
 	width: 25px;
@@ -365,7 +413,7 @@ body {
 .b-markguide-navigation__indent::before {
 	content: "";
 	width: 2px;
-	border-left: 1px solid lightgrey;
+	border-left: 1px solid var(--color-mg-navigation-indent__border);
 	height: 100%;
 	left: 50%;
 	margin-left: -6px;
@@ -396,49 +444,48 @@ body {
 	pointer-events: none;
 }
 .b-markguide-navigation__text:hover, .b-markguide-navigation__text:focus {
-	color: black;
+	color: var(--color-mg-navigation-text__color--hover);
 	text-decoration: none;
 }
 .b-markguide-navigation__text:active {
-	color: blue;
+	color: var(--color-mg-navigation-text__color--active);
 }
 .b-markguide-navigation .b-markguide-navigation__item-line._category.js-collapsed + .b-markguide-navigation__sub-nav {
-	/* stylelint-disable-line */
 	display: none;
 }
 
 .js-searching .b-markguide-navigation__item-line {
-	color: #000;
+	color: var(--color-mg-navigation-searching-item-line__color);
 	cursor: default;
 	pointer-events: none;
 }
 .js-searching .b-markguide-navigation__item-line._category svg {
-	color: #000;
+	color: var(--color-mg-navigation-searching-icon__color);
 }
 
 .js-found .b-markguide-navigation__item-line {
-	color: #000;
+	color: var(--color-mg-navigation-found-item-line__color);
 	cursor: default;
 	display: none;
 	pointer-events: none;
 }
 .js-found .b-markguide-navigation__item-line.js-relevant {
-	color: #000;
+	color: var(--color-mg-navigation-relevant-item-line__color);
 	cursor: pointer;
 	display: flex;
 	pointer-events: initial;
 }
 .js-found .b-markguide-navigation__item-line.js-relevant:hover, .js-found .b-markguide-navigation__item-line.js-relevant:focus {
-	color: black;
+	color: var(--color-mg-navigation-relevant-item-line__color--hover);
 }
 .js-found .b-markguide-navigation__item-line.js-relevant:active {
-	color: blue;
+	color: var(--color-mg-navigation-relevant-item-line__color--active);
 }
 .js-found .b-markguide-navigation__sub-nav {
-	display: block !important; /* stylelint-disable-line */
+	display: block !important;
 }
 .js-found .b-markguide-navigation__item-line._category {
-	display: flex !important; /* stylelint-disable-line */
+	display: flex !important;
 }
 
 .b-markguide-footer-copyright {
@@ -446,7 +493,7 @@ body {
 	font-size: 10px;
 	font-weight: 400;
 	line-height: 1.5;
-	color: #000;
+	color: var(--color-mg-footer-copyright__color);
 	display: block;
 	margin: 0;
 	overflow: hidden;
@@ -481,7 +528,7 @@ body {
 .b-markguide-html {
 	padding: 10px;
 	margin-bottom: 20px;
-	border: 1px solid grey;
+	border: 1px solid var(--color-mg-html__border);
 }
 .b-markguide-html__item {
 	margin-bottom: 20px;
@@ -489,16 +536,29 @@ body {
 .b-markguide-html__item:last-child {
 	margin: 0;
 }
+.b-markguide-html__item-heading {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.5;
+	padding: 0 0 10px;
+	margin: 0;
+}
+
 .b-markguide-markup {
 	margin: 10px 0 20px;
 	outline: none !important;
 	position: relative;
+	border: 1px solid var(--color-mg-markup__border);
 }
 .b-markguide-markup__summary {
 	padding-left: 10px;
 	display: list-item;
 	outline: revert !important;
 	cursor: pointer;
+}
+.b-markguide-markup[open] .markguide-markup__summary {
+	border: 1px solid var(--color-mg-markup__border);
 }
 .b-markguide-markup pre {
 	margin: 0;
@@ -511,7 +571,7 @@ body {
 	outline: none !important;
 }
 .b-markguide-markup summary {
-	border: 1px solid grey;
+	border: 1px solid var(--color-mg-markup__border);
 	cursor: pointer;
 	padding-left: 10px;
 	-webkit-user-select: none;
@@ -571,9 +631,9 @@ body {
 	font-size: 10px;
 	font-weight: 400;
 	line-height: 1.5;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--color-mg-copier-message__background);
 	border-radius: 5px;
-	color: #fff;
+	color: var(--color-mg-copier-message__color);
 	left: 50%;
 	min-width: 20px;
 	padding: 20px;
@@ -599,7 +659,7 @@ body {
 	outline: none;
 }
 .b-markguide-copier:hover .b-markguide-copier__text {
-	color: blue;
+	color: var(--color-mg-copier-text__color--hover);
 }
 
 .b-markguide-colors {
@@ -619,8 +679,8 @@ body {
 }
 
 .b-markguide-color {
-	background: white;
-	border: 1px solid black;
+	background: var(--color-mg-color__background);
+	border: 1px solid var(--color-mg-color__border);
 	margin: 0;
 	padding: 0;
 }
@@ -647,12 +707,12 @@ body {
 
 .b-markguide-color__name {
 	display: block;
-	color: black;
+	color: var(--color-mg-color-name__color);
 }
 
 .b-markguide-color__code {
 	display: block;
-	color: black;
+	color: var(--color-mg-color-code__color);
 }
 
 .b-markguide-icons {
@@ -670,8 +730,7 @@ body {
 }
 
 .b-markguide-icon {
-	--color-markguide-border: #c3c3c3;
-	border: 1px solid var(--color-markguide-border);
+	border: 1px solid var(--color-mg-icon__border);
 	border-radius: 5px;
 	padding: 10px 10px 40px;
 	position: relative;
@@ -686,7 +745,7 @@ body {
 	display: block;
 }
 .b-markguide-icon:hover .b-markguide-icon__svg {
-	background-color: #dfdfdf;
+	background-color: var(--color-mg-icon-svg__background--hover);
 }
 .b-markguide-icon__svg {
 	text-align: center;
@@ -694,6 +753,7 @@ body {
 	height: 64px;
 	margin: 0 auto 10px;
 	position: relative;
+	color: var(--color-mg-icon-svg__background);
 }
 .b-markguide-icon__svg svg {
 	width: 100%;
@@ -713,7 +773,7 @@ body {
 }
 .b-markguide-icon__grid-top, .b-markguide-icon__grid-bottom, .b-markguide-icon__grid-left, .b-markguide-icon__grid-right {
 	position: absolute;
-	background: #242add;
+	background-color: var(--color-mg-icon-grid__background);
 }
 .b-markguide-icon__grid-top, .b-markguide-icon__grid-bottom {
 	left: 0;
@@ -742,22 +802,22 @@ body {
 	right: var(--padding);
 }
 .b-markguide-icon__data {
-	position: absolute;
+	background: var(--color-mg-icon__background);
+	border-radius: 6px;
+	border-top: 1px solid var(--color-mg-icon__border);
 	bottom: 0;
 	left: 0;
-	right: 0;
-	background: lightgray;
 	padding: 5px 0;
-	border-radius: 6px;
-	border-top: 1px solid var(--color-markguide-border);
+	position: absolute;
+	right: 0;
 }
 .b-markguide-icon__data pre {
 	font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
 	font-size: 11px;
 	font-weight: 400;
 	line-height: 1.5;
-	text-align: center;
 	margin: 0;
+	text-align: center;
 	white-space: normal;
 }
 .b-markguide-icon__name {
@@ -766,32 +826,32 @@ body {
 	font-weight: 600;
 	line-height: 1;
 	text-align: center;
-	color: var(--color-markguide-icon-path);
+	color: var(--color-mg-icon-name__color);
 	padding: 5px 0;
 }
 .b-markguide-icon__font {
-	color: var(--color-markguide-icon-path);
+	color: var(--color-mg-icon-font__color);
 	text-align: center;
 	padding: 5px 0;
 }
 .b-markguide-icon__code {
-	position: absolute;
 	bottom: 0;
-	left: 0;
-	right: 0;
 	display: none;
-	text-align: center;
-	padding: 0;
+	left: 0;
 	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
 }
 .b-markguide-icon__code code {
-	background-color: lightgray;
-	color: gray;
-	border-top: 1px solid var(--color-markguide-border);
+	background-color: var(--color-mg-icon-code__background);
+	color: var(--color-mg-icon-code__color);
+	border-top: 1px solid var(--color-mg-icon-code__border);
 }
 .b-markguide-icon__code ::selection {
-	background-color: blue;
-	color: white;
+	background-color: var(--color-mg-icon-code__background--selection);
+	color: var(--color-mg-icon-code__color--selection);
 }
 
 .highlight-element {
@@ -1017,21 +1077,9 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
-	--focus-outlineColor: #0969da;
-	--fgColor-default: #1f2328;
-	--fgColor-muted: #636c76;
-	--fgColor-accent: #0969da;
-	--bgColor-default: #ffffff;
-	--bgColor-muted: #f6f8fa;
-	--bgColor-neutral-muted: #afb8c133;
-	--bgColor-attention-muted: #fff8c5;
-	--borderColor-default: #d0d7de;
-	--borderColor-muted: #d0d7deb3;
-	--borderColor-neutral-muted: #afb8c133;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	margin: 0;
-	color: var(--fgColor-default);
 	word-wrap: break-word;
 	scroll-behavior: auto;
 }
@@ -1049,11 +1097,11 @@ body {
 	box-sizing: content-box;
 	overflow: hidden;
 	background: transparent;
-	border-bottom: 1px solid var(--borderColor-muted);
+	border-bottom: 1px solid var(--color-markdown-hr__border);
 	height: 0.25em;
 	padding: 0;
 	margin: 24px 0;
-	background-color: var(--borderColor-default);
+	background-color: var(--color-markdown-hr__background);
 	border: 0;
 }
 .markdown-body hr::before, .markdown-body hr::after {
@@ -1069,8 +1117,8 @@ body {
 	margin-bottom: 16px;
 }
 .markdown-body mark {
-	background-color: var(--bgColor-attention-muted);
-	color: var(--fgColor-default);
+	background-color: var(--color-markdown-mark__background);
+	color: var(--color-markdown-mark__color);
 }
 .markdown-body small {
 	font-size: 90%;
@@ -1100,8 +1148,8 @@ body {
 	font-size: 85%;
 }
 .markdown-body blockquote {
-	border-left: 0.25em solid var(--borderColor-default);
-	color: var(--fgColor-muted);
+	border-left: 0.25em solid var(--color-markdown-blockquote__border);
+	color: var(--color-markdown-blockquote__color);
 	margin-bottom: 16px;
 	margin-top: 0;
 }
@@ -1149,7 +1197,7 @@ body {
 	font-size: 2em;
 	font-weight: 600;
 	line-height: 1.25;
-	border-bottom: 1px solid var(--borderColor-muted);
+	border-bottom: 1px solid var(--color-markdown-body-heading__border);
 	margin: 0.67em 0;
 	padding-bottom: 0.3em;
 }
@@ -1158,7 +1206,7 @@ body {
 	font-size: 1.5em;
 	font-weight: 600;
 	line-height: 1.25;
-	border-bottom: 1px solid var(--borderColor-muted);
+	border-bottom: 1px solid var(--color-markdown-body-heading__border);
 	padding-bottom: 0.3em;
 }
 .markdown-body h3 {
@@ -1184,7 +1232,6 @@ body {
 	font-size: 0.85em;
 	font-weight: 600;
 	line-height: 1.25;
-	color: var(--fgColor-muted);
 }
 .markdown-body summary h1,
 .markdown-body summary h2,
@@ -1214,7 +1261,7 @@ body {
 }
 .markdown-heading .anchor {
 	align-items: center;
-	border-radius: var(--borderRadius-small);
+	border-radius: 2px;
 	display: flex;
 	height: 28px;
 	justify-content: center;
@@ -1249,15 +1296,15 @@ body {
 	width: max-content;
 }
 .markdown-body table tr {
-	background-color: var(--bgColor-default);
-	border-top: 1px solid var(--borderColor-muted);
+	background-color: var(--color-markdown-tr__background);
+	border-top: 1px solid var(--color-markdown-tr__border);
 }
 .markdown-body table tr:nth-child(2n) {
-	background-color: var(--bgColor-muted);
+	background-color: var(--color-markdown-tr-2n__background);
 }
 .markdown-body table td,
 .markdown-body table th {
-	border: 1px solid var(--borderColor-default);
+	border: 1px solid var(--color-markdown-th-td_border);
 	padding: 6px 13px;
 }
 .markdown-body table td > :last-child {
@@ -1272,13 +1319,13 @@ body {
 
 .markdown-body a {
 	background-color: transparent;
-	color: var(--fgColor-accent);
+	color: var(--color-markdown-a__color);
 	text-decoration: none;
 }
 .markdown-body a:focus {
 	box-shadow: none;
 	outline-offset: -2px;
-	outline: 2px solid var(--focus-outlineColor);
+	outline: 2px solid var(--color-markdown-a__outline--focus);
 }
 .markdown-body a:hover {
 	text-decoration: underline;
@@ -1290,7 +1337,7 @@ body {
 .markdown-body a:focus-visible {
 	box-shadow: none;
 	outline-offset: -2px;
-	outline: 2px solid var(--focus-outlineColor);
+	outline: 2px solid var(--color-markdown-a__outline--focus);
 }
 .markdown-body a:not([class]):focus, .markdown-body a:not([class]):focus-visible {
 	outline-offset: 0;
@@ -1404,7 +1451,7 @@ body {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 1.5;
-	background-color: var(--bgColor-neutral-muted);
+	background-color: var(--color-markdown-code__background);
 	border-radius: 6px;
 	margin: 0;
 	padding: 0.2em 0.4em;
@@ -1415,7 +1462,7 @@ body {
 }
 
 .markdown-body img {
-	background-color: var(--bgColor-default);
+	background-color: var(--color-markdown-img__background);
 	border-style: none;
 	box-sizing: content-box;
 	max-width: 100%;
@@ -1436,7 +1483,7 @@ body {
 	overflow: hidden;
 }
 .markdown-body span.frame > span {
-	border: 1px solid var(--borderColor-default);
+	border: 1px solid var(--color-markdown-span__border);
 	display: block;
 	float: left;
 	margin: 13px 0 0;
@@ -1450,7 +1497,7 @@ body {
 }
 .markdown-body span.frame span span {
 	clear: both;
-	color: var(--fgColor-default);
+	color: var(--color-markdown-span__color);
 	display: block;
 	padding: 5px 0 0;
 }
@@ -1530,19 +1577,19 @@ body {
 	font: inherit;
 }
 .markdown-body ::-webkit-input-placeholder {
-	color: var(--fgColor-muted);
+	color: var(--color-markdown-body__color--placeholder);
 	opacity: 1;
 }
 .markdown-body :-ms-input-placeholder {
-	color: var(--fgColor-muted);
+	color: var(--color-markdown-body__color--placeholder);
 	opacity: 1;
 }
 .markdown-body ::-ms-input-placeholder {
-	color: var(--fgColor-muted);
+	color: var(--color-markdown-body__color--placeholder);
 	opacity: 1;
 }
 .markdown-body ::placeholder {
-	color: var(--fgColor-muted);
+	color: var(--color-markdown-body__color--placeholder);
 	opacity: 1;
 }
 .markdown-body input {
@@ -1584,7 +1631,7 @@ body {
 .markdown-body input[type=checkbox]:focus-visible {
 	box-shadow: none;
 	outline-offset: -2px;
-	outline: 2px solid var(--focus-outlineColor);
+	outline: 2px solid var(--color-markdown-input__outline--focus);
 }
 .markdown-body [role=button]:focus:not(:focus-visible),
 .markdown-body input[type=radio]:focus:not(:focus-visible),
@@ -1633,11 +1680,11 @@ body {
 	font-size: 11px;
 	font-weight: 400;
 	line-height: 10px;
-	background-color: var(--bgColor-muted);
+	background-color: var(--color-markdown-kbd__background);
 	border-radius: 6px;
-	border: solid 1px var(--borderColor-neutral-muted);
-	box-shadow: inset 0 -1px 0 var(--borderColor-neutral-muted);
-	color: var(--fgColor-default);
+	border: 1px solid var(--color-markdown-kbd__border);
+	box-shadow: inset 0 -1px 0 var(--color-markdown-kbd__box-shadow);
+	color: var(--color-markdown-kbd__color);
 	display: inline-block;
 	padding: 3px 5px;
 	vertical-align: middle;

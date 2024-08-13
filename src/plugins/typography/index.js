@@ -14,6 +14,14 @@ class typographyPlugin extends basePlugin {
             style: font.properties.style,
             weight: font.properties.weight
         }));
+
+        this.alphabet = [
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        ];
+
+        this.digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
     }
 
     init() {
@@ -50,7 +58,12 @@ class typographyPlugin extends basePlugin {
 
     generateTypographyPage(fonts) {
         const template = fs.readFileSync(path.join(__dirname, 'templates/template.mustache'), 'utf-8');
-        const htmlContent = mustache.render(template, { fonts });
+        const htmlContent = mustache.render(template, {
+            page: this.getConfiguration(),
+            alphabet: this.alphabet,
+            digits: this.digits,
+            fonts: fonts
+        });
 
         return htmlContent;
     }

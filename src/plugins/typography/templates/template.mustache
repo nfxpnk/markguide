@@ -1,10 +1,32 @@
-<h1 class="heading-element">
-    Typography
-</h1>
+<div class="markdown-heading">
+    <h1 class="heading-element">
+        {{page.title}}
+    </h1>
+
+    <a id="h1-{{page.id}}" class="anchor" href="#h1-{{page.id}}">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
 
 <div>
     {{#fonts}}
     <h2>{{family}} - {{weight}} - {{style}}</h2>
+
+    <div style="display: flex;">
+    {{#digits}}
+        <div>{{.}}</div>
+    {{/digits}}
+    </div>
+
+    <div style="display: flex;">
+    {{#alphabet}}
+        <div>{{.}}</div>
+    {{/alphabet}}
+    </div>
+
+
     <div class="show-typography font-sample" style="padding:15px 0; font-family: '{{family}}'; font-weight: {{weight}}; font-style: {{style}}; font-size: 34px;">
         <p>The quick brown fox jumps over the lazy dog.</p>
     </div>
