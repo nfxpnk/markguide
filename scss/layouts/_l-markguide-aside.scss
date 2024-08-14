@@ -16,7 +16,6 @@
 		overflow-y: auto;
 		overscroll-behavior: contain;
 		//scrollbar-width: thin;
-		//scrollbar-color: red blue;
 	}
 
 	&__footer {
@@ -31,5 +30,14 @@
 	.l-markguide-aside__footer,
 	.l-markguide-aside__content {
 		display: none;
+	}
+}
+
+
+@include color-mode(dark) {
+	.l-markguide-aside {
+		&__content {
+			scrollbar-color: var(--color-mg-aside-scrollbar);
+		}
 	}
 }
