@@ -39,6 +39,10 @@
 			color: var(--color-mg-navigation-icon__color);
 		}
 
+		&:focus {
+			outline: none !important;
+		}
+
 		&._category {
 			.b-markguide-navigation__icon-active {
 				display: block;

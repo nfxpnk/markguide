@@ -16,6 +16,10 @@
 		overflow-y: auto;
 		overscroll-behavior: contain;
 		//scrollbar-width: thin;
+
+		&:focus {
+			outline: none !important;
+		}
 	}
 
 	&__footer {

@@ -11,6 +11,9 @@
 		border: 1px solid $c-grey;
 		border-radius: 3px;
 		color: $c-grey-300;
+		&:focus {
+			outline: none !important;
+		}
 
 		&:hover {
 			border-color: $c-blue-200;
