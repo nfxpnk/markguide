@@ -7,15 +7,16 @@ body {
 
 //@import "variables/misc";
 
-// Colors
-@import "base/colors-default";
-//@import "base/colors-dark";
-//@import "base/colors-alternative";
-
 // Mixins
 @import "mixins/clearfix";
 @import "mixins/font";
 @import "mixins/font-mono";
+@import "mixins/color";
+
+// Colors
+@import "base/colors-default";
+@import "base/colors-dark";
+//@import "base/colors-alternative";
 
 // Layouts
 @import "layouts/l-markguide-container";

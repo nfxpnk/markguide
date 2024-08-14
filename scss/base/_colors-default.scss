@@ -68,7 +68,7 @@ $color-primary-button__background--hover
 ```
 */
 
-:root {
+@include color-mode-theme(light, true) {
 	// Default theme
 	--color-mg-background: #{$c-grey-200};
 	--color-mg-text: #{$c-grey-400};

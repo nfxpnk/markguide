@@ -39,7 +39,15 @@
     <script>
         // Retrieve `asideWidth` from sessionStorage if available
         const asideWidth = window.sessionStorage ? window.sessionStorage.getItem('asideWidth') : false;
+
+        // Set theme
+        let html = document.querySelector('html');
+        let theme = window.sessionStorage.getItem('markguide-theme') || 'light';
+        html.removeAttribute('data-' + theme + '-theme');
+        html.setAttribute('data-color-mode', theme);
+        html.setAttribute('data-' + theme + '-theme', theme);
     </script>
+
 </head>
 <body class="b-markguide-page b-markguide-page_{{type}}">
 
@@ -56,7 +64,7 @@
                         <use href="#screen-full-16"></use>
                     </svg>
                 </button>
-                <button class="b-markguide-options-bar__theme" type="button" title="Toggle theme">
+                <button class="b-markguide-options-bar__theme" id="js-markguide-theme" type="button" title="Toggle theme">
                     <svg width="16" height="16" viewBox="0 0 16 16" role="img">
                         <use class="b-markguide-options-bar__theme-dark" href="#moon-16"></use>
                         <use class="b-markguide-options-bar__theme-light" href="#sun-16"></use>
