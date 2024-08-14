@@ -18,4 +18,18 @@
 			color: $c-blue-500;
 		}
 	}
+
+	&__theme-light {
+		display: none;
+	}
+}
+
+@include color-mode(dark) {
+	.b-markguide-options-bar__theme-light {
+		display: block;
+	}
+
+	.b-markguide-options-bar__theme-dark {
+		display: none;
+	}
 }
