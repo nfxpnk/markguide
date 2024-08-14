@@ -111,6 +111,7 @@ $color-primary-button__background--hover
 	--color-mg-navigation-icon__color--active: #{$c-blue-500};
 	--color-mg-navigation-item-current__backgound: #{$c-blue-100};
 	--color-mg-navigation-item-current__backgound--hover: #{$c-white};
+	--color-mg-navigation-item-current-before__backgound: #{$c-blue-500};
 	--color-mg-navigation-item-current__color: #{$c-black};
 	--color-mg-navigation-item-empty__color: #{$c-grey-300};
 	--color-mg-navigation-indent__border: #{$c-blue-200};
@@ -140,6 +141,9 @@ $color-primary-button__background--hover
 	--color-mg-color__border: #{$c-grey};
 	--color-mg-color-name__color: #{$c-black};
 	--color-mg-color-code__color: #{$c-black};
+
+	// typography
+	--color-mg-typography-symbol__border: #{$c-grey};
 
 	// markdown
 	--color-markdown-a__color: #{$c-blue-500};

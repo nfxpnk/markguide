@@ -68,6 +68,18 @@
 			color: var(--color-mg-navigation-item-current__color);
 			cursor: default;
 			pointer-events: none;
+			position: relative;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: 2px;
+				top: 2px;
+				width: 4px;
+				bottom: 2px;
+				border-radius: 2px;
+				background-color: var(--color-mg-navigation-item-current-before__backgound);
+			}
 		}
 
 		svg {
