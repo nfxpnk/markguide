@@ -18,6 +18,15 @@
 		z-index: 1;
 	}
 
+	&__sticky-bar {
+		position: sticky;
+		background-color: var(--color-mg-container-main__background);
+		top: 0;
+		z-index: 10;
+		height: 40px;
+		border-bottom: 1px solid $c-grey;
+	}
+
 	&.js-aside-panel-hidden {
 		.l-markguide-container__aside {
 			min-width: 5px;
