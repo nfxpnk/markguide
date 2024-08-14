@@ -5,8 +5,10 @@ const log = require('fancy-log');
 const c = require('ansi-colors');
 
 const icons = [
+    'arrow-up-16',
     'book-16',
     'code-16',
+    'copy-16',
     'file-16',
     'file-code-16',
     'file-directory-fill-16',
@@ -16,17 +18,16 @@ const icons = [
     'link-16',
     'link-external-16',
     'markdown-16',
+    'moon-16',
     'paintbrush-16',
     'screen-full-16',
-    'screen-normal-16',
-    'search-16',
-    'typography-16',
-    'x-circle-16',
     'screen-full-16',
     'screen-normal-16',
+    'screen-normal-16',
+    'search-16',
     'sun-16',
-    'moon-16',
-    'arrow-up-16',
+    'typography-16',
+    'x-circle-16',
     'confluence',
     'icons'
 ];
