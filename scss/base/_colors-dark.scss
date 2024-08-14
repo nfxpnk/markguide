@@ -18,9 +18,9 @@
 	--color-mg-background: #22272e;
 	--color-mg-text: #c5d1de;
 
-	// --color-mg-copier-message__background: #{$c-blue-600};
-	// --color-mg-copier-message__color: #{$c-blue-600};
-	// --color-mg-copier-text__color--hover: #{$c-blue-600};
+	--color-mg-copier-message__background: #c5d1de;
+	--color-mg-copier-message__color: #22272e;
+	--color-mg-copier-text__color--hover: red;
 
 	// // markguide-markup
 	--color-mg-markup__border: #3a414a;
@@ -35,7 +35,7 @@
 	// --color-mg-icon-grid__background: #{$c-blue-400};
 	// --color-mg-icon-name__color: #{$c-black};
 	// --color-mg-icon-svg__background--hover: #{$c-blue-100};
-	// --color-mg-icon-svg__background: #{$c-grey-400};
+	--color-mg-icon-svg__background: #778491;
 	// --color-mg-icon__background: #{$c-grey-200};
 	--color-mg-icon__border: #3a414a;
 
@@ -81,10 +81,10 @@
 	// --color-mg-search-icon-clear__color--active: #{$c-blue-400};
 
 	// // markguide colors
-	// --color-mg-color__background: #{$c-white};
+	--color-mg-color__background: #22272e;
 	--color-mg-color__border: #3a414a;
-	// --color-mg-color-name__color: #{$c-black};
-	// --color-mg-color-code__color: #{$c-black};
+	--color-mg-color-name__color: #c5d1de;
+	--color-mg-color-code__color: #c5d1de;
 
 	// // typography
 	--color-mg-typography-symbol__border: #3a414a;
