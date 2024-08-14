@@ -1,0 +1,21 @@
+.b-markguide-options-bar {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+
+	&__fullscreen,
+	&__theme {
+		cursor: pointer;
+		width: 24px;
+		height: 24px;
+		border: 1px solid $c-grey;
+		border-radius: 3px;
+		color: $c-grey-300;
+
+		&:hover {
+			border-color: $c-blue-200;
+			background-color: $c-blue-100;
+			color: $c-blue-500;
+		}
+	}
+}

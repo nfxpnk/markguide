@@ -5,6 +5,7 @@
     const aside = document.getElementById('js-markguide-aside');
     const main = document.getElementById('js-markguide-main');
     const resizer = document.getElementById('js-markguide-aside-resizer');
+    const fullscreen = document.getElementById('js-markguide-fullscreen');
     const resizerOverlay = document.getElementById('js-markguide-aside-resizer-overlay');
 
     function resizeTo(width) {
@@ -72,6 +73,7 @@
         resizerOverlay.classList.remove('js-dragging');
     });
     resizer.addEventListener('dblclick', asideToggle);
+    fullscreen.addEventListener('click', asideToggle);
 
     window.addEventListener('beforeunload', populateStorage);
 }());

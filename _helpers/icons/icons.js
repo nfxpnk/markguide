@@ -22,6 +22,9 @@ const icons = [
     'search-16',
     'typography-16',
     'x-circle-16',
+    'screen-full-16',
+    'sun-16',
+    'moon-16',
     'confluence',
     'icons'
 ];

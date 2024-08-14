@@ -50,7 +50,19 @@
     {{> aside}}
     <main role="main" class="l-markguide-container__main" id="js-markguide-main">
         <div class="l-markguide-container__sticky-bar">
-
+            <div class="b-markguide-options-bar">
+                <button class="b-markguide-options-bar__fullscreen" id="js-markguide-fullscreen" type="button" title="Go full screen">
+                    <svg width="16" height="16" viewBox="0 0 16 16" role="img">
+                        <use href="#screen-full-16"></use>
+                    </svg>
+                </button>
+                <button class="b-markguide-options-bar__theme" type="button" title="Toggle theme">
+                    <svg width="16" height="16" viewBox="0 0 16 16" role="img">
+                        <use class="b-markguide-options-bar__theme-dark" href="#moon-16"></use>
+                        <use class="b-markguide-options-bar__theme-light" href="#sun-16"></use>
+                    </svg>
+                </button>
+            </div>
         </div>
         <script>
             const mainElement = document.getElementById('js-markguide-main');

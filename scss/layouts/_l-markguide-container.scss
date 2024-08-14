@@ -25,16 +25,21 @@
 		z-index: 10;
 		height: 40px;
 		border-bottom: 1px solid $c-grey;
+		padding: 0 20px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
 	}
 
 	&.js-aside-panel-hidden {
 		.l-markguide-container__aside {
-			min-width: 5px;
-			width: 5px;
+			min-width: 0;
+			width: 0;
+			overflow: hidden;
 		}
 
 		.l-markguide-container__main {
-			margin-left: 5px;
+			margin-left: 0;
 		}
 	}
 }
