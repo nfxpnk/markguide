@@ -3,6 +3,7 @@
 	flex-direction: row;
 	gap: 10px;
 
+	&__top,
 	&__fullscreen,
 	&__theme {
 		cursor: pointer;

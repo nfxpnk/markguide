@@ -26,6 +26,7 @@ const icons = [
     'screen-normal-16',
     'sun-16',
     'moon-16',
+    'arrow-up-16',
     'confluence',
     'icons'
 ];
