@@ -33,6 +33,7 @@
 	&:hover,
 	&:focus {
 		color: var(--color-mg-aside-ctrl__color--hover);
+		outline: none !important;
 	}
 
 	.js-aside-panel-hidden & {
