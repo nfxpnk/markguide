@@ -22,6 +22,13 @@
 	--color-mg-copier-message__color: #22272e;
 	--color-mg-copier-text__color--hover: red;
 
+	// Options bar button
+	--color-mg-options-bar-button__background--hover: #{$c-blue-100};
+	--color-mg-options-bar-button__border--hover: #{$c-blue-200};
+	--color-mg-options-bar-button__border: #3a414a;
+	--color-mg-options-bar-button__color--hover: #{$c-blue-500};
+	--color-mg-options-bar-button__color: #{$c-grey-300};
+
 	// // markguide-markup
 	--color-mg-markup__border: #3a414a;
 
@@ -41,6 +48,8 @@
 
 	--color-mg-container-aside__box-shadow: #3a414a;
 	--color-mg-container-main__background: #22272e;
+	--color-mg-container-sticky-bar__background: #22272e;
+	--color-mg-container-sticky-bar__border: #3a414a;
 
 	// --color-mg-aside-ctrl__color--hover: #{$c-black};
 	--color-mg-aside-scrollbar: #3a414a #22272e;

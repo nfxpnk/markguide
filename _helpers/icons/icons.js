@@ -23,6 +23,7 @@ const icons = [
     'typography-16',
     'x-circle-16',
     'screen-full-16',
+    'screen-normal-16',
     'sun-16',
     'moon-16',
     'confluence',
