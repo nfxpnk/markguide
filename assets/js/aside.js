@@ -26,12 +26,13 @@
 
     function asideHide() {
         container.classList.add('js-aside-panel-hidden');
+        window.sessionStorage.getItem('asideWidth')
         resizeTo(0);
     }
 
     function asideShow() {
         container.classList.remove('js-aside-panel-hidden');
-        resizeTo(250);
+        resizeTo(window.sessionStorage.getItem('asideWidth'));
     }
 
     function asideToggle(event) {
