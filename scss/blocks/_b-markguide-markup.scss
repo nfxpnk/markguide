@@ -35,16 +35,17 @@
 	}
 
 	&__copy-button {
-		appearance: none;
-		cursor: pointer;
-		width: 24px;
-		height: 24px;
-		border: 1px solid var(--color-mg-options-bar-button__border);
+		align-items: center;
 		border-radius: 3px;
+		border: 1px solid var(--color-mg-options-bar-button__border);
 		color: var(--color-mg-options-bar-button__color);
-		position: absolute;
-		right: 15px;
-		top: 8px;
+		cursor: pointer;
+		display: flex;
+		height: 24px;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+		width: 24px;
 
 		&:focus {
 			outline: none !important;
