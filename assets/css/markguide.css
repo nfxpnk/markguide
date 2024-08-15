@@ -43,12 +43,19 @@ we can add the state to the custom property name:
 $color-primary-button__background--hover
 ```
 */
-:root {
+:root,
+[data-color-mode=light][data-light-theme=light],
+[data-color-mode=dark][data-dark-theme=light] {
 	--color-mg-background: #f7f7f7;
 	--color-mg-text: #434643;
 	--color-mg-copier-message__background: #0d3880;
 	--color-mg-copier-message__color: #0d3880;
 	--color-mg-copier-text__color--hover: #0d3880;
+	--color-mg-options-bar-button__background--hover: #e2edf9;
+	--color-mg-options-bar-button__border--hover: #c0daf7;
+	--color-mg-options-bar-button__border: #ccc;
+	--color-mg-options-bar-button__color--hover: #3a7ac1;
+	--color-mg-options-bar-button__color: #717171;
 	--color-mg-markup__border: #ccc;
 	--color-mg-icon-code__background--selection: #3a7ac1;
 	--color-mg-icon-code__background: #000;
@@ -64,8 +71,11 @@ $color-primary-button__background--hover
 	--color-mg-icon__border: #ccc;
 	--color-mg-container-aside__box-shadow: #ccc;
 	--color-mg-container-main__background: #f7f7f7;
+	--color-mg-container-sticky-bar__background: #f7f7f7;
+	--color-mg-container-sticky-bar__border: #ccc;
 	--color-mg-aside-ctrl__color--hover: #000;
 	--color-mg-footer-copyright__color: #000;
+	--color-mg-html__background: #f7f7f7;
 	--color-mg-html__border: #ccc;
 	--color-mg-navigation-item-border__background: #ccc;
 	--color-mg-navigation-item-line__color: #000;
@@ -73,6 +83,7 @@ $color-primary-button__background--hover
 	--color-mg-navigation-icon__color--active: #3a7ac1;
 	--color-mg-navigation-item-current__backgound: #e2edf9;
 	--color-mg-navigation-item-current__backgound--hover: #fff;
+	--color-mg-navigation-item-current-before__backgound: #3a7ac1;
 	--color-mg-navigation-item-current__color: #000;
 	--color-mg-navigation-item-empty__color: #717171;
 	--color-mg-navigation-indent__border: #c0daf7;
@@ -98,6 +109,7 @@ $color-primary-button__background--hover
 	--color-mg-color__border: #ccc;
 	--color-mg-color-name__color: #000;
 	--color-mg-color-code__color: #000;
+	--color-mg-typography-symbol__border: #ccc;
 	--color-markdown-a__color: #3a7ac1;
 	--color-markdown-a__outline--focus: #3a7ac1;
 	--color-markdown-blockquote__border: #ccc;
@@ -123,6 +135,59 @@ $color-primary-button__background--hover
 	--color-markdown-tr__border: #ccc;
 }
 
+[data-color-mode=light][data-light-theme=dark],
+[data-color-mode=dark][data-dark-theme=dark] {
+	--color-mg-background: #22272e;
+	--color-mg-text: #c5d1de;
+	--color-mg-copier-message__background: #c5d1de;
+	--color-mg-copier-message__color: #22272e;
+	--color-mg-copier-text__color--hover: red;
+	--color-mg-options-bar-button__background--hover: #e2edf9;
+	--color-mg-options-bar-button__border--hover: #c0daf7;
+	--color-mg-options-bar-button__border: #3a414a;
+	--color-mg-options-bar-button__color--hover: #3a7ac1;
+	--color-mg-options-bar-button__color: #717171;
+	--color-mg-markup__border: #3a414a;
+	--color-mg-icon-code__border: #3a414a;
+	--color-mg-icon-grid__background: #c5d1de;
+	--color-mg-icon-svg__background--hover: #3a414a;
+	--color-mg-icon-svg__background: #778491;
+	--color-mg-icon__background: #22272e;
+	--color-mg-icon__border: #3a414a;
+	--color-mg-container-aside__box-shadow: #3a414a;
+	--color-mg-container-main__background: #22272e;
+	--color-mg-container-sticky-bar__background: #22272e;
+	--color-mg-container-sticky-bar__border: #3a414a;
+	--color-mg-aside-scrollbar: #3a414a #22272e;
+	--color-mg-html__background: #717171;
+	--color-mg-navigation-item-border__background: #3a414a;
+	--color-mg-navigation-item-line__color: #c5d1de;
+	--color-mg-navigation-icon__color: #778491;
+	--color-mg-navigation-icon__color--active: #5c6268;
+	--color-mg-navigation-item-current__backgound: #2a3037;
+	--color-mg-navigation-item-current__backgound--hover: #2a3037;
+	--color-mg-navigation-item-current-before__backgound: #316dca;
+	--color-mg-navigation-item-current__color: #c5d1de;
+	--color-mg-navigation-indent__border: #3a414a;
+	--color-mg-navigation-text__color--hover: #c5d1de;
+	--color-mg-navigation-text__color--active: #c5d1de;
+	--color-mg-search-input__color--placeholder: #c5d1de;
+	--color-mg-search-input__border: #3a414a;
+	--color-mg-color__background: #22272e;
+	--color-mg-color__border: #3a414a;
+	--color-mg-color-name__color: #c5d1de;
+	--color-mg-color-code__color: #c5d1de;
+	--color-mg-typography-symbol__border: #3a414a;
+	--color-markdown-blockquote__border: #3a414a;
+	--color-markdown-body-heading__border: #3a414a;
+	--color-markdown-code__background: #3a414a;
+	--color-markdown-hr__border: #3a414a;
+	--color-markdown-kbd__border: #3a414a;
+	--color-markdown-span__border: #3a414a;
+	--color-markdown-th-td_border: #3a414a;
+	--color-markdown-tr__border: #3a414a;
+}
+
 .l-markguide-container {
 	height: 100%;
 }
@@ -141,12 +206,25 @@ $color-primary-button__background--hover
 	position: relative;
 	z-index: 1;
 }
+.l-markguide-container__sticky-bar {
+	position: sticky;
+	background-color: var(--color-mg-container-sticky-bar__background);
+	top: 0;
+	z-index: 10;
+	height: 40px;
+	border-bottom: 1px solid var(--color-mg-container-sticky-bar__border);
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
 .l-markguide-container.js-aside-panel-hidden .l-markguide-container__aside {
-	min-width: 5px;
-	width: 5px;
+	min-width: 0;
+	width: 0;
+	overflow: hidden;
 }
 .l-markguide-container.js-aside-panel-hidden .l-markguide-container__main {
-	margin-left: 5px;
+	margin-left: 0;
 }
 
 .l-markguide-aside {
@@ -168,6 +246,9 @@ $color-primary-button__background--hover
 	-ms-scroll-chaining: none;
 	    overscroll-behavior: contain;
 }
+.l-markguide-aside__content:focus {
+	outline: none !important;
+}
 .l-markguide-aside__footer {
 	margin-top: auto;
 	padding-top: 10px;
@@ -177,6 +258,11 @@ $color-primary-button__background--hover
 .js-aside-panel-hidden .l-markguide-aside__footer,
 .js-aside-panel-hidden .l-markguide-aside__content {
 	display: none;
+}
+
+[data-color-mode=light][data-light-theme*=dark] .l-markguide-aside__content,
+[data-color-mode=dark][data-dark-theme*=dark] .l-markguide-aside__content {
+	scrollbar-color: var(--color-mg-aside-scrollbar);
 }
 
 .l-markguide-page {
@@ -233,6 +319,7 @@ $color-primary-button__background--hover
 }
 .b-markguide-aside-ctrl:hover, .b-markguide-aside-ctrl:focus {
 	color: var(--color-mg-aside-ctrl__color--hover);
+	outline: none !important;
 }
 .js-aside-panel-hidden .b-markguide-aside-ctrl {
 	cursor: col-resize;
@@ -369,6 +456,9 @@ $color-primary-button__background--hover
 .b-markguide-navigation__item-line svg {
 	color: var(--color-mg-navigation-icon__color);
 }
+.b-markguide-navigation__item-line:focus {
+	outline: none !important;
+}
 .b-markguide-navigation__item-line._category .b-markguide-navigation__icon-active {
 	display: block;
 	color: var(--color-mg-navigation-icon__color--active);
@@ -391,6 +481,17 @@ $color-primary-button__background--hover
 	color: var(--color-mg-navigation-item-current__color);
 	cursor: default;
 	pointer-events: none;
+	position: relative;
+}
+.b-markguide-navigation__item-line.js-current-page:before {
+	content: "";
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	width: 4px;
+	bottom: 2px;
+	border-radius: 2px;
+	background-color: var(--color-mg-navigation-item-current-before__backgound);
 }
 .b-markguide-navigation__item-line svg {
 	height: 16px;
@@ -503,7 +604,58 @@ $color-primary-button__background--hover
 	white-space: nowrap;
 }
 
+.b-markguide-options-bar {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+.b-markguide-options-bar__top, .b-markguide-options-bar__fullscreen, .b-markguide-options-bar__theme {
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+	border: 1px solid var(--color-mg-options-bar-button__border);
+	border-radius: 3px;
+	color: var(--color-mg-options-bar-button__color);
+}
+.b-markguide-options-bar__top:focus, .b-markguide-options-bar__fullscreen:focus, .b-markguide-options-bar__theme:focus {
+	outline: none !important;
+}
+.b-markguide-options-bar__top:hover, .b-markguide-options-bar__fullscreen:hover, .b-markguide-options-bar__theme:hover {
+	border-color: var(--color-mg-options-bar-button__border--hover);
+	background-color: var(--color-mg-options-bar-button__background--hover);
+	color: var(--color-mg-options-bar-button__color--hover);
+}
+.b-markguide-options-bar__fullscreen-full {
+	display: block;
+}
+.b-markguide-options-bar__fullscreen-normal {
+	display: none;
+}
+.b-markguide-options-bar__theme-light {
+	display: none;
+}
+
+.js-aside-panel-hidden .b-markguide-options-bar__fullscreen-full {
+	display: none;
+}
+.js-aside-panel-hidden .b-markguide-options-bar__fullscreen-normal {
+	display: block;
+}
+
+[data-color-mode=light][data-light-theme*=dark] .b-markguide-options-bar__theme-light,
+[data-color-mode=dark][data-dark-theme*=dark] .b-markguide-options-bar__theme-light {
+	display: block;
+}
+[data-color-mode=light][data-light-theme*=dark] .b-markguide-options-bar__theme-dark,
+[data-color-mode=dark][data-dark-theme*=dark] .b-markguide-options-bar__theme-dark {
+	display: none;
+}
+
 .b-markguide-overline {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
 	display: flex;
 	gap: 10px;
 	align-items: center;
@@ -528,6 +680,7 @@ $color-primary-button__background--hover
 .b-markguide-html {
 	padding: 10px;
 	margin-bottom: 20px;
+	background-color: var(--color-mg-html__background);
 	border: 1px solid var(--color-mg-html__border);
 }
 .b-markguide-html__item {
@@ -661,6 +814,94 @@ $color-primary-button__background--hover
 	color: var(--color-mg-copier-text__color--hover);
 }
 
+.plugin-body h2,
+.plugin-body h3,
+.plugin-body h4,
+.plugin-body h5,
+.plugin-body h6 {
+	margin-bottom: 16px;
+	margin-top: 24px;
+}
+.plugin-body h2:hover .anchor,
+.plugin-body h3:hover .anchor,
+.plugin-body h4:hover .anchor,
+.plugin-body h5:hover .anchor,
+.plugin-body h6:hover .anchor {
+	text-decoration: none;
+}
+.plugin-body h2:first-child,
+.plugin-body h3:first-child,
+.plugin-body h4:first-child,
+.plugin-body h5:first-child,
+.plugin-body h6:first-child {
+	margin-top: 0;
+}
+.plugin-body h2 {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 1.5em;
+	font-weight: 600;
+	line-height: 1.25;
+	border-bottom: 1px solid var(--color-markdown-body-heading__border);
+	padding-bottom: 0.3em;
+}
+.plugin-body h3 {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 1.25em;
+	font-weight: 600;
+	line-height: 1.25;
+}
+.plugin-body h4 {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 1em;
+	font-weight: 600;
+	line-height: 1.25;
+}
+.plugin-body h5 {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 0.875em;
+	font-weight: 600;
+	line-height: 1.25;
+}
+.plugin-body h6 {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 0.85em;
+	font-weight: 600;
+	line-height: 1.25;
+}
+.plugin-body .octicon {
+	display: inline-block;
+	fill: currentColor;
+	overflow: visible !important;
+	vertical-align: text-bottom;
+}
+.plugin-body .plugin-heading {
+	position: relative;
+}
+.plugin-body .plugin-heading .anchor {
+	align-items: center;
+	border-radius: 2px;
+	display: flex;
+	height: 28px;
+	justify-content: center;
+	left: -28px;
+	margin: auto;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+	width: 28px;
+}
+.plugin-body .plugin-heading .anchor:focus {
+	outline: none;
+}
+.plugin-body .plugin-heading .anchor:hover {
+	opacity: 1;
+}
+.plugin-body .plugin-heading .heading-element:hover + .anchor {
+	opacity: 1;
+}
+
 .b-markguide-colors {
 	list-style: none;
 	padding: 0;
@@ -701,15 +942,27 @@ $color-primary-button__background--hover
 }
 
 .b-markguide-color__caption {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
 	padding: 0.5em;
 }
 
 .b-markguide-color__name {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
 	display: block;
 	color: var(--color-mg-color-name__color);
 }
 
 .b-markguide-color__code {
+	font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
 	display: block;
 	color: var(--color-mg-color-code__color);
 }
@@ -753,6 +1006,7 @@ $color-primary-button__background--hover
 	margin: 0 auto 10px;
 	position: relative;
 	color: var(--color-mg-icon-svg__background);
+	fill: var(--color-mg-icon-svg__background);
 }
 .b-markguide-icon__svg svg {
 	width: 100%;
@@ -851,6 +1105,26 @@ $color-primary-button__background--hover
 .b-markguide-icon__code ::selection {
 	background-color: var(--color-mg-icon-code__background--selection);
 	color: var(--color-mg-icon-code__color--selection);
+}
+
+.b-markguide-typography {
+	margin-bottom: 30px;
+}
+.b-markguide-typography__symbols {
+	display: flex;
+	flex-direction: row;
+	gap: 4px;
+	margin-bottom: 10px;
+}
+.b-markguide-typography__symbol {
+	font-size: 22px;
+	width: 2em;
+	border: 1px solid var(--color-mg-typography-symbol__border);
+	text-align: center;
+}
+.b-markguide-typography__example {
+	font-size: 42px;
+	padding: 20px 0;
 }
 
 .highlight-element {
