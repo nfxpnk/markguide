@@ -4,12 +4,10 @@
     </div>
 
     <details class="js-copier b-markguide-markup">
-        <summary>Code:</summary>
-        <button class="b-markguide-markup__copy-button js-copier-button">Copy</button>
+        {{>copyButton}}
         <div class="b-markguide-code">
             <pre><code class="language-pug">{{pug}}</code></pre>
             <pre><code class="js-copier-text language-html">{{code}}</code></pre>
         </div>
-        <span role="region" aria-live="polite" class="b-markguide-markup__notifier js-playground__notifier"></span>
     </details>
 </div>

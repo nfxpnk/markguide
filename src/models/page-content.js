@@ -22,6 +22,7 @@ const markdownTemplates = '../views/includes/markdown';
 const getFile = fileURL => fs.readFileSync(path.join(__dirname, fileURL), 'utf8');
 const elements = {
     'heading': getFile(markdownTemplates + '/heading.mustache'),
+    'copyButton': getFile(markdownTemplates + '/copy-button.mustache'),
     'example': getFile(markdownTemplates + '/example.mustache'),
     'examplePug': getFile(markdownTemplates + '/example-pug.mustache'),
     'exampleArray': getFile(markdownTemplates + '/example-array.mustache'),
@@ -158,7 +159,7 @@ function renderedPageContent(fileURL, options) {
             code: code,
             language: language.replace(/_example/, ''),
             title: options.title + '-code-' + codeItemCount
-        });
+        }, {copyButton: elements.copyButton});
 
         const exampleMarkupArray = mustache.render(elements.exampleArray, {
             style: parentStyles,
@@ -166,13 +167,13 @@ function renderedPageContent(fileURL, options) {
             codeArray: exampleArray,
             language: language.replace(/_example/, ''),
             title: options.title + '-code-' + codeItemCount
-        });
+        }, {copyButton: elements.copyButton});
 
         const regularMarkup = mustache.render(elements.code, {
             code: code,
             language: language,
             class: language
-        });
+        }, {copyButton: elements.copyButton});
 
         codeItemCount += 1;
 

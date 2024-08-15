@@ -11,13 +11,13 @@ class Copier {
     showMessage() {
         const message = 'Copied!';
         const messageBlock = document.createElement('div');
-        messageBlock.className = 'b-markguide-copier__message';
+        messageBlock.className = 'b-markguide-markup__copy-message';
         messageBlock.textContent = message;
-        this.instance.appendChild(messageBlock);
+        this.copyButton.insertAdjacentElement('afterend', messageBlock);
 
         setTimeout(() => {
             messageBlock.remove();
-        }, 700);
+        }, 1500);
     }
 
     copyText() {
