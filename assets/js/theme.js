@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let theme = window.sessionStorage.getItem('markguide-theme') || 'light';
     const htmlTag = document.querySelector('html');
     const themeButton = document.getElementById('js-markguide-theme');
-    console.log(themeButton);
+
     setTheme();
 
     themeButton.addEventListener('click', () => {
