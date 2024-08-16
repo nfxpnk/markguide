@@ -21,7 +21,7 @@
     </style>
 
     {{#projectStyles}}
-    <link rel="stylesheet" type="text/css" href="styles/{{.}}.css"/>
+    <link rel="stylesheet" type="text/css" href="{{.}}"/>
     {{/projectStyles}}
 
     <script>
@@ -29,7 +29,7 @@
     </script>
 
     {{#projectScripts}}
-    <script async="async" src="scripts/{{.}}.js" crossorigin="anonymous"></script>
+    <script async="async" src="{{.}}" crossorigin="anonymous"></script>
     {{/projectScripts}}
 
     {{> assetshead}}
