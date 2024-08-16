@@ -1094,6 +1094,7 @@ $color-primary-button__background--hover
 .b-markguide-typography__symbols {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	gap: 4px;
 	margin-bottom: 10px;
 }
