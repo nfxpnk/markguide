@@ -12,9 +12,19 @@
     </div>
 </div>
 
+<style>
+    .b-markguide-typography h2,
+    .b-markguide-typography__symbols,
+    .b-markguide-typography__example {
+        font-family: var(--family);
+        font-weight: var(--weight);
+        font-style: var(--style);
+    }
+</style>
+
 <div class="plugin-body">
     {{#fonts}}
-        <div class="b-markguide-typography" style="font-family: '{{family}}'; font-weight: {{weight}}; font-style: {{style}};">
+        <div class="b-markguide-typography" style="--family: '{{family}}'; --weight: {{weight}}; --style: {{style}};">
             <h2>{{family}} - {{weight}} - {{style}}</h2>
 
             <div class="b-markguide-typography__symbols">
