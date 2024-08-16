@@ -704,6 +704,10 @@ $color-primary-button__background--hover
 	border: 1px solid var(--color-mg-markup__border);
 }
 .b-markguide-markup__summary {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
 	cursor: pointer;
 	display: list-item;
 	outline: revert !important;
@@ -736,6 +740,9 @@ $color-primary-button__background--hover
 	justify-content: center;
 	margin: 0;
 	padding: 0;
+	position: absolute;
+	right: 15px;
+	top: 8px;
 	width: 24px;
 }
 .b-markguide-markup__copy-button:focus {
@@ -748,14 +755,14 @@ $color-primary-button__background--hover
 }
 .b-markguide-markup__copy-message {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 400;
 	line-height: 1.5;
 	right: 54px;
 	pointer-events: none;
 	position: absolute;
 	text-align: center;
-	top: 9px;
+	top: 11px;
 	transition-property: opacity, visibility;
 	transition: ease 0.6s;
 	z-index: 10;
