@@ -3,6 +3,7 @@ $c-black: #000;
 $c-grey: #ccc;
 
 $c-grey-200: #f7f7f7;
+$c-grey-250: #e5e5e5;
 $c-grey-300: #717171;
 $c-grey-400: #434643;
 $c-grey-500: #333;
@@ -157,7 +158,7 @@ $color-primary-button__background--hover
 	--color-markdown-blockquote__color: #{$c-grey-400};
 	--color-markdown-body-heading__border: #{$c-grey};
 	--color-markdown-body__color--placeholder: #{$c-grey};
-	--color-markdown-code__background: #{$c-blue-200};
+	--color-markdown-code__background: #{$c-grey-250};
 	--color-markdown-hr__background: #{$c-grey};
 	--color-markdown-hr__border: #{$c-grey};
 	--color-markdown-img__background: #{$c-white};
