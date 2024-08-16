@@ -9,6 +9,10 @@ class Copier {
     }
 
     showMessage() {
+        if (this.instance.querySelector('.b-markguide-markup__copy-message')) {
+            return; // If the message is already there, don't add a new one
+        }
+
         const message = 'Copied!';
         const messageBlock = document.createElement('div');
         messageBlock.className = 'b-markguide-markup__copy-message';
@@ -16,7 +20,11 @@ class Copier {
         this.copyButton.insertAdjacentElement('afterend', messageBlock);
 
         setTimeout(() => {
-            messageBlock.remove();
+            messageBlock.style.opacity = '0';  // Fade out by reducing opacity
+            // Remove the element after the fade-out transition is complete
+            messageBlock.addEventListener('transitionend', () => {
+                messageBlock.remove();
+            });
         }, 1500);
     }
 
