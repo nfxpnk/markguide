@@ -11,6 +11,10 @@ const { fs, path, log, c } = require('./common-utils.js');
 function copyFiles(sourceDir, destDir, ext) {
     const items = fs.readdirSync(sourceDir);
 
+    if (!fs.existsSync(destDir)) {
+        fs.mkdirSync(destDir, { recursive: true });
+    }
+
     items.forEach(item => {
         const sourcePath = path.join(sourceDir, item);
         const destPath = path.join(destDir, item);
