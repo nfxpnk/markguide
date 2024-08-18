@@ -430,6 +430,9 @@ const markguide = require('markguide').withConfig({config: 'here'});
 markguide.buildAll().then(...); // compile all components, guidelines
 ```
 
+## Development tree
+![Development tree](assets/images/development-tree.png)
+
 ## Troubleshooting
 
 ### We have 2 document comments `/*md` in scss file, but only first is shown in documentation.
