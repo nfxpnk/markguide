@@ -23,7 +23,6 @@
         "lorem-ipsum": "^2.0.8",
         "marked": "^14.0.0",
         "mustache": "^4.2.0",
-        "prettier": "^3.3.3",
         "pug": "^3.0.3"
     },
     "devDependencies": {
@@ -36,6 +35,7 @@
         "gulp-sourcemaps": "3.0.0",
         "postcss": "^8.4.41",
         "postcss-scss": "^4.0.9",
+        "prettier": "^3.3.3",
         "sass": "^1.77.8",
         "stylelint": "16.8.2",
         "stylelint-config-standard-scss": "^13.1.0",
