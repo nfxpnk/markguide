@@ -2,13 +2,14 @@
 
 ## Task: `server:up`
 
-Starts a local server for serving static assets with live reload enabled. This server serves files from the guide destination and the project's compiled files.
+Starts a local server for serving static assets with livereload enabled. This server serves files from the guide destination and the project's compiled files.
 
 #### Key Points:
 
 - Serves files from the `config.guideDest` and `config.projectStaticFiles` directories.
-- Runs on port 5000 and enables live reload on port 9000.
+- Runs on port `5000` and enables live reload on port `9000`.
 - Adds CORS headers to responses.
+- Logs a message indicating the server is running.
 
 ## Task: `server:reload:guide`
 
@@ -26,6 +27,8 @@ Compiles Sass files for assets into the specified destination folder.
 
 - Compiles Sass files from `config.sassSrc`.
 - Outputs the compiled CSS to `config.sassDest`.
+- Applies PostCSS processing with Autoprefixer.
+- Handles Sass compilation errors with custom logging.
 
 ## Task: `compile:styles:assets:markguide`
 
@@ -33,8 +36,8 @@ Compiles Sass files for assets into the markguide destination folder.
 
 #### Key Points:
 
-- Compiles Sass files from config.sassSrc.
-- Outputs the compiled CSS to the assets/css directory within the config.guideDest folder.
+- Compiles Sass files from `config.sassSrc`.
+- Outputs the compiled CSS to the `assets/css` directory within the `config.guideDest` folder.
 
 ## Task: `scss:watch`
 
@@ -76,8 +79,8 @@ Watches for changes in Sass and Markdown files and triggers incremental compilat
 
 #### Key Points:
 
-- Watches for changes in all .scss and .md files within the config.guideSrc directory.
-- On change, runs the markguide:compile:incremental and server:reload:guide tasks.
+- Watches for changes in all `.scss` and .md files within the `config.guideSrc` directory.
+- On change, runs the `markguide:compile:incremental` and `server:reload:guide tasks`.
 
 ## Task: `dev`
 
