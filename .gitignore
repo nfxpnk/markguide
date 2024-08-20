@@ -31,6 +31,9 @@ node_modules
 # Config files for your projects
 .markguiderc.*.json
 
+# Build script
+build.sh
+
 # Example static files
 _example/markguide-static/*.html
 _example/markguide-static/*.js
