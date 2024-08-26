@@ -478,6 +478,7 @@ Include: _b-button.pug
             <div><!--
 Classes:
 .m-width_full - Full width
+.m-width_full.m-light - Class combination (Full width + Light)
 :disabled - Disabled
 :hover - Hover
 :active - Active
@@ -498,6 +499,16 @@ Include: _b-button.html
 -->
 
 <button class="b-button m-width_full">
+	button from html file
+</button></div>
+            </div>
+            <div class="b-markguide-html__item">
+                <h2 class="b-markguide-html__item-heading">.m-width_full.m-light - Class combination (Full width + Light)</h2>
+                <div><!--
+Include: _b-button.html
+-->
+
+<button class="b-button m-width_full m-light">
 	button from html file
 </button></div>
             </div>
@@ -553,6 +564,7 @@ Include: _b-button.html
             <pre><code class="js-copier-text language-html">&lt;!--
 Classes:
 .m-width_full - Full width
+.m-width_full.m-light - Class combination (Full width + Light)
 :disabled - Disabled
 :hover - Hover
 :active - Active
