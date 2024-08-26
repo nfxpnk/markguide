@@ -131,7 +131,8 @@ function renderedPageContent(fileURL, options) {
                 e = e.trim();
                 e = e.split(' - ');
                 let className = e[0];
-                e[0] = e[0].replace(/\./g, '');
+
+                e[0] = e[0].replace(/\./g, ' ').trim();
                 e[0] = e[0].replace(/:/g, 'pseudo-class-');
                 return {
                     modifier: e[0],
@@ -195,7 +196,7 @@ function renderedPageContent(fileURL, options) {
                 pug: code,
                 code: pugCompiled,
                 title: options.title + '-code-' + codeItemCount
-            });
+            }, {copyButton: elements.copyButton});
         } else {
             return regularMarkup;
         }
