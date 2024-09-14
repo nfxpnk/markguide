@@ -63,6 +63,8 @@ function getMandatoryBaseConfig(config) {
     markguideConfig.projectStyles = modifyFilePaths(markguideConfig.projectStyles, 'css');
     markguideConfig.projectScripts = modifyFilePaths(markguideConfig.projectScripts, 'js');
 
+    markguideConfig.sourceReplacements = config.sourceReplacements || {};
+
     /**
      * Modify file paths in the array based on their type.
      * @param {Array} files - Array of file paths (URLs or basenames).

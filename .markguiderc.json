@@ -66,5 +66,8 @@
                 "weight": "700"
             }
         }
-    ]
+    ],
+    "sourceReplacements": {
+        "../images/": "images/"
+    }
 }
