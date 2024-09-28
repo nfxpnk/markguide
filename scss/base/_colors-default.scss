@@ -14,6 +14,9 @@ $c-blue-400: #5a9cd8;
 $c-blue-500: #3a7ac1;
 $c-blue-600: #0d3880;
 
+$c-purple-100: #efe2f9;
+$c-purple-200: #ddc0f7;
+
 $temp-all: #79aea5;
 
 // $c-white: $temp-all;
@@ -29,6 +32,9 @@ $temp-all: #79aea5;
 // $c-blue-400: $temp-all;
 // $c-blue-500: $temp-all;
 // $c-blue-600: $temp-all;
+
+// $c-purple-100: $temp-all;
+// $c-purple-200: $temp-all;
 
 /*
 # Naming convention for Themes SCSS variables and CSS custom properties
@@ -147,6 +153,13 @@ $color-primary-button__background--hover
 	--color-mg-color__border: #{$c-grey};
 	--color-mg-color-name__color: #{$c-black};
 	--color-mg-color-code__color: #{$c-black};
+	--color-mg-list-color-figure__border: #{$c-grey};
+	--color-mg-list-color-name__border: #{$c-grey-200};
+	--color-mg-list-color-name__background: #{$c-grey-250};
+	--color-mg-list-color-code__border: #{$c-blue-200};
+	--color-mg-list-color-code__background: #{$c-blue-100};
+	--color-mg-list-color-hex__border: #{$c-purple-200};
+	--color-mg-list-color-hex__background: #{$c-purple-100};
 
 	// typography
 	--color-mg-typography-symbol__border: #{$c-grey};

@@ -85,6 +85,7 @@ class colorsl360Plugin extends basePlugin {
         let colorSections = [];
 
         let sharedColors = null;
+        let semanticColors = false;
         for (let i = 0; i <= lines.length; ++i) {
             let line = lines[i];
 
@@ -94,6 +95,10 @@ class colorsl360Plugin extends basePlugin {
 
             if (line.startsWith('// Shared colors')) {
                 sharedColors = true;
+            }
+
+            if (line.startsWith('// end of the main palette')) {
+                semanticColors = true;
             }
 
             if (sharedColors === null) {
@@ -114,6 +119,7 @@ class colorsl360Plugin extends basePlugin {
                 }
 
                 colorsCollection.name = line.slice(4);
+                colorsCollection.type = semanticColors;
             }
 
             if (line.startsWith('$')) {
