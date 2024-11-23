@@ -33,7 +33,8 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
 
     <script>
-        window.contexts = ["global"]
+        window.contexts = ['global'];
+        window.assetsStaticURL = '/scripts/';
     </script>
 
     <script async="async" src="scripts/main.js" crossorigin="anonymous"></script>
@@ -111,7 +112,9 @@
                     markguide
                     1.0.1
                 </p>
-            </div>
+                <p class="b-markguide-footer-build-date">
+                    <span id="build-date"></span>
+                </p>            </div>
         </div>
 
         <button class="b-markguide-aside-ctrl" id="js-markguide-aside-resizer" title="Double click to toggle aside"></button>
@@ -868,19 +871,19 @@ This line is part of the same quote.</p>
                     <section class="markdown-code">
                         <div class="b-markguide-code no-highlight">
 	<pre><code class="language-no-highlight">&lt;dl&gt;
-    &lt;dt&gt;Definition list&lt;&#x2F;dt&gt;
-    &lt;dd&gt;Is something people use sometimes.&lt;&#x2F;dd&gt;
+	&lt;dt&gt;Definition list&lt;&#x2F;dt&gt;
+	&lt;dd&gt;Is something people use sometimes.&lt;&#x2F;dd&gt;
 
-    &lt;dt&gt;Markdown in HTML&lt;&#x2F;dt&gt;
-    &lt;dd&gt;Does *not* work **very** well. Use HTML &lt;em&gt;tags&lt;&#x2F;em&gt;.&lt;&#x2F;dd&gt;
+	&lt;dt&gt;Markdown in HTML&lt;&#x2F;dt&gt;
+	&lt;dd&gt;Does *not* work **very** well. Use HTML &lt;em&gt;tags&lt;&#x2F;em&gt;.&lt;&#x2F;dd&gt;
 &lt;&#x2F;dl&gt;</code></pre>
 </div>
 
                     </section>
                     <section class="markdown-body">
                         <dl>
-    <dt>Definition list</dt>
-    <dd>Is something people use sometimes.</dd>
+	<dt>Definition list</dt>
+	<dd>Is something people use sometimes.</dd>
 
 
                     </section>
@@ -1239,11 +1242,11 @@ Lots of it...</code></pre>
 </div>
 <ul>
 <li>   Tab<ul>
-<li>   Tab<ul>
-<li>   Tab</li>
+<li>Tab</li>
 </ul>
-</li>
-</ul>
+<div class="b-markguide-code text">
+	<pre><code class="language-text">   *    Tab</code></pre>
+</div>
 </li>
 </ul>
 <p>Here&#39;s another:</p>
@@ -1275,7 +1278,7 @@ Lots of it...</code></pre>
 <ul>
 <li><p>   this</p>
 <ul>
-<li>   sub</li>
+<li>sub</li>
 </ul>
 <p>   that</p>
 </li>
@@ -2605,7 +2608,7 @@ break] with a line-ending space.</p>
 <p>[this] [that] and the [other]</p>
 <p>Here&#39;s a simple block:</p>
 <div>
-    foo
+	foo
 </div>
 
 <p>This should be a code block, though:</p>
@@ -2614,7 +2617,7 @@ break] with a line-ending space.</p>
                     <section class="markdown-code">
                         <div class="b-markguide-code text">
 	<pre><code class="language-text">&lt;div&gt;
-    foo
+	foo
 &lt;&#x2F;div&gt;</code></pre>
 </div>
 
@@ -2632,11 +2635,11 @@ break] with a line-ending space.</p>
                     <section class="markdown-body">
                         <p>Now, nested:</p>
 <div>
-    <div>
-        <div>
-            foo
-        </div>
-    </div>
+	<div>
+		<div>
+			foo
+		</div>
+	</div>
 </div>
 
 <p>This should just be an HTML comment:</p>
@@ -2925,6 +2928,7 @@ Blah
 <script src="assets/js/box-model.js"></script>
 <script src="assets/js/typography.js"></script>
 <script src="assets/js/back-to-top.js"></script>
+<script src="assets/js/build-date.js"></script>
 
 <script src="nav.js"></script>
 

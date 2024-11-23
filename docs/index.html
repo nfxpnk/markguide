@@ -33,7 +33,8 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
 
     <script>
-        window.contexts = ["global"]
+        window.contexts = ['global'];
+        window.assetsStaticURL = '/scripts/';
     </script>
 
     <script async="async" src="scripts/main.js" crossorigin="anonymous"></script>
@@ -111,7 +112,9 @@
                     markguide
                     1.0.1
                 </p>
-            </div>
+                <p class="b-markguide-footer-build-date">
+                    <span id="build-date"></span>
+                </p>            </div>
         </div>
 
         <button class="b-markguide-aside-ctrl" id="js-markguide-aside-resizer" title="Double click to toggle aside"></button>
@@ -1227,6 +1230,7 @@ markguide.buildAll().then(...); &#x2F;&#x2F; compile all components, guidelines<
 <script src="assets/js/box-model.js"></script>
 <script src="assets/js/typography.js"></script>
 <script src="assets/js/back-to-top.js"></script>
+<script src="assets/js/build-date.js"></script>
 
 <script src="nav.js"></script>
 

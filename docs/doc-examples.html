@@ -33,7 +33,8 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
 
     <script>
-        window.contexts = ["global"]
+        window.contexts = ['global'];
+        window.assetsStaticURL = '/scripts/';
     </script>
 
     <script async="async" src="scripts/main.js" crossorigin="anonymous"></script>
@@ -111,7 +112,9 @@
                     markguide
                     1.0.1
                 </p>
-            </div>
+                <p class="b-markguide-footer-build-date">
+                    <span id="build-date"></span>
+                </p>            </div>
         </div>
 
         <button class="b-markguide-aside-ctrl" id="js-markguide-aside-resizer" title="Double click to toggle aside"></button>
@@ -181,11 +184,11 @@
                     <section class="markdown-code">
                         <div class="b-markguide-code scss">
 	<pre><code class="language-scss">body {
-    background: white;
+	background: white;
 }
 
 .class {
-    padding: 10px;
+	padding: 10px;
 }</code></pre>
 </div>
 
@@ -300,12 +303,12 @@ block content
                     <section class="markdown-code">
                         <div>
     <div class="b-markguide-html">
-        <div class="b-markguide-html__item"><div class="b-simple_error m-green">Nisi occaecat incididunt mollit nostrud esse ea laborum nostrud minim in. Consequat veniam adipisicing laboris proident pariatur.</div>
-<div class="b-simple_error m-orange">Et tempor irure aliquip aute consectetur labore exercitation consectetur id. Occaecat minim elit id est pariatur nulla cupidatat et veniam.</div>
-<div class="b-simple_error m-blue">Elit culpa pariatur qui. Sunt officia sunt ut cupidatat nisi labore duis pariatur do dolore reprehenderit occaecat amet non ipsum.</div>
-<div class="b-simple_error m-red">Nulla irure laboris eu consectetur ullamco sit deserunt sit. Excepteur nisi est sint sint ipsum cillum.</div>
-<div class="b-simple_error m-hotpink">Elit pariatur labore non fugiat aliquip. Officia adipisicing enim nostrud irure sint ut non consequat tempor sint voluptate fugiat proident consectetur.</div>
-<div class="b-simple_error m-magenta">Et fugiat occaecat tempor quis in magna elit consectetur veniam in aliqua. Occaecat minim occaecat excepteur exercitation laboris deserunt irure commodo consectetur minim proident mollit elit consequat officia.</div></div>
+        <div class="b-markguide-html__item"><div class="b-simple_error m-green">Reprehenderit anim magna nostrud tempor velit dolor. Est et tempor pariatur fugiat aliquip commodo.</div>
+<div class="b-simple_error m-orange">Ea nulla quis proident tempor. Occaecat sit duis labore fugiat dolor ullamco elit pariatur do occaecat laboris.</div>
+<div class="b-simple_error m-blue">Deserunt minim dolor deserunt ea exercitation occaecat ut ad aliquip labore occaecat do. Adipisicing commodo Lorem ex nisi.</div>
+<div class="b-simple_error m-red">Voluptate in labore exercitation tempor ipsum anim ipsum ex amet ipsum qui officia proident laboris exercitation. Culpa ad pariatur labore reprehenderit ad dolor in.</div>
+<div class="b-simple_error m-hotpink">Proident mollit aliqua culpa officia veniam. Reprehenderit minim eiusmod magna veniam irure nulla ad tempor.</div>
+<div class="b-simple_error m-magenta">Reprehenderit enim consequat culpa ea qui deserunt nulla. Fugiat dolor proident in aliquip nostrud duis non laborum veniam.</div></div>
     </div>
 
     <details class="js-copier b-markguide-markup">
@@ -317,12 +320,12 @@ block content
         </button>        <div class="b-markguide-code">
             <pre><code class="language-pug">each modifier in [&#39;m-green&#39;, &#39;m-orange&#39;, &#39;m-blue&#39;, &#39;m-red&#39;, &#39;m-hotpink&#39;, &#39;m-magenta&#39;]
   .b-simple_error(class&#x3D;modifier) {lorem} {lorem}</code></pre>
-            <pre><code class="js-copier-text language-html">&lt;div class&#x3D;&quot;b-simple_error m-green&quot;&gt;Nisi occaecat incididunt mollit nostrud esse ea laborum nostrud minim in. Consequat veniam adipisicing laboris proident pariatur.&lt;&#x2F;div&gt;
-&lt;div class&#x3D;&quot;b-simple_error m-orange&quot;&gt;Et tempor irure aliquip aute consectetur labore exercitation consectetur id. Occaecat minim elit id est pariatur nulla cupidatat et veniam.&lt;&#x2F;div&gt;
-&lt;div class&#x3D;&quot;b-simple_error m-blue&quot;&gt;Elit culpa pariatur qui. Sunt officia sunt ut cupidatat nisi labore duis pariatur do dolore reprehenderit occaecat amet non ipsum.&lt;&#x2F;div&gt;
-&lt;div class&#x3D;&quot;b-simple_error m-red&quot;&gt;Nulla irure laboris eu consectetur ullamco sit deserunt sit. Excepteur nisi est sint sint ipsum cillum.&lt;&#x2F;div&gt;
-&lt;div class&#x3D;&quot;b-simple_error m-hotpink&quot;&gt;Elit pariatur labore non fugiat aliquip. Officia adipisicing enim nostrud irure sint ut non consequat tempor sint voluptate fugiat proident consectetur.&lt;&#x2F;div&gt;
-&lt;div class&#x3D;&quot;b-simple_error m-magenta&quot;&gt;Et fugiat occaecat tempor quis in magna elit consectetur veniam in aliqua. Occaecat minim occaecat excepteur exercitation laboris deserunt irure commodo consectetur minim proident mollit elit consequat officia.&lt;&#x2F;div&gt;</code></pre>
+            <pre><code class="js-copier-text language-html">&lt;div class&#x3D;&quot;b-simple_error m-green&quot;&gt;Reprehenderit anim magna nostrud tempor velit dolor. Est et tempor pariatur fugiat aliquip commodo.&lt;&#x2F;div&gt;
+&lt;div class&#x3D;&quot;b-simple_error m-orange&quot;&gt;Ea nulla quis proident tempor. Occaecat sit duis labore fugiat dolor ullamco elit pariatur do occaecat laboris.&lt;&#x2F;div&gt;
+&lt;div class&#x3D;&quot;b-simple_error m-blue&quot;&gt;Deserunt minim dolor deserunt ea exercitation occaecat ut ad aliquip labore occaecat do. Adipisicing commodo Lorem ex nisi.&lt;&#x2F;div&gt;
+&lt;div class&#x3D;&quot;b-simple_error m-red&quot;&gt;Voluptate in labore exercitation tempor ipsum anim ipsum ex amet ipsum qui officia proident laboris exercitation. Culpa ad pariatur labore reprehenderit ad dolor in.&lt;&#x2F;div&gt;
+&lt;div class&#x3D;&quot;b-simple_error m-hotpink&quot;&gt;Proident mollit aliqua culpa officia veniam. Reprehenderit minim eiusmod magna veniam irure nulla ad tempor.&lt;&#x2F;div&gt;
+&lt;div class&#x3D;&quot;b-simple_error m-magenta&quot;&gt;Reprehenderit enim consequat culpa ea qui deserunt nulla. Fugiat dolor proident in aliquip nostrud duis non laborum veniam.&lt;&#x2F;div&gt;</code></pre>
         </div>
     </details>
 </div>
@@ -377,8 +380,8 @@ block content
 </div>
 <div class="article">
   <div class="article-wrapper">
-    <h1>Laboris consequat labore culpa voluptate irure eu exercitation adipisicing ea.</h1>
-    <p>Laborum magna dolore ea aute amet elit mollit quis sint dolor fugiat fugiat officia ut.</p>
+    <h1>Occaecat enim pariatur pariatur duis consectetur eu sint aute proident magna incididunt.</h1>
+    <p>Labore consectetur excepteur excepteur magna ipsum reprehenderit occaecat nostrud qui magna laboris.</p>
   </div>
 </div></div>
     </div>
@@ -437,8 +440,8 @@ mixin article(title&#x3D;&#39;Default Title&#39;, p&#x3D;&#39;Text&#39;)
 &lt;&#x2F;div&gt;
 &lt;div class&#x3D;&quot;article&quot;&gt;
   &lt;div class&#x3D;&quot;article-wrapper&quot;&gt;
-    &lt;h1&gt;Laboris consequat labore culpa voluptate irure eu exercitation adipisicing ea.&lt;&#x2F;h1&gt;
-    &lt;p&gt;Laborum magna dolore ea aute amet elit mollit quis sint dolor fugiat fugiat officia ut.&lt;&#x2F;p&gt;
+    &lt;h1&gt;Occaecat enim pariatur pariatur duis consectetur eu sint aute proident magna incididunt.&lt;&#x2F;h1&gt;
+    &lt;p&gt;Labore consectetur excepteur excepteur magna ipsum reprehenderit occaecat nostrud qui magna laboris.&lt;&#x2F;p&gt;
   &lt;&#x2F;div&gt;
 &lt;&#x2F;div&gt;</code></pre>
         </div>
@@ -487,6 +490,7 @@ mixin article(title&#x3D;&#39;Default Title&#39;, p&#x3D;&#39;Text&#39;)
 <script src="assets/js/box-model.js"></script>
 <script src="assets/js/typography.js"></script>
 <script src="assets/js/back-to-top.js"></script>
+<script src="assets/js/build-date.js"></script>
 
 <script src="nav.js"></script>
 
