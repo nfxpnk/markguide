@@ -53,6 +53,9 @@ function withConfig(configPath) {
     const writeNavigation = require('./utils/write-navigation.js');
     writeNavigation(config, tree);
 
+    const writeBuildDate = require('./utils/write-build-date.js');
+    writeBuildDate(config);
+
     const buildComponent = require('./build-component.js')(config, tree).buildComponent;
 
     return {
