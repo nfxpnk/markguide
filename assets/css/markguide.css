@@ -258,8 +258,11 @@ $color-primary-button__background--hover
 	outline: none !important;
 }
 .l-markguide-aside__footer {
+	display: flex;
+	flex-direction: column;
 	margin-top: auto;
 	padding-top: 10px;
+	gap: 0;
 }
 
 .js-aside-panel-hidden .l-markguide-aside__header,
@@ -606,7 +609,6 @@ $color-primary-button__background--hover
 	display: block;
 	margin: 0;
 	overflow: hidden;
-	padding: 10px;
 	text-align: center;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -621,7 +623,6 @@ $color-primary-button__background--hover
 	display: block;
 	margin: 0;
 	overflow: hidden;
-	padding: 10px;
 	text-align: center;
 	text-overflow: ellipsis;
 	white-space: nowrap;
