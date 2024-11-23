@@ -1,0 +1,230 @@
+body,
+input,
+button,
+textarea,
+select {
+	font-family: "Roboto", "Arial";
+}
+
+input,
+button,
+textarea,
+select {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-size: 24px;
+	padding-bottom: 20px;
+	margin: 10px 0;
+}
+
+h2 {
+	font-size: 18px;
+	padding-bottom: 10px;
+	margin: 10px 0;
+}
+
+/*md
+# Palette
+
+This is palette settings for the project.
+
+*/
+/*md
+
+# g-example
+
+This component is designed to add border on any block.
+
+## Usage
+
+```scss
+@mixin g-example() {
+	border: 1px solid black;
+}
+
+.b-user {
+	@include g-example;
+}
+```
+*/
+/*md
+
+# Example button
+
+## No styles
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:active - Active
+:focus - Focus
+-->
+<button type="submit" class="b-button [modifier class]">
+    Primary
+</button>
+```
+
+## Dark background
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+:disabled - Disabled
+:hover - Hover
+:active - Active
+:focus - Focus
+-->
+<!--
+Parent Styles:
+background: #646464; color: white;
+-->
+<button type="submit" class="b-button m-light [modifier class]">
+    Primary
+</button>
+```
+
+## Include
+
+```html_example
+<!--
+Include: _b-button.html
+-->
+```
+
+## Include PUG
+
+```html_example
+<!--
+Include: _b-button.pug
+-->
+```
+
+## Include modifier
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+.m-width_full.m-light - Class combination (Full width + Light)
+:disabled - Disabled
+:hover - Hover
+:active - Active
+:focus - Focus
+-->
+<!--
+Include: _b-button.html
+-->
+```
+
+*/
+.b-button {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #fff;
+	background-color: #007bff;
+	border: 1px solid #007bff;
+	border-radius: 4px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.b-button.m-light {
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #fff;
+}
+.b-button.m-light:hover {
+	background-color: #f0f0f0;
+	border-color: #f0f0f0;
+}
+.b-button.m-light:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+.b-button.m-light:active {
+	background-color: #e0e0e0;
+	border-color: #e0e0e0;
+}
+.b-button.m-light:disabled {
+	background-color: #1c1c1c;
+	border-color: #1c1c1c;
+	color: #cccccc;
+	cursor: not-allowed;
+}
+.b-button.m-width_full {
+	width: 100%;
+}
+.b-button:hover {
+	background-color: #0056b3;
+	border-color: #0056b3;
+}
+.b-button:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+.b-button:active {
+	background-color: #004085;
+	border-color: #004085;
+}
+.b-button:disabled {
+	background-color: #cccccc;
+	border-color: #cccccc;
+	color: #666666;
+	cursor: not-allowed;
+}
+
+/*md
+
+# Example input
+
+```html_example
+<!--
+Classes:
+.m-width_full - Full width
+.m-error - Error
+:disabled - Disabled
+:hover - Hover
+:active - Active
+:focus - Focus
+-->
+<input type="text" class="b-input [modifier class]" placeholder="Text"/>
+```
+*/
+.b-input {
+	display: block;
+	padding: 10px;
+	font-size: 16px;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	transition: border-color 0.3s, box-shadow 0.3s;
+}
+.b-input.m-width_full {
+	width: 100%;
+}
+.b-input.m-error {
+	border-color: #f26262;
+}
+.b-input:hover {
+	border-color: #007bff;
+}
+.b-input:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+.b-input:disabled {
+	background-color: #e9ecef;
+	border-color: #ccc;
+	color: #6c757d;
+	cursor: not-allowed;
+}
