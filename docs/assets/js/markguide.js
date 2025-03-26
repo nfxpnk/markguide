@@ -4,8 +4,7 @@
     var MarkguideStateGenerator;
 
     MarkguideStateGenerator = (function() {
-        var pseudoSelectors;
-        pseudoSelectors = [
+        var pseudoSelectors = [
             'hover',
             'enabled',
             'disabled',
@@ -21,7 +20,17 @@
             'last-child'
         ];
 
+        var attributeSelectors = [
+            'disabled',
+            'readonly',
+            'required',
+            'checked',
+            'selected'
+        ];
+
         var pseudos = new RegExp("(\\:" + (pseudoSelectors.join('|\\:')) + ")", "g");
+
+        var attributes = new RegExp("(\\[" + (attributeSelectors.join('\\]|\\[')) + "\\])", "g");
 
         function MarkguideStateGenerator() {
             var stylesheet;
@@ -53,15 +62,24 @@
                 if (rule.type === CSSRule.MEDIA_RULE) {
                     //console.log('CSSRule.MEDIA_RULE');
                     this.insertRules(rule.cssRules);
-                } else if ((rule.type === CSSRule.STYLE_RULE) && pseudos.test(rule.selectorText)) {
+                } else if ((rule.type === CSSRule.STYLE_RULE) && (pseudos.test(rule.selectorText) || attributes.test(rule.selectorText))) {
                     //console.log('CSSRule.STYLE_RULE');
 
                     let replaceRule = function(matched) {
                         return matched.replace(/:/g, '.pseudo-class-');
                     };
+
+                    let replaceRule2 = function(matched) {
+                        return matched.replace(/\[([^\]]+)\]/g, '.attribute-class-$1');
+                    };
+
                     this.insertRule(rule.cssText.replace(pseudos, replaceRule));
+
+                    this.insertRule(rule.cssText.replace(attributes, replaceRule2));
                 }
+
                 pseudos.lastIndex = 0;
+                attributes.lastIndex = 0;
             }
         };
 
