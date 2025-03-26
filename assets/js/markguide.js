@@ -32,8 +32,6 @@
 
         var attributes = new RegExp("(\\[" + (attributeSelectors.join('\\]|\\[')) + "\\])", "g");
 
-        console.log("(\\[" + (attributeSelectors.join('\\]|\\[')) + "\\])");
-
         function MarkguideStateGenerator() {
             var stylesheet;
             var _i;
