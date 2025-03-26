@@ -134,6 +134,8 @@ function renderedPageContent(fileURL, options) {
 
                 e[0] = e[0].replace(/\./g, ' ').trim();
                 e[0] = e[0].replace(/:/g, 'pseudo-class-');
+                const reg = /\[([^\]]+)\]/g; // Matches [something] and captures "something"
+                e[0] = e[0].replace(reg, 'attribute-class-$1');
                 return {
                     modifier: e[0],
                     class: className,
