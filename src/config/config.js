@@ -41,7 +41,13 @@ function findConfig(config) {
             return config;
         }
 
-        const configPath = path.join(projectRoot, config);
+        let configPath;
+
+        if(path.isAbsolute(config)) {
+            configPath = config;
+        } else {
+            configPath = path.join(projectRoot, config);
+        }
 
         if (fs.existsSync(configPath)) {
             return require(configPath);
