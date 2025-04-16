@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <title>Styleguide - About</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico"/>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/markguide.css"/>
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style:  normal;
+            font-weight: 300;
+            src: url("styles/fonts/roboto-light.woff2") format("woff2");
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style:  normal;
+            font-weight: 400;
+            src: url("styles/fonts/roboto-regular.woff2") format("woff2");
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style:  normal;
+            font-weight: 700;
+            src: url("styles/fonts/roboto-bold.woff2") format("woff2");
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+
+    <script>
+        window.contexts = ['global'];
+        window.assetsStaticURL = '/scripts/';
+    </script>
+
+    <script async="async" src="scripts/main.js" crossorigin="anonymous"></script>
+
+
+    <script>
+        // Retrieve `asideWidth` from sessionStorage if available
+        const asideWidth = window.sessionStorage ? window.sessionStorage.getItem('asideWidth') : false;
+
+        // Set theme
+        let html = document.querySelector('html');
+        let theme = window.sessionStorage.getItem('markguide-theme') || 'light';
+        html.removeAttribute('data-' + theme + '-theme');
+        html.setAttribute('data-color-mode', theme);
+        html.setAttribute('data-' + theme + '-theme', theme);
+    </script>
+
+</head>
+<body class="b-markguide-page b-markguide-page_page">
+
+<div id="js-markguide-icons"></div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+	<symbol id="arrow-up-16" viewBox="0 0 16 16"><path fill="currentColor" d="M3.47 7.78a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0l4.25 4.25a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018L9 4.81v7.44a.75.75 0 0 1-1.5 0V4.81L4.53 7.78a.75.75 0 0 1-1.06 0Z"/></symbol>
+	<symbol id="book-16" viewBox="0 0 16 16"><path fill="currentColor" d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"/></symbol>
+	<symbol id="code-16" viewBox="0 0 16 16"><path fill="currentColor" d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"/></symbol>
+	<symbol id="copy-16" viewBox="0 0 16 16"><path fill="currentColor" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"/></symbol>
+	<symbol id="file-16" viewBox="0 0 16 16"><path fill="currentColor" d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"/></symbol>
+	<symbol id="file-code-16" viewBox="0 0 16 16"><path fill="currentColor" d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06ZM3.28 7.78 1.81 9.25l1.47 1.47a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Zm8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"/></symbol>
+	<symbol id="file-directory-fill-16" viewBox="0 0 16 16"><path fill="currentColor" d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z"/></symbol>
+	<symbol id="file-directory-open-fill-16" viewBox="0 0 16 16"><path fill="currentColor" d="M.513 1.513A1.75 1.75 0 0 1 1.75 1h3.5c.55 0 1.07.26 1.4.7l.9 1.2a.25.25 0 0 0 .2.1H13a1 1 0 0 1 1 1v.5H2.75a.75.75 0 0 0 0 1.5h11.978a1 1 0 0 1 .994 1.117L15 13.25A1.75 1.75 0 0 1 13.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75c0-.464.184-.91.513-1.237Z"/></symbol>
+	<symbol id="hash-16" viewBox="0 0 16 16"><path fill="currentColor" d="M6.368 1.01a.75.75 0 0 1 .623.859L6.57 4.5h3.98l.46-2.868a.75.75 0 0 1 1.48.237L12.07 4.5h2.18a.75.75 0 0 1 0 1.5h-2.42l-.64 4h2.56a.75.75 0 0 1 0 1.5h-2.8l-.46 2.869a.75.75 0 0 1-1.48-.237l.42-2.632H5.45l-.46 2.869a.75.75 0 0 1-1.48-.237l.42-2.632H1.75a.75.75 0 0 1 0-1.5h2.42l.64-4H2.25a.75.75 0 0 1 0-1.5h2.8l.46-2.868a.75.75 0 0 1 .858-.622ZM9.67 10l.64-4H6.33l-.64 4Z"/></symbol>
+	<symbol id="info-16" viewBox="0 0 16 16"><path fill="currentColor" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></symbol>
+	<symbol id="link-16" viewBox="0 0 16 16"><path fill="currentColor" d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></symbol>
+	<symbol id="link-external-16" viewBox="0 0 16 16"><path fill="currentColor" d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></symbol>
+	<symbol id="markdown-16" viewBox="0 0 16 16"><path fill="currentColor" d="M14.85 3c.63 0 1.15.52 1.14 1.15v7.7c0 .63-.51 1.15-1.15 1.15H1.15C.52 13 0 12.48 0 11.84V4.15C0 3.52.52 3 1.15 3ZM9 11V5H7L5.5 7 4 5H2v6h2V8l1.5 1.92L7 8v3Zm2.99.5L14.5 8H13V5h-2v3H9.5Z"/></symbol>
+	<symbol id="moon-16" viewBox="0 0 16 16"><path fill="currentColor" d="M9.598 1.591a.749.749 0 0 1 .785-.175 7.001 7.001 0 1 1-8.967 8.967.75.75 0 0 1 .961-.96 5.5 5.5 0 0 0 7.046-7.046.75.75 0 0 1 .175-.786Zm1.616 1.945a7 7 0 0 1-7.678 7.678 5.499 5.499 0 1 0 7.678-7.678Z"/></symbol>
+	<symbol id="paintbrush-16" viewBox="0 0 16 16"><path fill="currentColor" d="M11.134 1.535c.7-.509 1.416-.942 2.076-1.155.649-.21 1.463-.267 2.069.34.603.601.568 1.411.368 2.07-.202.668-.624 1.39-1.125 2.096-1.011 1.424-2.496 2.987-3.775 4.249-1.098 1.084-2.132 1.839-3.04 2.3a3.744 3.744 0 0 1-1.055 3.217c-.431.431-1.065.691-1.657.861-.614.177-1.294.287-1.914.357A21.151 21.151 0 0 1 .797 16H.743l.007-.75H.749L.742 16a.75.75 0 0 1-.743-.742l.743-.008-.742.007v-.054a21.25 21.25 0 0 1 .13-2.284c.067-.647.187-1.287.358-1.914.17-.591.43-1.226.86-1.657a3.746 3.746 0 0 1 3.227-1.054c.466-.893 1.225-1.907 2.314-2.982 1.271-1.255 2.833-2.75 4.245-3.777ZM1.62 13.089c-.051.464-.086.929-.104 1.395.466-.018.932-.053 1.396-.104a10.511 10.511 0 0 0 1.668-.309c.526-.151.856-.325 1.011-.48a2.25 2.25 0 1 0-3.182-3.182c-.155.155-.329.485-.48 1.01a10.515 10.515 0 0 0-.309 1.67Zm10.396-10.34c-1.224.89-2.605 2.189-3.822 3.384l1.718 1.718c1.21-1.205 2.51-2.597 3.387-3.833.47-.662.78-1.227.912-1.662.134-.444.032-.551.009-.575h-.001V1.78c-.014-.014-.113-.113-.548.027-.432.14-.995.462-1.655.942Zm-4.832 7.266-.001.001a9.859 9.859 0 0 0 1.63-1.142L7.155 7.216a9.7 9.7 0 0 0-1.161 1.607c.482.302.889.71 1.19 1.192Z"/></symbol>
+	<symbol id="screen-full-16" viewBox="0 0 16 16"><path fill="currentColor" d="M1.75 10a.75.75 0 0 1 .75.75v2.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 1 13.25v-2.5a.75.75 0 0 1 .75-.75Zm12.5 0a.75.75 0 0 1 .75.75v2.5A1.75 1.75 0 0 1 13.25 15h-2.5a.75.75 0 0 1 0-1.5h2.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 .75-.75ZM2.75 2.5a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0v-2.5C1 1.784 1.784 1 2.75 1h2.5a.75.75 0 0 1 0 1.5ZM10 1.75a.75.75 0 0 1 .75-.75h2.5c.966 0 1.75.784 1.75 1.75v2.5a.75.75 0 0 1-1.5 0v-2.5a.25.25 0 0 0-.25-.25h-2.5a.75.75 0 0 1-.75-.75Z"/></symbol>
+	<symbol id="screen-full-16" viewBox="0 0 16 16"><path fill="currentColor" d="M1.75 10a.75.75 0 0 1 .75.75v2.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 1 13.25v-2.5a.75.75 0 0 1 .75-.75Zm12.5 0a.75.75 0 0 1 .75.75v2.5A1.75 1.75 0 0 1 13.25 15h-2.5a.75.75 0 0 1 0-1.5h2.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 .75-.75ZM2.75 2.5a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0v-2.5C1 1.784 1.784 1 2.75 1h2.5a.75.75 0 0 1 0 1.5ZM10 1.75a.75.75 0 0 1 .75-.75h2.5c.966 0 1.75.784 1.75 1.75v2.5a.75.75 0 0 1-1.5 0v-2.5a.25.25 0 0 0-.25-.25h-2.5a.75.75 0 0 1-.75-.75Z"/></symbol>
+	<symbol id="screen-normal-16" viewBox="0 0 16 16"><path fill="currentColor" d="M10.75 1a.75.75 0 0 1 .75.75v2.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 10 4.25v-2.5a.75.75 0 0 1 .75-.75Zm-5.5 0a.75.75 0 0 1 .75.75v2.5A1.75 1.75 0 0 1 4.25 6h-2.5a.75.75 0 0 1 0-1.5h2.5a.25.25 0 0 0 .25-.25v-2.5A.75.75 0 0 1 5.25 1ZM1 10.75a.75.75 0 0 1 .75-.75h2.5c.966 0 1.75.784 1.75 1.75v2.5a.75.75 0 0 1-1.5 0v-2.5a.25.25 0 0 0-.25-.25h-2.5a.75.75 0 0 1-.75-.75Zm9 1c0-.966.784-1.75 1.75-1.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Z"/></symbol>
+	<symbol id="screen-normal-16" viewBox="0 0 16 16"><path fill="currentColor" d="M10.75 1a.75.75 0 0 1 .75.75v2.5c0 .138.112.25.25.25h2.5a.75.75 0 0 1 0 1.5h-2.5A1.75 1.75 0 0 1 10 4.25v-2.5a.75.75 0 0 1 .75-.75Zm-5.5 0a.75.75 0 0 1 .75.75v2.5A1.75 1.75 0 0 1 4.25 6h-2.5a.75.75 0 0 1 0-1.5h2.5a.25.25 0 0 0 .25-.25v-2.5A.75.75 0 0 1 5.25 1ZM1 10.75a.75.75 0 0 1 .75-.75h2.5c.966 0 1.75.784 1.75 1.75v2.5a.75.75 0 0 1-1.5 0v-2.5a.25.25 0 0 0-.25-.25h-2.5a.75.75 0 0 1-.75-.75Zm9 1c0-.966.784-1.75 1.75-1.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Z"/></symbol>
+	<symbol id="search-16" viewBox="0 0 16 16"><path fill="currentColor" d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></symbol>
+	<symbol id="sun-16" viewBox="0 0 16 16"><path fill="currentColor" d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0ZM3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8Zm13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8Zm-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13Zm3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"/></symbol>
+	<symbol id="typography-16" viewBox="0 0 16 16"><path fill="currentColor" d="M6.71 10H2.332l-.874 2.498a.75.75 0 0 1-1.415-.496l3.39-9.688a1.217 1.217 0 0 1 2.302.018l3.227 9.681a.75.75 0 0 1-1.423.474Zm3.13-4.358C10.53 4.374 11.87 4 13 4c1.5 0 3 .939 3 2.601v5.649a.75.75 0 0 1-1.448.275C13.995 12.82 13.3 13 12.5 13c-.77 0-1.514-.231-2.078-.709-.577-.488-.922-1.199-.922-2.041 0-.694.265-1.411.887-1.944C11 7.78 11.88 7.5 13 7.5h1.5v-.899c0-.54-.5-1.101-1.5-1.101-.869 0-1.528.282-1.84.858a.75.75 0 1 1-1.32-.716ZM6.21 8.5 4.574 3.594 2.857 8.5Zm8.29.5H13c-.881 0-1.375.22-1.637.444-.253.217-.363.5-.363.806 0 .408.155.697.39.896.249.21.63.354 1.11.354.732 0 1.26-.209 1.588-.449.35-.257.412-.495.412-.551Z"/></symbol>
+	<symbol id="x-circle-16" viewBox="0 0 16 16"><path fill="currentColor" d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"/></symbol>
+	<symbol id="confluence" viewBox="0 0 16 16"><path fill="currentColor" d="m1.476 11.67-.466.745a.492.492 0 0 0 .186.652l3.028 1.863a.466.466 0 0 0 .653-.14l.442-.745c1.212-1.957 2.423-1.724 4.59-.699l3.004 1.421a.466.466 0 0 0 .63-.21v-.023l1.467-3.284c.093-.233 0-.513-.233-.606l-3.028-1.42c-4.124-1.98-7.594-1.841-10.273 2.445z"/><path d="m14.505 4.308.465-.745a.466.466 0 0 0-.163-.653L11.78 1.047a.498.498 0 0 0-.652.186l-.443.746c-1.211 1.956-2.422 1.723-4.589.699L3.067 1.257c-.233-.117-.513 0-.629.233L.994 4.727c-.093.233 0 .513.233.606l3.028 1.421c4.123 1.957 7.594 1.84 10.25-2.446z"/></symbol>
+	<symbol id="icons" viewBox="0 0 16 16"><path fill="currentColor" d="M13.3 1c1 0 1.8.8 1.8 1.8v10.5c0 1-.8 1.8-1.8 1.8H2.8c-1 0-1.8-.8-1.8-1.8V2.8C1 1.8 1.8 1 2.8 1h10.5zM2.8 2.5c-.1 0-.3.1-.3.3v10.5c0 .1.1.3.3.3h10.5c.1 0 .3-.1.3-.3V2.8c0-.1-.1-.3-.3-.3H2.8zM6.1 7H4.9c-.5 0-.9-.4-.9-.9V4.9c0-.5.4-.9.9-.9h1.3c.4 0 .8.4.8.9v1.3c0 .4-.4.8-.9.8zm5 0H9.9c-.5 0-.9-.4-.9-.9V4.9c0-.5.4-.9.9-.9h1.3c.4 0 .8.4.8.9v1.3c0 .4-.4.8-.9.8zm-5 5H4.9c-.5 0-.9-.4-.9-.9V9.9c0-.5.4-.9.9-.9h1.3c.4 0 .8.4.8.9v1.3c0 .4-.4.8-.9.8zm5 0H9.9c-.5 0-.9-.4-.9-.9V9.9c0-.5.4-.9.9-.9h1.3c.4 0 .8.4.8.9v1.3c0 .4-.4.8-.9.8z"/></symbol>
+</svg>
+
+<div class="l-markguide-container" id="js-markguide-container">
+    <div class="l-markguide-container__aside" id="js-markguide-aside" role="contentinfo">
+        <script>
+            const asideElement = document.getElementById('js-markguide-aside');
+            asideElement.style.width = asideWidth ? `${asideWidth}px` : '';
+        </script>
+        <div class="l-markguide-aside">
+            <div class="l-markguide-aside__header">
+
+                <div class="b-markguide-search" role="search">
+                    <svg class="b-markguide-search__icon" width="16" height="16" role="img"><use href="#search-16"></use></svg>
+                    <input class="b-markguide-search__input" type="search" id="js-markguide-search" placeholder="Filter" autocomplete="off"/>
+                    <button class="b-markguide-search__clear" id="js-markguide-search-clear" title="Clear input">
+                        <svg width="16" height="16" role="img"><use href="#x-circle-16"></use></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="l-markguide-aside__content" role="navigation" id="js-markguide-aside-content">
+                <div class="b-markguide-navigation" role="list" id="js-markguide-navigation">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="l-markguide-aside__footer">
+                <p class="b-markguide-footer-copyright">
+                    &copy; 2025
+                    markguide
+                    1.0.1
+                </p>
+                <p class="b-markguide-footer-build-date">
+                    <span id="build-date"></span>
+                </p>            </div>
+        </div>
+
+        <button class="b-markguide-aside-ctrl" id="js-markguide-aside-resizer" title="Double click to toggle aside"></button>
+        <div class="b-markguide-aside-resizer-overlay" id="js-markguide-aside-resizer-overlay"></div>
+    </div>
+    <main role="main" class="l-markguide-container__main" id="js-markguide-main">
+        <div class="l-markguide-container__sticky-bar">
+            <div class="b-markguide-options-bar">
+                <button class="b-markguide-options-bar__top" id="js-markguide-top" type="button" title="Back to top">
+                    <svg width="16" height="16" viewBox="0 0 16 16" role="img">
+                        <use href="#arrow-up-16"></use>
+                    </svg>
+                </button>
+                <button class="b-markguide-options-bar__fullscreen" id="js-markguide-fullscreen" type="button" title="Go full screen">
+                    <svg width="16" height="16" viewBox="0 0 16 16" role="img">
+                        <use class="b-markguide-options-bar__fullscreen-normal" href="#screen-normal-16"></use>
+                        <use class="b-markguide-options-bar__fullscreen-full" href="#screen-full-16"></use>
+                    </svg>
+                </button>
+                <button class="b-markguide-options-bar__theme" id="js-markguide-theme" type="button" title="Toggle theme">
+                    <svg width="16" height="16" viewBox="0 0 16 16" role="img">
+                        <use class="b-markguide-options-bar__theme-dark" href="#moon-16"></use>
+                        <use class="b-markguide-options-bar__theme-light" href="#sun-16"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <script>
+            const mainElement = document.getElementById('js-markguide-main');
+            mainElement.style.marginLeft = asideWidth ? `${asideWidth}px` : '';
+        </script>
+
+<div class="l-markguide-page">
+    <div class="l-markguide-page__content">
+        <div class="l-markguide-page__main">
+            <div class="l-markguide-page__main-content">
+                <div class="b-markguide-overline">
+                    <svg width="16" height="16" role="img">
+                        <use href="#info-16"></use>
+                    </svg>
+                    <span>page</span>
+                </div>
+                <!-- page.mustache -->
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h1 class="heading-element">
+        Markguide
+    </h1>
+
+    <a id="h1-markguide" class="anchor" href="#h1-markguide">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>Markguide is a living style-guide, pattern library, guidelines, and documentation static site generator with plugins support. It generates documentation from markdown files and documentation comments in <code>scss</code> files.</p>
+<p>It is opinionated because it is probably impossible to cover all cases in CSS/Sass. It is designed primarily as a &quot;style-guide driven development&quot; tool with a focus on split files approach and encapsulated components with normative Sass import structures.</p>
+<ul>
+<li><a href="https://nfxpnk.github.io/markguide/">Live example</a></li>
+</ul>
+<div class="markdown-heading">
+    <h2 class="heading-element">
+        Folder Structure
+    </h2>
+
+    <a id="h2-folder-structure" class="anchor" href="#h2-folder-structure">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>This documentation provides an overview of the folder structure for this project, including the purpose of each folder and its contents.</p>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        <code>_example</code>
+    </h3>
+
+    <a id="h3--code-_example-code-" class="anchor" href="#h3--code-_example-code-">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>This folder contains SCSS example files and static HTML file destinations.</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code ">
+	<pre><code class="language-">|-- custom-plugins
+|   &#x60;-- dummy
+|-- markguide-static
+|   |-- assets
+|   |-- images
+|   |-- scripts
+|   &#x60;-- styles
+|-- projects-static-files
+&#x60;-- scss-source
+    |-- blocks
+    |-- components
+    &#x60;-- configuration</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h3 class="heading-element">
+        <code>_helpers</code>
+    </h3>
+
+    <a id="h3--code-_helpers-code-" class="anchor" href="#h3--code-_helpers-code-">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>This folder contains miscellaneous helper scripts.</p>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        <code>assets</code>
+    </h3>
+
+    <a id="h3--code-assets-code-" class="anchor" href="#h3--code-assets-code-">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>This folder contains CSS and JavaScript files for the static HTML files.</p>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        <code>bin</code>
+    </h3>
+
+    <a id="h3--code-bin-code-" class="anchor" href="#h3--code-bin-code-">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>This folder contains the executable files for the project&#39;s modules.</p>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        <code>scss</code>
+    </h3>
+
+    <a id="h3--code-scss-code-" class="anchor" href="#h3--code-scss-code-">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>This folder contains SCSS files for the style guide only.</p>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        <code>src</code>
+    </h3>
+
+    <a id="h3--code-src-code-" class="anchor" href="#h3--code-src-code-">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>This is the main folder that contains all the modules&#39; JavaScript files.</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code ">
+	<pre><code class="language-">|-- config
+|-- models
+|-- plugins
+|   |-- colors
+|   |-- icons
+|   &#x60;-- typography
+|-- utils
+|   &#x60;-- template-helpers
+&#x60;-- views
+    |-- includes
+    |   |-- markdown
+    |   &#x60;-- partials
+    &#x60;-- templates</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h2 class="heading-element">
+        Features
+    </h2>
+
+    <a id="h2-features" class="anchor" href="#h2-features">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<ul>
+<li>Blazing fast thanks to Mustache and Marked. It is primarily designed as a development platform.</li>
+<li>Supports incremental builds, so only changed pages are updated.</li>
+<li>Can be set up with livereload.</li>
+<li>Small list of dependencies:<ul>
+<li>ansi-colors</li>
+<li>fancy-log</li>
+<li>lorem-ipsum</li>
+<li>marked</li>
+<li>mustache</li>
+<li>pug</li>
+</ul>
+</li>
+<li>All internal templates and styles can be overwritten on the project level.</li>
+<li>Can be used as a simple guide docs generator.</li>
+</ul>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        Components library
+    </h3>
+
+    <a id="h3-components-library" class="anchor" href="#h3-components-library">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>Support <code>/*md</code> comment in <code>scss</code> files where regular markdown could be placed.</p>
+<ul>
+<li>consists of 3 main types of pages - component, guide could be expanded to many different types;</li>
+<li>navigation tree copy project tree, to ease of orientation and handling huge components library;</li>
+<li>plugins;</li>
+</ul>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        Guide
+    </h3>
+
+    <a id="h3-guide" class="anchor" href="#h3-guide">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>Support regular markdown files in components folders and process it as guideline pages.</p>
+<ul>
+<li>markdown support;</li>
+</ul>
+<div class="markdown-heading">
+    <h2 class="heading-element">
+        Getting started
+    </h2>
+
+    <a id="h2-getting-started" class="anchor" href="#h2-getting-started">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        Installing
+    </h3>
+
+    <a id="h3-installing" class="anchor" href="#h3-installing">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code ">
+	<pre><code class="language-">npm install markguide</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h3 class="heading-element">
+        Configuring
+    </h3>
+
+    <a id="h3-configuring" class="anchor" href="#h3-configuring">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<div class="markdown-heading">
+    <h4 class="heading-element">
+        Minimal configuration
+    </h4>
+
+    <a id="h4-minimal-configuration" class="anchor" href="#h4-minimal-configuration">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p><code>.markguiderc.json</code>:</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code json">
+	<pre><code class="language-json">{
+    &quot;guideSrc&quot;: &quot;_example&#x2F;scss-source&quot;,
+    &quot;guideDest&quot;: &quot;_example&#x2F;markguide-static&quot;,
+    &quot;cssSrc&quot;: &quot;assets&#x2F;css&quot;,
+    &quot;projectStaticFiles&quot;: &quot;_example&#x2F;projects-static-files&quot;,
+    &quot;projectImagesFolder&quot;: &quot;images&quot;,
+    &quot;projectStylesFolder&quot;: &quot;&quot;,
+    &quot;projectScriptsFolder&quot;: &quot;&quot;,
+    &quot;projectFontsFolder&quot;: &quot;fonts&quot;,
+    &quot;projectStyles&quot;: [
+        &quot;styles&quot;
+    ],
+    &quot;projectScripts&quot;: [
+        &quot;main&quot;
+    ],
+    &quot;internalAssetsPath&quot;: &quot;assets&quot;,
+    &quot;customPluginsPath&quot;: &quot;_example&#x2F;custom-plugins&quot;,
+    &quot;enabledPlugins&quot;: [
+        {
+            &quot;name&quot;: &quot;icons&quot;,
+            &quot;options&quot;: {
+                &quot;iconsFolder&quot;: &quot;icons&quot;,
+                &quot;fileExtension&quot;: &quot;svg&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;colors&quot;,
+            &quot;options&quot;: {
+                &quot;filePath&quot;: &quot;configuration&#x2F;_colors.scss&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;typography&quot;,
+            &quot;options&quot;: {}
+        },
+        {
+            &quot;name&quot;: &quot;dummy&quot;,
+            &quot;options&quot;: {
+                &quot;filePath&quot;: &quot;file.html&quot;
+            }
+        }
+    ],
+    &quot;projectFonts&quot;: [
+        {
+            &quot;filename&quot;: &quot;roboto-regular.woff2&quot;,
+            &quot;properties&quot;: {
+                &quot;family&quot;: &quot;Roboto&quot;,
+                &quot;style&quot;: &quot;normal&quot;,
+                &quot;weight&quot;: &quot;400&quot;
+            }
+        },
+        {
+            &quot;filename&quot;: &quot;roboto-bold.woff2&quot;,
+            &quot;properties&quot;: {
+                &quot;family&quot;: &quot;Roboto&quot;,
+                &quot;style&quot;: &quot;normal&quot;,
+                &quot;weight&quot;: &quot;700&quot;
+            }
+        }
+    ]
+}</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <p>Then in <code>package.json</code></p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code json">
+	<pre><code class="language-json">{
+  &quot;scripts&quot;: {
+    &quot;build-styleguide&quot;: &quot;markguide --build&#x3D;.&#x2F;path&#x2F;to&#x2F;config.json&quot;
+  }
+}</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h3 class="heading-element">
+        Writing documentation
+    </h3>
+
+    <a id="h3-writing-documentation" class="anchor" href="#h3-writing-documentation">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>In <code>path/to/scss/style.scss</code>:</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code scss">
+	<pre><code class="language-scss">&#x2F;*md
+
+# Component name
+
+Component description.
+
+Component example (Add one more backtick to make this example works):
+
+&#x60;&#x60;html_example
+&lt;h1&gt;Some&lt;&#x2F;h1&gt;
+&#x60;&#x60;
+
+&#x60;&#x60;pug_example
+h1 Some
+&#x60;&#x60;
+*&#x2F;
+
+.regular-scss-here {
+    margin: 0;
+}</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h3 class="heading-element">
+        Building
+    </h3>
+
+    <a id="h3-building" class="anchor" href="#h3-building">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code ">
+	<pre><code class="language-">npm run ???</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h3 class="heading-element">
+        API
+    </h3>
+
+    <a id="h3-api" class="anchor" href="#h3-api">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code js">
+	<pre><code class="language-js">const markguide &#x3D; require(&#39;markguide&#39;).withConfig(&#39;.&#x2F;project&#x2F;root&#x2F;path&#x2F;to&#x2F;config.json&#39;);
+&#x2F;&#x2F; or markguide &#x3D; require(&#39;markguide&#39;).withConfig({ rawConfigObject });
+markguide.build().then(...); &#x2F;&#x2F; build all guide files without reports. Returns promise.
+markguide.build(&#39;&#x2F;absolute&#x2F;path&#x2F;to&#x2F;changed&#x2F;file.scss&#39;).then(...); &#x2F;&#x2F; compile only particular file, if it marked as documented in project tree. Returns promise.
+markguide.buildAll().then(...); &#x2F;&#x2F; compile all guide pages. Returns promise.</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <p>Use <code>markguide.build()</code> for incremental development builds.</p>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        CLI
+    </h3>
+
+    <a id="h3-cli" class="anchor" href="#h3-cli">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code shell">
+	<pre><code class="language-shell">Usage: markguide [OPTION]
+
+Options:            
+  -b, --build&#x3D;FILE           build all markguide pages, followed with config &#39;--build&#x3D;.&#x2F;path&#x2F;to&#x2F;config.json&#39;
+  -v, --version              print version
+  --help                     print this message</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h2 class="heading-element">
+        Configuration
+    </h2>
+
+    <a id="h2-configuration" class="anchor" href="#h2-configuration">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>Require explicit configuration in <code>.withConfig()</code> method.</p>
+<p>Minimal configuration:</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code json">
+	<pre><code class="language-json">{
+    &quot;guideSrc&quot;: &quot;path&#x2F;to&#x2F;yours&#x2F;scss&#x2F;&quot;,
+    &quot;guideDest&quot;: &quot;path&#x2F;to&#x2F;your&#x2F;static&#x2F;folder&#x2F;for&#x2F;guide&#x2F;&quot;,
+    &quot;cssSrc&quot;: &quot;assets&#x2F;css&#x2F;&quot;
+}</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <p>You could place it wherever you want and target with:</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code js">
+	<pre><code class="language-js">const markguide &#x3D; require(&#39;markguide&#39;).withConfig(&#39;.&#x2F;from&#x2F;project&#x2F;root&#x2F;path&#x2F;to&#x2F;my&#x2F;config.json&#39;);</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <p>or with rawConfig object if you call markguide from js:</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code js">
+	<pre><code class="language-js">const markguide &#x3D; require(&#39;markguide&#39;).withConfig({
+    guideSrc: &#39;path&#x2F;to&#x2F;yours&#x2F;scss&#x2F;&#39;,
+    guideDest: &#39;path&#x2F;to&#x2F;your&#x2F;static&#x2F;folder&#x2F;for&#x2F;guide&#x2F;&#39;,
+    cssSrc: &#39;assets&#x2F;css&#x2F;&#39;
+    &#x2F;&#x2F; etc
+});</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h3 class="heading-element">
+        Templates overwrites
+    </h3>
+
+    <a id="h3-templates-overwrites" class="anchor" href="#h3-templates-overwrites">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>As the next step you, probably, want to add your project CSS and JS to render components examples properly.
+To make this happen you need to add <code>partials</code> to the config, with paths to the templates in your project space:</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code json">
+	<pre><code class="language-json">{
+    &quot;partials&quot;: {
+      &quot;assetshead&quot;: &quot;project-root&#x2F;path&#x2F;to&#x2F;project-head.mustache&quot;,
+      &quot;assetsfooter&quot;: &quot;project-root&#x2F;path&#x2F;to&#x2F;project-footer.mustache&quot;
+    }
+}</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <p>Note, that paths should be related to generated HTML, no matter where templates are stored. This is simple include that will be incorporated into resulted html.</p>
+<p>All templates and partials could be overwritten. Please see this repo views folder to get list of all templates and partials.</p>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        Configuration options
+    </h3>
+
+    <a id="h3-configuration-options" class="anchor" href="#h3-configuration-options">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code json">
+	<pre><code class="language-json">{
+
+}</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <ul>
+<li>!<code>guideSrc</code> {string} – path to scss files that documented. It is not mandatory that it should be scss root, it could be any folder, but in this case you need to additionaly provide <code>scssSrc</code> for statistic reports.</li>
+<li>!<code>guideDest</code> {string} – path to generated files folder.</li>
+<li>!<code>cssSrc</code> {string} – path to generated CSS. Used for statistical reports.</li>
+<li><code>scssAdditionalImportsArray</code> {array} – array of additional sass imports, if they used. Needed for statistical reports and styleguide auto generation.</li>
+<li><code>componentPrefixes</code> {array of strings} – [&#39;component&#39;, &#39;container&#39;] prefixes that used for components and containers on project. It used to properly guess component types in component structure info (in footer). Ex: <code>[&#39;c-&#39;, &#39;l-&#39;]</code>, <code>[&#39;markguide-&#39;, &#39;l-&#39;]</code></li>
+<li><code>excludedCssFiles</code> {regexp} – CSS files that would not be processed in statistical reports.</li>
+<li><code>excludedSassFiles</code> {regexp} – Sass files that would not be processed in statistical reports.</li>
+<li><code>excludedDirs</code> {regexp} – directories that will be excluded from doc sets.</li>
+<li><code>createDestFolder</code> {bool} - create destination directory if it is not exist. Default if <code>false</code>.</li>
+<li><code>indexPageSource</code> {string} - path to custom markdown file that will be used in index.html. Otherwise markguide try to find README.md in guide src and in the root of the project.</li>
+<li><code>templates</code>– use this field to use your own templates for guide generation.</li>
+<li><code>includes</code> – use this field to use your own partials and includes.</li>
+<li><code>projectInfo</code><ul>
+<li><code>name</code> {string} - custom name of the project. Otherwise package name will be used.</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        Documenting code
+    </h3>
+
+    <a id="h3-documenting-code" class="anchor" href="#h3-documenting-code">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<div class="markdown-heading">
+    <h4 class="heading-element">
+        Doc comment
+    </h4>
+
+    <a id="h4-doc-comment" class="anchor" href="#h4-doc-comment">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>Add this comment to the scss file and it file appears as component page.</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code scss">
+	<pre><code class="language-scss">&#x2F;*md
+
+# Component name
+
+ *&#x2F;</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <p>Inside this comment regular markdown syntax would used, so any valid markdown will work here.</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code scss">
+	<pre><code class="language-scss">&#x2F;*md
+
+# Heading level 1
+
+## Heading level 2
+
+## Heading level 3
+
+Regular paragraph with **bold**, _italic_ and &#x60;inline code&#x60;.
+
+* list item
+* list item
+* list item
+
+1. ordered list item
+2. ordered list item
+3. ordered list item
+
+etc.
+
+ *&#x2F;</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h4 class="heading-element">
+        Component example
+    </h4>
+
+    <a id="h4-component-example" class="anchor" href="#h4-component-example">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>It extends markdown code block &quot;fences&quot; notation with custom type (just like Hologram) -- <code>html_example</code> and <code>pug_example</code>.
+That render component html instead of code-example. This keeps documentation compatible with regular markdown.</p>
+<p>To create component example you need to add code-block with <code>html_example</code>:</p>
+<p>add pug_example</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code scss">
+	<pre><code class="language-scss">&#x2F;*md
+
+&#x60;&#x60;html_example
+&lt;h1&gt;Add one more backtick to make this example works&lt;&#x2F;h1&gt;
+&#x60;&#x60;
+
+*&#x2F;</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h4 class="heading-element">
+        Regular code blocks
+    </h4>
+
+    <a id="h4-regular-code-blocks" class="anchor" href="#h4-regular-code-blocks">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>Simple <code>html</code>, <code>scss</code>, <code>css</code> &quot;fences&quot; become regular code-block:</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code scss">
+	<pre><code class="language-scss">&#x2F;*md
+
+&#x60;&#x60;html
+&lt;h1&gt;heading 1&lt;&#x2F;h1&gt;
+&#x60;&#x60;
+
+&#x60;&#x60;scss
+.some { maring: 0; }
+&#x60;&#x60;
+
+*&#x2F;</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h4 class="heading-element">
+        Template helpers
+    </h4>
+
+    <a id="h4-template-helpers" class="anchor" href="#h4-template-helpers">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>To inline some resources like svg icons, inlined styles etc. you could use <code>inline</code> helper. Ex:</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code html">
+	<pre><code class="language-html">{{#inline}}project-root&#x2F;assets&#x2F;src&#x2F;images&#x2F;icons.svg{{&#x2F;inline}}</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <p>This helper use path to file from your <em>project root</em>. Virtually any file could be inlined.</p>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        Guideline/Documentation page
+    </h3>
+
+    <a id="h3-guideline-documentation-page" class="anchor" href="#h3-guideline-documentation-page">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>Simply put regular markdown file to components tree and they automatically become part of the markguide.</p>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        Build guide
+    </h3>
+
+    <a id="h3-build-guide" class="anchor" href="#h3-build-guide">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<div class="markdown-heading">
+    <h4 class="heading-element">
+        Incremental builds
+    </h4>
+
+    <a id="h4-incremental-builds" class="anchor" href="#h4-incremental-builds">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>Regular development flow could be organized in this way – build all guide pages on start and incrementally rebuild pages on file changes:</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code js">
+	<pre><code class="language-js">const markguide &#x3D; require(&#39;markguide&#39;).withConfig({config: &#39;here&#39;});
+markguide.build().then(...); &#x2F;&#x2F; build all guide files without reports
+
+&#x2F;&#x2F; watch for changes, get changed file path and build needed page:
+markguide.build(&#39;&#x2F;absolute&#x2F;path&#x2F;to&#x2F;changed&#x2F;file.scss&#39;).then(...); &#x2F;&#x2F; compile only this file if was documented on module import</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h5 class="heading-element">
+        Gulp example
+    </h5>
+
+    <a id="h5-gulp-example" class="anchor" href="#h5-gulp-example">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>See example guideline page or this repo <code>gulpfile.js</code> to get the idea how live reload and incremental builds could be set upped.</p>
+<div class="markdown-heading">
+    <h4 class="heading-element">
+        Complete generation
+    </h4>
+
+    <a id="h4-complete-generation" class="anchor" href="#h4-complete-generation">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>Due to time efforts reports not generated in regular flow. To generate reports you need to call <code>npm markguide --build</code>
+or in JS:</p>
+
+                    </section>
+                    <section class="markdown-code">
+                        <div class="b-markguide-code js">
+	<pre><code class="language-js">const markguide &#x3D; require(&#39;markguide&#39;).withConfig({config: &#39;here&#39;});
+markguide.buildAll().then(...); &#x2F;&#x2F; compile all components, guidelines</code></pre>
+</div>
+
+                    </section>
+                    <section class="markdown-body">
+                        <div class="markdown-heading">
+    <h2 class="heading-element">
+        Development tree
+    </h2>
+
+    <a id="h2-development-tree" class="anchor" href="#h2-development-tree">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p><img src="assets/images/development-tree.png" alt="Development tree"></p>
+<div class="markdown-heading">
+    <h2 class="heading-element">
+        Troubleshooting
+    </h2>
+
+    <a id="h2-troubleshooting" class="anchor" href="#h2-troubleshooting">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<div class="markdown-heading">
+    <h3 class="heading-element">
+        We have 2 document comments <code>/*md</code> in scss file, but only first is shown in documentation.
+    </h3>
+
+    <a id="h3-we-have-2-document-comments-code-md-code-in-scss-file-but-only-first-is-shown-in-documentation-" class="anchor" href="#h3-we-have-2-document-comments-code-md-code-in-scss-file-but-only-first-is-shown-in-documentation-">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>This is done intentionally. It all designed for 1 component 1 scss file structure. Otherwise it is very hard to keep components readable and supportable.</p>
+<div class="markdown-heading">
+    <h2 class="heading-element">
+        Contributing
+    </h2>
+
+    <a id="h2-contributing" class="anchor" href="#h2-contributing">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>You are welcome for ideas, help and of course code contributing. Please see CONTRIBUTING for more details.</p>
+<div class="markdown-heading">
+    <h2 class="heading-element">
+        License
+    </h2>
+
+    <a id="h2-license" class="anchor" href="#h2-license">
+        <svg class="octicon" width="16" height="16" role="img" aria-hidden="true">
+            <use href="#link-16"></use>
+        </svg>
+    </a>
+</div>
+<p>Published under MIT license.</p>
+
+                    </section>
+            </div>
+        </div>
+        <div class="l-markguide-page__aside">
+            <div class="b-markguide-toc">
+                <!-- <div class="b-markguide-toc__info">
+                    <div class="b-markguide-toc__path"><strong>Path:</strong> README.md</div>
+                </div> -->
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_1" href="#h1-markguide">
+                            Markguide
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_2" href="#h2-folder-structure">
+                            Folder Structure
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3--code-_example-code-">
+                            <code>_example</code>
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3--code-_helpers-code-">
+                            <code>_helpers</code>
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3--code-assets-code-">
+                            <code>assets</code>
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3--code-bin-code-">
+                            <code>bin</code>
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3--code-scss-code-">
+                            <code>scss</code>
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3--code-src-code-">
+                            <code>src</code>
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_2" href="#h2-features">
+                            Features
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-components-library">
+                            Components library
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-guide">
+                            Guide
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_2" href="#h2-getting-started">
+                            Getting started
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-installing">
+                            Installing
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-configuring">
+                            Configuring
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_4" href="#h4-minimal-configuration">
+                            Minimal configuration
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-writing-documentation">
+                            Writing documentation
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-building">
+                            Building
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-api">
+                            API
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-cli">
+                            CLI
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_2" href="#h2-configuration">
+                            Configuration
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-templates-overwrites">
+                            Templates overwrites
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-configuration-options">
+                            Configuration options
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-documenting-code">
+                            Documenting code
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_4" href="#h4-doc-comment">
+                            Doc comment
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_4" href="#h4-component-example">
+                            Component example
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_4" href="#h4-regular-code-blocks">
+                            Regular code blocks
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_4" href="#h4-template-helpers">
+                            Template helpers
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-guideline-documentation-page">
+                            Guideline/Documentation page
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-build-guide">
+                            Build guide
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_4" href="#h4-incremental-builds">
+                            Incremental builds
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_5" href="#h5-gulp-example">
+                            Gulp example
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_4" href="#h4-complete-generation">
+                            Complete generation
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_2" href="#h2-development-tree">
+                            Development tree
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_2" href="#h2-troubleshooting">
+                            Troubleshooting
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_3" href="#h3-we-have-2-document-comments-code-md-code-in-scss-file-but-only-first-is-shown-in-documentation-">
+                            We have 2 document comments <code>/*md</code> in scss file, but only first is shown in documentation.
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_2" href="#h2-contributing">
+                            Contributing
+                        </a>
+                    </div>
+                    <div class="b-markguide-toc__item" role="listitem">
+                        <a class="b-markguide-toc__ln b-markguide-toc__ln_2" href="#h2-license">
+                            License
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+</div>
+
+
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/search.js" async defer></script>
+<script src="assets/js/aside.js" async defer></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/prism.js" async></script>
+<script src="assets/js/copier.js"></script>
+<script src="assets/js/markguide.js"></script>
+<script src="assets/js/box-model.js"></script>
+<script src="assets/js/typography.js"></script>
+<script src="assets/js/back-to-top.js"></script>
+<script src="assets/js/build-date.js"></script>
+
+<script src="nav.js"></script>
+
+</body>
+</html>
