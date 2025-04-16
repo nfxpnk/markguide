@@ -1,4 +1,4 @@
-body {
+body.b-markguide-page {
 	background: var(--color-mg-background);
 	color: var(--color-mg-text);
 	margin: 0;
@@ -6,8 +6,6 @@ body {
 }
 
 //@import "variables/misc";
-
-
 
 // Mixins
 @import "mixins/clearfix";
