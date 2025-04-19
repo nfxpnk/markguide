@@ -1247,8 +1247,6 @@ $color-primary-button__background--hover
 .margin-right,
 .margin-left {
   position: absolute;
-  background-blend-mode: screen;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEX///8AAABVwtN+AAAAEklEQVQI12M4wNDBIMFgwJAAAAvqAfHBRIxpAAAAAElFTkSuQmCC");
 }
 .padding-bottom span,
 .padding-top span,
@@ -1298,7 +1296,7 @@ $color-primary-button__background--hover
 .padding-top,
 .padding-right,
 .padding-left {
-  background-color: #ffd2a5;
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="5" height="5"%3E%3Cpath fill="%23ffd2a5" d="M1 2H0V0h2v1H1v1zm3-1v1H3v1H2v1H1v1h2V4h1V3h1V1H4z"/%3E%3C/svg%3E%0A');
 }
 .padding-bottom span,
 .padding-top span,
@@ -1336,7 +1334,7 @@ $color-primary-button__background--hover
 .margin-top,
 .margin-right,
 .margin-left {
-  background-color: #cae4fd;
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="5" height="5"%3E%3Cpath fill="%23cae4fd" d="M1 2H0V0h2v1H1v1zm3-1v1H3v1H2v1H1v1h2V4h1V3h1V1H4z"/%3E%3C/svg%3E%0A');
 }
 .margin-bottom span,
 .margin-top span,

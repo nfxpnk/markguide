@@ -5,6 +5,7 @@
 @use "sass:string";
 
 // Colors cae4fd 7dbcf8 4fc0f6
+$color-black: #000;
 $color-margin: #cae4fd;
 $color-padding: #ffd2a5;
 $color-outline: #dd06fd;
@@ -26,6 +27,7 @@ $svg-up: ("M-0 8l7-8 7 8", $horizontal-arrow-width, $horizontal-arrow-height);
 $svg-down: ("M14 0l-7 8-7-8", $horizontal-arrow-width, $horizontal-arrow-height);
 $svg-left: ("M8 14l-8-7 8-7", $vertical-arrow-width, $vertical-arrow-height);
 $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
+$svg-pattern: ("M1 2H0V0h2v1H1v1zm3-1v1H3v1H2v1H1v1h2V4h1V3h1V1H4z", 5, 5);
 
 @function create-svg($name, $fill-color) {
 	$path: list.nth($name, 1);
@@ -75,8 +77,6 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .margin-right,
 .margin-left {
 	position: absolute;
-	background-blend-mode: screen;
-	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEX///8AAABVwtN+AAAAEklEQVQI12M4wNDBIMFgwJAAAAvqAfHBRIxpAAAAAElFTkSuQmCC");
 
 	span {
 		@include font-mono(12px, 400);
@@ -106,11 +106,12 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .padding-top,
 .padding-right,
 .padding-left {
-	background-color: $color-padding;
+	// stylelint-disable-next-line function-url-quotes
+	background-image: url(create-svg($svg-pattern, $color-padding));
 
 	span {
 		background-color: $color-padding;
-		color: #000;
+		color: $color-black;
 	}
 
 	.show-box-model-position-left {
@@ -146,7 +147,8 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .margin-top,
 .margin-right,
 .margin-left {
-	background-color: $color-margin;
+	// stylelint-disable-next-line function-url-quotes
+	background-image: url(create-svg($svg-pattern, $color-margin));
 
 	span {
 		background-color: $color-margin;
