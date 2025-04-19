@@ -5,7 +5,7 @@ body.b-markguide-page {
 	padding: 0;
 }
 
-//@import "variables/misc";
+// @import "variables/misc";
 
 // Mixins
 @import "mixins/clearfix";
@@ -16,7 +16,7 @@ body.b-markguide-page {
 // Colors
 @import "base/colors-default";
 @import "base/colors-dark";
-//@import "base/colors-alternative";
+// @import "base/colors-alternative";
 
 // Layouts
 @import "layouts/l-markguide-container";

@@ -57,10 +57,7 @@
 
 .b-markguide-color__figure-color {
 	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0;
 
 	.b-markguide-color--list & {
 		border-radius: 4px;
