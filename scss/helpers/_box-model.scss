@@ -43,6 +43,7 @@ $svg-pattern: ("M1 2H0V0h2v1H1v1zm3-1v1H3v1H2v1H1v1h2V4h1V3h1V1H4z", 5, 5);
 .highlight-element {
 	position: absolute;
 	inset: 0;
+	z-index: 20;
 
 	&:hover {
 		outline: 1px solid $color-outline;

@@ -1227,6 +1227,7 @@ $color-primary-button__background--hover
 .highlight-element {
   position: absolute;
   inset: 0;
+  z-index: 20;
 }
 .highlight-element:hover {
   outline: 1px solid #dd06fd;
