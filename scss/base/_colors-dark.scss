@@ -58,7 +58,7 @@
 	--color-mg-navigation-indent__border: #3a414a;
 	// --color-mg-navigation-searching-item-line__color: #{$c-grey-300};
 	// --color-mg-navigation-searching-icon__color: #{$c-grey-300};
-	// --color-mg-navigation-found-item-line__color: #{$c-black};
+	--color-mg-navigation-found-item-line__color: #c5d1de;
 	// --color-mg-navigation-relevant-item-line__color: #{$c-grey-300};
 	// --color-mg-navigation-relevant-item-line__color--hover: #{$c-black};
 	// --color-mg-navigation-relevant-item-line__color--active: #{$c-black};
@@ -66,9 +66,10 @@
 	--color-mg-navigation-text__color--active: #c5d1de;
 
 	// // markguide-search
+	--color-mg-search-input__color: #c5d1de;
 	--color-mg-search-input__color--placeholder: #c5d1de;
 	--color-mg-search-input__border: #3a414a;
-	// --color-mg-search-input__background--focus: #{$c-grey-200};
+	--color-mg-search-input__background--focus: #3a414a;
 	// --color-mg-search-icon__color: #{$c-blue-400};
 	// --color-mg-search-icon-found__color: #{$c-blue-600};
 	// --color-mg-search-clear__color: #{$c-blue-400};

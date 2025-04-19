@@ -108,6 +108,7 @@ $color-primary-button__background--hover
   --color-mg-navigation-relevant-item-line__color--active: #000;
   --color-mg-navigation-text__color--hover: #000;
   --color-mg-navigation-text__color--active: #000;
+  --color-mg-search-input__color: #717171;
   --color-mg-search-input__color--placeholder: #717171;
   --color-mg-search-input__border: #c0daf7;
   --color-mg-search-input__background--focus: #f7f7f7;
@@ -190,10 +191,13 @@ $color-primary-button__background--hover
   --color-mg-navigation-item-current-before__backgound: #316dca;
   --color-mg-navigation-item-current__color: #c5d1de;
   --color-mg-navigation-indent__border: #3a414a;
+  --color-mg-navigation-found-item-line__color: #c5d1de;
   --color-mg-navigation-text__color--hover: #c5d1de;
   --color-mg-navigation-text__color--active: #c5d1de;
+  --color-mg-search-input__color: #c5d1de;
   --color-mg-search-input__color--placeholder: #c5d1de;
   --color-mg-search-input__border: #3a414a;
+  --color-mg-search-input__background--focus: #3a414a;
   --color-mg-color__background: #22272e;
   --color-mg-color__border: #3a414a;
   --color-mg-color-name__color: #c5d1de;
@@ -376,9 +380,10 @@ $color-primary-button__background--hover
   font-weight: 400;
   line-height: 34px;
   background: transparent;
-  border: 1px solid var(--color-mg-search-input__border);
   border-radius: 6px;
+  border: 1px solid var(--color-mg-search-input__border);
   box-sizing: border-box;
+  color: var(--color-mg-search-input__color);
   height: 34px;
   outline: none;
   padding: 0 10px;
