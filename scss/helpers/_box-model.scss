@@ -78,6 +78,21 @@ $svg-pattern: ("M1 2H0V0h2v1H1v1zm3-1v1H3v1H2v1H1v1h2V4h1V3h1V1H4z", 5, 5);
 .margin-left {
 	position: absolute;
 
+	&::before,
+	&::after {
+		content: "";
+		inset: 0;
+		position: absolute;
+	}
+
+	&::before {
+		z-index: 5;
+	}
+
+	&::after {
+		z-index: 10;
+	}
+
 	span {
 		@include font-mono(12px, 400);
 
@@ -97,8 +112,10 @@ $svg-pattern: ("M1 2H0V0h2v1H1v1zm3-1v1H3v1H2v1H1v1h2V4h1V3h1V1H4z", 5, 5);
 	}
 
 	&:hover {
-		outline: 1px solid $color-outline;
-		outline-offset: -1px;
+		&::after {
+			outline: 1px solid $color-outline;
+			outline-offset: -1px;
+		}
 	}
 }
 
@@ -106,8 +123,10 @@ $svg-pattern: ("M1 2H0V0h2v1H1v1zm3-1v1H3v1H2v1H1v1h2V4h1V3h1V1H4z", 5, 5);
 .padding-top,
 .padding-right,
 .padding-left {
-	// stylelint-disable-next-line function-url-quotes
-	background-image: url(create-svg($svg-pattern, $color-padding));
+	&::before {
+		// stylelint-disable-next-line function-url-quotes
+		background-image: url(create-svg($svg-pattern, $color-padding));
+	}
 
 	span {
 		background-color: $color-padding;
@@ -147,8 +166,10 @@ $svg-pattern: ("M1 2H0V0h2v1H1v1zm3-1v1H3v1H2v1H1v1h2V4h1V3h1V1H4z", 5, 5);
 .margin-top,
 .margin-right,
 .margin-left {
-	// stylelint-disable-next-line function-url-quotes
-	background-image: url(create-svg($svg-pattern, $color-margin));
+	&::before {
+		// stylelint-disable-next-line function-url-quotes
+		background-image: url(create-svg($svg-pattern, $color-margin));
+	}
 
 	span {
 		background-color: $color-margin;
@@ -181,6 +202,15 @@ $svg-pattern: ("M1 2H0V0h2v1H1v1zm3-1v1H3v1H2v1H1v1h2V4h1V3h1V1H4z", 5, 5);
 			// stylelint-disable-next-line function-url-quotes
 			background-image: url(create-svg($svg-up, $color-margin));
 		}
+	}
+}
+
+.margin-left,
+.margin-right,
+.padding-left,
+.padding-right {
+	&::before {
+		mask-image: linear-gradient(to bottom, black calc(100% - var(--mask-visible-height, 0)), transparent 0%);
 	}
 }
 
