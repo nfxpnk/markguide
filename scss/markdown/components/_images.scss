@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .markdown-body {
 	img {
 		background-color: var(--color-markdown-img__background);

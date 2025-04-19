@@ -1,52 +1,41 @@
-body.b-markguide-page {
-	background: var(--color-mg-background);
-	color: var(--color-mg-text);
-	margin: 0;
-	padding: 0;
-}
-
 // @import "variables/misc";
 
-// Mixins
-@import "mixins/clearfix";
-@import "mixins/font";
-@import "mixins/font-mono";
-@import "mixins/color";
-
 // Colors
-@import "base/colors-default";
-@import "base/colors-dark";
-// @import "base/colors-alternative";
+@use "base/base";
+@use "base/colors-default";
+@use "base/colors-dark";
+
+// @use "base/colors-alternative";
 
 // Layouts
-@import "layouts/l-markguide-container";
-@import "layouts/l-markguide-aside";
-@import "layouts/l-markguide-page";
+@use "layouts/l-markguide-container";
+@use "layouts/l-markguide-aside";
+@use "layouts/l-markguide-page";
 
 // Blocks
-@import "blocks/b-markguide-aside-ctrl";
-@import "blocks/b-markguide-search";
-@import "blocks/b-markguide-navigation";
-@import "blocks/b-markguide-footer-copyright";
-@import "blocks/b-markguide-footer-build-date";
-@import "blocks/b-markguide-options-bar";
-@import "blocks/b-markguide-overline";
-@import "blocks/b-markguide-section";
-@import "blocks/b-markguide-html";
-@import "blocks/b-markguide-markup";
-@import "blocks/b-markguide-toc";
+@use "blocks/b-markguide-aside-ctrl";
+@use "blocks/b-markguide-search";
+@use "blocks/b-markguide-navigation";
+@use "blocks/b-markguide-footer-copyright";
+@use "blocks/b-markguide-footer-build-date";
+@use "blocks/b-markguide-options-bar";
+@use "blocks/b-markguide-overline";
+@use "blocks/b-markguide-section";
+@use "blocks/b-markguide-html";
+@use "blocks/b-markguide-markup";
+@use "blocks/b-markguide-toc";
 
 // Default Plugins
-@import "plugins/plugin-body";
-@import "plugins/b-markguide-colors";
-@import "plugins/b-markguide-icons";
-@import "plugins/b-markguide-typography";
+@use "plugins/plugin-body";
+@use "plugins/b-markguide-colors";
+@use "plugins/b-markguide-icons";
+@use "plugins/b-markguide-typography";
 
 // Helpers
-@import "helpers/box-model";
+@use "helpers/box-model";
 
 // Markdown
-@import "markdown/markdown";
+@use "markdown/markdown";
 
 // Markdown
-@import "prism/prism";
+@use "prism/prism";

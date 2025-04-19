@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .b-markguide-markup {
 	margin: 10px 0 20px;
 	outline: none !important;
@@ -20,7 +22,7 @@
 	}
 
 	&[open] .b-markguide-markup__summary {
-		//border: 1px solid var(--color-mg-markup__border);
+		// border: 1px solid var(--color-mg-markup__border);
 	}
 
 	pre {
@@ -66,13 +68,12 @@
 	&__copy-message {
 		@include font(14px);
 
-		right: 54px;
 		pointer-events: none;
 		position: absolute;
+		right: 54px;
 		text-align: center;
 		top: 11px;
-		transition-property: opacity, visibility;
-		transition: ease 0.6s;
+		transition: opacity 0.6s ease, visibility 0.6s ease;
 		z-index: 10;
 	}
 }

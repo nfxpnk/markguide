@@ -1,17 +1,26 @@
+@use "mixins" as *;
+@use "components/typography";
+@use "components/headings";
+@use "components/tables";
+@use "components/links";
+@use "components/lists";
+@use "components/code";
+@use "components/images";
+@use "components/elements";
+
 .markdown-body {
 	@include font(16px, 400, 1.5);
 
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
 	margin: 0;
-	word-wrap: break-word;
 	scroll-behavior: auto;
+	text-size-adjust: 100%;
+	word-wrap: break-word;
 
 	[hidden] {
 		display: none !important;
 	}
 
-	@include clearfix();
+	@include clearfix;
 
 	hr {
 		box-sizing: content-box;
@@ -24,18 +33,11 @@
 		background-color: var(--color-markdown-hr__background);
 		border: 0;
 
-		@include clearfix();
+		@include clearfix;
 	}
 }
 
-@import "components/typography";
-@import "components/headings";
-@import "components/tables";
-@import "components/links";
-@import "components/lists";
-@import "components/code";
-@import "components/images";
-@import "components/elements";
+
 
 .markdown-body > *:first-child > .heading-element:first-child {
 	margin-top: 0 !important;

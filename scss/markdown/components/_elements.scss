@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .markdown-body {
 	::-webkit-input-placeholder {
 		color: inherit;
@@ -113,7 +115,7 @@
 	}
 
 	kbd {
-		@include fontMono(11px, 400, 10px);
+		@include font-mono(11px, 400, 10px);
 
 		background-color: var(--color-markdown-kbd__background);
 		border-radius: 6px;
@@ -126,6 +128,6 @@
 	}
 
 	samp {
-		@include fontMono(12px, 400);
+		@include font-mono(12px, 400);
 	}
 }

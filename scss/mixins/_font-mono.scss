@@ -1,11 +1,11 @@
-@mixin fontMono($size, $fontWeight: 400, $lineHeight: 1.5) {
+@mixin font-mono($size, $fontWeight: 400, $lineHeight: 1.5) {
 	font-family:
 		ui-monospace,
 		SFMono-Regular,
-		SF Mono,
+		"SF Mono",
 		Menlo,
 		Consolas,
-		Liberation Mono,
+		"Liberation Mono",
 		monospace;
 	font-size: $size;
 	font-weight: $fontWeight;

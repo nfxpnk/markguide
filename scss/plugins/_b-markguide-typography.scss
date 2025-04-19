@@ -3,8 +3,7 @@
 
 	&__symbols {
 		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
+		flex-flow: row wrap;
 		gap: 4px;
 		margin-bottom: 10px;
 	}

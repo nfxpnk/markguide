@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .b-markguide-footer-build-date {
 	@include font($size: 10px);
 

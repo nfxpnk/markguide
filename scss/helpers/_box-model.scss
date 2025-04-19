@@ -1,42 +1,46 @@
+@use "mixins" as *;
+@use "sass:list";
 @use "sass:math";
+@use "sass:meta";
+@use "sass:string";
 
-//cae4fd 7dbcf8 4fc0f6
+// Colors cae4fd 7dbcf8 4fc0f6
 $color-margin: #cae4fd;
 $color-padding: #ffd2a5;
 $color-outline: #dd06fd;
 
+// Arrows
 $arrow-box-width: 14px;
 $arrow-box-height: 8px;
 
+// Horizontal arrow
 $horizontal-arrow-width: $arrow-box-width;
 $horizontal-arrow-height: $arrow-box-height;
 
+// Vertical arrow
 $vertical-arrow-width: $arrow-box-height;
 $vertical-arrow-height: $arrow-box-width;
 
+// Icons
 $svg-up: ("M-0 8l7-8 7 8", $horizontal-arrow-width, $horizontal-arrow-height);
 $svg-down: ("M14 0l-7 8-7-8", $horizontal-arrow-width, $horizontal-arrow-height);
-
 $svg-left: ("M8 14l-8-7 8-7", $vertical-arrow-width, $vertical-arrow-height);
 $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 
 @function create-svg($name, $fill-color) {
-	$path: nth($name, 1);
-	$w: nth($name, 2);
-	$h: nth($name, 3);
-
-	$fill-color: str-slice(inspect($fill-color), 2);
+	$path: list.nth($name, 1);
+	$w: list.nth($name, 2);
+	$h: list.nth($name, 3);
+	$fill-color: string.slice(meta.inspect($fill-color), 2);
 	$fill-color: "%23" + $fill-color;
 	$icon: 'data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="#{$w}" height="#{$h}"%3E%3Cpath fill="#{$fill-color}" d="#{$path}"/%3E%3C/svg%3E%0A';
+
 	@return $icon;
 }
 
 .highlight-element {
 	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
+	inset: 0;
 
 	&:hover {
 		outline: 1px solid $color-outline;
@@ -73,8 +77,10 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 	position: absolute;
 	background-blend-mode: screen;
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABlBMVEX///8AAABVwtN+AAAAEklEQVQI12M4wNDBIMFgwJAAAAvqAfHBRIxpAAAAAElFTkSuQmCC");
+
 	span {
-		@include fontMono(12px, 400);
+		@include font-mono(12px, 400);
+
 		position: absolute;
 		color: #0c4b7c;
 		z-index: 1000;
@@ -101,6 +107,7 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .padding-right,
 .padding-left {
 	background-color: $color-padding;
+
 	span {
 		background-color: $color-padding;
 		color: #000;
@@ -108,24 +115,28 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 
 	.show-box-model-position-left {
 		&::before {
+			// stylelint-disable-next-line function-url-quotes
 			background-image: url(create-svg($svg-right, $color-padding));
 		}
 	}
 
 	.show-box-model-position-right {
 		&::before {
+			// stylelint-disable-next-line function-url-quotes
 			background-image: url(create-svg($svg-left, $color-padding));
 		}
 	}
 
 	.show-box-model-position-top {
 		&::before {
+			// stylelint-disable-next-line function-url-quotes
 			background-image: url(create-svg($svg-down, $color-padding));
 		}
 	}
 
 	.show-box-model-position-bottom {
 		&::before {
+			// stylelint-disable-next-line function-url-quotes
 			background-image: url(create-svg($svg-up, $color-padding));
 		}
 	}
@@ -136,6 +147,7 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .margin-right,
 .margin-left {
 	background-color: $color-margin;
+
 	span {
 		background-color: $color-margin;
 		color: #000;
@@ -143,24 +155,28 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 
 	.show-box-model-position-left {
 		&::before {
+			// stylelint-disable-next-line function-url-quotes
 			background-image: url(create-svg($svg-right, $color-margin));
 		}
 	}
 
 	.show-box-model-position-right {
 		&::before {
+			// stylelint-disable-next-line function-url-quotes
 			background-image: url(create-svg($svg-left, $color-margin));
 		}
 	}
 
 	.show-box-model-position-top {
 		&::before {
+			// stylelint-disable-next-line function-url-quotes
 			background-image: url(create-svg($svg-down, $color-margin));
 		}
 	}
 
 	.show-box-model-position-bottom {
 		&::before {
+			// stylelint-disable-next-line function-url-quotes
 			background-image: url(create-svg($svg-up, $color-margin));
 		}
 	}
@@ -169,6 +185,7 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .show-box-model-position-left,
 .show-box-model-position-right {
 	top: 50%;
+
 	&::before {
 		width: $vertical-arrow-width;
 		height: $vertical-arrow-height;
@@ -179,6 +196,7 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .show-box-model-position-left {
 	left: -10px;
 	transform: translate(-100%, -50%);
+
 	&::before {
 		right: -($vertical-arrow-width - 2);
 	}
@@ -187,6 +205,7 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .show-box-model-position-right {
 	right: -10px;
 	transform: translate(100%, -50%);
+
 	&::before {
 		left: -($vertical-arrow-width - 2);
 	}
@@ -195,6 +214,7 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .show-box-model-position-top,
 .show-box-model-position-bottom {
 	left: 50%;
+
 	&::before {
 		width: $horizontal-arrow-width;
 		height: $horizontal-arrow-height;
@@ -205,6 +225,7 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .show-box-model-position-top {
 	top: -10px;
 	transform: translate(-50%, -100%);
+
 	&::before {
 		bottom: -($horizontal-arrow-height - 2);
 	}
@@ -213,6 +234,7 @@ $svg-right: ("M-0 0l8 7-8 7", $vertical-arrow-width, $vertical-arrow-height);
 .show-box-model-position-bottom {
 	bottom: -10px;
 	transform: translate(-50%, 100%);
+
 	&::before {
 		top: -($horizontal-arrow-height - 2);
 	}

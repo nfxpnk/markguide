@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .b-markguide-icons {
 	list-style: none;
 	padding: 0;
@@ -64,11 +66,8 @@
 
 	&__grid {
 		display: none;
+		inset: 0;
 		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
 
 		--padding: 4px;
 
@@ -126,7 +125,7 @@
 		right: 0;
 
 		pre {
-			@include fontMono(11px, 400);
+			@include font-mono(11px, 400);
 
 			margin: 0;
 			text-align: center;
@@ -135,7 +134,7 @@
 	}
 
 	&__name {
-		@include fontMono(14px, 600, 1);
+		@include font-mono(14px, 600, 1);
 
 		text-align: center;
 		color: var(--color-mg-icon-name__color);

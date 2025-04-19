@@ -1,18 +1,7 @@
-// $c-white: red;
-// $c-black: red;
-// $c-grey: red;
+@use "variables" as *;
+@use "mixins" as *;
 
-// $c-grey-200: #f7f7f7;
-// $c-grey-300: #717171;
-// $c-grey-400: #434643;
-// $c-grey-500: #333;
-
-// $c-blue-100: #e2edf9;
-// $c-blue-200: #c0daf7;
-// $c-blue-400: #5a9cd8;
-// $c-blue-500: #3a7ac1;
-// $c-blue-600: #0d3880;
-
+/* stylelint-disable */
 @include color-mode-theme(dark) {
 	// Dark theme
 	--color-mg-background: #22272e;
@@ -25,10 +14,10 @@
 	--color-mg-options-bar-button__color--hover: #{$c-blue-500};
 	--color-mg-options-bar-button__color: #{$c-grey-300};
 
-	// // markguide-markup
+	// markguide-markup
 	--color-mg-markup__border: #3a414a;
 
-	// // markguide-icon
+	// markguide-icon
 	// --color-mg-icon-code__background--selection: #{$c-blue-500};
 	// --color-mg-icon-code__background: #{$c-black};
 	--color-mg-icon-code__border: #3a414a;
@@ -128,3 +117,4 @@
 	// --color-markdown-tr__background: #{$c-white};
 	--color-markdown-tr__border: #3a414a;
 }
+/* stylelint-enable */

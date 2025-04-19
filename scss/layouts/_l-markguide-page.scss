@@ -5,22 +5,21 @@
 	&__content {
 		display: flex;
 		flex-flow: row nowrap;
-		justify-content: center;
 		gap: 20px;
+		justify-content: center;
+		min-height: 100vh;
 		position: relative;
 		width: 100%;
-		min-height: 100vh;
 	}
 
 	&__aside {
-		padding: 10px;
-
 		display: none;
+		padding: 10px;
 	}
 
 	&__main {
-		min-height: 100vh;
 		max-width: 1400px;
+		min-height: 100vh;
 		width: 100%;
 	}
 

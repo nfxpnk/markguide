@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .l-markguide-aside {
 	all: initial;
 	bottom: 0;
@@ -15,7 +17,8 @@
 	&__content {
 		overflow-y: auto;
 		overscroll-behavior: contain;
-		//scrollbar-width: thin;
+
+		// scrollbar-width: thin;
 
 		&:focus {
 			outline: none !important;

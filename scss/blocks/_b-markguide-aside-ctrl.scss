@@ -42,12 +42,9 @@
 }
 
 .b-markguide-aside-resizer-overlay {
-	bottom: 0;
 	display: none;
-	left: 0;
+	inset: 0;
 	position: fixed;
-	right: 0;
-	top: 0;
 	z-index: 11;
 
 	&.js-dragging {

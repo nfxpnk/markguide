@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .b-markguide-overline {
 	@include font(16px);
 

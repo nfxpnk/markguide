@@ -1,29 +1,29 @@
 @mixin color-mode-theme($theme-name, $include-root: false) {
-    @if $include-root {
-        :root,
-        [data-color-mode="light"][data-light-theme="#{$theme-name}"],
-        [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
-            @content;
-        }
-    } @else {
-        [data-color-mode="light"][data-light-theme="#{$theme-name}"],
-        [data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
-            @content;
-        }
-    }
+	@if $include-root {
+		:root,
+		[data-color-mode="light"][data-light-theme="#{$theme-name}"],
+		[data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
+			@content;
+		}
+	} @else {
+		[data-color-mode="light"][data-light-theme="#{$theme-name}"],
+		[data-color-mode="dark"][data-dark-theme="#{$theme-name}"] {
+			@content;
+		}
+	}
 }
 
 @mixin color-mode($mode) {
-    @if $mode == light {
-        :root,
-        [data-color-mode="light"][data-light-theme*="#{$mode}"],
-        [data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
-            @content;
-        }
-    } @else {
-        [data-color-mode="light"][data-light-theme*="#{$mode}"],
-        [data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
-            @content;
-        }
-    }
+	@if $mode == light {
+		:root,
+		[data-color-mode="light"][data-light-theme*="#{$mode}"],
+		[data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
+			@content;
+		}
+	} @else {
+		[data-color-mode="light"][data-light-theme*="#{$mode}"],
+		[data-color-mode="dark"][data-dark-theme*="#{$mode}"] {
+			@content;
+		}
+	}
 }
