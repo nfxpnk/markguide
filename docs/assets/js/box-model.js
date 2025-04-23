@@ -67,7 +67,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 const element = document.createElement('div');
                 element.className = className;
                 Object.keys(cssProperties).forEach(property => {
-                    element.style[property] = cssProperties[property];
+                    if (property.startsWith('--')) {
+                        // CSS custom property
+                        element.style.setProperty(property, cssProperties[property]);
+                    } else {
+                        element.style[property] = cssProperties[property];
+                    }
                 });
                 if (showSizes) {
                     const valueSpan = document.createElement('span');
@@ -81,11 +86,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         appendBoxModelElement('padding-top', { left: margin.left, right: margin.right, top: margin.top, height: padding.top }, padding.top, paddingPos.top);
         appendBoxModelElement('padding-bottom', { left: margin.left, right: margin.right, bottom: margin.bottom, height: padding.bottom }, padding.bottom, paddingPos.bottom);
-        appendBoxModelElement('padding-left', { left: margin.left, top: margin.top, bottom: margin.bottom, width: padding.left }, padding.left, paddingPos.left);
-        appendBoxModelElement('padding-right', { right: margin.right, top: margin.top, bottom: margin.bottom, width: padding.right }, padding.right, paddingPos.right);
+        appendBoxModelElement('padding-left', { left: margin.left, top: margin.top, bottom: margin.bottom, width: padding.left, '--mask-visible-height': padding.bottom }, padding.left, paddingPos.left);
+        appendBoxModelElement('padding-right', { right: margin.right, top: margin.top, bottom: margin.bottom, width: padding.right, '--mask-visible-height': padding.bottom }, padding.right, paddingPos.right);
 
-        appendBoxModelElement('margin-left', { left: '0', top: '0', width: margin.left, height: '100%' }, margin.left, marginPos.left);
-        appendBoxModelElement('margin-right', { right: '0', top: '0', width: margin.right, height: '100%' }, margin.right, marginPos.right);
+        appendBoxModelElement('margin-left', { left: '0', top: '0', width: margin.left, height: '100%', '--mask-visible-height': margin.bottom }, margin.left, marginPos.left);
+        appendBoxModelElement('margin-right', { right: '0', top: '0', width: margin.right, height: '100%', '--mask-visible-height': margin.bottom }, margin.right, marginPos.right);
         appendBoxModelElement('margin-top', { top: '0', left: '0', width: '100%', height: margin.top }, margin.top, marginPos.top);
         appendBoxModelElement('margin-bottom', { bottom: '0', left: '0', width: '100%', height: margin.bottom }, margin.bottom, marginPos.bottom);
     });
