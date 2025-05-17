@@ -164,7 +164,11 @@ gulp.task('markguide:compile', done =>
     markguide
         .withConfig(currentConfigPath)
         .build()
-        .then(done())
+        .then(() => done())
+        .catch(err => {
+            console.error('Error compiling markguide:', err);
+            done(err);
+        })
 );
 
 // Compile particular page from the guide
@@ -172,14 +176,22 @@ gulp.task('markguide:compile:incremental', done =>
     markguide
         .withConfig(currentConfigPath)
         .build(changedFilePath)
-        .then(done())
+        .then(() => done())
+        .catch(err => {
+            console.error('Error compiling incremental markguide:', err);
+            done(err);
+        })
 );
 
 gulp.task('markguide:compile:all', done =>
     markguide
         .withConfig(currentConfigPath)
         .buildAll()
-        .then(done())
+        .then(() => done())
+        .catch(err => {
+            console.error('Error compiling all markguide components:', err);
+            done(err);
+        })
 );
 
 // Compile Guide and watch changes
