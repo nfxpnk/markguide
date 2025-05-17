@@ -56,6 +56,7 @@ module.exports = function(markguideConfig, projectTree) {
                         content = component.content;
                     }
 
+                    // content.documentation  ->  JSON.stringify(content)
                     if (isContentChanged(filePath, content.documentation)) {
                         docSet.push({
                             id: component.id,
