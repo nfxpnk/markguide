@@ -1,6 +1,8 @@
 @use "mixins" as *;
 
 .markdown-code {
+	@include font-mono(16px);
+
 	margin-bottom: 16px;
 
 	.b-markguide-code {
