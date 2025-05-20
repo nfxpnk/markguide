@@ -4,7 +4,8 @@ body.b-markguide-page {
 	margin: 0;
 	padding: 0;
 
-	::selection {
-		background-color: initial;
+	&::selection {
+		background-color: #b3d4fc;
+		color: #000;
 	}
 }
