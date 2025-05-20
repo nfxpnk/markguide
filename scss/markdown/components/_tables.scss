@@ -1,5 +1,7 @@
 .markdown-body {
 	table {
+		@include font(16px, 400, 1.5);
+
 		border-collapse: collapse;
 		border-spacing: 0;
 		display: block;
