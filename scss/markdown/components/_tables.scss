@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .markdown-body {
 	table {
 		@include font(16px, 400, 1.5);
