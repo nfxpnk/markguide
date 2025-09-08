@@ -4,6 +4,10 @@ body.b-markguide-page {
   margin: 0;
   padding: 0;
 }
+body.b-markguide-page::selection {
+  background-color: #b3d4fc;
+  color: #000;
+}
 
 /* other ---------------- */
 /*
@@ -379,6 +383,7 @@ $color-primary-button__background--hover
   font-size: 12px;
   font-weight: 400;
   line-height: 34px;
+  letter-spacing: normal;
   background: transparent;
   border-radius: 6px;
   border: 1px solid var(--color-mg-search-input__border);
@@ -461,6 +466,7 @@ $color-primary-button__background--hover
   font-size: 13px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   list-style: none;
   padding-bottom: 20px;
 }
@@ -564,6 +570,7 @@ $color-primary-button__background--hover
   font-size: 13px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   color: inherit;
   cursor: pointer;
   overflow: hidden;
@@ -626,6 +633,7 @@ $color-primary-button__background--hover
   font-size: 10px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   color: var(--color-mg-footer-copyright__color);
   display: block;
   margin: 0;
@@ -640,6 +648,7 @@ $color-primary-button__background--hover
   font-size: 10px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   color: var(--color-mg-footer-copyright__color);
   display: block;
   margin: 0;
@@ -707,6 +716,7 @@ $color-primary-button__background--hover
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -745,6 +755,7 @@ $color-primary-button__background--hover
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
+  letter-spacing: normal;
   padding: 0 0 10px;
   margin: 0;
 }
@@ -760,6 +771,7 @@ $color-primary-button__background--hover
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   cursor: pointer;
   display: list-item;
   outline: revert !important;
@@ -810,6 +822,7 @@ $color-primary-button__background--hover
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   pointer-events: none;
   position: absolute;
   right: 54px;
@@ -824,6 +837,7 @@ $color-primary-button__background--hover
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   padding-top: 30px;
 }
 .b-markguide-toc__info {
@@ -831,6 +845,7 @@ $color-primary-button__background--hover
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   display: flex;
   flex-flow: column nowrap;
   gap: 10px;
@@ -873,6 +888,7 @@ $color-primary-button__background--hover
   font-size: 1.5em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
   border-bottom: 1px solid var(--color-markdown-body-heading__border);
   padding-bottom: 0.3em;
 }
@@ -881,24 +897,28 @@ $color-primary-button__background--hover
   font-size: 1.25em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
 }
 .plugin-body h4 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 1em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
 }
 .plugin-body h5 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 0.875em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
 }
 .plugin-body h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 0.85em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
 }
 .plugin-body .octicon {
   display: inline-block;
@@ -999,6 +1019,7 @@ $color-primary-button__background--hover
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   padding: 0.5em;
 }
 .b-markguide-color--list .b-markguide-color__caption {
@@ -1012,6 +1033,7 @@ $color-primary-button__background--hover
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   display: block;
   color: var(--color-mg-color-name__color);
 }
@@ -1020,6 +1042,7 @@ $color-primary-button__background--hover
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   border: 1px solid var(--color-mg-list-color-name__border);
   background-color: var(--color-mg-list-color-name__background);
   padding: 2px 8px;
@@ -1031,6 +1054,7 @@ $color-primary-button__background--hover
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   display: block;
   color: var(--color-mg-color-code__color);
 }
@@ -1042,6 +1066,7 @@ $color-primary-button__background--hover
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   border: 1px solid var(--color-mg-list-color-code__border);
   background-color: var(--color-mg-list-color-code__background);
   padding: 2px 8px;
@@ -1053,6 +1078,7 @@ $color-primary-button__background--hover
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   display: block;
   color: var(--color-mg-color-code__color);
 }
@@ -1061,6 +1087,7 @@ $color-primary-button__background--hover
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   border: 1px solid var(--color-mg-list-color-hex__border);
   background-color: var(--color-mg-list-color-hex__background);
   padding: 2px 8px;
@@ -1166,6 +1193,7 @@ $color-primary-button__background--hover
   font-size: 11px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   margin: 0;
   text-align: center;
   white-space: normal;
@@ -1175,6 +1203,7 @@ $color-primary-button__background--hover
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
+  letter-spacing: normal;
   text-align: center;
   color: var(--color-mg-icon-name__color);
   padding: 5px 0;
@@ -1311,6 +1340,7 @@ $color-primary-button__background--hover
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   position: absolute;
   color: #0c4b7c;
   z-index: 1000;
@@ -1541,6 +1571,7 @@ $color-primary-button__background--hover
 .markdown-body h6 {
   margin-bottom: 16px;
   margin-top: 24px;
+  text-align: left;
 }
 .markdown-body h1:hover .anchor,
 .markdown-body h2:hover .anchor,
@@ -1570,6 +1601,7 @@ $color-primary-button__background--hover
   font-size: 2em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
   border-bottom: 1px solid var(--color-markdown-body-heading__border);
   margin: 0.67em 0;
   padding-bottom: 0.3em;
@@ -1579,6 +1611,7 @@ $color-primary-button__background--hover
   font-size: 1.5em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
   border-bottom: 1px solid var(--color-markdown-body-heading__border);
   padding-bottom: 0.3em;
 }
@@ -1587,24 +1620,28 @@ $color-primary-button__background--hover
   font-size: 1.25em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
 }
 .markdown-body h4 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 1em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
 }
 .markdown-body h5 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 0.875em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
 }
 .markdown-body h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 0.85em;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: normal;
 }
 .markdown-body summary h1,
 .markdown-body summary h2,
@@ -1658,6 +1695,11 @@ $color-primary-button__background--hover
 }
 
 .markdown-body table {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
   border-collapse: collapse;
   border-spacing: 0;
   display: block;
@@ -1798,6 +1840,11 @@ $color-primary-button__background--hover
 }
 
 .markdown-code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
   margin-bottom: 16px;
 }
 .markdown-code .b-markguide-code {
@@ -1813,6 +1860,7 @@ $color-primary-button__background--hover
   font-size: 85%;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   margin-bottom: 16px;
   margin-top: 0;
 }
@@ -1824,6 +1872,7 @@ $color-primary-button__background--hover
   font-size: 85%;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   background-color: var(--color-markdown-code__background);
   border-radius: 6px;
   margin: 0;
@@ -2053,6 +2102,7 @@ $color-primary-button__background--hover
   font-size: 11px;
   font-weight: 400;
   line-height: 10px;
+  letter-spacing: normal;
   background-color: var(--color-markdown-kbd__background);
   border-radius: 6px;
   border: 1px solid var(--color-markdown-kbd__border);
@@ -2067,6 +2117,7 @@ $color-primary-button__background--hover
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
 }
 
 .markdown-body {
@@ -2074,6 +2125,7 @@ $color-primary-button__background--hover
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: normal;
   margin: 0;
   scroll-behavior: auto;
   -webkit-text-size-adjust: 100%;
