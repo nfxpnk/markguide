@@ -106,7 +106,7 @@ function getBaseConfig(configRaw) {
             id: 'index',
             title: 'About',
             src: path.join('./README.md'), // get absolute path ?
-            target: path.join(baseMandatory.guideDest, '/index.html'),
+            target: path.join(baseMandatory.guideDest, 'index.html'),
             type: 'page',
             icon: 'info-16',
             subPages: []
@@ -116,8 +116,6 @@ function getBaseConfig(configRaw) {
     const pluginsPages = {
          pluginsPages: initPlugins(Object.assign({}, baseMandatory))
     };
-
-    console.log(baseMandatory);
 
     return Object.assign({}, baseMandatory, templates, additionalPages, partials, projectInfo, pluginsPages);
 }

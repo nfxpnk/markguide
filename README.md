@@ -1,8 +1,8 @@
 # Markguide
 
-Markguide is a living style-guide, pattern library, guidelines, and documentation static site generator with plugins support. It generates documentation from markdown files and documentation comments in `scss` files.
+Markguide is a living style guide, pattern library, and documentation static site generator with plugin support. It generates documentation from Markdown files and documentation comments in `scss` files.
 
-It is opinionated because it is probably impossible to cover all cases in CSS/Sass. It is designed primarily as a "style-guide driven development" tool with a focus on split files approach and encapsulated components with normative Sass import structures.
+It is opinionated because it is probably impossible to cover all cases in CSS/Sass. It is designed primarily as a "style-guide-driven development" tool with a focus on a split-files approach and encapsulated components with standard Sass import structures.
 
 * [Live example](https://nfxpnk.github.io/markguide/)
 
@@ -82,17 +82,17 @@ This is the main folder that contains all the modules' JavaScript files.
 
 ### Components library
 
-Support `/*md` comment in `scss` files where regular markdown could be placed.
+Supports `/*md` comments in `scss` files where regular Markdown can be placed.
 
-* consists of 3 main types of pages - component, guide could be expanded to many different types;
-* navigation tree copy project tree, to ease of orientation and handling huge components library;
-* plugins;
+* Consists of three main types of pages — component, guide — and can be expanded to additional types.
+* Navigation tree mirrors the project tree to make large component libraries easier to browse.
+* Supports plugins.
 
 ### Guide
 
-Support regular markdown files in components folders and process it as guideline pages.
+Supports regular Markdown files in components folders and processes them as guideline pages.
 
-* markdown support;
+* Markdown support.
 
 ## Getting started
 
@@ -193,7 +193,7 @@ In `path/to/scss/style.scss`:
 
 Component description.
 
-Component example (Add one more backtick to make this example works):
+Component example (add one more backtick to make this example work):
 
 ``html_example
 <h1>Some</h1>
@@ -212,7 +212,7 @@ h1 Some
 ### Building
 
 ```
-npm run ???
+npm run build-styleguide
 ```
 
 ### API
@@ -240,7 +240,7 @@ Options:
 
 ## Configuration
 
-Require explicit configuration in `.withConfig()` method.
+Requires explicit configuration in the `.withConfig()` method.
 
 Minimal configuration:
 
@@ -295,7 +295,7 @@ All templates and partials could be overwritten. Please see this repo views fold
 }
 ```
 
-* !`guideSrc` {string} – path to scss files that documented. It is not mandatory that it should be scss root, it could be any folder, but in this case you need to additionaly provide `scssSrc` for statistic reports.
+* !`guideSrc` {string} – path to scss files that are documented. It is not mandatory that it should be the scss root; it can be any folder, but in this case you need to additionally provide `scssSrc` for statistic reports.
 * !`guideDest` {string} – path to generated files folder.
 * !`cssSrc` {string} – path to generated CSS. Used for statistical reports.
 * `scssAdditionalImportsArray` {array} – array of additional sass imports, if they used. Needed for statistical reports and styleguide auto generation.
@@ -303,8 +303,8 @@ All templates and partials could be overwritten. Please see this repo views fold
 * `excludedCssFiles` {regexp} – CSS files that would not be processed in statistical reports.
 * `excludedSassFiles` {regexp} – Sass files that would not be processed in statistical reports.
 * `excludedDirs` {regexp} – directories that will be excluded from doc sets.
-* `createDestFolder` {bool} - create destination directory if it is not exist. Default if `false`.
-* `indexPageSource` {string} - path to custom markdown file that will be used in index.html. Otherwise markguide try to find README.md in guide src and in the root of the project.
+* `createDestFolder` {bool} - create the destination directory if it does not exist. Default is `false`.
+* `indexPageSource` {string} - path to a custom Markdown file that will be used in index.html. Otherwise Markguide tries to find README.md in the guide src and in the root of the project.
 * `templates`– use this field to use your own templates for guide generation.
 * `includes` – use this field to use your own partials and includes.
 * `projectInfo`
@@ -315,7 +315,7 @@ All templates and partials could be overwritten. Please see this repo views fold
 
 #### Doc comment
 
-Add this comment to the scss file and it file appears as component page.
+Add this comment to the scss file and the file appears as a component page.
 
 ```scss
 /*md
@@ -325,7 +325,7 @@ Add this comment to the scss file and it file appears as component page.
  */
 ```
 
-Inside this comment regular markdown syntax would used, so any valid markdown will work here.
+Inside this comment regular Markdown syntax is used, so any valid Markdown will work here.
 
 ```scss
 /*md
@@ -353,12 +353,10 @@ etc.
 
 #### Component example
 
-It extends markdown code block "fences" notation with custom type (just like Hologram) -- `html_example` and `pug_example`.
-That render component html instead of code-example. This keeps documentation compatible with regular markdown.
+It extends Markdown fenced code blocks with a custom type (like Hologram) — `html_example` and `pug_example`.
+That renders component HTML instead of a code example, keeping documentation compatible with regular Markdown.
 
-To create component example you need to add code-block with `html_example`:
-
-add pug_example
+To create a component example you need to add a code block with `html_example`:
 
 ```scss
 /*md
@@ -382,7 +380,7 @@ Simple `html`, `scss`, `css` "fences" become regular code-block:
 ``
 
 ``scss
-.some { maring: 0; }
+.some { margin: 0; }
 ``
 
 */
@@ -396,7 +394,7 @@ To inline some resources like svg icons, inlined styles etc. you could use `inli
 {{#inline}}project-root/assets/src/images/icons.svg{{/inline}}
 ```
 
-This helper use path to file from your *project root*. Virtually any file could be inlined.
+This helper uses the path to a file from your *project root*. Virtually any file can be inlined.
 
 ### Guideline/Documentation page
 
