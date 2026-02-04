@@ -84,7 +84,7 @@ This is the main folder that contains all the modules' JavaScript files.
 
 Supports `/*md` comments in `scss` files where regular Markdown can be placed.
 
-* Consists of three main types of pages — component, guide — and can be expanded to additional types.
+* Consists of two main types of pages — component and guide — and can be expanded to additional types.
 * Navigation tree mirrors the project tree to make large component libraries easier to browse.
 * Supports plugins.
 
@@ -95,6 +95,11 @@ Supports regular Markdown files in components folders and processes them as guid
 * Markdown support.
 
 ## Getting started
+
+### Requirements
+
+* Node.js >= 18
+* npm >= 8.19
 
 ### Installing
 
@@ -246,9 +251,15 @@ Minimal configuration:
 
 ```json
 {
-    "guideSrc": "path/to/yours/scss/",
+    "guideSrc": "path/to/your/scss/",
     "guideDest": "path/to/your/static/folder/for/guide/",
-    "cssSrc": "assets/css/"
+    "cssSrc": "assets/css/",
+    "projectStaticFiles": "path/to/your/static/files/",
+    "projectImagesFolder": "images",
+    "projectStylesFolder": "",
+    "projectScriptsFolder": "",
+    "projectFontsFolder": "fonts",
+    "internalAssetsPath": "assets"
 }
 ```
 
@@ -262,9 +273,15 @@ or with rawConfig object if you call markguide from js:
 
 ```js
 const markguide = require('markguide').withConfig({
-    guideSrc: 'path/to/yours/scss/',
+    guideSrc: 'path/to/your/scss/',
     guideDest: 'path/to/your/static/folder/for/guide/',
-    cssSrc: 'assets/css/'
+    cssSrc: 'assets/css/',
+    projectStaticFiles: 'path/to/your/static/files/',
+    projectImagesFolder: 'images',
+    projectStylesFolder: '',
+    projectScriptsFolder: '',
+    projectFontsFolder: 'fonts',
+    internalAssetsPath: 'assets'
     // etc
 });
 ```
@@ -283,32 +300,38 @@ To make this happen you need to add `partials` to the config, with paths to the 
 }
 ```
 
-Note, that paths should be related to generated HTML, no matter where templates are stored. This is simple include that will be incorporated into resulted html.
+Note, that paths can be absolute or relative to your project root (the current working directory). This is a simple include that will be incorporated into the resulting HTML.
 
-All templates and partials could be overwritten. Please see this repo views folder to get list of all templates and partials.
+All templates and partials could be overwritten. Please see this repo `src/views` folder to get list of all templates and partials.
 
 ### Configuration options
 
-```json
-{
+Required paths
 
-}
-```
-
-* !`guideSrc` {string} – path to scss files that are documented. It is not mandatory that it should be the scss root; it can be any folder, but in this case you need to additionally provide `scssSrc` for statistic reports.
+* !`guideSrc` {string} – path to scss files that are documented.
 * !`guideDest` {string} – path to generated files folder.
-* !`cssSrc` {string} – path to generated CSS. Used for statistical reports.
-* `scssAdditionalImportsArray` {array} – array of additional sass imports, if they used. Needed for statistical reports and styleguide auto generation.
-* `componentPrefixes` {array of strings} – ['component', 'container'] prefixes that used for components and containers on project. It used to properly guess component types in component structure info (in footer). Ex: `['c-', 'l-']`, `['markguide-', 'l-']`
-* `excludedCssFiles` {regexp} – CSS files that would not be processed in statistical reports.
-* `excludedSassFiles` {regexp} – Sass files that would not be processed in statistical reports.
-* `excludedDirs` {regexp} – directories that will be excluded from doc sets.
-* `createDestFolder` {bool} - create the destination directory if it does not exist. Default is `false`.
-* `indexPageSource` {string} - path to a custom Markdown file that will be used in index.html. Otherwise Markguide tries to find README.md in the guide src and in the root of the project.
-* `templates`– use this field to use your own templates for guide generation.
-* `includes` – use this field to use your own partials and includes.
+* !`cssSrc` {string} – path to generated CSS (used by templates).
+* !`projectStaticFiles` {string} – base path for static files (images, styles, scripts, fonts).
+* !`projectImagesFolder` {string} – folder name under `projectStaticFiles` with images.
+* !`projectStylesFolder` {string} – folder name under `projectStaticFiles` with stylesheets.
+* !`projectScriptsFolder` {string} – folder name under `projectStaticFiles` with scripts.
+* !`projectFontsFolder` {string} – folder name under `projectStaticFiles` with fonts.
+* !`internalAssetsPath` {string} – path to Markguide internal assets.
+
+Optional fields
+
+* `excludedDirs` {regexp|string} – directories that will be excluded from doc sets.
+* `excludedSassFiles` {regexp|string} – Sass files that will be excluded from doc sets.
+* `projectStyles` {array} – list of stylesheet basenames or full URLs to include in rendered pages.
+* `projectScripts` {array} – list of script basenames or full URLs to include in rendered pages.
+* `projectFonts` {array} – font metadata used in templates.
+* `customPluginsPath` {string} – path to custom plugins folder.
+* `enabledPlugins` {array} – list of plugin configs (`name` and `options`).
+* `templates` {object} – map of template overrides keyed by template name.
+* `partials` {object} – map of partial overrides keyed by partial name.
+* `sourceReplacements` {object} – string replacements applied when copying CSS files.
 * `projectInfo`
-    * `name` {string} - custom name of the project. Otherwise package name will be used.
+    * `name` {string} – custom project name. Otherwise the package name will be used.
 
 
 ### Documenting code
