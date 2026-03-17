@@ -117,68 +117,14 @@ function getBaseConfig(configRaw) {
          pluginsPages: initPlugins(Object.assign({}, baseMandatory))
     };
 
-    console.log(baseMandatory);
 
     return Object.assign({}, baseMandatory, templates, additionalPages, partials, projectInfo, pluginsPages);
 }
 
 function initPlugins(baseMandatory) {
-    if(baseMandatory.enabledPlugins === undefined) {
-        return [];
-    }
+    const PluginManager = require('../models/plugin-manager.js');
 
-    const basePlugin = require('../models/base-plugin.js');
-
-    const plugins = [];
-
-    baseMandatory.enabledPlugins.forEach(plugin => {
-        let pluginPath = path.join(baseMandatory.customPluginsPath, plugin.name, 'index.js');
-
-        if(fs.existsSync(pluginPath) === false) {
-            pluginPath = path.join(projectRoot, 'src/plugins', plugin.name, 'index.js');
-
-            if(fs.existsSync(pluginPath) === false) {
-                throw new Error(`Plugin file does not exist: ${pluginPath}`);
-            }
-        }
-
-        const pluginClass = require(pluginPath);
-
-
-        const pluginInstance = new pluginClass(baseMandatory, plugin.options);
-
-        if (!(pluginInstance instanceof basePlugin)) {
-            throw new Error(`Plugin does not extend basePlugin: ${pluginInstance.constructor.name}`);
-        }
-        try {
-            pluginInstance.init();
-
-            const config = pluginInstance.getConfiguration();
-            const content = pluginInstance.getContent();
-            const toc = pluginInstance.getToc();
-
-            plugins.push({
-                id: config.id,
-                title: config.title,
-                src: '',
-                target: path.join(baseMandatory.guideDest, config.target),
-                type: config.type,
-                icon: config.icon,
-                content: {
-                    sections: [{
-                        content: content,
-                        class: ''
-                    }], // TODO: redo this
-                    toc: toc
-                },
-                subPages: []
-            });
-        } catch (error) {
-            console.error(`Error running plugin: ${pluginInstance.constructor.name}`, error);
-        }
-    });
-
-    return plugins;
+    return new PluginManager(baseMandatory, projectRoot).init();
 }
 
 module.exports = getBaseConfig;
