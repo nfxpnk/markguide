@@ -5,7 +5,7 @@ const path = require('path');
 const log = require('fancy-log');
 const c = require('ansi-colors');
 const mustache = require('mustache');
-const { basePlugin } = require('H:/github/markguide/src/markguide.js');
+const { basePlugin } = require('../../../src/markguide.js');
 
 class dummyPlugin extends basePlugin {
     constructor(config, options) {
@@ -34,9 +34,9 @@ class dummyPlugin extends basePlugin {
         const toc = [];
 
         const heading = {
-            text: 'test',
+            text: 'Demo plugin content',
             depth: 2,
-            escapedText: 'test'
+            escapedText: 'demo-plugin-content'
         };
 
         toc.push(heading);
