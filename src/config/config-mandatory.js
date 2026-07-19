@@ -18,6 +18,7 @@ function makePathAbsolute(p, root = '') {
 
 function getMandatoryBaseConfig(config) {
     const corruptedConfig = { isCorrupted: true };
+    const navigationTreeModes = ['expanded', 'compact'];
 
     if (!config.guideDest) {
         log(c.red('Error: ') + '"guideDest" not defined. This field is mandatory');
@@ -64,6 +65,15 @@ function getMandatoryBaseConfig(config) {
     markguideConfig.projectScripts = modifyFilePaths(markguideConfig.projectScripts, 'js');
 
     markguideConfig.sourceReplacements = config.sourceReplacements || {};
+
+    markguideConfig.navigationTreeMode = config.navigationTreeMode || 'expanded';
+
+    if (!navigationTreeModes.includes(markguideConfig.navigationTreeMode)) {
+        log(c.yellow('Warning: ') +
+            '"navigationTreeMode" must be "expanded" or "compact". ' +
+            '"' + markguideConfig.navigationTreeMode + '" received, "expanded" used instead.');
+        markguideConfig.navigationTreeMode = 'expanded';
+    }
 
     /**
      * Modify file paths in the array based on their type.

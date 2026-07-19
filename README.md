@@ -259,7 +259,8 @@ Minimal configuration:
     "projectStylesFolder": "",
     "projectScriptsFolder": "",
     "projectFontsFolder": "fonts",
-    "internalAssetsPath": "assets"
+    "internalAssetsPath": "assets",
+    "navigationTreeMode": "compact"
 }
 ```
 
@@ -281,10 +282,50 @@ const markguide = require('markguide').withConfig({
     projectStylesFolder: '',
     projectScriptsFolder: '',
     projectFontsFolder: 'fonts',
-    internalAssetsPath: 'assets'
+    internalAssetsPath: 'assets',
+    navigationTreeMode: 'compact'
     // etc
 });
 ```
+
+### Navigation tree mode
+
+By default, Markguide renders directory navigation in `expanded` mode, preserving one category for each directory in the source tree. Set `navigationTreeMode` to `compact` to collapse consecutive directory categories when a directory has no page directly inside it and has exactly one category child.
+
+```js
+navigationTreeMode: 'compact'
+```
+
+For a documented source file such as:
+
+```text
+app/design/frontend/ImaginationMedia/base/web/css/source/_buttons.scss
+```
+
+Expanded mode renders each directory as a separate category:
+
+```text
+app
+`-- design
+    `-- frontend
+        `-- ImaginationMedia
+            `-- base
+                `-- web
+                    `-- css
+                        `-- source
+                            `-- _buttons.scss
+```
+
+Compact mode renders the single-child directory chain as one category label:
+
+```text
+app/design/frontend/ImaginationMedia/base/web/css/source
+`-- _buttons.scss
+```
+
+Compaction stops at any directory that contains a page directly or has more than one relevant child category. Chains below separate branches may still be compacted independently. Empty categories are removed after excluded directories and excluded Sass files are filtered.
+
+The `/` character is used only as the navigation label separator, regardless of operating system path separators. Page IDs, source paths, generated output paths, templates, coverage counts, documentation parsing, and component content are unaffected.
 
 ### Templates overwrites
 
@@ -321,6 +362,7 @@ Required paths
 Optional fields
 
 * `excludedDirs` {regexp|string} – directories that will be excluded from doc sets.
+* `navigationTreeMode` {string} - controls directory categories in generated navigation. Available values are `expanded` and `compact`; default is `expanded`.
 * `excludedSassFiles` {regexp|string} – Sass files that will be excluded from doc sets.
 * `projectStyles` {array} – list of stylesheet basenames or full URLs to include in rendered pages.
 * `projectScripts` {array} – list of script basenames or full URLs to include in rendered pages.

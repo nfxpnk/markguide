@@ -55,6 +55,7 @@
         "markguide": "bin/markguide.js"
     },
     "scripts": {
+        "test": "node test/navigation-tree.test.js",
         "lint": "eslint ./ && stylelint ./",
         "lintscss": "npx stylelint \"{./scss/*.scss,./scss/**/*.scss,./scss/**/**/*.scss}\"",
         "formatscss": "npx prettier \"{./scss/*.scss,./scss/**/*.scss,./scss/**/**/*.scss}\" --print-width 255 --write --ignore-path=./.prettierignore",

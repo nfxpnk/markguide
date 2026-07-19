@@ -1,6 +1,7 @@
 'use strict';
 
 const { fs, path, log, c } = require('../utils/common-utils.js');
+const navigationTree = require('./navigation-tree.js');
 
 let excludedSassFiles;
 let excludedDirs;
@@ -27,41 +28,10 @@ function isDocumented(filePath) {
     return hasDocumentation;
 }
 
-/**
- * Traverse array of objects and removes those objects
- * which are categories and doesn't have any sub-pages
- *
- * @param {Array} collection - array of objects
- */
-function removeEmptyCategories(collection) {
-    for (let i = collection.length - 1; i >= 0; i--) {
-        if (collection[i].type === 'category') {
-            if (collection[i].subPages.length) {
-                removeEmptyCategories(collection[i].subPages);
-            }
-
-            if (collection[i].subPages.length === 0) {
-                collection.splice(i, 1);
-            }
-        }
-    }
-}
 
 const isExcludedFile = name => excludedSassFiles.test(name);
 const isExcludedDirectory = name => excludedDirs.test(name);
 
-function createDummyArray(num) {
-  // Initialize an empty array
-  let dummyArray = [];
-
-  // Populate the array with dummy items
-  for (let i = 0; i < num; i++) {
-    dummyArray.push(`spacer`);
-  }
-
-  // Return the resulting array
-  return dummyArray;
-}
 
 function pageConfig(id, title, target, noDocumentation, isDocs, depth) {
     let type = 'component';
@@ -86,7 +56,7 @@ function pageConfig(id, title, target, noDocumentation, isDocs, depth) {
         template: isDocs ? templates.docs : templates.component,
         noDocumentation: noDocumentation,
         subPages: [],
-        depth: createDummyArray(depth)
+        depth: navigationTree.createDummyArray(depth)
     };
 }
 
@@ -98,7 +68,7 @@ function categoryConfig(id, title, depth) {
         icon: 'file-directory-fill-16',
         iconActive: 'file-directory-open-fill-16',
         subPages: [],
-        depth: createDummyArray(depth)
+        depth: navigationTree.createDummyArray(depth)
     };
 }
 
@@ -196,7 +166,9 @@ function makeProjectTree(markguideConfig) {
                     config.push(pageConfig(id, title, target, false, true, depth));
                 }
             } else if (resource.isDirectory() && !isExcludedDirectory(name)) {
-                const id = 'section-' + path.basename(name);
+                const id = markguideConfig.navigationTreeMode === 'compact' ?
+                    'section-' + categoryName + path.basename(name) :
+                    'section-' + path.basename(name);
                 config.push(categoryConfig(id, name, depth));
                 findComponents(target, config[config.length - 1].subPages, categoryName + name + '-', depth+1);
             }
@@ -204,7 +176,7 @@ function makeProjectTree(markguideConfig) {
     }
 
     findComponents(markguideConfig.guideSrc, docSet.subPages, '');
-    //removeEmptyCategories(docSet.subPages);
+    navigationTree.normalizeNavigationTree(docSet.subPages, markguideConfig.navigationTreeMode);
 
     if (markguideConfig.additionalPages && markguideConfig.additionalPages.length > 0) {
         markguideConfig.additionalPages.forEach(page => docSet.subPages.unshift(page));

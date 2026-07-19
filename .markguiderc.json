@@ -14,6 +14,7 @@
         "main"
     ],
     "internalAssetsPath": "assets",
+    "navigationTreeMode": "compact",
     "excludedSassFiles": "_dev-markguide-settings|_dev-markguide-definitions",
     "customPluginsPath": "_example/custom-plugins",
     "enabledPlugins": [
