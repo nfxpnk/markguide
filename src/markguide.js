@@ -2,7 +2,7 @@
 
 const { fs, path, log, c } = require('./utils/common-utils.js');
 
-const {copyFiles, copyDirectory} = require('./utils/copy.js');
+const {copyFiles, copyDirectory, applySourceReplacements} = require('./utils/copy.js');
 const markguideConfig = require('./config/config.js');
 const projectTree = require('./models/project-tree.js');
 
@@ -15,11 +15,15 @@ function copyDirectoriesAndFiles(config) {
     copyDirectory(config.projectImagesFolder, path.join(config.guideDest, 'images'));
 
     // Copy styles
+    const stylesDest = path.join(config.guideDest, 'styles');
+
     if(config.projectStylesFolder === config.projectStaticFiles) {
-        copyFiles(config.projectStylesFolder, path.join(config.guideDest, 'styles'), 'css', config.sourceReplacements);
+        copyFiles(config.projectStylesFolder, stylesDest, 'css');
     } else {
-        copyDirectory(config.projectStylesFolder, path.join(config.guideDest, 'styles'), 'css', config.sourceReplacements);
+        copyDirectory(config.projectStylesFolder, stylesDest);
     }
+
+    applySourceReplacements(stylesDest, 'css', config.sourceReplacements);
 
     // Copy scritps
     if(config.projectScriptsFolder === config.projectStaticFiles) {

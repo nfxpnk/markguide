@@ -8,7 +8,7 @@ const { fs, path, log, c } = require('./common-utils.js');
  * @param {string} destDir - Absolute path to destination directory
  * @param {string} [ext] - Optional file extension to filter by (without the dot)
  */
-function copyFiles(sourceDir, destDir, ext = false, sourceReplacements = {}) {
+function copyFiles(sourceDir, destDir, ext = false) {
     const items = fs.readdirSync(sourceDir);
 
     if (!fs.existsSync(destDir)) {
@@ -26,19 +26,6 @@ function copyFiles(sourceDir, destDir, ext = false, sourceReplacements = {}) {
             }
             try {
                 fs.copyFileSync(sourcePath, destPath);
-
-                if(ext !== false) {
-                    // Read the file content from destination
-                    let content = fs.readFileSync(destPath, 'utf8');
-
-                    // Replace content based on the replacements object
-                    for (const [key, value] of Object.entries(sourceReplacements)) {
-                        const regex = new RegExp(key, 'g'); // Create a regex for global replacement
-                        content = content.replace(regex, value);
-                    }
-
-                    fs.writeFileSync(destPath, content, 'utf8');
-                }
             } catch (e) {
                 console.error(`Error copying file ${sourcePath} to ${destPath}:`, e);
             }
@@ -51,7 +38,7 @@ function copyFiles(sourceDir, destDir, ext = false, sourceReplacements = {}) {
  * @param {string} sourceDir - Absolute path to source directory
  * @param {string} destDir - Absolute path to destination directory
  */
-function copyDirectory(sourceDir, destDir, ext = false, sourceReplacements = {}) {
+function copyDirectory(sourceDir, destDir) {
     if (!fs.existsSync(destDir)) {
         try {
             fs.mkdirSync(destDir, { recursive: true });
@@ -69,15 +56,45 @@ function copyDirectory(sourceDir, destDir, ext = false, sourceReplacements = {})
         const stat = fs.statSync(sourcePath);
 
         if (stat.isDirectory()) {
-            copyDirectory(sourcePath, destPath, ext, sourceReplacements); // Recursive call for subdirectories
+            copyDirectory(sourcePath, destPath); // Recursive call for subdirectories
         }
     });
 
     // After all directories are copied, copy files in the current directory
-    copyFiles(sourceDir, destDir, ext, sourceReplacements);
+    copyFiles(sourceDir, destDir);
+}
+
+function applySourceReplacements(sourceDir, ext, sourceReplacements = {}) {
+    const items = fs.readdirSync(sourceDir);
+
+    items.forEach(item => {
+        const sourcePath = path.join(sourceDir, item);
+        const stat = fs.statSync(sourcePath);
+
+        if (stat.isDirectory()) {
+            applySourceReplacements(sourcePath, ext, sourceReplacements);
+        }
+
+        if (stat.isFile() && path.extname(item) === `.${ext}`) {
+            try {
+                let content = fs.readFileSync(sourcePath, 'utf8');
+
+                for (const [key, value] of Object.entries(sourceReplacements)) {
+                    const regex = new RegExp(key, 'g');
+                    content = content.replace(regex, value);
+                }
+
+                fs.writeFileSync(sourcePath, content, 'utf8');
+            } catch (e) {
+                console.error(`Error replacing content in file ${sourcePath}:`, e);
+            }
+        }
+    });
+
 }
 
 module.exports = {
     copyFiles,
     copyDirectory,
+    applySourceReplacements,
 };
