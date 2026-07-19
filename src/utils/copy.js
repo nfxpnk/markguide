@@ -51,7 +51,7 @@ function copyFiles(sourceDir, destDir, ext = false, sourceReplacements = {}) {
  * @param {string} sourceDir - Absolute path to source directory
  * @param {string} destDir - Absolute path to destination directory
  */
-function copyDirectory(sourceDir, destDir) {
+function copyDirectory(sourceDir, destDir, ext = false, sourceReplacements = {}) {
     if (!fs.existsSync(destDir)) {
         try {
             fs.mkdirSync(destDir, { recursive: true });
@@ -69,12 +69,12 @@ function copyDirectory(sourceDir, destDir) {
         const stat = fs.statSync(sourcePath);
 
         if (stat.isDirectory()) {
-            copyDirectory(sourcePath, destPath); // Recursive call for subdirectories
+            copyDirectory(sourcePath, destPath, ext, sourceReplacements); // Recursive call for subdirectories
         }
     });
 
     // After all directories are copied, copy files in the current directory
-    copyFiles(sourceDir, destDir);
+    copyFiles(sourceDir, destDir, ext, sourceReplacements);
 }
 
 module.exports = {

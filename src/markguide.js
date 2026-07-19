@@ -18,7 +18,7 @@ function copyDirectoriesAndFiles(config) {
     if(config.projectStylesFolder === config.projectStaticFiles) {
         copyFiles(config.projectStylesFolder, path.join(config.guideDest, 'styles'), 'css', config.sourceReplacements);
     } else {
-        copyDirectory(config.projectStylesFolder, path.join(config.guideDest, 'styles'));
+        copyDirectory(config.projectStylesFolder, path.join(config.guideDest, 'styles'), 'css', config.sourceReplacements);
     }
 
     // Copy scritps
