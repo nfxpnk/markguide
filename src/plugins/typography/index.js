@@ -12,6 +12,9 @@ class typographyPlugin extends basePlugin {
 
         this.fonts = config.projectFonts.map(font => ({
             filename: font.filename,
+            path: font.path,
+            url: font.url,
+            format: font.format,
             family: font.properties.family,
             style: font.properties.style,
             weight: font.properties.weight

@@ -57,7 +57,7 @@ function getMandatoryBaseConfig(config) {
     markguideConfig.customPluginsPath = makePathAbsolute(config.customPluginsPath) || '';
     markguideConfig.enabledPlugins = config.enabledPlugins || undefined;
 
-    markguideConfig.projectFonts = config.projectFonts || [];
+    markguideConfig.projectFonts = normalizeProjectFonts(config.projectFonts || []);
     markguideConfig.projectStyles = getProjectStyles(
         config.projectStyles || [],
         config.projectStylesAttributes || {}
@@ -85,6 +85,33 @@ function getMandatoryBaseConfig(config) {
             attributes: Object.entries(stylesAttributes[styles[index]] || {})
                 .map(([name, value]) => ({ name, value }))
         }));
+    }
+
+    function normalizeProjectFonts(fonts) {
+        const formatByExtension = {
+            '.eot': 'embedded-opentype',
+            '.otf': 'opentype',
+            '.ttf': 'truetype',
+            '.woff': 'woff',
+            '.woff2': 'woff2'
+        };
+
+        return fonts.map(font => {
+            const fontPath = normalizeFontPath(font.path || font.filename || '');
+            const filename = font.filename || path.basename(fontPath);
+            const extension = path.extname(fontPath || filename).toLowerCase();
+
+            return Object.assign({}, font, {
+                filename,
+                path: fontPath,
+                url: `fonts/${fontPath}`,
+                format: font.format || formatByExtension[extension] || 'woff2'
+            });
+        });
+    }
+
+    function normalizeFontPath(fontPath) {
+        return fontPath.replace(/\\/g, '/').replace(/^\/+/, '');
     }
     /**
      * Modify file paths in the array based on their type.
