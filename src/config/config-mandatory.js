@@ -58,10 +58,12 @@ function getMandatoryBaseConfig(config) {
     markguideConfig.enabledPlugins = config.enabledPlugins || undefined;
 
     markguideConfig.projectFonts = config.projectFonts || [];
-    markguideConfig.projectStyles = config.projectStyles || [];
+    markguideConfig.projectStyles = getProjectStyles(
+        config.projectStyles || [],
+        config.projectStylesAttributes || {}
+    );
     markguideConfig.projectScripts = config.projectScripts || [];
 
-    markguideConfig.projectStyles = modifyFilePaths(markguideConfig.projectStyles, 'css');
     markguideConfig.projectScripts = modifyFilePaths(markguideConfig.projectScripts, 'js');
 
     markguideConfig.sourceReplacements = config.sourceReplacements || {};
@@ -75,6 +77,15 @@ function getMandatoryBaseConfig(config) {
         markguideConfig.navigationTreeMode = 'expanded';
     }
 
+    function getProjectStyles(styles, stylesAttributes) {
+        const hrefs = modifyFilePaths(styles, 'css');
+
+        return hrefs.map((href, index) => ({
+            href,
+            attributes: Object.entries(stylesAttributes[styles[index]] || {})
+                .map(([name, value]) => ({ name, value }))
+        }));
+    }
     /**
      * Modify file paths in the array based on their type.
      * @param {Array} files - Array of file paths (URLs or basenames).
