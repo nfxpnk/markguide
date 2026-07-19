@@ -104,7 +104,7 @@ function getMandatoryBaseConfig(config) {
             return Object.assign({}, font, {
                 filename,
                 path: fontPath,
-                url: `fonts/${fontPath}`,
+                url: `styles/fonts/${fontPath}`,
                 format: font.format || formatByExtension[extension] || 'woff2'
             });
         });
