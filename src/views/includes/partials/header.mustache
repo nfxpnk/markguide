@@ -23,7 +23,7 @@
     </style>
 
     {{#projectStyles}}
-    <link rel="stylesheet" type="text/css" href="{{{.}}}"/>
+    <link rel="stylesheet" type="text/css" href="{{{href}}}"{{#attributes}} {{name}}="{{value}}"{{/attributes}}/>
     {{/projectStyles}}
 
     <script>
