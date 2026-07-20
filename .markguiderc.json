@@ -44,7 +44,7 @@
     ],
     "projectFonts": [
         {
-            "filename": "roboto-light.woff2",
+            "path": "roboto-light.woff2",
             "properties": {
                 "family": "Roboto",
                 "style": "normal",
@@ -52,7 +52,7 @@
             }
         },
         {
-            "filename": "roboto-regular.woff2",
+            "path": "roboto-regular.woff2",
             "properties": {
                 "family": "Roboto",
                 "style": "normal",
@@ -60,7 +60,7 @@
             }
         },
         {
-            "filename": "roboto-bold.woff2",
+            "path": "roboto-bold.woff2",
             "properties": {
                 "family": "Roboto",
                 "style": "normal",

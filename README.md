@@ -158,7 +158,7 @@ npm install markguide
     ],
     "projectFonts": [
         {
-            "filename": "roboto-regular.woff2",
+            "path": "roboto-regular.woff2",
             "properties": {
                 "family": "Roboto",
                 "style": "normal",
@@ -166,7 +166,7 @@ npm install markguide
             }
         },
         {
-            "filename": "roboto-bold.woff2",
+            "path": "roboto-bold.woff2",
             "properties": {
                 "family": "Roboto",
                 "style": "normal",
