@@ -30,6 +30,7 @@ const elements = {
 };
 
 const renderer = {};
+const includeCommentRegexp = /<!--\s*(Include|IncludeFromProject):([\s\S]+?)-->/giu;
 
 /**
  * @typedef {Object} commentContent
@@ -60,6 +61,43 @@ function getCommentContent(filePath) {
             content: ''
         };
     }
+}
+
+function getIncludeRoot(type, fileURL, options) {
+    if (type.toLowerCase() === 'includefromproject') {
+        return options.projectRoot || '';
+    }
+
+    return path.dirname(fileURL);
+}
+
+function includeFileContent(type, includePath, fileURL, options) {
+    const root = getIncludeRoot(type, fileURL, options);
+
+    if (!root) {
+        return 'IncludeFromProject root is not configured.';
+    }
+
+    const target = path.resolve(root, includePath.trim());
+
+    if (fs.existsSync(target) === false || fs.statSync(target).isFile() === false) {
+        return `File doesn't exist: ${target}`;
+    }
+
+    let fileContent = fs.readFileSync(target, 'utf8');
+
+    if (path.extname(target) === '.pug') {
+        const pugFn = pug.compile(fileContent, {pretty: true});
+        fileContent = pugFn().trim();
+    }
+
+    return fileContent.trim();
+}
+
+function resolveCodeIncludes(code, fileURL, options) {
+    return code.replace(includeCommentRegexp, (match, type, includePath) => {
+        return includeFileContent(type, includePath, fileURL, options);
+    }).trim();
 }
 
 function renderedPageContent(fileURL, options) {
@@ -93,28 +131,7 @@ function renderedPageContent(fileURL, options) {
             language = 'text';
         }
 
-        const includeRegexp = new RegExp('<!--\\s+Include:([\\s\\S]+?)-->', 'ui');
-        if (includeRegexp.test(code) === true) {
-            let include = code.match(includeRegexp);
-            if (typeof include[1] !== 'undefined') {
-                include = include[1].trim();
-                include = path.join(path.dirname(fileURL), include);
-                if (fs.existsSync(include) !== false) {
-                    let fileContent = fs.readFileSync(include, 'utf8');
-
-                    if (path.extname(include) === '.pug') {
-                        let pugFn = pug.compile(fileContent, {pretty: true});
-                        fileContent = pugFn().trim();
-                    }
-
-                    code += '\n\n';
-                    code += fileContent;
-                    code = code.trim();
-                } else {
-                    code += '\n\nFile doesn\'t exists';
-                }
-            }
-        }
+        code = resolveCodeIncludes(code, fileURL, options);
 
         let parentStyles = null;
         let exampleArray = [];

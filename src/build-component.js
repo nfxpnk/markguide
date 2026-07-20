@@ -47,7 +47,10 @@ module.exports = function(markguideConfig, projectTree) {
                     let content;
 
                     if (component.src !== '') {
-                        const page = renderedPageContent(component.src, {'title': component.title});
+                        const page = renderedPageContent(component.src, {
+                            'title': component.title,
+                            'projectRoot': markguideConfig.projectRoot
+                        });
                         content = {
                             sections: page.sections,
                             toc: page.toc

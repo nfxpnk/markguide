@@ -366,6 +366,7 @@ Optional fields
 * `excludedSassFiles` {regexp|string} – Sass files that will be excluded from doc sets.
 * `projectStyles` {array} – list of stylesheet basenames or full URLs to include in rendered pages.
 * `projectScripts` {array} – list of script basenames or full URLs to include in rendered pages.
+* `projectRoot` {string} - base path for `IncludeFromProject` code block includes.
 * `projectFonts` {array} – font metadata used in templates.
 * `customPluginsPath` {string} – path to custom plugins folder.
 * `enabledPlugins` {array} – list of plugin configs (`name` and `options`).
@@ -450,6 +451,32 @@ Simple `html`, `scss`, `css` "fences" become regular code-block:
 
 */
 ```
+
+#### Including files in code blocks
+
+Code fences can include full file contents by using an HTML comment directive. This works in regular `.md` files and inside `/*md */` comments in source files.
+
+Use `Include` for files relative to the folder of the current source file:
+
+~~~md
+```html
+<!--
+Include: file.html
+-->
+```
+~~~
+
+Use `IncludeFromProject` for files relative to the configured `projectRoot`:
+
+~~~md
+```scss
+<!--
+IncludeFromProject: scss-source/blocks/_b-input.scss
+-->
+```
+~~~
+
+The directive is replaced with the included file contents before the code block is rendered. If the included file is `.pug`, Markguide compiles it to HTML first.
 
 #### Template helpers
 

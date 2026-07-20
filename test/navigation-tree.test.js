@@ -263,3 +263,64 @@ test('invalid navigationTreeMode warns and falls back to expanded', () => {
 
     assert.equal(config.navigationTreeMode, 'expanded');
 });
+
+test('code block includes resolve relative to source file and configured project root', () => {
+    const fixture = createFixture();
+    const projectRoot = path.join(fixture.root, 'project');
+
+    fs.mkdirSync(path.join(projectRoot, 'app/code/Vendor/Module'), { recursive: true });
+    fs.mkdirSync(path.join(fixture.guideSrc, 'docs/folder-include'), { recursive: true });
+
+    writeFile(fixture.guideSrc, 'docs/file.html', '<button>Local</button>\n');
+    writeFile(projectRoot, 'app/code/Vendor/Module/file.less', '.project-file {\n    color: red;\n}\n');
+
+    const scssPath = writeFile(fixture.guideSrc, 'docs/inline.scss', [
+        '/*md',
+        '```html',
+        '<!--',
+        'Include: file.html',
+        '-->',
+        '```',
+        '*/'
+    ].join('\n'));
+
+    const markdownPath = writeFile(fixture.guideSrc, 'docs/includes.md', [
+        '```html',
+        '<!--',
+        'Include: file.html',
+        '-->',
+        '```',
+        '',
+        '```less',
+        '<!--',
+        'IncludeFromProject: app/code/Vendor/Module/file.less',
+        '-->',
+        '```'
+    ].join('\n'));
+
+    const directoryPath = writeFile(fixture.guideSrc, 'docs/directory-include.md', [
+        '```html',
+        '<!--',
+        'Include: folder-include',
+        '-->',
+        '```'
+    ].join('\n'));
+
+    const page = renderedPageContent(markdownPath, {
+        title: 'includes.md',
+        projectRoot
+    });
+    const html = page.sections.map(section => section.content).join('\n');
+    const scssPage = renderedPageContent(scssPath, { title: 'inline.scss' });
+    const scssHtml = scssPage.sections.map(section => section.content).join('\n');
+    const directoryPage = renderedPageContent(directoryPath, { title: 'directory-include.md' });
+    const directoryHtml = directoryPage.sections.map(section => section.content).join('\n');
+
+    assert.match(html, /&lt;button&gt;Local/);
+    assert.doesNotMatch(html, /Include: file\.html/);
+    assert.match(html, /\.project-file/);
+    assert.doesNotMatch(html, /IncludeFromProject/);
+    assert.match(scssHtml, /&lt;button&gt;Local/);
+    assert.doesNotMatch(scssHtml, /Include: file\.html/);
+    assert.match(directoryHtml, /File doesn/);
+});

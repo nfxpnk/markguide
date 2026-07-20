@@ -2,9 +2,13 @@
 
 const { fs, path, log, c } = require('../utils/common-utils.js');
 
-const projectRoot = process.cwd();
+const cwd = process.cwd();
 
 function makePathAbsolute(p, root = '') {
+    if (p === undefined || p === null) {
+        return '';
+    }
+
     if(path.isAbsolute(p)) {
         return path.join(p, '/');
     } else {
@@ -12,7 +16,7 @@ function makePathAbsolute(p, root = '') {
             return path.join(root, p, '/');
         }
 
-        return path.join(projectRoot, root, p, '/');
+        return path.join(cwd, root, p, '/');
     }
 }
 
@@ -35,11 +39,16 @@ function getMandatoryBaseConfig(config) {
         projectScriptsFolder: makePathAbsolute(config.projectScriptsFolder, config.projectStaticFiles),
         projectFontsFolder: makePathAbsolute(config.projectFontsFolder, config.projectStaticFiles),
         guideDest: makePathAbsolute(config.guideDest),
-        internalAssetsPath: makePathAbsolute(config.internalAssetsPath)
+        internalAssetsPath: makePathAbsolute(config.internalAssetsPath),
+        projectRoot: makePathAbsolute(config.projectRoot)
     };
 
     // Check if path exist
     for (const [key, value] of Object.entries(markguideConfig)) {
+        if (value === '') {
+            continue;
+        }
+
         if (fs.existsSync(value) === false) {
             log(c.red('Error: ') +
             '"' + key + '" (' + value + ')' +
