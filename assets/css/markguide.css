@@ -797,6 +797,7 @@ $color-primary-button__background--hover
   align-items: center;
   border-radius: 3px;
   border: 1px solid var(--color-mg-options-bar-button__border);
+  background-color: var(--color-mg-options-bar-button__background);
   color: var(--color-mg-options-bar-button__color);
   cursor: pointer;
   display: flex;
@@ -1541,8 +1542,7 @@ $color-primary-button__background--hover
 }
 .markdown-body abbr[title] {
   border-bottom: none;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 .markdown-body dfn {
   font-style: italic;
